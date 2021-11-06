@@ -1,8 +1,18 @@
 [tool.poetry]
 name = "bot-core"
 version = "0.1.0"
-description = "Skeleton and utilities for Python Discord bots"
+description = "Bot-Core provides the core functionality and utilities for the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
+license = "MIT"
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+packages = [
+    { include = "botcore" },
+]
+exclude = ["tests", "tests.*"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
