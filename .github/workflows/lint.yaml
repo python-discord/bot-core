@@ -14,28 +14,13 @@ jobs:
   lint:
     name: Run pre-commit & flake8
     runs-on: ubuntu-latest
-    env:
-      # Configure pip to cache dependencies and do a user install
-      PIP_NO_CACHE_DIR: false
-      PIP_USER: 1
-
-      # Make sure package manager does not use virtualenv
-      POETRY_VIRTUALENVS_CREATE: false
-
-      # Specify explicit paths for python dependencies and the pre-commit
-      # environment so we know which directories to cache
-      POETRY_CACHE_DIR: ${{ github.workspace }}/.cache/py-user-base
-      PYTHONUSERBASE: ${{ github.workspace }}/.cache/py-user-base
-      PRE_COMMIT_HOME: ${{ github.workspace }}/.cache/pre-commit-cache
 
     steps:
-      - name: Add custom PYTHONUSERBASE to PATH
-        run: echo '${{ env.PYTHONUSERBASE }}/bin/' >> $GITHUB_PATH
-
       - name: Install Python Dependencies
         uses: HassanAbouelela/actions/setup-python@setup-python_v1.0.0
         with:
-          dev: false
+          # Set dev=true to run pre-commit which is a dev dependency
+          dev: true
           python_version: 3.9
 
       # We will not run `flake8` here, as we will use a separate flake8
