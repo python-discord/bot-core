@@ -1,0 +1,74 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Run pre-commit & flake8
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Python Dependencies
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.0.0
+        with:
+          # Set dev=true to run pre-commit which is a dev dependency
+          dev: true
+          python_version: 3.9
+
+      # We will not run `flake8` here, as we will use a separate flake8
+      # action. As pre-commit does not support user installs, we set
+      # PIP_USER=0 to not do a user install.
+      - name: Run pre-commit hooks
+        run: export PIP_USER=0; SKIP=flake8 pre-commit run --all-files
+
+      # Run flake8 and have it format the linting errors in the format of
+      # the GitHub Workflow command to register error annotations. This
+      # means that our flake8 output is automatically added as an error
+      # annotation to both the run result and in the "Files" tab of a
+      # pull request.
+      #
+      # Format used:
+      # ::error file={filename},line={line},col={col}::{message}
+      - name: Run flake8
+        run: "flake8 \
+        --format='::error file=%(path)s,line=%(row)d,col=%(col)d::[flake8] %(code)s: %(text)s'"
+
+#      - name: Run tests and generate coverage report
+#        run: pytest -n auto --cov --disable-warnings -q
+#
+#      # This step will publish the coverage reports coveralls.io and
+#      # print a "job" link in the output of the GitHub Action
+#      - name: Publish coverage report to coveralls.io
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run: coveralls
+
+      # Prepare the Pull Request Payload artifact. If this fails, we
+      # we fail silently using the `continue-on-error` option. It's
+      # nice if this succeeds, but if it fails for any reason, it
+      # does not mean that our lint checks failed.
+      - name: Prepare Pull Request Payload artifact
+        id: prepare-artifact
+        if: always() && github.event_name == 'pull_request'
+        continue-on-error: true
+        run: cat $GITHUB_EVENT_PATH | jq '.pull_request' > pull_request_payload.json
+
+      # This only makes sense if the previous step succeeded. To
+      # get the original outcome of the previous step before the
+      # `continue-on-error` conclusion is applied, we use the
+      # `.outcome` value. This step also fails silently.
+      - name: Upload a Build Artifact
+        if: always() && steps.prepare-artifact.outcome == 'success'
+        continue-on-error: true
+        uses: actions/upload-artifact@v2
+        with:
+          name: pull-request-payload
+          path: pull_request_payload.json
