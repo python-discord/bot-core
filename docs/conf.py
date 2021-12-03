@@ -77,6 +77,7 @@ html_title = f"{project} v{version}"
 html_short_title = project
 
 html_logo = "https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"
+html_favicon = html_logo
 
 html_css_files = [
     "changelog.css",
