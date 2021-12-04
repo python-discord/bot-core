@@ -23,7 +23,7 @@ jobs:
       - name: Install Python Dependencies
         uses: HassanAbouelela/actions/setup-python@setup-python_v1.0.0
         with:
-          dev: false
+          dev: true
           python_version: 3.9
 
       # Undeclared dependency for `releases`... whoops

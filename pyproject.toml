@@ -17,12 +17,6 @@ exclude = ["tests", "tests.*"]
 [tool.poetry.dependencies]
 python = "3.9.*"
 "discord.py" = "^1.7.2"
-Sphinx = "^4.3.1"
-tomli = "^1.2.2"
-GitPython = "^3.1.24"
-sphinx-autodoc-typehints = "^1.12.0"
-releases = "^1.6.3"
-furo = "^2021.11.23"
 
 [tool.poetry.dev-dependencies]
 flake8 = "~=3.8"
@@ -40,6 +34,13 @@ python-dotenv = "^0.18.0"
 pytest = "~=6.2.4"
 pytest-cov = "~=2.12.1"
 pytest-xdist = { version = "~=2.3.0", extras = ["psutil"] }
+Sphinx = "^4.3.1"
+tomli = "^1.2.2"
+GitPython = "^3.1.24"
+sphinx-autodoc-typehints = "^1.12.0"
+releases = "^1.6.3"
+furo = "^2021.11.23"
+
 
 [tool.taskipy.tasks]
 lint = "pre-commit run --all-files"
