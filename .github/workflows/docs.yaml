@@ -1,0 +1,51 @@
+name: Build Docs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: docs-deployment-${{ github.ref }}
+  cancel-in-progress: true
+
+
+jobs:
+  build-deploy:
+    name: Build & Deploy Docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Python Dependencies
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.0.0
+        with:
+          dev: true
+          python_version: 3.9
+
+      # Undeclared dependency for `releases`... whoops
+      # https://github.com/bitprophet/releases/pull/82
+      - run: pip install six
+
+      - name: Generate AutoDoc References
+        run: sphinx-apidoc -o docs/output botcore -fe
+
+      - name: Generate HTML Site
+        run: sphinx-build -nW -j auto -b html docs docs/build
+
+      - name: Uplaod Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: docs/build/*
+
+      - name: Deploy To GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: docs
+          folder: docs/build
+          # We only want to actually push the build if we're on main, otherwise just make sure everything works
+          dry-run: ${{ github.ref != 'refs/heads/main' }}
