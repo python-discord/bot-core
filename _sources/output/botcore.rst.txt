@@ -1,0 +1,8 @@
+Botcore
+=======
+
+.. toctree::
+   :maxdepth: 4
+
+   botcore.regex
+
