@@ -38,6 +38,7 @@ add_module_names = False
 # ones.
 extensions = [
     "sphinx.ext.extlinks",
+    "sphinx.ext.intersphinx",
     "sphinx.ext.autodoc",
     "sphinx.ext.todo",
     "sphinx.ext.napoleon",
@@ -166,6 +167,13 @@ releases_github_path = REPO_LINK.removeprefix("https://github.com/")
 # -- Options for extlinks extension ------------------------------------------
 extlinks = {
     "repo-file": (f"{REPO_LINK}/blob/main/%s", "repo-file %s")
+}
+
+
+# -- Options for intersphinx extension ---------------------------------------
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    "discord": ("https://discordpy.readthedocs.io/en/master/", None),
 }
 
 
