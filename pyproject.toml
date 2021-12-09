@@ -45,7 +45,7 @@ furo = "^2021.11.23"
 [tool.taskipy.tasks]
 lint = "pre-commit run --all-files"
 precommit = "pre-commit install"
-apidoc = "sphinx-apidoc -o docs/output botcore -fe"
+apidoc = "sphinx-apidoc -o docs/output botcore -feM"
 builddoc = "sphinx-build -nW -j auto -b html docs docs/build"
 docs = "task apidoc && task builddoc"
 

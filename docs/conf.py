@@ -99,31 +99,29 @@ def __cleanup() -> None:
             # We only have one module, so this is redundant
             # Remove it and flatten out the tree
             file.unlink()
+            continue
 
-        elif file.name == "botcore.rst":
-            # We want to bring the submodule name to the top, and remove anything that's not a submodule
-            result = ""
-            for line in file.read_text(encoding="utf-8").splitlines(keepends=True):
-                if ".." not in line and result == "":
-                    # We have not reached the first submodule, this is all filler
-                    continue
-                elif "Module contents" in line:
-                    # We have parsed all the submodules, so let's skip the redudant module name
-                    break
-                result += line
+        elif file.name in ("botcore.rst", "botcore.exts.rst"):
+            content = file.read_text(encoding="utf-8").splitlines(keepends=True)
 
-            result = "Botcore\n=======\n\n" + result
-            file.write_text(result, encoding="utf-8")
+            # Rename the extension to be less wordy
+            # Example: botcore.exts -> Botcore Exts
+            title = content[0].split()[0].strip().replace("botcore.", "").replace(".", " ").title()
+            title = f"{title}\n{'=' * len(title)}\n\n"
+            content[0:2] = title
+
+            file.write_text("".join(content), encoding="utf-8")
 
         else:
             # Clean up the submodule name so it's just the name without the top level module name
             # example: `botcore.regex module` -> `regex`
-            lines = file.read_text(encoding="utf-8").splitlines()
-            lines[0] = lines[0].replace("botcore.", "").replace("module", "").strip()
+            lines = file.read_text(encoding="utf-8").splitlines(keepends=True)
+            lines[0] = lines[0].replace("module", "").strip().split(".")[-1] + "\n"
+            file.write_text("".join(lines))
 
-            # Take the opportunity to configure autodoc
-            lines = "\n".join(lines).replace("undoc-members", "special-members")
-            file.write_text(lines, encoding="utf-8")
+        # Take the opportunity to configure autodoc
+        content = file.read_text(encoding="utf-8").replace("undoc-members", "special-members")
+        file.write_text(content, encoding="utf-8")
 
 
 __cleanup()
