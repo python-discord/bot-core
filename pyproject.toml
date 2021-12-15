@@ -16,30 +16,30 @@ exclude = ["tests", "tests.*"]
 
 [tool.poetry.dependencies]
 python = "3.9.*"
-"discord.py" = "^1.7.2"
+"discord.py" = {url = "https://github.com/Rapptz/discord.py/archive/45d498c1b76deaf3b394d17ccf56112fa691d160.zip"}
 
 [tool.poetry.dev-dependencies]
-flake8 = "~=3.8"
-flake8-annotations = "~=2.3"
-flake8-bugbear = "~=20.1"
-flake8-docstrings = "~=1.5"
-flake8-import-order = "~=0.18"
-flake8-string-format = "~=0.3"
-flake8-tidy-imports = "~=4.1"
-flake8-todo = "~=0.7"
-pep8-naming = "~=0.11"
-pre-commit = "~=2.1"
-taskipy = "^1.6.0"
-python-dotenv = "^0.18.0"
-pytest = "~=6.2.4"
-pytest-cov = "~=2.12.1"
-pytest-xdist = { version = "~=2.3.0", extras = ["psutil"] }
-Sphinx = "^4.3.1"
-tomli = "^1.2.2"
-GitPython = "^3.1.24"
-sphinx-autodoc-typehints = "^1.12.0"
-releases = "^1.6.3"
-furo = "^2021.11.23"
+flake8 = "4.0.1"
+flake8-annotations = "2.7.0"
+flake8-bugbear = "21.11.29"
+flake8-docstrings = "1.6.0"
+flake8-import-order = "0.18.1"
+flake8-string-format = "0.3.0"
+flake8-tidy-imports = "4.5.0"
+flake8-todo = "0.7"
+pep8-naming = "0.12.1"
+pre-commit = "2.16.0"
+taskipy = "1.9.0"
+python-dotenv = "0.19.2"
+pytest = "6.2.5"
+pytest-cov = "3.0.0"
+pytest-xdist = { version = "2.5.0", extras = ["psutil"] }
+Sphinx = "4.3.1"
+tomli = "2.0.0"
+GitPython = "3.1.24"
+sphinx-autodoc-typehints = "1.12.0"
+releases = "1.6.3"
+furo = "2021.11.23"
 
 
 [tool.taskipy.tasks]
