@@ -1,7 +1,7 @@
 import asyncio
 import inspect
 import json
-from typing import Callable, Union
+from typing import Callable, Optional
 
 import aioredis
 
@@ -12,13 +12,14 @@ class RedisMessageRelay:
     def __init__(
             self,
             name: str,
-            redis_channel: Union[aioredis.Channel, str],
-            redis_list: str,
             redis_pool: aioredis.Redis,
+            *,
+            redis_channel: Optional[aioredis.Channel, str] = None,
+            redis_list: Optional[str] = None,
     ) -> None:
         self.name = name
-        self.channel = redis_channel
-        self.redis_list = redis_list
+        self.channel = redis_channel or name
+        self.redis_list = redis_list or name
 
         self.redis = redis_pool
 
@@ -27,16 +28,6 @@ class RedisMessageRelay:
 
 
 class RedisMessageProducer(RedisMessageRelay):
-
-    def __init__(
-            self,
-            name: str,
-            redis_channel: Union[aioredis.Channel, str],
-            redis_list: str,
-            redis_pool: aioredis.Redis,
-    ) -> None:
-        super().__init__(name, redis_channel, redis_list, redis_pool)
-
     async def relay(self, data: dict) -> int:
         """
         Push message and notify consumer.
@@ -49,9 +40,9 @@ class RedisMessageProducer(RedisMessageRelay):
         await self.redis.rpush(self.redis_list, serialised)
 
         # Notify consumer about new message.
-        subs: int = await self.redis.publish_json(
+        subs: int = await self.redis.publish(
             self.channel,
-            {"pushed": True}
+            "pushed"
         )
         return subs
 
@@ -60,17 +51,15 @@ class RedisMessageConsumer(RedisMessageRelay):
 
     def __init__(
             self,
-            name: str,
-            redis_channel: Union[aioredis.Channel, str],
-            redis_list: str,
-            redis_pool: aioredis.Redis,
+            *args,
             callback: Callable,
-            loop: asyncio.AbstractEventLoop
+            loop: Optional[asyncio.AbstractEventLoop] = None,
+            **kwargs
     ) -> None:
-        super().__init__(name, redis_channel, redis_list, redis_pool)
+        super().__init__(*args, **kwargs)
 
         self.callback = callback
-        self.loop = loop
+        self.loop = loop or asyncio.get_event_loop()
 
     async def listen(self) -> None:
         res = await self.redis.subscribe(self.channel)
@@ -103,7 +92,6 @@ class RedisMessageConsumer(RedisMessageRelay):
             await self.pre_callback(item)
 
         while await self.channel.wait_message():
-            data = await self.channel.get_json()
-
-            if data["pushed"]:
+            data = await self.channel.get()
+            if data == "pushed":
                 await self.read_redis_list()
