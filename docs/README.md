@@ -43,3 +43,9 @@ You can use [this site][releases] to get the PR number you'll use for your entry
 
 [next]: https://ichard26.github.io/next-pr-number/?owner=python-discord&name=bot-core
 [releases]: https://releases.readthedocs.io/en/latest/concepts.html
+
+## Static Builds
+We deploy our docs to netlify to power static previews on PRs.
+Check out [python-discord/site][STATIC_BUILD_DOCS] for more info on the system.
+
+[STATIC_BUILD_DOCS]: https://github.com/python-discord/site/tree/main/static-builds
