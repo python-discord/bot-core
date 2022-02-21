@@ -7,6 +7,7 @@ from pathlib import Path
 
 import git
 import tomli
+from sphinx.application import Sphinx
 
 from docs import utils
 
@@ -87,6 +88,8 @@ html_js_files = [
     "changelog.js",
 ]
 
+utils.cleanup()
+
 
 def skip(*args) -> bool:
     """Things that should be skipped by the autodoc generation."""
@@ -98,6 +101,11 @@ def skip(*args) -> bool:
     ):
         return True
     return would_skip
+
+
+def setup(app: Sphinx) -> None:
+    """Add extra hook-based autodoc configuration."""
+    app.connect("autodoc-skip-member", skip)
 
 
 # -- Extension configuration -------------------------------------------------
@@ -128,17 +136,6 @@ extlinks = {
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "discord": ("https://discordpy.readthedocs.io/en/master/", None),
-}
-
-
-# -- Options for the autodoc extension ---------------------------------------
-utils.cleanup()
-autodoc_default_options = {
-    "members": True,
-    "special-members": True,
-    "show-inheritance": True,
-    "imported-members": False,
-    "exclude-members": "__weakref__"
 }
 
 
