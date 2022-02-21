@@ -1,0 +1,45 @@
+"""Custom logging class."""
+
+import logging
+import typing
+
+if typing.TYPE_CHECKING:
+    LoggerClass = logging.Logger
+else:
+    LoggerClass = logging.getLoggerClass()
+
+TRACE_LEVEL = 5
+
+
+class CustomLogger(LoggerClass):
+    """Custom implementation of the `Logger` class with an added `trace` method."""
+
+    def trace(self, msg: str, *args, **kwargs) -> None:
+        """
+        Log 'msg % args' with severity 'TRACE'.
+
+        To pass exception information, use the keyword argument exc_info with a true value:
+
+        .. code-block:: py
+
+            logger.trace("Houston, we have an %s", "interesting problem", exc_info=1)
+
+        Args:
+            msg: The message to be logged.
+            args, kwargs: Passed to the base log function as is.
+        """
+        if self.isEnabledFor(TRACE_LEVEL):
+            self.log(TRACE_LEVEL, msg, *args, **kwargs)
+
+
+def get_logger(name: typing.Optional[str] = None) -> CustomLogger:
+    """
+    Utility to make mypy recognise that logger is of type `CustomLogger`.
+
+    Args:
+        name: The name given to the logger.
+
+    Returns:
+        An instance of the `CustomLogger` class.
+    """
+    return typing.cast(CustomLogger, logging.getLogger(name))
