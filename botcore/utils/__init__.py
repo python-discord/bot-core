@@ -1,6 +1,6 @@
 """Useful utilities and tools for discord bot development."""
 
-from botcore.utils import (caching, channel, extensions, logging, members, regex, scheduling)
+from botcore.utils import (caching, channel, extensions, logging, members, monkey_patches, regex, scheduling)
 
 __all__ = [
     caching,
@@ -8,6 +8,7 @@ __all__ = [
     extensions,
     logging,
     members,
+    monkey_patches,
     regex,
     scheduling,
 ]
