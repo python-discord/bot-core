@@ -13,11 +13,6 @@ Reference
 
    output/botcore
 
-.. toctree::
-   :caption: Other:
-
-   changelog
-
 
 Extras
 ==================

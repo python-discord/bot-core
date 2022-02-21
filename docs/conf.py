@@ -46,7 +46,6 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.napoleon",
     "sphinx_autodoc_typehints",
-    "releases",
     "sphinx.ext.linkcode",
     "sphinx.ext.githubpages",
 ]
@@ -124,10 +123,6 @@ todo_include_todos = True
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
 napoleon_attr_annotations = True
-
-
-# -- Options for releases extension ------------------------------------------
-releases_github_path = REPO_LINK.removeprefix("https://github.com/")
 
 
 # -- Options for extlinks extension ------------------------------------------
