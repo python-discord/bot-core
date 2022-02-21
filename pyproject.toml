@@ -36,7 +36,7 @@ pytest-cov = "3.0.0"
 pytest-xdist = { version = "2.5.0", extras = ["psutil"] }
 Sphinx = "4.4.0"
 tomli = "2.0.0"
-GitPython = "3.1.26"
+GitPython = "3.1.27"
 sphinx-autodoc-typehints = "1.17.0"
 releases = "1.6.3"
 furo = "2022.1.2"
