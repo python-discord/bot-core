@@ -2,6 +2,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import functools
+import os.path
 import sys
 from pathlib import Path
 
@@ -9,7 +10,10 @@ import git
 import tomli
 from sphinx.application import Sphinx
 
-from docs import utils
+# Handle the path not being set correctly in actions.
+sys.path.insert(0, os.path.abspath('..'))
+
+from docs import utils  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 
