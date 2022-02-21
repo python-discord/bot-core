@@ -20,3 +20,4 @@ Extras
 * :ref:`genindex`
 * :ref:`search`
 * :repo-file:`Information <docs/README.md>`
+* :repo-file:`Changelog <CHANGELOG.md>`
