@@ -16,7 +16,8 @@ exclude = ["tests", "tests.*"]
 
 [tool.poetry.dependencies]
 python = "3.9.*"
-disnake = ">=2.4"
+# It is expected that bots that use bot-core will define a striciter version of disnake.
+disnake = "^2"
 
 [tool.poetry.dev-dependencies]
 flake8 = "4.0.1"

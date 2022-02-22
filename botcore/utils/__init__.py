@@ -1,4 +1,4 @@
-"""Useful utilities and tools for discord bot development."""
+"""Useful utilities and tools for Discord bot development."""
 
 from botcore.utils import (caching, channel, extensions, logging, members, monkey_patches, regex, scheduling)
 

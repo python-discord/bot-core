@@ -1,4 +1,4 @@
-"""Useful utilities and tools for discord bot development."""
+"""Useful utilities and tools for Discord bot development."""
 
 from botcore import exts, utils
 

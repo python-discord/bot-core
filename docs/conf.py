@@ -129,7 +129,7 @@ extlinks = {
 # -- Options for intersphinx extension ---------------------------------------
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    "discord": ("https://discordpy.readthedocs.io/en/master/", None),
+    "disnake": ("https://docs.disnake.dev/en/latest/", None),
 }
 
 
