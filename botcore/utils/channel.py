@@ -3,7 +3,7 @@
 import discord
 from discord.ext.commands import Bot
 
-from botcore import loggers
+from botcore.utils import loggers
 
 log = loggers.get_logger(__name__)
 

@@ -1,16 +1,10 @@
 """Useful utilities and tools for discord bot development."""
 
-from botcore import (caching, channel, extensions, exts, loggers, members, regex, scheduling)
+from botcore import exts, utils
 
 __all__ = [
-    caching,
-    channel,
-    extensions,
     exts,
-    loggers,
-    members,
-    regex,
-    scheduling,
+    utils,
 ]
 
 __all__ = list(map(lambda module: module.__name__, __all__))
