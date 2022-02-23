@@ -1,4 +1,4 @@
-"""Custom logging class."""
+"""Custom :obj:`logging.Logger` class that implements a new ``"TRACE"`` level."""
 
 import logging
 import typing
@@ -12,11 +12,11 @@ TRACE_LEVEL = 5
 
 
 class CustomLogger(LoggerClass):
-    """Custom implementation of the `Logger` class with an added `trace` method."""
+    """Custom implementation of the :obj:`logging.Logger` class with an added :obj:`trace` method."""
 
     def trace(self, msg: str, *args, **kwargs) -> None:
         """
-        Log 'msg % args' with severity 'TRACE'.
+        Log the given message with the severity ``"TRACE"``.
 
         To pass exception information, use the keyword argument exc_info with a true value:
 
@@ -34,12 +34,12 @@ class CustomLogger(LoggerClass):
 
 def get_logger(name: typing.Optional[str] = None) -> CustomLogger:
     """
-    Utility to make mypy recognise that logger is of type `CustomLogger`.
+    Utility to make mypy recognise that logger is of type :obj:`CustomLogger`.
 
     Args:
         name: The name given to the logger.
 
     Returns:
-        An instance of the `CustomLogger` class.
+        An instance of the :obj:`CustomLogger` class.
     """
     return typing.cast(CustomLogger, logging.getLogger(name))

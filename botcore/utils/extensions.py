@@ -9,7 +9,7 @@ from typing import NoReturn
 
 def unqualify(name: str) -> str:
     """
-    Return an unqualified name given a qualified module/package `name`.
+    Return an unqualified name given a qualified module/package ``name``.
 
     Args:
         name: The module name to unqualify.
@@ -22,7 +22,7 @@ def unqualify(name: str) -> str:
 
 def walk_extensions(module: types.ModuleType) -> frozenset[str]:
     """
-    Yield extension names from the bot.exts subpackage.
+    Yield extension names from the given module.
 
     Args:
         module (types.ModuleType): The module to look for extensions in.

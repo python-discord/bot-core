@@ -1,3 +1,5 @@
+"""Useful helper functions for interactin with :obj:`discord.Member` objects."""
+
 import typing
 
 import discord
@@ -11,7 +13,8 @@ async def get_or_fetch_member(guild: discord.Guild, member_id: int) -> typing.Op
     """
     Attempt to get a member from cache; on failure fetch from the API.
 
-    Return `None` to indicate the member could not be found.
+    Returns:
+        The :obj:`discord.Member` or :obj:`None` to indicate the member could not be found.
     """
     if member := guild.get_member(member_id):
         log.trace(f"{member} retrieved from cache.")
@@ -31,9 +34,14 @@ async def handle_role_change(
     role: discord.Role
 ) -> None:
     """
-    Change `member`'s cooldown role via awaiting `coro` and handle errors.
+    Await the given ``coro`` with ``member`` as the sole argument.
 
-    `coro` is intended to be `discord.Member.add_roles` or `discord.Member.remove_roles`.
+    Handle errors that we expect to be raised from
+    :obj:`discord.Member.add_roles` and :obj:`discord.Member.remove_roles`.
+
+    Args:
+        member: The member to pass to ``coro``.
+        coro: This is intended to be :obj:`discord.Member.add_roles` or :obj:`discord.Member.remove_roles`.
     """
     try:
         await coro(role)

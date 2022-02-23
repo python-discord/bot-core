@@ -215,7 +215,7 @@ def create_task(
     **kwargs,
 ) -> asyncio.Task:
     """
-    Wrapper for creating asyncio `Tasks` which logs exceptions raised in the task.
+    Wrapper for creating an :obj:`asyncio.Task` which logs exceptions raised in the task.
 
     If the loop kwarg is provided, the task is created from that event loop, otherwise the running loop is used.
 

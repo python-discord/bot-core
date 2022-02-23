@@ -1,4 +1,4 @@
-"""Utilities for interacting with discord channels."""
+"""Useful helper functions for interacting with various discord.py channel objects."""
 
 import discord
 from discord.ext.commands import Bot
@@ -9,7 +9,16 @@ log = loggers.get_logger(__name__)
 
 
 def is_in_category(channel: discord.TextChannel, category_id: int) -> bool:
-    """Return True if `channel` is within a category with `category_id`."""
+    """
+    Return whether the given channel has the category_id.
+
+    Args:
+        channel: The channel to check.
+        category_id: The category to check for.
+
+    Returns:
+        A bool depending on whether the channel is in the category.
+    """
     return getattr(channel, "category_id", None) == category_id
 
 
