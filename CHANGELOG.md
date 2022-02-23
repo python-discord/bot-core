@@ -1,6 +1,7 @@
 # Changelog
 
-## 1.3.0 22nd February 2022
+## 2.0.0 22nd February 2022
+- Breaking: Moved regex to botcore.utils namespace
 - Feature: Port many common utilities from our bots
     - caching
     - channel
