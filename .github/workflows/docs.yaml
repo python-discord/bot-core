@@ -31,7 +31,7 @@ jobs:
       - run: pip install six
 
       - name: Generate AutoDoc References
-        run: sphinx-apidoc -o docs/output botcore -fe
+        run: sphinx-apidoc -o docs/output botcore -feM
 
       - name: Generate HTML Site
         run: sphinx-build -nW -j auto -b html docs docs/build

@@ -79,7 +79,7 @@ def cleanup() -> None:
             # Example: botcore.exts -> Botcore Exts
             title = content[0].split()[0].strip().replace("botcore.", "").replace(".", " ").title()
             title = f"{title}\n{'=' * len(title)}\n\n"
-            content[0:2] = title
+            content = title, *content[3:]
 
             file.write_text("".join(content), encoding="utf-8")
 
