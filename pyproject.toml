@@ -38,14 +38,13 @@ Sphinx = "4.4.0"
 tomli = "2.0.0"
 GitPython = "3.1.26"
 sphinx-autodoc-typehints = "1.17.0"
-releases = "1.6.3"
 furo = "2022.1.2"
 
 
 [tool.taskipy.tasks]
 lint = "pre-commit run --all-files"
 precommit = "pre-commit install"
-apidoc = "sphinx-apidoc -o docs/output botcore -fe"
+apidoc = "sphinx-apidoc -o docs/output botcore -feM"
 builddoc = "sphinx-build -nW -j auto -b html docs docs/build"
 docs = "task apidoc && task builddoc"
 
