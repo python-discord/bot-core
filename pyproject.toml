@@ -38,7 +38,7 @@ Sphinx = "4.4.0"
 tomli = "2.0.0"
 GitPython = "3.1.26"
 sphinx-autodoc-typehints = "1.17.0"
-furo = "2022.1.2"
+furo = "2022.2.23"
 
 
 [tool.taskipy.tasks]
