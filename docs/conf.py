@@ -83,6 +83,7 @@ html_logo = "https://raw.githubusercontent.com/python-discord/branding/main/logo
 html_favicon = html_logo
 
 html_css_files = [
+    "index.css",
     "logo.css",
 ]
 
