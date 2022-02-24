@@ -1,0 +1,21 @@
+Utils
+=====
+
+.. automodule:: botcore.utils
+   :members:
+   :special-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   botcore.utils.caching
+   botcore.utils.channel
+   botcore.utils.extensions
+   botcore.utils.logging
+   botcore.utils.members
+   botcore.utils.regex
+   botcore.utils.scheduling

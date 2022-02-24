@@ -3,14 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Changelog" href="../changelog.html" /><link rel="prev" title="Botcore" href="botcore.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="scheduling" href="botcore.utils.scheduling.html" /><link rel="prev" title="members" href="botcore.utils.members.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.4.0, furo 2022.01.02"/>
         <title>regex - Bot Core v1.2.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
-    <link rel="stylesheet" type="text/css" href="../_static/changelog.css" />
     <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
     
     
@@ -163,13 +162,19 @@
   <p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="botcore.html">Botcore</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">regex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="botcore.exts.html">Exts</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="botcore.utils.html">Utils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.caching.html">caching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.channel.html">channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.extensions.html">extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.logging.html">logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.members.html">members</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">regex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.scheduling.html">scheduling</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Other:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</li>
 </ul>
 
 </div>
@@ -196,26 +201,26 @@
           </label>
         </div>
         <article role="main">
-          <section id="module-botcore.regex">
-<span id="regex"></span><h1>regex<a class="headerlink" href="#module-botcore.regex" title="Permalink to this headline">¶</a></h1>
+          <section id="module-botcore.utils.regex">
+<span id="regex"></span><h1>regex<a class="headerlink" href="#module-botcore.utils.regex" title="Permalink to this headline">¶</a></h1>
 <p>Common regular expressions.</p>
 <dl class="py data">
-<dt class="sig sig-object py" id="botcore.regex.DISCORD_INVITE">
-<span class="sig-name descname"><span class="pre">DISCORD_INVITE</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/72ec57ae3153a274c902493ef6f74d35c27f965b/botcore/regex.py#L5-L16"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.regex.DISCORD_INVITE" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="botcore.utils.regex.DISCORD_INVITE">
+<span class="sig-name descname"><span class="pre">DISCORD_INVITE</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/554919b6314814320f35431a6cfb32ca81b09079/botcore/utils/regex.py#L5-L16"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.regex.DISCORD_INVITE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Regex for discord server invites.</p>
 <dl class="field-list simple">
 </dl>
 </dd></dl>
 <dl class="py data">
-<dt class="sig sig-object py" id="botcore.regex.FORMATTED_CODE_REGEX">
-<span class="sig-name descname"><span class="pre">FORMATTED_CODE_REGEX</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/72ec57ae3153a274c902493ef6f74d35c27f965b/botcore/regex.py#L23-L31"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.regex.FORMATTED_CODE_REGEX" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="botcore.utils.regex.FORMATTED_CODE_REGEX">
+<span class="sig-name descname"><span class="pre">FORMATTED_CODE_REGEX</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/554919b6314814320f35431a6cfb32ca81b09079/botcore/utils/regex.py#L23-L31"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.regex.FORMATTED_CODE_REGEX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Regex for formatted code, using Discord’s code blocks.</p>
 <dl class="field-list simple">
 </dl>
 </dd></dl>
 <dl class="py data">
-<dt class="sig sig-object py" id="botcore.regex.RAW_CODE_REGEX">
-<span class="sig-name descname"><span class="pre">RAW_CODE_REGEX</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/72ec57ae3153a274c902493ef6f74d35c27f965b/botcore/regex.py#L38-L43"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.regex.RAW_CODE_REGEX" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="botcore.utils.regex.RAW_CODE_REGEX">
+<span class="sig-name descname"><span class="pre">RAW_CODE_REGEX</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/554919b6314814320f35431a6cfb32ca81b09079/botcore/utils/regex.py#L38-L43"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.regex.RAW_CODE_REGEX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Regex for raw code, <em>not</em> using Discord’s code blocks.</p>
 <dl class="field-list simple">
 </dl>
@@ -227,23 +232,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../changelog.html">
+          <a class="next-page" href="botcore.utils.scheduling.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Changelog</div>
+                <div class="title">scheduling</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="botcore.html">
+          <a class="prev-page" href="botcore.utils.members.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Botcore</div>
+                <div class="title">members</div>
                 
               </div>
             </a>
@@ -253,7 +258,7 @@
               Copyright &#169; 2021, Python Discord |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/output/botcore.regex.rst.txt"
+            | <a class="muted-link" href="../_sources/output/botcore.utils.regex.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -272,6 +277,5 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/changelog.js"></script>
     </body>
 </html>

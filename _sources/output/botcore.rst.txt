@@ -1,8 +1,16 @@
 Botcore
 =======
 
+.. automodule:: botcore
+   :members:
+   :special-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
 .. toctree::
    :maxdepth: 4
 
-   botcore.regex
-
+   botcore.exts
+   botcore.utils

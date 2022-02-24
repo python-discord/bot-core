@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exts" href="botcore.exts.html" /><link rel="prev" title="Bot Core Project Documentation" href="../index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="channel" href="botcore.utils.channel.html" /><link rel="prev" title="Utils" href="botcore.utils.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.4.0, furo 2022.01.02"/>
-        <title>Botcore - Bot Core v1.2.0</title>
+        <title>caching - Bot Core v1.2.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -161,10 +161,10 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Botcore</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="botcore.html">Botcore</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="botcore.exts.html">Exts</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="botcore.utils.html">Utils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.caching.html">caching</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="botcore.utils.html">Utils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.channel.html">channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.extensions.html">extensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.logging.html">logging</a></li>
@@ -195,36 +195,59 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="module-botcore">
-<span id="botcore"></span><h1>Botcore<a class="headerlink" href="#module-botcore" title="Permalink to this headline">¶</a></h1>
-<p>Useful utilities and tools for discord bot development.</p>
-<section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="botcore.exts.html">Exts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="botcore.utils.html">Utils</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="botcore.utils.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.caching.html">caching</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.channel.html">channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.extensions.html">extensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.logging.html">logging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.members.html">members</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.regex.html">regex</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.scheduling.html">scheduling</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
+          <section id="module-botcore.utils.caching">
+<span id="caching"></span><h1>caching<a class="headerlink" href="#module-botcore.utils.caching" title="Permalink to this headline">¶</a></h1>
+<p>Utilities related to custom caches.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="botcore.utils.caching.AsyncCache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AsyncCache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/554919b6314814320f35431a6cfb32ca81b09079/botcore/utils/caching.py#L8-L66"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>LRU cache implementation for coroutines.</p>
+<p>Once the cache exceeds the maximum size, keys are deleted in FIFO order.</p>
+<p>An offset may be optionally provided to be applied to the coroutine’s arguments when creating the cache key.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="botcore.utils.caching.AsyncCache.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/554919b6314814320f35431a6cfb32ca81b09079/botcore/utils/caching.py#L27-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator for async cache.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arg_offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The offset for the position of the key argument.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A decorator to wrap the target function.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="botcore.utils.caching.AsyncCache.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/554919b6314814320f35431a6cfb32ca81b09079/botcore/utils/caching.py#L17-L26"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialise a new <a class="reference internal" href="#botcore.utils.caching.AsyncCache" title="botcore.utils.caching.AsyncCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AsyncCache</span></code></a> instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>max_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – How many items to store in the cache.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="botcore.utils.caching.AsyncCache.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/554919b6314814320f35431a6cfb32ca81b09079/botcore/utils/caching.py#L63-L66"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear cache instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
 </section>
 
         </article>
@@ -232,23 +255,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="botcore.exts.html">
+          <a class="next-page" href="botcore.utils.channel.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Exts</div>
+                <div class="title">channel</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../index.html">
+          <a class="prev-page" href="botcore.utils.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">Utils</div>
                 
               </div>
             </a>
@@ -258,7 +281,7 @@
               Copyright &#169; 2021, Python Discord |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/output/botcore.rst.txt"
+            | <a class="muted-link" href="../_sources/output/botcore.utils.caching.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -266,27 +289,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Botcore</a><ul>
-<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

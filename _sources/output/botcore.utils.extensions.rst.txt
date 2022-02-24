@@ -1,0 +1,7 @@
+extensions
+===============================
+
+.. automodule:: botcore.utils.extensions
+   :members:
+   :special-members:
+   :show-inheritance:
