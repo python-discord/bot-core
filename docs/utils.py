@@ -72,7 +72,7 @@ def cleanup() -> None:
     included = __get_included()
 
     for file in (PROJECT_ROOT / "docs" / "output").iterdir():
-        if file.name in ("botcore.rst", "botcore.exts.rst") and file.name in included:
+        if file.name in ("botcore.rst", "botcore.exts.rst", "botcore.utils.rst") and file.name in included:
             content = file.read_text(encoding="utf-8").splitlines(keepends=True)
 
             # Rename the extension to be less wordy
