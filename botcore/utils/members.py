@@ -4,9 +4,9 @@ import typing
 
 import discord
 
-from botcore.utils import loggers
+from botcore.utils import logging
 
-log = loggers.get_logger(__name__)
+log = logging.get_logger(__name__)
 
 
 async def get_or_fetch_member(guild: discord.Guild, member_id: int) -> typing.Optional[discord.Member]:

@@ -3,9 +3,9 @@
 import discord
 from discord.ext.commands import Bot
 
-from botcore.utils import loggers
+from botcore.utils import logging
 
-log = loggers.get_logger(__name__)
+log = logging.get_logger(__name__)
 
 
 def is_in_category(channel: discord.TextChannel, category_id: int) -> bool:

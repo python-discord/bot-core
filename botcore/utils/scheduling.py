@@ -7,7 +7,7 @@ import typing
 from datetime import datetime
 from functools import partial
 
-from botcore.utils import loggers
+from botcore.utils import logging
 
 
 class Scheduler:
@@ -36,7 +36,7 @@ class Scheduler:
         """
         self.name = name
 
-        self._log = loggers.get_logger(f"{__name__}.{name}")
+        self._log = logging.get_logger(f"{__name__}.{name}")
         self._scheduled_tasks: typing.Dict[typing.Hashable, asyncio.Task] = {}
 
     def __contains__(self, task_id: typing.Hashable) -> bool:
@@ -242,5 +242,5 @@ def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: typing.Tup
         exception = task.exception()
         # Log the exception if one exists.
         if exception and not isinstance(exception, suppressed_exceptions):
-            log = loggers.get_logger(__name__)
+            log = logging.get_logger(__name__)
             log.error(f"Error in task {task.get_name()} {id(task)}!", exc_info=exception)
