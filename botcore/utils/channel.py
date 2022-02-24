@@ -10,7 +10,7 @@ log = logging.get_logger(__name__)
 
 def is_in_category(channel: discord.TextChannel, category_id: int) -> bool:
     """
-    Return whether the given channel has the category_id.
+    Return whether the given ``channel`` in the the category with the id ``category_id``.
 
     Args:
         channel: The channel to check.
@@ -23,7 +23,26 @@ def is_in_category(channel: discord.TextChannel, category_id: int) -> bool:
 
 
 async def get_or_fetch_channel(bot: Bot, channel_id: int) -> discord.abc.GuildChannel:
-    """Attempt to get or fetch a channel and return it."""
+    """
+    Attempt to get or fetch the given ``channel_id`` from the bots cache, and return it.
+
+    Args:
+        bot: The :obj:`discord.ext.commands.Bot` instance to use for getting/fetching.
+        channel_id: The channel to get/fetch.
+
+    Raises:
+        :exc:`discord.InvalidData`
+            An unknown channel type was received from Discord.
+        :exc:`discord.HTTPException`
+            Retrieving the channel failed.
+        :exc:`discord.NotFound`
+            Invalid Channel ID.
+        :exc:`discord.Forbidden`
+            You do not have permission to fetch this channel.
+
+    Returns:
+        The channel from the ID.
+    """
     log.trace(f"Getting the channel {channel_id}.")
 
     channel = bot.get_channel(channel_id)

@@ -1,4 +1,4 @@
-"""Custom :obj:`logging.Logger` class that implements a new ``"TRACE"`` level."""
+"""Common logging related functions."""
 
 import logging
 import typing

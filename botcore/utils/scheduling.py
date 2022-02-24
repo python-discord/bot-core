@@ -14,25 +14,26 @@ class Scheduler:
     """
     Schedule the execution of coroutines and keep track of them.
 
-    When instantiating a Scheduler, a name must be provided. This name is used to distinguish the
+    When instantiating a :obj:`Scheduler`, a name must be provided. This name is used to distinguish the
     instance's log messages from other instances. Using the name of the class or module containing
     the instance is suggested.
 
-    Coroutines can be scheduled immediately with `schedule` or in the future with `schedule_at`
-    or `schedule_later`. A unique ID is required to be given in order to keep track of the
-    resulting Tasks. Any scheduled task can be cancelled prematurely using `cancel` by providing
-    the same ID used to schedule it.  The `in` operator is supported for checking if a task with a
-    given ID is currently scheduled.
+    Coroutines can be scheduled immediately with :obj:`schedule` or in the future with :obj:`schedule_at`
+    or :obj:`schedule_later`. A unique ID is required to be given in order to keep track of the
+    resulting Tasks. Any scheduled task can be cancelled prematurely using :obj:`cancel` by providing
+    the same ID used to schedule it.
+
+    The ``in`` operator is supported for checking if a task with a given ID is currently scheduled.
 
     Any exception raised in a scheduled task is logged when the task is done.
     """
 
     def __init__(self, name: str):
         """
-        Initialize a new Scheduler instance.
+        Initialize a new :obj:`Scheduler` instance.
 
         Args:
-            name: The name of the scheduler. Used in logging, and namespacing.
+            name: The name of the :obj:`Scheduler`. Used in logging, and namespacing.
         """
         self.name = name
 
@@ -41,21 +42,21 @@ class Scheduler:
 
     def __contains__(self, task_id: typing.Hashable) -> bool:
         """
-        Return True if a task with the given `task_id` is currently scheduled.
+        Return :obj:`True` if a task with the given ``task_id`` is currently scheduled.
 
         Args:
             task_id: The task to look for.
 
         Returns:
-            True if the task was found.
+            :obj:`True` if the task was found.
         """
         return task_id in self._scheduled_tasks
 
     def schedule(self, task_id: typing.Hashable, coroutine: typing.Coroutine) -> None:
         """
-        Schedule the execution of a `coroutine`.
+        Schedule the execution of a ``coroutine``.
 
-        If a task with `task_id` already exists, close `coroutine` instead of scheduling it. This
+        If a task with ``task_id`` already exists, close ``coroutine`` instead of scheduling it. This
         prevents unawaited coroutine warnings. Don't pass a coroutine that'll be re-used elsewhere.
 
         Args:
@@ -80,14 +81,14 @@ class Scheduler:
 
     def schedule_at(self, time: datetime, task_id: typing.Hashable, coroutine: typing.Coroutine) -> None:
         """
-        Schedule `coroutine` to be executed at the given `time`.
+        Schedule ``coroutine`` to be executed at the given ``time``.
 
-        If `time` is timezone aware, then use that timezone to calculate now() when subtracting.
-        If `time` is naïve, then use UTC.
+        If ``time`` is timezone aware, then use that timezone to calculate now() when subtracting.
+        If ``time`` is naïve, then use UTC.
 
-        If `time` is in the past, schedule `coroutine` immediately.
+        If ``time`` is in the past, schedule ``coroutine`` immediately.
 
-        If a task with `task_id` already exists, close `coroutine` instead of scheduling it. This
+        If a task with ``task_id`` already exists, close ``coroutine`` instead of scheduling it. This
         prevents unawaited coroutine warnings. Don't pass a coroutine that'll be re-used elsewhere.
 
         Args:
@@ -109,9 +110,9 @@ class Scheduler:
         coroutine: typing.Coroutine
     ) -> None:
         """
-        Schedule `coroutine` to be executed after `delay` seconds.
+        Schedule ``coroutine`` to be executed after ``delay`` seconds.
 
-        If a task with `task_id` already exists, close `coroutine` instead of scheduling it. This
+        If a task with ``task_id`` already exists, close ``coroutine`` instead of scheduling it. This
         prevents unawaited coroutine warnings. Don't pass a coroutine that'll be re-used elsewhere.
 
         Args:
@@ -123,7 +124,7 @@ class Scheduler:
 
     def cancel(self, task_id: typing.Hashable) -> None:
         """
-        Unschedule the task identified by `task_id`. Log a warning if the task doesn't exist.
+        Unschedule the task identified by ``task_id``. Log a warning if the task doesn't exist.
 
         Args:
             task_id: The task's unique ID.
@@ -152,7 +153,7 @@ class Scheduler:
         task_id: typing.Hashable,
         coroutine: typing.Coroutine
     ) -> None:
-        """Await `coroutine` after `delay` seconds."""
+        """Await ``coroutine`` after ``delay`` seconds."""
         try:
             self._log.trace(f"Waiting {delay} seconds before awaiting coroutine for #{task_id}.")
             await asyncio.sleep(delay)
@@ -176,7 +177,7 @@ class Scheduler:
         """
         Delete the task and raise its exception if one exists.
 
-        If `done_task` and the task associated with `task_id` are different, then the latter
+        If ``done_task`` and the task associated with ``task_id`` are different, then the latter
         will not be deleted. In this case, a new task was likely rescheduled with the same ID.
         """
         self._log.trace(f"Performing done callback for task #{task_id} {id(done_task)}.")
@@ -217,7 +218,8 @@ def create_task(
     """
     Wrapper for creating an :obj:`asyncio.Task` which logs exceptions raised in the task.
 
-    If the loop kwarg is provided, the task is created from that event loop, otherwise the running loop is used.
+    If the ``event_loop`` kwarg is provided, the task is created from that event loop,
+    otherwise the running loop is used.
 
     Args:
         coro: The function to call.
@@ -237,7 +239,7 @@ def create_task(
 
 
 def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: typing.Tuple[typing.Type[Exception]]) -> None:
-    """Retrieve and log the exception raised in `task` if one exists."""
+    """Retrieve and log the exception raised in ``task`` if one exists."""
     with contextlib.suppress(asyncio.CancelledError):
         exception = task.exception()
         # Log the exception if one exists.

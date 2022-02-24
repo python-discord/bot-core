@@ -16,7 +16,7 @@ class AsyncCache:
 
     def __init__(self, max_size: int = 128):
         """
-        Initialise a new AsyncCache instance.
+        Initialise a new :obj:`AsyncCache` instance.
 
         Args:
             max_size: How many items to store in the cache.
