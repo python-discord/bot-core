@@ -13,6 +13,11 @@ Reference
 
    output/botcore
 
+.. toctree::
+   :caption: Other:
+
+   Changelog <https://github.com/python-discord/bot-core/blob/main/CHANGELOG.md>
+
 
 Extras
 ==================

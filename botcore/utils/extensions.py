@@ -1,4 +1,4 @@
-"""Utilities for loading discord extensions."""
+"""Utilities for loading Discord extensions."""
 
 import importlib
 import inspect
@@ -28,7 +28,7 @@ def walk_extensions(module: types.ModuleType) -> frozenset[str]:
         module (types.ModuleType): The module to look for extensions in.
 
     Returns:
-        A set of strings that can be passed directly to :obj:`discord.ext.commands.Bot.load_extension`.
+        A set of strings that can be passed directly to :obj:`disnake.ext.commands.Bot.load_extension`.
     """
 
     def on_error(name: str) -> NoReturn:

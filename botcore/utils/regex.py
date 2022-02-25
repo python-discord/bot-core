@@ -15,7 +15,7 @@ DISCORD_INVITE = re.compile(
     flags=re.IGNORECASE
 )
 """
-Regex for discord server invites.
+Regex for Discord server invites.
 
 :meta hide-value:
 """
