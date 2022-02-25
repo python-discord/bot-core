@@ -17,5 +17,6 @@ Submodules
    botcore.utils.extensions
    botcore.utils.logging
    botcore.utils.members
+   botcore.utils.monkey_patches
    botcore.utils.regex
    botcore.utils.scheduling
