@@ -131,6 +131,7 @@ extlinks = {
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "disnake": ("https://docs.disnake.dev/en/latest/", None),
+    "aiohttp": ("https://docs.aiohttp.org/en/stable/", None),
 }
 
 
