@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="regex" href="botcore.utils.regex.html" /><link rel="prev" title="members" href="botcore.utils.members.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.23"/>
-        <title>monkey_patches - Bot Core v2.0.0</title>
+        <title>monkey_patches - Bot Core v2.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=3c656993158f05539f962c5cea52a5e6c184bb8c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -122,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Bot Core v2.0.0</div></a>
+      <a href="../index.html"><div class="brand">Bot Core v2.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Bot Core v2.0.0</span>
+  <span class="sidebar-brand-text">Bot Core v2.1.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -171,6 +171,7 @@
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.scheduling.html">scheduling</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="botcore.site_api.html">site_api</a></li>
 </ul>
 </li>
 </ul>
@@ -214,7 +215,7 @@
 <p>Contains all common monkey patches, used to alter disnake to fit our needs.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.monkey_patches.apply_monkey_patches">
-<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/5593a0c95e2b4fd9515c8875ea6e51c0ab88eb00/botcore/utils/monkey_patches.py#L65-L84"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.monkey_patches.apply_monkey_patches" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/114db8556dd236fd5ba58061357e7ae1e5e732b2/botcore/utils/monkey_patches.py#L65-L84"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.monkey_patches.apply_monkey_patches" title="Permalink to this definition">#</a></dt>
 <dd><p>Applies all common monkey patches for our bots.</p>
 <dl>
 <dt>Patches <a class="reference external" href="https://docs.disnake.dev/en/latest/ext/commands/api.html#disnake.ext.commands.Command" title="(in disnake v2.5.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disnake.ext.commands.Command</span></code></a> and <a class="reference external" href="https://docs.disnake.dev/en/latest/ext/commands/api.html#disnake.ext.commands.Group" title="(in disnake v2.5.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disnake.ext.commands.Group</span></code></a> to support root aliases.</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">root_aliases</span></code> keyword argument is added to these two objects, which is a sequence of alias names

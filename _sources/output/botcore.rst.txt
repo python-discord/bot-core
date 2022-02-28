@@ -14,3 +14,11 @@ Subpackages
 
    botcore.exts
    botcore.utils
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   botcore.site_api
