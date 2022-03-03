@@ -105,7 +105,10 @@ def __get_included() -> set[str]:
     """Get a list of files that should be included in the final build."""
 
     def get_all_from_module(module_name: str) -> set[str]:
-        module = importlib.import_module(module_name)
+        try:
+            module = importlib.import_module(module_name)
+        except ModuleNotFoundError:
+            return {}
         _modules = {module.__name__ + ".rst"}
 
         if hasattr(module, "__all__"):
