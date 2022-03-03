@@ -1,7 +1,0 @@
-monkey\_patches
-====================================
-
-.. automodule:: botcore.utils.monkey_patches
-   :members:
-   :special-members:
-   :show-inheritance:
