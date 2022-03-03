@@ -1,10 +1,13 @@
 # Changelog
 
+## 3.0.0 3rd March 2021
+ - Breaking: Move `apply_monkey_patches()` directly to `botcore.utils` namespace
+
 ## 2.1.0 24th February 2022
  - Feature: Port the Site API wrapper from the bot repo.
 
 ## 2.0.0 22nd February 2022
-- Breaking: Moved regex to botcore.utils namespace
+- Breaking: Moved regex to `botcore.utils` namespace
 - Feature: Migrate from discord.py 2.0a0 to disnake.
 - Feature: Add common monkey patches.
 - Feature: Port many common utilities from our bots
