@@ -1,6 +1,9 @@
 # Changelog
 
-## 3.0.0 3rd March 2021
+## 3.0.1 5th March 2022
+- Fix: Setup log tracing when `botcore.utils.logging` is imported so that it can be used within botcore functions.
+
+## 3.0.0 3rd March 2022
  - Breaking: Move `apply_monkey_patches()` directly to `botcore.utils` namespace
 
 ## 2.1.0 24th February 2022
