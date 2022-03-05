@@ -43,3 +43,9 @@ def get_logger(name: typing.Optional[str] = None) -> CustomLogger:
         An instance of the :obj:`CustomLogger` class.
     """
     return typing.cast(CustomLogger, logging.getLogger(name))
+
+
+# Setup trace level logging so that we can use it within botcore.
+logging.TRACE = TRACE_LEVEL
+logging.setLoggerClass(CustomLogger)
+logging.addLevelName(TRACE_LEVEL, "TRACE")
