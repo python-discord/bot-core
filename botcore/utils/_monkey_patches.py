@@ -1,18 +1,18 @@
-"""Contains all common monkey patches, used to alter disnake to fit our needs."""
+"""Contains all common monkey patches, used to alter discord to fit our needs."""
 
 import logging
 from datetime import datetime, timedelta
 from functools import partial, partialmethod
 
-from disnake import Forbidden, http
-from disnake.ext import commands
+from discord import Forbidden, http
+from discord.ext import commands
 
 log = logging.getLogger(__name__)
 
 
 class _Command(commands.Command):
     """
-    A :obj:`disnake.ext.commands.Command` subclass which supports root aliases.
+    A :obj:`discord.ext.commands.Command` subclass which supports root aliases.
 
     A ``root_aliases`` keyword argument is added, which is a sequence of alias names that will act as
     top-level commands rather than being aliases of the command's group. It's stored as an attribute
@@ -29,7 +29,7 @@ class _Command(commands.Command):
 
 class _Group(commands.Group, _Command):
     """
-    A :obj:`disnake.ext.commands.Group` subclass which supports root aliases.
+    A :obj:`discord.ext.commands.Group` subclass which supports root aliases.
 
     A ``root_aliases`` keyword argument is added, which is a sequence of alias names that will act as
     top-level groups rather than being aliases of the command's group. It's stored as an attribute
@@ -41,7 +41,7 @@ def _patch_typing() -> None:
     """
     Sometimes Discord turns off typing events by throwing 403s.
 
-    Handle those issues by patching disnake's internal ``send_typing`` method so it ignores 403s in general.
+    Handle those issues by patching discord's internal ``send_typing`` method so it ignores 403s in general.
     """
     log.debug("Patching send_typing, which should fix things breaking when Discord disables typing events. Stay safe!")
 
