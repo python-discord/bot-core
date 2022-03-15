@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.0.0 14th March 2022
+- Breaking: Migrate back to Discord.py 2.0
+
 ## 3.0.1 5th March 2022
 - Fix: Setup log tracing when `botcore.utils.logging` is imported so that it can be used within botcore functions.
 
