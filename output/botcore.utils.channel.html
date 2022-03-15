@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="extensions" href="botcore.utils.extensions.html" /><link rel="prev" title="caching" href="botcore.utils.caching.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.23"/>
-        <title>channel - Bot Core v3.0.1</title>
+        <title>channel - Bot Core v4.0.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=3c656993158f05539f962c5cea52a5e6c184bb8c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -122,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Bot Core v3.0.1</div></a>
+      <a href="../index.html"><div class="brand">Bot Core v4.0.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Bot Core v3.0.1</span>
+  <span class="sidebar-brand-text">Bot Core v4.0.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -211,28 +211,28 @@
         <article role="main">
           <section id="module-botcore.utils.channel">
 <span id="channel"></span><h1>channel<a class="headerlink" href="#module-botcore.utils.channel" title="Permalink to this headline">#</a></h1>
-<p>Useful helper functions for interacting with various disnake channel objects.</p>
+<p>Useful helper functions for interacting with various discord channel objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.channel.get_or_fetch_channel">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/f105af921d2e294e49388c4aff680912cf261ec6/botcore/utils/channel.py#L25-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.channel.get_or_fetch_channel" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/bc0a470dcd99007581975f23efabbda9266dac9d/botcore/utils/channel.py#L25-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.channel.get_or_fetch_channel" title="Permalink to this definition">#</a></dt>
 <dd><p>Attempt to get or fetch the given <code class="docutils literal notranslate"><span class="pre">channel_id</span></code> from the bots cache, and return it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bot</strong> (<a class="reference external" href="https://docs.disnake.dev/en/latest/ext/commands/api.html#disnake.ext.commands.Bot" title="(in disnake v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a>) – The <a class="reference external" href="https://docs.disnake.dev/en/latest/ext/commands/api.html#disnake.ext.commands.Bot" title="(in disnake v2.5.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disnake.ext.commands.Bot</span></code></a> instance to use for getting/fetching.</p></li>
+<li><p><strong>bot</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/master/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.0.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a>) – The <a class="reference external" href="https://discordpy.readthedocs.io/en/master/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Bot</span></code></a> instance to use for getting/fetching.</p></li>
 <li><p><strong>channel_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The channel to get/fetch.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference external" href="https://docs.disnake.dev/en/latest/api.html#disnake.InvalidData" title="(in disnake v2.5.0a)"><strong>disnake.InvalidData</strong></a> – An unknown channel type was received from Discord.</p></li>
-<li><p><a class="reference external" href="https://docs.disnake.dev/en/latest/api.html#disnake.HTTPException" title="(in disnake v2.5.0a)"><strong>disnake.HTTPException</strong></a> – Retrieving the channel failed.</p></li>
-<li><p><a class="reference external" href="https://docs.disnake.dev/en/latest/api.html#disnake.NotFound" title="(in disnake v2.5.0a)"><strong>disnake.NotFound</strong></a> – Invalid Channel ID.</p></li>
-<li><p><a class="reference external" href="https://docs.disnake.dev/en/latest/api.html#disnake.Forbidden" title="(in disnake v2.5.0a)"><strong>disnake.Forbidden</strong></a> – You do not have permission to fetch this channel.</p></li>
+<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.InvalidData" title="(in discord.py v2.0.0a)"><strong>discord.InvalidData</strong></a> – An unknown channel type was received from Discord.</p></li>
+<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.HTTPException" title="(in discord.py v2.0.0a)"><strong>discord.HTTPException</strong></a> – Retrieving the channel failed.</p></li>
+<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.NotFound" title="(in discord.py v2.0.0a)"><strong>discord.NotFound</strong></a> – Invalid Channel ID.</p></li>
+<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.Forbidden" title="(in discord.py v2.0.0a)"><strong>discord.Forbidden</strong></a> – You do not have permission to fetch this channel.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.disnake.dev/en/latest/api.html#disnake.abc.GuildChannel" title="(in disnake v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GuildChannel</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.abc.GuildChannel" title="(in discord.py v2.0.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GuildChannel</span></code></a></p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The channel from the ID.</p>
@@ -241,12 +241,12 @@
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.channel.is_in_category">
-<span class="sig-name descname"><span class="pre">is_in_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/f105af921d2e294e49388c4aff680912cf261ec6/botcore/utils/channel.py#L11-L23"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.channel.is_in_category" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_in_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/bc0a470dcd99007581975f23efabbda9266dac9d/botcore/utils/channel.py#L11-L23"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.channel.is_in_category" title="Permalink to this definition">#</a></dt>
 <dd><p>Return whether the given <code class="docutils literal notranslate"><span class="pre">channel</span></code> in the the category with the id <code class="docutils literal notranslate"><span class="pre">category_id</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>channel</strong> (<a class="reference external" href="https://docs.disnake.dev/en/latest/api.html#disnake.TextChannel" title="(in disnake v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextChannel</span></code></a>) – The channel to check.</p></li>
+<li><p><strong>channel</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.TextChannel" title="(in discord.py v2.0.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextChannel</span></code></a>) – The channel to check.</p></li>
 <li><p><strong>category_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The category to check for.</p></li>
 </ul>
 </dd>
