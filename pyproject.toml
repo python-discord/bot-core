@@ -16,7 +16,9 @@ exclude = ["tests", "tests.*"]
 
 [tool.poetry.dependencies]
 python = "3.9.*"
-"discord.py" = {url = "https://github.com/Rapptz/discord.py/archive/beafaa8a8b8006357c2a1ca6802ed80e000f4cda.zip"}
+"discord.py" = {url = "https://github.com/Rapptz/discord.py/archive/414759f3723a3fe632ecfc1343a4164a51cd2940.zip"}
+async-rediscache = { version = "0.2.0", extras = ["fakeredis"] }
+statsd = "3.3.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "4.0.1"
