@@ -132,6 +132,7 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "discord": ("https://discordpy.readthedocs.io/en/master/", None),
     "aiohttp": ("https://docs.aiohttp.org/en/stable/", None),
+    "statsd": ("https://statsd.readthedocs.io/en/v3.3/", ("_static/statsd_additional_objects.inv", None)),
 }
 
 
