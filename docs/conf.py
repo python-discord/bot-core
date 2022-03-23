@@ -107,6 +107,14 @@ def setup(app: Sphinx) -> None:
     app.connect("autodoc-skip-member", skip)
 
 
+ignored_modules = [
+    "async_rediscache",
+]
+
+nitpick_ignore_regex = [
+    ("py:.*", "|".join([f".*{entry}.*" for entry in ignored_modules])),
+]
+
 # -- Extension configuration -------------------------------------------------
 
 # -- Options for todo extension ----------------------------------------------

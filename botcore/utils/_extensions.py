@@ -28,13 +28,12 @@ def walk_extensions(module: types.ModuleType) -> frozenset[str]:
         module (types.ModuleType): The module to look for extensions in.
 
     Returns:
-        A set of strings that can be passed directly to :obj:`discord.ext.commands.Bot.load_extension`.
+        An iterator object, that returns a string that can be passed directly to
+            :obj:`discord.ext.commands.Bot.load_extension` on call to next().
     """
 
     def on_error(name: str) -> NoReturn:
         raise ImportError(name=name)  # pragma: no cover
-
-    modules = set()
 
     for module_info in pkgutil.walk_packages(module.__path__, f"{module.__name__}.", onerror=on_error):
         if unqualify(module_info.name).startswith("_"):
@@ -47,6 +46,4 @@ def walk_extensions(module: types.ModuleType) -> frozenset[str]:
                 # If it lacks a setup function, it's not an extension.
                 continue
 
-        modules.add(module_info.name)
-
-    return frozenset(modules)
+        yield module_info.name
