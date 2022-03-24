@@ -22,18 +22,19 @@ def unqualify(name: str) -> str:
 
 def walk_extensions(module: types.ModuleType) -> frozenset[str]:
     """
-    Yield extension names from the given module.
+    Return all extension names from the given module.
 
     Args:
         module (types.ModuleType): The module to look for extensions in.
 
     Returns:
-        An iterator object, that returns a string that can be passed directly to
-            :obj:`discord.ext.commands.Bot.load_extension` on call to next().
+        A set of strings that can be passed directly to :obj:`discord.ext.commands.Bot.load_extension`.
     """
 
     def on_error(name: str) -> NoReturn:
         raise ImportError(name=name)  # pragma: no cover
+
+    modules = set()
 
     for module_info in pkgutil.walk_packages(module.__path__, f"{module.__name__}.", onerror=on_error):
         if unqualify(module_info.name).startswith("_"):
@@ -46,4 +47,6 @@ def walk_extensions(module: types.ModuleType) -> frozenset[str]:
                 # If it lacks a setup function, it's not an extension.
                 continue
 
-        yield module_info.name
+        modules.add(module_info.name)
+
+    return frozenset(modules)

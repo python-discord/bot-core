@@ -75,6 +75,8 @@ class BotBase(commands.Bot):
 
         self.stats: Optional[AsyncStatsClient] = None
 
+        self.all_extensions: Optional[frozenset[str]] = None
+
     def _connect_statsd(
         self,
         statsd_url: str,
@@ -104,8 +106,10 @@ class BotBase(commands.Bot):
         self.closing_tasks: list[asyncio.Task] = []
 
     async def load_extensions(self, module: types.ModuleType) -> None:
-        """Load all the extensions within the given module."""
-        for extension in walk_extensions(module):
+        """Load all the extensions within the given module and save them to ``self.all_extensions``."""
+        self.all_extensions = walk_extensions(module)
+
+        for extension in self.all_extensions:
             await self.load_extension(extension)
 
     def _add_root_aliases(self, command: commands.Command) -> None:
