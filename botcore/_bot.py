@@ -33,9 +33,7 @@ class BotBase(commands.Bot):
         self,
         *args,
         guild_id: int,
-        prefix: str,
         allowed_roles: list,
-        intents: discord.Intents,
         http_session: aiohttp.ClientSession,
         redis_session: Optional[RedisSession] = None,
         **kwargs,
@@ -45,9 +43,7 @@ class BotBase(commands.Bot):
 
         Args:
             guild_id: The ID of the guild use for :func:`wait_until_guild_available`.
-            prefix: The prefix to use for the bot.
             allowed_roles: A list of role IDs that the bot is allowed to mention.
-            intents: The :obj:`discord.Intents` to use for the bot.
             http_session (aiohttp.ClientSession): The session to use for the bot.
             redis_session: The
                 ``[async_rediscache.RedisSession](https://github.com/SebastiaanZ/async-rediscache#creating-a-redissession)``
@@ -55,9 +51,7 @@ class BotBase(commands.Bot):
         """
         super().__init__(
             *args,
-            prefix=prefix,
             allowed_roles=allowed_roles,
-            intents=intents,
             **kwargs,
         )
 
