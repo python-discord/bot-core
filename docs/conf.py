@@ -111,6 +111,8 @@ ignored_modules = [
     "async_rediscache",
 ]
 
+# nitpick raises warnings as errors. This regex tells nitpick to ignore any warnings that match this regex.
+# This is a workaround for modules that do not have docs that can be linked out to.
 nitpick_ignore_regex = [
     ("py:.*", "|".join([f".*{entry}.*" for entry in ignored_modules])),
 ]
