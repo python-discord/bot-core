@@ -23,7 +23,7 @@ name = "aioredis"
 version = "2.0.1"
 description = "asyncio (PEP 3156) Redis support"
 category = "main"
-optional = false
+optional = true
 python-versions = ">=3.6"
 
 [package.dependencies]
@@ -57,7 +57,7 @@ name = "async-rediscache"
 version = "0.2.0"
 description = "An easy to use asynchronous Redis cache"
 category = "main"
-optional = false
+optional = true
 python-versions = "~=3.7"
 
 [package.dependencies]
@@ -177,7 +177,7 @@ name = "deprecated"
 version = "1.2.13"
 description = "Python @deprecated decorator to deprecate old python classes, functions or methods."
 category = "main"
-optional = false
+optional = true
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [package.dependencies]
@@ -238,7 +238,7 @@ name = "fakeredis"
 version = "1.7.1"
 description = "Fake implementation of redis API for testing purposes."
 category = "main"
-optional = false
+optional = true
 python-versions = ">=3.5"
 
 [package.dependencies]
@@ -466,11 +466,11 @@ python-versions = "*"
 
 [[package]]
 name = "jinja2"
-version = "3.0.3"
+version = "3.1.1"
 description = "A very fast and expressive template engine."
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 MarkupSafe = ">=2.0"
@@ -483,7 +483,7 @@ name = "lupa"
 version = "1.13"
 description = "Python wrapper around Lua and LuaJIT"
 category = "main"
-optional = false
+optional = true
 python-versions = "*"
 
 [[package]]
@@ -755,7 +755,7 @@ name = "redis"
 version = "4.1.4"
 description = "Python client for Redis database and key-value store"
 category = "main"
-optional = false
+optional = true
 python-versions = ">=3.6"
 
 [package.dependencies]
@@ -813,7 +813,7 @@ name = "sortedcontainers"
 version = "2.4.0"
 description = "Sorted Containers -- Sorted List, Sorted Dict, Sorted Set"
 category = "main"
-optional = false
+optional = true
 python-versions = "*"
 
 [[package]]
@@ -985,7 +985,7 @@ name = "typing-extensions"
 version = "4.1.1"
 description = "Backported and Experimental Type Hints for Python 3.6+"
 category = "main"
-optional = false
+optional = true
 python-versions = ">=3.6"
 
 [[package]]
@@ -1003,7 +1003,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "virtualenv"
-version = "20.13.4"
+version = "20.14.0"
 description = "Virtual Python Environment builder"
 category = "dev"
 optional = false
@@ -1024,7 +1024,7 @@ name = "wrapt"
 version = "1.14.0"
 description = "Module for decorators, wrappers and monkey patching."
 category = "main"
-optional = false
+optional = true
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 
 [[package]]
@@ -1051,10 +1051,13 @@ python-versions = ">=3.7"
 docs = ["sphinx", "jaraco.packaging (>=8.2)", "rst.linker (>=1.9)"]
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.0.1)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy"]
 
+[extras]
+async-rediscache = ["async-rediscache"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.*"
-content-hash = "00840d04789ee82c20b8c9633be5d2333427c2694850c457491cd9180fe39fa1"
+content-hash = "d4ef1ae44135c6e669f1711cc55b04314d498d9c90c3329d8f5064d7a1b0ea4f"
 
 [metadata.files]
 aiohttp = [
@@ -1380,8 +1383,8 @@ iniconfig = [
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
 ]
 jinja2 = [
-    {file = "Jinja2-3.0.3-py3-none-any.whl", hash = "sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8"},
-    {file = "Jinja2-3.0.3.tar.gz", hash = "sha256:611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7"},
+    {file = "Jinja2-3.1.1-py3-none-any.whl", hash = "sha256:539835f51a74a69f41b848a9645dbdc35b4f20a3b601e2d9a7e22947b15ff119"},
+    {file = "Jinja2-3.1.1.tar.gz", hash = "sha256:640bed4bb501cbd17194b3cace1dc2126f5b619cf068a726b98192a0fde74ae9"},
 ]
 lupa = [
     {file = "lupa-1.13-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:da1885faca29091f9e408c0cc6b43a0b29a2128acf8d08c188febc5d9f99129d"},
@@ -1788,8 +1791,8 @@ urllib3 = [
     {file = "urllib3-1.26.9.tar.gz", hash = "sha256:aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"},
 ]
 virtualenv = [
-    {file = "virtualenv-20.13.4-py2.py3-none-any.whl", hash = "sha256:c3e01300fb8495bc00ed70741f5271fc95fed067eb7106297be73d30879af60c"},
-    {file = "virtualenv-20.13.4.tar.gz", hash = "sha256:ce8901d3bbf3b90393498187f2d56797a8a452fb2d0d7efc6fd837554d6f679c"},
+    {file = "virtualenv-20.14.0-py2.py3-none-any.whl", hash = "sha256:1e8588f35e8b42c6ec6841a13c5e88239de1e6e4e4cedfd3916b306dc826ec66"},
+    {file = "virtualenv-20.14.0.tar.gz", hash = "sha256:8e5b402037287126e81ccde9432b95a8be5b19d36584f64957060a3488c11ca8"},
 ]
 wrapt = [
     {file = "wrapt-1.14.0-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:5a9a1889cc01ed2ed5f34574c90745fab1dd06ec2eee663e8ebeefe363e8efd7"},

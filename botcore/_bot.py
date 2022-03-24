@@ -1,19 +1,24 @@
 import asyncio
 import socket
 import types
+import warnings
 from abc import abstractmethod
 from contextlib import suppress
 from typing import Optional
 
 import aiohttp
 import discord
-from async_rediscache import RedisSession
 from discord.ext import commands
 
 from botcore.async_stats import AsyncStatsClient
 from botcore.site_api import APIClient
 from botcore.utils._extensions import walk_extensions
 from botcore.utils.logging import get_logger
+
+try:
+    from async_rediscache import RedisSession
+except ImportError:
+    RedisSession = discord.utils._MissingSentinel
 
 log = get_logger()
 
@@ -57,7 +62,10 @@ class BotBase(commands.Bot):
 
         self.guild_id = guild_id
         self.http_session = http_session
-        if redis_session:
+
+        if redis_session and RedisSession == discord.utils._MissingSentinel:
+            warnings.warn("redis_session kwarg passed, but async-rediscache not installed!")
+        elif redis_session:
             self.redis_session = redis_session
 
         self.api_client: Optional[APIClient] = None
@@ -209,6 +217,7 @@ class BotBase(commands.Bot):
         and :func:`ping_services`.
         """
         loop = asyncio.get_running_loop()
+
         self._connect_statsd(self.statsd_url, loop)
         self.stats = AsyncStatsClient(loop, "127.0.0.1")
         await self.stats.create_socket()
@@ -256,7 +265,7 @@ class BotBase(commands.Bot):
         if self.stats._transport:
             self.stats._transport.close()
 
-        if self.redis_session:
+        if getattr(self.redis_session, None):
             await self.redis_session.close()
 
         if self._statsd_timerhandle:
