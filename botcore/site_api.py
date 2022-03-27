@@ -151,3 +151,6 @@ class APIClient:
 
             await self.maybe_raise_for_status(resp, raise_for_status)
             return await resp.json()
+
+
+__all__ = ['APIClient', 'ResponseCodeError']

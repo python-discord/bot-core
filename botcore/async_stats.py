@@ -52,3 +52,6 @@ class AsyncStatsClient(StatsClientBase):
     async def _async_send(self, data: str) -> None:
         """Send data to the statsd server using the async transport."""
         self._transport.sendto(data.encode('ascii'), self._addr)
+
+
+__all__ = ['AsyncStatsClient']
