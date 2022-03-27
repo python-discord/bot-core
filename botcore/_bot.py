@@ -2,7 +2,6 @@ import asyncio
 import socket
 import types
 import warnings
-from abc import abstractmethod
 from contextlib import suppress
 from typing import Optional
 
@@ -194,7 +193,6 @@ class BotBase(commands.Bot):
 
         self._guild_available.set()
 
-    @abstractmethod
     async def log_to_dev_log(self, message: str) -> None:
         """Log the given message to #dev-log."""
         ...
@@ -227,7 +225,6 @@ class BotBase(commands.Bot):
         except Exception as e:
             raise StartupError(e)
 
-    @abstractmethod
     async def ping_services() -> None:
         """Ping all required services on setup to ensure they are up before starting."""
         ...
