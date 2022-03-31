@@ -17,11 +17,12 @@ jobs:
 
     steps:
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.0.0
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.1.0
         with:
           # Set dev=true to run pre-commit which is a dev dependency
           dev: true
           python_version: 3.9
+          install_args: "--extras async-rediscache"
 
       # We will not run `flake8` here, as we will use a separate flake8
       # action. As pre-commit does not support user installs, we set
