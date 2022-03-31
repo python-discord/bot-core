@@ -109,9 +109,6 @@ class BotBase(commands.Bot):
                 attempt + 1
             )
 
-        # All tasks that need to block closing until finished
-        self.closing_tasks: list[asyncio.Task] = []
-
     async def load_extensions(self, module: types.ModuleType) -> None:
         """Load all the extensions within the given module and save them to ``self.all_extensions``."""
         self.all_extensions = walk_extensions(module)
@@ -239,10 +236,6 @@ class BotBase(commands.Bot):
         for cog in list(self.cogs):
             with suppress(Exception):
                 await self.remove_cog(cog)
-
-        # Wait until all tasks that have to be completed before bot is closing is done
-        log.trace("Waiting for tasks before closing.")
-        await asyncio.gather(*self.closing_tasks)
 
         # Now actually do full close of bot
         await super().close()
