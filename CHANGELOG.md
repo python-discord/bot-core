@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.0 2nd April 2022
+- Breaking: Remove public extensions util
+- Feature: Add `BotBase`, a `discord.ext.commands.Bot` sub-class, which abstracts a lot of logic shared between our bots
+- Feature: Add async statsd client
+- Dependencies: Bump Discord.py to latest alpha commit
+
 ## 4.0.0 14th March 2022
 - Breaking: Migrate back to Discord.py 2.0
 
