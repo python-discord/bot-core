@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bot-core"
-version = "4.0.0"
+version = "5.0.0"
 description = "Bot-Core provides the core functionality and utilities for the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
@@ -25,7 +25,7 @@ async-rediscache = ["async-rediscache"]
 
 [tool.poetry.dev-dependencies]
 flake8 = "4.0.1"
-flake8-annotations = "2.7.0"
+flake8-annotations = "2.8.0"
 flake8-bugbear = "22.1.11"
 flake8-docstrings = "1.6.0"
 flake8-import-order = "0.18.1"
