@@ -22,7 +22,7 @@ def unqualify(name: str) -> str:
 
 def walk_extensions(module: types.ModuleType) -> frozenset[str]:
     """
-    Yield extension names from the given module.
+    Return all extension names from the given module.
 
     Args:
         module (types.ModuleType): The module to look for extensions in.

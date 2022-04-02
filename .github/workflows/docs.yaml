@@ -21,10 +21,11 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.0.0
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.1.0
         with:
           dev: true
           python_version: 3.9
+          install_args: "--extras async-rediscache"
 
       # Undeclared dependency for `releases`... whoops
       # https://github.com/bitprophet/releases/pull/82

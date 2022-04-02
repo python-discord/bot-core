@@ -107,6 +107,16 @@ def setup(app: Sphinx) -> None:
     app.connect("autodoc-skip-member", skip)
 
 
+ignored_modules = [
+    "async_rediscache",
+]
+
+# nitpick raises warnings as errors. This regex tells nitpick to ignore any warnings that match this regex.
+# This is a workaround for modules that do not have docs that can be linked out to.
+nitpick_ignore_regex = [
+    ("py:.*", "|".join([f".*{entry}.*" for entry in ignored_modules])),
+]
+
 # -- Extension configuration -------------------------------------------------
 
 # -- Options for todo extension ----------------------------------------------
@@ -132,6 +142,7 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "discord": ("https://discordpy.readthedocs.io/en/master/", None),
     "aiohttp": ("https://docs.aiohttp.org/en/stable/", None),
+    "statsd": ("https://statsd.readthedocs.io/en/v3.3/", ("_static/statsd_additional_objects.inv", None)),
 }
 
 
