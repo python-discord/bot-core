@@ -69,12 +69,8 @@ class BotBase(commands.Bot):
 
         self.api_client: Optional[APIClient] = None
 
-        self._resolver = aiohttp.AsyncResolver()
-        self._connector = aiohttp.TCPConnector(
-            resolver=self._resolver,
-            family=socket.AF_INET,
-        )
-        self.http.connector = self._connector
+        self._resolver: Optional[aiohttp.AsyncResolver] = None
+        self._connector: Optional[aiohttp.TCPConnector] = None
 
         self.statsd_url: Optional[str] = None
         self._statsd_timerhandle: Optional[asyncio.TimerHandle] = None
@@ -212,6 +208,13 @@ class BotBase(commands.Bot):
         and :func:`ping_services`.
         """
         loop = asyncio.get_running_loop()
+
+        self._resolver = aiohttp.AsyncResolver()
+        self._connector = aiohttp.TCPConnector(
+            resolver=self._resolver,
+            family=socket.AF_INET,
+        )
+        self.http.connector = self._connector
 
         self._connect_statsd(self.statsd_url, loop)
         self.stats = AsyncStatsClient(loop, "127.0.0.1")
