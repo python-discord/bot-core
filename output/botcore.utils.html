@@ -163,13 +163,13 @@
 <li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Utils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.channel.html">channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.extensions.html">extensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.logging.html">logging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.members.html">members</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.regex.html">regex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.scheduling.html">scheduling</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="botcore.async_stats.html">async_stats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="botcore.site_api.html">site_api</a></li>
 </ul>
 </li>
@@ -214,7 +214,7 @@
 <p>Useful utilities and tools for Discord bot development.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.apply_monkey_patches">
-<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/bc0a470dcd99007581975f23efabbda9266dac9d/botcore/utils/__init__.py#L6-L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.apply_monkey_patches" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/765284a5e436f7786619a5ba4c312d75df5e9dee/botcore/utils/__init__.py#L6-L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.apply_monkey_patches" title="Permalink to this definition">#</a></dt>
 <dd><p>Applies all common monkey patches for our bots.</p>
 <dl>
 <dt>Patches <a class="reference external" href="https://discordpy.readthedocs.io/en/master/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Command</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/master/ext/commands/api.html#discord.ext.commands.Group" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Group</span></code></a> to support root aliases.</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">root_aliases</span></code> keyword argument is added to these two objects, which is a sequence of alias names
@@ -236,7 +236,6 @@ that will act as top-level groups rather than being aliases of the command’s g
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="botcore.utils.caching.html">caching</a></li>
 <li class="toctree-l1"><a class="reference internal" href="botcore.utils.channel.html">channel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="botcore.utils.extensions.html">extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="botcore.utils.logging.html">logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="botcore.utils.members.html">members</a></li>
 <li class="toctree-l1"><a class="reference internal" href="botcore.utils.regex.html">regex</a></li>

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="logging" href="botcore.utils.logging.html" /><link rel="prev" title="channel" href="botcore.utils.channel.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="site_api" href="botcore.site_api.html" /><link rel="prev" title="scheduling" href="botcore.utils.scheduling.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.23"/>
-        <title>extensions - Bot Core v4.0.0</title>
+        <title>async_stats - Bot Core v4.0.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=3c656993158f05539f962c5cea52a5e6c184bb8c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -160,16 +160,16 @@
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="botcore.html">Botcore</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="botcore.exts.html">Exts</a></li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="botcore.utils.html">Utils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="botcore.utils.html">Utils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.channel.html">channel</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">extensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.logging.html">logging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.members.html">members</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.regex.html">regex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="botcore.utils.scheduling.html">scheduling</a></li>
 </ul>
 </li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">async_stats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="botcore.site_api.html">site_api</a></li>
 </ul>
 </li>
@@ -209,40 +209,40 @@
           </label>
         </div>
         <article role="main">
-          <section id="module-botcore.utils.extensions">
-<span id="extensions"></span><h1>extensions<a class="headerlink" href="#module-botcore.utils.extensions" title="Permalink to this headline">#</a></h1>
-<p>Utilities for loading Discord extensions.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="botcore.utils.extensions.unqualify">
-<span class="sig-name descname"><span class="pre">unqualify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/bc0a470dcd99007581975f23efabbda9266dac9d/botcore/utils/extensions.py#L10-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.extensions.unqualify" title="Permalink to this definition">#</a></dt>
-<dd><p>Return an unqualified name given a qualified module/package <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+          <section id="module-botcore.async_stats">
+<span id="async-stats"></span><h1>async_stats<a class="headerlink" href="#module-botcore.async_stats" title="Permalink to this headline">#</a></h1>
+<p>An async transport method for statsd communication.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="botcore.async_stats.AsyncStatsClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AsyncStatsClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/765284a5e436f7786619a5ba4c312d75df5e9dee/botcore/async_stats.py#L12-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.async_stats.AsyncStatsClient" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://statsd.readthedocs.io/en/v3.3/reference.html#statsd.client.base.StatsClientBase" title="(in Python StatsD - Edited by Python Discord to extend statsd base objects to also allow referencing statsd.client.base.StatsClientBase v3.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">statsd.client.base.StatsClientBase</span></code></a></p>
+<p>An async implementation of <a class="reference external" href="https://statsd.readthedocs.io/en/v3.3/reference.html#statsd.client.base.StatsClientBase" title="(in Python StatsD - Edited by Python Discord to extend statsd base objects to also allow referencing statsd.client.base.StatsClientBase v3.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">statsd.client.base.StatsClientBase</span></code></a> that supports async stat communication.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="botcore.async_stats.AsyncStatsClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/765284a5e436f7786619a5ba4c312d75df5e9dee/botcore/async_stats.py#L15-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.async_stats.AsyncStatsClient.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a new <a class="reference internal" href="#botcore.async_stats.AsyncStatsClient" title="botcore.async_stats.AsyncStatsClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AsyncStatsClient</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The module name to unqualify.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The unqualified module name.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.AbstractEventLoop" title="(in Python v3.10)"><em>asyncio.AbstractEventLoop</em></a>) – The event loop to use when creating the
+<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.create_datagram_endpoint" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio.loop.create_datagram_endpoint</span></code></a>.</p></li>
+<li><p><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The host to connect to.</p></li>
+<li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The port to connect to.</p></li>
+<li><p><strong>prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – The prefix to use for all stats.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="botcore.utils.extensions.walk_extensions">
-<span class="sig-name descname"><span class="pre">walk_extensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/bc0a470dcd99007581975f23efabbda9266dac9d/botcore/utils/extensions.py#L23-L53"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.extensions.walk_extensions" title="Permalink to this definition">#</a></dt>
-<dd><p>Yield extension names from the given module.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="botcore.async_stats.AsyncStatsClient.create_socket">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_socket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/765284a5e436f7786619a5ba4c312d75df5e9dee/botcore/async_stats.py#L40-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.async_stats.AsyncStatsClient.create_socket" title="Permalink to this definition">#</a></dt>
+<dd><p>Use <a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.create_datagram_endpoint" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio.loop.create_datagram_endpoint</span></code></a> from the loop given on init to create a socket.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>module</strong> (<a class="reference external" href="https://docs.python.org/3/library/types.html#types.ModuleType" title="(in Python v3.10)"><em>types.ModuleType</em></a>) – The module to look for extensions in.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#frozenset" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">frozenset</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A set of strings that can be passed directly to <a class="reference external" href="https://discordpy.readthedocs.io/en/master/ext/commands/api.html#discord.ext.commands.Bot.load_extension" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Bot.load_extension</span></code></a>.</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
+</dd></dl>
 </dd></dl>
 </section>
 
@@ -251,23 +251,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="botcore.utils.logging.html">
+          <a class="next-page" href="botcore.site_api.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">logging</div>
+                <div class="title">site_api</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="botcore.utils.channel.html">
+          <a class="prev-page" href="botcore.utils.scheduling.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">channel</div>
+                <div class="title">scheduling</div>
                 
               </div>
             </a>
