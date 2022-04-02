@@ -138,7 +138,7 @@ class BotBase(commands.Bot):
             self.all_commands.pop(alias, None)
 
     async def add_cog(self, cog: commands.Cog) -> None:
-        """Adds the given ``cog`` to the bot and logs the operation."""
+        """Add the given ``cog`` to the bot and log the operation."""
         await super().add_cog(cog)
         log.info(f"Cog loaded: {cog.qualified_name}")
 
