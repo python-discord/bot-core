@@ -74,7 +74,7 @@ class BotBase(commands.Bot):
 
         self.statsd_url: Optional[str] = None
         self._statsd_timerhandle: Optional[asyncio.TimerHandle] = None
-        self._guild_available = asyncio.Event()
+        self._guild_available: Optional[asyncio.Event] = None
 
         self.stats: Optional[AsyncStatsClient] = None
 
@@ -208,6 +208,8 @@ class BotBase(commands.Bot):
         and :func:`ping_services`.
         """
         loop = asyncio.get_running_loop()
+
+        self._guild_available = asyncio.Event()
 
         self._resolver = aiohttp.AsyncResolver()
         self._connector = aiohttp.TCPConnector(
