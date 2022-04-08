@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="caching" href="botcore.utils.caching.html" /><link rel="prev" title="Exts" href="botcore.exts.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.5.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
         <title>Utils - Bot Core v5.0.1</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css" />
     <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
     
@@ -39,10 +39,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -216,7 +218,7 @@
 <p>Useful utilities and tools for Discord bot development.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.apply_monkey_patches">
-<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/07a927dad70a12512e063e9b3d5caff6d60456ac/botcore/utils/__init__.py#L6-L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.apply_monkey_patches" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2fadc204cee0142fa7084d1b360d5e6248a4a355/botcore/utils/__init__.py#L6-L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.apply_monkey_patches" title="Permalink to this definition">#</a></dt>
 <dd><p>Applies all common monkey patches for our bots.</p>
 <dl>
 <dt>Patches <a class="reference external" href="https://discordpy.readthedocs.io/en/master/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Command</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/master/ext/commands/api.html#discord.ext.commands.Group" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Group</span></code></a> to support root aliases.</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">root_aliases</span></code> keyword argument is added to these two objects, which is a sequence of alias names
