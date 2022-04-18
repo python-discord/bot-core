@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.0.3 18th April 2022
+- Fix: Reconnect to redis session on setup if it is closed.
+
 ## 5.0.2 5th April 2022
 - Fix: Create a dummy `AsyncstatsdClient` before connecting to real url, in case a connection cannot be made on init.
 - Fix: Move the creation of the `asyncio.Event`, `BotBase._guild_available` to within the setup hook, to avoid a deprecation notice.
