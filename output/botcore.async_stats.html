@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="site_api" href="botcore.site_api.html" /><link rel="prev" title="scheduling" href="botcore.utils.scheduling.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
-        <title>async_stats - Bot Core v5.0.1</title>
+        <title>async_stats - Bot Core v5.0.3</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -126,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Bot Core v5.0.1</div></a>
+      <a href="../index.html"><div class="brand">Bot Core v5.0.3</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -152,7 +152,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Bot Core v5.0.1</span>
+  <span class="sidebar-brand-text">Bot Core v5.0.3</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -218,12 +218,12 @@
 <p>An async transport method for statsd communication.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="botcore.async_stats.AsyncStatsClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AsyncStatsClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2fadc204cee0142fa7084d1b360d5e6248a4a355/botcore/async_stats.py#L12-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.async_stats.AsyncStatsClient" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AsyncStatsClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4b93fbb03d22134cab1f9d9f1f07e5f81012dea5/botcore/async_stats.py#L12-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.async_stats.AsyncStatsClient" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://statsd.readthedocs.io/en/v3.3/reference.html#statsd.client.base.StatsClientBase" title="(in Python StatsD - Edited by Python Discord to extend statsd base objects to also allow referencing statsd.client.base.StatsClientBase v3.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">statsd.client.base.StatsClientBase</span></code></a></p>
 <p>An async implementation of <a class="reference external" href="https://statsd.readthedocs.io/en/v3.3/reference.html#statsd.client.base.StatsClientBase" title="(in Python StatsD - Edited by Python Discord to extend statsd base objects to also allow referencing statsd.client.base.StatsClientBase v3.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">statsd.client.base.StatsClientBase</span></code></a> that supports async stat communication.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.async_stats.AsyncStatsClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2fadc204cee0142fa7084d1b360d5e6248a4a355/botcore/async_stats.py#L15-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.async_stats.AsyncStatsClient.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4b93fbb03d22134cab1f9d9f1f07e5f81012dea5/botcore/async_stats.py#L15-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.async_stats.AsyncStatsClient.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#botcore.async_stats.AsyncStatsClient" title="botcore.async_stats.AsyncStatsClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AsyncStatsClient</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -239,7 +239,7 @@
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.async_stats.AsyncStatsClient.create_socket">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_socket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2fadc204cee0142fa7084d1b360d5e6248a4a355/botcore/async_stats.py#L40-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.async_stats.AsyncStatsClient.create_socket" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_socket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4b93fbb03d22134cab1f9d9f1f07e5f81012dea5/botcore/async_stats.py#L40-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.async_stats.AsyncStatsClient.create_socket" title="Permalink to this definition">#</a></dt>
 <dd><p>Use <a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.create_datagram_endpoint" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio.loop.create_datagram_endpoint</span></code></a> from the loop given on init to create a socket.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
