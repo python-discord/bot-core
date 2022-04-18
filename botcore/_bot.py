@@ -74,7 +74,7 @@ class BotBase(commands.Bot):
 
         self.statsd_url: Optional[str] = None
         self._statsd_timerhandle: Optional[asyncio.TimerHandle] = None
-        self._guild_available = asyncio.Event()
+        self._guild_available: Optional[asyncio.Event] = None
 
         self.stats: Optional[AsyncStatsClient] = None
 
@@ -89,7 +89,11 @@ class BotBase(commands.Bot):
     ) -> None:
         """Callback used to retry a connection to statsd if it should fail."""
         if attempt >= 8:
-            log.error("Reached 8 attempts trying to reconnect AsyncStatsClient. Aborting")
+            log.error(
+                "Reached 8 attempts trying to reconnect AsyncStatsClient to %s. "
+                "Aborting and leaving the dummy statsd client in place.",
+                statsd_url,
+            )
             return
 
         try:
@@ -209,6 +213,8 @@ class BotBase(commands.Bot):
         """
         loop = asyncio.get_running_loop()
 
+        self._guild_available = asyncio.Event()
+
         self._resolver = aiohttp.AsyncResolver()
         self._connector = aiohttp.TCPConnector(
             resolver=self._resolver,
@@ -216,8 +222,9 @@ class BotBase(commands.Bot):
         )
         self.http.connector = self._connector
 
-        self._connect_statsd(self.statsd_url, loop)
+        # Create dummy stats client first, in case `statsd_url` is unreachable within `_connect_statsd()`
         self.stats = AsyncStatsClient(loop, "127.0.0.1")
+        self._connect_statsd(self.statsd_url, loop)
         await self.stats.create_socket()
 
         try:
