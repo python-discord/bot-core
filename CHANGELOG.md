@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.0.4 18th April 2022
+- Feature: Allow passing an `api_client` to `BotBase`.`__init__` to specify the `botcore.site_api.APIClient` instance to use.
+
 ## 5.0.3 18th April 2022
 - Fix: Reconnect to redis session on setup if it is closed.
 

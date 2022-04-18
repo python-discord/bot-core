@@ -40,6 +40,7 @@ class BotBase(commands.Bot):
         allowed_roles: list,
         http_session: aiohttp.ClientSession,
         redis_session: Optional[RedisSession] = None,
+        api_client: Optional[APIClient] = None,
         **kwargs,
     ):
         """
@@ -49,9 +50,10 @@ class BotBase(commands.Bot):
             guild_id: The ID of the guild use for :func:`wait_until_guild_available`.
             allowed_roles: A list of role IDs that the bot is allowed to mention.
             http_session (aiohttp.ClientSession): The session to use for the bot.
-            redis_session: The
-                ``[async_rediscache.RedisSession](https://github.com/SebastiaanZ/async-rediscache#creating-a-redissession)``
-                to use for the bot.
+            redis_session: The `async_rediscache.RedisSession`_ to use for the bot.
+            api_client: The :obj:`botcore.site_api.APIClient` instance to use for the bot.
+
+        .. _async_rediscache.RedisSession: https://github.com/SebastiaanZ/async-rediscache#creating-a-redissession
         """
         super().__init__(
             *args,
@@ -61,13 +63,12 @@ class BotBase(commands.Bot):
 
         self.guild_id = guild_id
         self.http_session = http_session
+        self.api_client = api_client
 
         if redis_session and RedisSession == discord.utils._MissingSentinel:
             warnings.warn("redis_session kwarg passed, but async-rediscache not installed!")
         elif redis_session:
             self.redis_session = redis_session
-
-        self.api_client: Optional[APIClient] = None
 
         self._resolver: Optional[aiohttp.AsyncResolver] = None
         self._connector: Optional[aiohttp.TCPConnector] = None
