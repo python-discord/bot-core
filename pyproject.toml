@@ -25,7 +25,7 @@ async-rediscache = ["async-rediscache"]
 
 [tool.poetry.dev-dependencies]
 flake8 = "4.0.1"
-flake8-annotations = "2.8.0"
+flake8-annotations = "2.9.0"
 flake8-bugbear = "22.3.23"
 flake8-docstrings = "1.6.0"
 flake8-import-order = "0.18.1"
