@@ -1,5 +1,18 @@
 # Changelog
 
+## 5.0.4 18th April 2022
+- Feature: Allow passing an `api_client` to `BotBase`.`__init__` to specify the `botcore.site_api.APIClient` instance to use.
+
+## 5.0.3 18th April 2022
+- Fix: Reconnect to redis session on setup if it is closed.
+
+## 5.0.2 5th April 2022
+- Fix: Create a dummy `AsyncstatsdClient` before connecting to real url, in case a connection cannot be made on init.
+- Fix: Move the creation of the `asyncio.Event`, `BotBase._guild_available` to within the setup hook, to avoid a deprecation notice.
+
+## 5.0.1 2nd April 2022
+- Fix: Move creation of BotBase's `aiohttp.AsyncResolver` to the async setup hook, to avoid deprecation notice
+
 ## 5.0.0 2nd April 2022
 - Breaking: Remove public extensions util
 - Feature: Add `BotBase`, a `discord.ext.commands.Bot` sub-class, which abstracts a lot of logic shared between our bots

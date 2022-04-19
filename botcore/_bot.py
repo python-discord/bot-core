@@ -40,6 +40,7 @@ class BotBase(commands.Bot):
         allowed_roles: list,
         http_session: aiohttp.ClientSession,
         redis_session: Optional[RedisSession] = None,
+        api_client: Optional[APIClient] = None,
         **kwargs,
     ):
         """
@@ -49,9 +50,10 @@ class BotBase(commands.Bot):
             guild_id: The ID of the guild use for :func:`wait_until_guild_available`.
             allowed_roles: A list of role IDs that the bot is allowed to mention.
             http_session (aiohttp.ClientSession): The session to use for the bot.
-            redis_session: The
-                ``[async_rediscache.RedisSession](https://github.com/SebastiaanZ/async-rediscache#creating-a-redissession)``
-                to use for the bot.
+            redis_session: The `async_rediscache.RedisSession`_ to use for the bot.
+            api_client: The :obj:`botcore.site_api.APIClient` instance to use for the bot.
+
+        .. _async_rediscache.RedisSession: https://github.com/SebastiaanZ/async-rediscache#creating-a-redissession
         """
         super().__init__(
             *args,
@@ -61,20 +63,19 @@ class BotBase(commands.Bot):
 
         self.guild_id = guild_id
         self.http_session = http_session
+        self.api_client = api_client
 
         if redis_session and RedisSession == discord.utils._MissingSentinel:
             warnings.warn("redis_session kwarg passed, but async-rediscache not installed!")
         elif redis_session:
             self.redis_session = redis_session
 
-        self.api_client: Optional[APIClient] = None
-
         self._resolver: Optional[aiohttp.AsyncResolver] = None
         self._connector: Optional[aiohttp.TCPConnector] = None
 
         self.statsd_url: Optional[str] = None
         self._statsd_timerhandle: Optional[asyncio.TimerHandle] = None
-        self._guild_available = asyncio.Event()
+        self._guild_available: Optional[asyncio.Event] = None
 
         self.stats: Optional[AsyncStatsClient] = None
 
@@ -89,7 +90,11 @@ class BotBase(commands.Bot):
     ) -> None:
         """Callback used to retry a connection to statsd if it should fail."""
         if attempt >= 8:
-            log.error("Reached 8 attempts trying to reconnect AsyncStatsClient. Aborting")
+            log.error(
+                "Reached 8 attempts trying to reconnect AsyncStatsClient to %s. "
+                "Aborting and leaving the dummy statsd client in place.",
+                statsd_url,
+            )
             return
 
         try:
@@ -209,6 +214,8 @@ class BotBase(commands.Bot):
         """
         loop = asyncio.get_running_loop()
 
+        self._guild_available = asyncio.Event()
+
         self._resolver = aiohttp.AsyncResolver()
         self._connector = aiohttp.TCPConnector(
             resolver=self._resolver,
@@ -216,8 +223,14 @@ class BotBase(commands.Bot):
         )
         self.http.connector = self._connector
 
-        self._connect_statsd(self.statsd_url, loop)
+        if getattr(self, "redis_session", False) and self.redis_session.closed:
+            # If the RedisSession was somehow closed, we try to reconnect it
+            # here. Normally, this shouldn't happen.
+            await self.redis_session.connect()
+
+        # Create dummy stats client first, in case `statsd_url` is unreachable within `_connect_statsd()`
         self.stats = AsyncStatsClient(loop, "127.0.0.1")
+        self._connect_statsd(self.statsd_url, loop)
         await self.stats.create_socket()
 
         try:
@@ -258,7 +271,7 @@ class BotBase(commands.Bot):
         if self.stats._transport:
             self.stats._transport.close()
 
-        if getattr(self.redis_session, None):
+        if getattr(self, "redis_session", False):
             await self.redis_session.close()
 
         if self._statsd_timerhandle:
