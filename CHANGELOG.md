@@ -1,5 +1,10 @@
 # Changelog
 
+## 6.0.0 19th April 2022
+- Breaking: Bump discord.py to [987235d5649e7c2b1a927637bab6547244ecb2cf](https://github.com/Rapptz/discord.py/archive/987235d5649e7c2b1a927637bab6547244ecb2cf.zip)
+    - This reverts a change to help command behaviour that broke our custom pagination
+    - This also adds basic forum channel support to discord.py
+
 ## 5.0.4 18th April 2022
 - Feature: Allow passing an `api_client` to `BotBase`.`__init__` to specify the `botcore.site_api.APIClient` instance to use.
 
