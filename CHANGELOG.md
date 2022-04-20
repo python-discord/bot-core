@@ -1,5 +1,8 @@
 # Changelog
 
+## 6.1.0 20th April 2022
+- Feature: Add `unqualify` to the `botcore.utils` namespace for use in bots that manipulate extensions
+
 ## 6.0.0 19th April 2022
 - Breaking: Bump discord.py to [987235d5649e7c2b1a927637bab6547244ecb2cf](https://github.com/Rapptz/discord.py/tree/987235d5649e7c2b1a927637bab6547244ecb2cf)
     - This reverts a change to help command behaviour that broke our custom pagination

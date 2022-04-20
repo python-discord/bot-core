@@ -1,6 +1,7 @@
 """Useful utilities and tools for Discord bot development."""
 
 from botcore.utils import _monkey_patches, caching, channel, logging, members, regex, scheduling
+from botcore.utils._extensions import unqualify
 
 
 def apply_monkey_patches() -> None:
@@ -27,6 +28,7 @@ __all__ = [
     members,
     regex,
     scheduling,
+    unqualify,
 ]
 
 __all__ = list(map(lambda module: module.__name__, __all__))
