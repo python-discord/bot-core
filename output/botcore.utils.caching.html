@@ -218,14 +218,14 @@
 <p>Utilities related to custom caches.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="botcore.utils.caching.AsyncCache">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AsyncCache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6dac5cc1030fa8be9623b95ea6021162c83ce654/botcore/utils/caching.py#L8-L66"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AsyncCache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/486db9918e04afae84ae603ef96181608e70b77e/botcore/utils/caching.py#L8-L66"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>LRU cache implementation for coroutines.</p>
 <p>Once the cache exceeds the maximum size, keys are deleted in FIFO order.</p>
 <p>An offset may be optionally provided to be applied to the coroutine’s arguments when creating the cache key.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.utils.caching.AsyncCache.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6dac5cc1030fa8be9623b95ea6021162c83ce654/botcore/utils/caching.py#L27-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache.__call__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/486db9918e04afae84ae603ef96181608e70b77e/botcore/utils/caching.py#L27-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache.__call__" title="Permalink to this definition">#</a></dt>
 <dd><p>Decorator for async cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -241,7 +241,7 @@
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.utils.caching.AsyncCache.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6dac5cc1030fa8be9623b95ea6021162c83ce654/botcore/utils/caching.py#L17-L26"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/486db9918e04afae84ae603ef96181608e70b77e/botcore/utils/caching.py#L17-L26"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialise a new <a class="reference internal" href="#botcore.utils.caching.AsyncCache" title="botcore.utils.caching.AsyncCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AsyncCache</span></code></a> instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -251,7 +251,7 @@
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.utils.caching.AsyncCache.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6dac5cc1030fa8be9623b95ea6021162c83ce654/botcore/utils/caching.py#L63-L66"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache.clear" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/486db9918e04afae84ae603ef96181608e70b77e/botcore/utils/caching.py#L63-L66"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.caching.AsyncCache.clear" title="Permalink to this definition">#</a></dt>
 <dd><p>Clear cache instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
