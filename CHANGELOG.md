@@ -1,5 +1,14 @@
 # Changelog
 
+## 6.3.1 21st April 2022
+- Fix: Correct version number in pyproject.toml
+
+## 6.3.0 21st April 2022
+- Feature: Don't load modules starting with `_`
+
+## 6.2.0 21st April 2022
+- Feature: Load each cog in it's own task to avoid a single cog crashing entire load process.
+
 ## 6.1.0 20th April 2022
 - Feature: Add `unqualify` to the `botcore.utils` namespace for use in bots that manipulate extensions
 
