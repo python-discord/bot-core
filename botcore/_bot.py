@@ -11,6 +11,7 @@ from discord.ext import commands
 
 from botcore.async_stats import AsyncStatsClient
 from botcore.site_api import APIClient
+from botcore.utils import scheduling
 from botcore.utils._extensions import walk_extensions
 from botcore.utils.logging import get_logger
 
@@ -111,11 +112,16 @@ class BotBase(commands.Bot):
             )
 
     async def load_extensions(self, module: types.ModuleType) -> None:
-        """Load all the extensions within the given module and save them to ``self.all_extensions``."""
+        """
+        Load all the extensions within the given module and save them to ``self.all_extensions``.
+
+        This should be ran in a task on the event loop to avoid deadlocks caused by ``wait_for`` calls.
+        """
+        await self.wait_until_guild_available()
         self.all_extensions = walk_extensions(module)
 
         for extension in self.all_extensions:
-            await self.load_extension(extension)
+            scheduling.create_task(self.load_extension(extension))
 
     def _add_root_aliases(self, command: commands.Command) -> None:
         """Recursively add root aliases for ``command`` and any of its subcommands."""
