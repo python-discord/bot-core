@@ -20,7 +20,7 @@ def unqualify(name: str) -> str:
     return name.rsplit(".", maxsplit=1)[-1]
 
 
-def ignore_module(module) -> bool:
+def ignore_module(module: pkgutil.ModuleInfo) -> bool:
     """Return whether the module with name `name` should be ignored."""
     return any(name.startswith("_") for name in module.name.split("."))
 
