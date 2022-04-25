@@ -42,6 +42,7 @@ class BotBase(commands.Bot):
         http_session: aiohttp.ClientSession,
         redis_session: Optional[RedisSession] = None,
         api_client: Optional[APIClient] = None,
+        statsd_url: Optional[str] = None,
         **kwargs,
     ):
         """
@@ -53,6 +54,8 @@ class BotBase(commands.Bot):
             http_session (aiohttp.ClientSession): The session to use for the bot.
             redis_session: The `async_rediscache.RedisSession`_ to use for the bot.
             api_client: The :obj:`botcore.site_api.APIClient` instance to use for the bot.
+            statsd_url: The URL of the statsd server to use for the bot. If not given,
+                a dummy statsd client will be created.
 
         .. _async_rediscache.RedisSession: https://github.com/SebastiaanZ/async-rediscache#creating-a-redissession
         """
@@ -65,6 +68,7 @@ class BotBase(commands.Bot):
         self.guild_id = guild_id
         self.http_session = http_session
         self.api_client = api_client
+        self.statsd_url = statsd_url
 
         if redis_session and RedisSession == discord.utils._MissingSentinel:
             warnings.warn("redis_session kwarg passed, but async-rediscache not installed!")
@@ -74,7 +78,6 @@ class BotBase(commands.Bot):
         self._resolver: Optional[aiohttp.AsyncResolver] = None
         self._connector: Optional[aiohttp.TCPConnector] = None
 
-        self.statsd_url: Optional[str] = None
         self._statsd_timerhandle: Optional[asyncio.TimerHandle] = None
         self._guild_available: Optional[asyncio.Event] = None
 

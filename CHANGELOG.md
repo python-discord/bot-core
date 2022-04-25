@@ -1,5 +1,8 @@
 # Changelog
 
+## 6.3.2 25th April 2022
+- Fix: Actually use `statsd_url` when it gets passed to `BotBase`.
+
 ## 6.3.1 21st April 2022
 - Fix: Correct version number in pyproject.toml
 
