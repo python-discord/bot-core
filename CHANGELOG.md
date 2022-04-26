@@ -1,5 +1,9 @@
 # Changelog
 
+## 6.4.0 26th April 2022
+- Feature: Bump discord.py to `[5a06fa5](https://github.com/Rapptz/discord.py/tree/5a06fa5f3e28d2b7191722e1a84c541560008aea)`
+    - Notably, one of the commits in this bump dynamically extends the timeout of `Guild.chunk()` based on the number or members, so it should actually work on our guild now.
+
 ## 6.3.2 25th April 2022
 - Fix: Actually use `statsd_url` when it gets passed to `BotBase`.
 
