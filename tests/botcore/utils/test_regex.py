@@ -13,7 +13,7 @@ def use_regex(s: str) -> Optional[str]:
     return result if result is None else result.group("invite")
 
 
-def test_discord_invite_positive():
+def test_discord_invite_positives():
     """Test the DISCORD_INVITE regex on a set of strings we would expect to capture."""
 
     assert use_regex("discord.gg/python") == "python"
