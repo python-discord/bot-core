@@ -1,5 +1,9 @@
 # Changelog
 
+## 7.0.0 10th May 2022
+- Fix: Capture all characters up to a whitespace in the Discord Invite regex.
+- Breaking: Discord invite regex no longer returns a URL safe result, refer to documentation for safely handling it.
+
 ## 6.4.0 26th April 2022
 - Feature: Bump discord.py to `[5a06fa5](https://github.com/Rapptz/discord.py/tree/5a06fa5f3e28d2b7191722e1a84c541560008aea)`
     - Notably, one of the commits in this bump dynamically extends the timeout of `Guild.chunk()` based on the number or members, so it should actually work on our guild now.

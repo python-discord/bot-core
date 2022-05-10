@@ -1,4 +1,4 @@
-name: Lint
+name: Lint & Test
 
 on:
   push:
@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   lint:
-    name: Run pre-commit & flake8
+    name: Run Linting & Test Suites
     runs-on: ubuntu-latest
 
     steps:
@@ -42,15 +42,8 @@ jobs:
         run: "flake8 \
         --format='::error file=%(path)s,line=%(row)d,col=%(col)d::[flake8] %(code)s: %(text)s'"
 
-#      - name: Run tests and generate coverage report
-#        run: pytest -n auto --cov --disable-warnings -q
-#
-#      # This step will publish the coverage reports coveralls.io and
-#      # print a "job" link in the output of the GitHub Action
-#      - name: Publish coverage report to coveralls.io
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        run: coveralls
+      - name: Run tests and generate coverage report
+        run: python -m pytest -n auto --cov botcore -q
 
       # Prepare the Pull Request Payload artifact. If this fails, we
       # we fail silently using the `continue-on-error` option. It's
