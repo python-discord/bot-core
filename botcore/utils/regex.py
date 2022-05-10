@@ -18,9 +18,9 @@ DISCORD_INVITE = re.compile(
 Regex for Discord server invites.
 
 :meta hide-value:
-.. warning:: 
-    This regex pattern will capture until a whitespace, if you are to use the 'invite' capture group in 
-    any HTTP requests or similar. Please ensure you sanitise the output using something similar to 
+.. warning::
+    This regex pattern will capture until a whitespace, if you are to use the 'invite' capture group in
+    any HTTP requests or similar. Please ensure you sanitise the output using something similar to
     https://docs.python.org/3/library/urllib.parse.html#urllib.parse.quote.
 """
 
