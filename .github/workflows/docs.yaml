@@ -37,7 +37,7 @@ jobs:
       - name: Generate HTML Site
         run: sphinx-build -nW -j auto -b html docs docs/build
 
-      - name: Uplaod Build Artifact
+      - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
         with:
           name: docs

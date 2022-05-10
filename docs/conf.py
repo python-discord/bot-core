@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 import git
+import releases
 import tomli
 from sphinx.application import Sphinx
 
@@ -46,6 +47,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.napoleon",
     "sphinx_autodoc_typehints",
+    "releases",
     "sphinx.ext.linkcode",
     "sphinx.ext.githubpages",
 ]
@@ -82,10 +84,9 @@ html_short_title = project
 html_logo = "https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"
 html_favicon = html_logo
 
-html_css_files = [
-    "index.css",
-    "logo.css",
-]
+static = Path("_static")
+html_css_files = utils.get_recursive_file_uris(static, "*.css")
+html_js_files = utils.get_recursive_file_uris(static, "*.js")
 
 utils.cleanup()
 
@@ -105,6 +106,12 @@ def skip(*args) -> bool:
 def setup(app: Sphinx) -> None:
     """Add extra hook-based autodoc configuration."""
     app.connect("autodoc-skip-member", skip)
+    app.add_role("literal-url", utils.emphasized_url)
+
+    # Add a `breaking` role to the changelog
+    releases.ISSUE_TYPES["breaking"] = "F50F10"  # This is the hex for a light red color
+    releases.reorder_release_entries = utils.reorder_release_entries
+    app.add_role("breaking", releases.issues_role)
 
 
 ignored_modules = [
@@ -148,3 +155,8 @@ intersphinx_mapping = {
 
 # -- Options for the linkcode extension --------------------------------------
 linkcode_resolve = functools.partial(utils.linkcode_resolve, SOURCE_FILE_LINK)
+
+
+# -- Options for releases extension ------------------------------------------
+releases_github_path = REPO_LINK.removeprefix("https://github.com/")
+releases_release_uri = f"{REPO_LINK}/releases/tag/v%s"

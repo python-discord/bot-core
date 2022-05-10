@@ -6,6 +6,10 @@ import inspect
 import typing
 from pathlib import Path
 
+import docutils.nodes
+import docutils.parsers.rst.states
+import releases
+
 PROJECT_ROOT = Path(__file__).parent.parent
 
 
@@ -108,7 +112,7 @@ def __get_included() -> set[str]:
         try:
             module = importlib.import_module(module_name)
         except ModuleNotFoundError:
-            return {}
+            return set()
         _modules = {module.__name__ + ".rst"}
 
         if hasattr(module, "__all__"):
@@ -118,3 +122,47 @@ def __get_included() -> set[str]:
         return _modules
 
     return get_all_from_module("botcore")
+
+
+def reorder_release_entries(release_list: list[releases.Release]) -> None:
+    """
+    Sort `releases` based on `release.type`.
+
+    This is meant to be used as an override for `releases.reorder_release_entries` to support
+    custom types.
+    """
+    order = {"breaking": 0, "feature": 1, "bug": 2, "support": 3}
+    for release in release_list:
+        release["entries"].sort(key=lambda entry: order[entry.type])
+
+
+def emphasized_url(
+    name: str, rawtext: str, text: str, lineno: int, inliner: docutils.parsers.rst.states.Inliner, *__
+) -> tuple[list, list]:
+    """
+    Sphinx role to add hyperlinked literals.
+
+    ReST: :literal-url:`Google <https://google.com>`
+    Markdown equivalent: [`Google`](https://google.com)
+
+    Refer to https://docutils.sourceforge.io/docs/howto/rst-roles.html for details on the input and output.
+    """
+    arguments = text.rsplit(maxsplit=1)
+    if len(arguments) != 2:
+        message = inliner.reporter.error(
+            f"`{name}` expects a message and a URL, formatted as: :{name}:`message <url>`",
+            line=lineno
+        )
+        problem = inliner.problematic(text, rawtext, message)
+        return [problem], [message]
+
+    message, url = arguments
+    url: str = url[1:-1]  # Remove the angled brackets off the start and end
+
+    literal = docutils.nodes.literal(rawtext, message)
+    return [docutils.nodes.reference(rawtext, "", literal, refuri=url)], []
+
+
+def get_recursive_file_uris(folder: Path, match_pattern: str) -> list[str]:
+    """Get the URI of any file relative to folder which matches the `match_pattern` regex."""
+    return [file.relative_to(folder).as_posix() for file in folder.rglob(match_pattern)]

@@ -38,11 +38,11 @@ Refer to the [sphinx documentation][docstring-sections] for more information.
 Each change requires an entry in the [Changelog](./changelog.rst).
 
 Refer to the [Releases][releases] documentation for more information on the exact format and content of entries
-You can use [this site][releases] to get the PR number you'll use for your entry.
+You can use [this site][next] to get the PR number that'll be assigned for your entry.
 
 
-[next]: https://ichard26.github.io/next-pr-number/?owner=python-discord&name=bot-core
 [releases]: https://releases.readthedocs.io/en/latest/concepts.html
+[next]: https://ichard26.github.io/next-pr-number/?owner=python-discord&name=bot-core
 
 ## Static Builds
 We deploy our docs to netlify to power static previews on PRs.
