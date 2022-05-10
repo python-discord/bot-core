@@ -11,13 +11,17 @@ DISCORD_INVITE = re.compile(
     r"discord([.,]|dot)io|"                      # or discord.io.
     r"((?<!\w)([.,]|dot))gg"                     # or .gg/
     r")([/]|slash)"                              # / or 'slash'
-    r"(?P<invite>[a-zA-Z0-9\-]+)",               # the invite code itself
+    r"(?P<invite>\S+)",                          # the invite code itself
     flags=re.IGNORECASE
 )
 """
 Regex for Discord server invites.
 
 :meta hide-value:
+.. warning:: 
+    This regex pattern will capture until a whitespace, if you are to use the 'invite' capture group in 
+    any HTTP requests or similar. Please ensure you sanitise the output using something similar to 
+    https://docs.python.org/3/library/urllib.parse.html#urllib.parse.quote.
 """
 
 FORMATTED_CODE_REGEX = re.compile(
