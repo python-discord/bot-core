@@ -352,7 +352,7 @@ flake8 = "*"
 
 [[package]]
 name = "flake8-tidy-imports"
-version = "4.7.0"
+version = "4.8.0"
 description = "A flake8 plugin that helps you write tidier imports."
 category = "dev"
 optional = false
@@ -1059,7 +1059,7 @@ async-rediscache = ["async-rediscache"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.*"
-content-hash = "bef8ff45bf441ea07f430cc33b054a017709d7806ef2ef4cf0783334609f34a3"
+content-hash = "9aa2234408bb7fa5a961b4768d6033c4dc14769ee2ad92bf20335fc91a34c7f9"
 
 [metadata.files]
 aiohttp = [
@@ -1285,8 +1285,8 @@ flake8-string-format = [
     {file = "flake8_string_format-0.3.0-py2.py3-none-any.whl", hash = "sha256:812ff431f10576a74c89be4e85b8e075a705be39bc40c4b4278b5b13e2afa9af"},
 ]
 flake8-tidy-imports = [
-    {file = "flake8-tidy-imports-4.7.0.tar.gz", hash = "sha256:afb7d5eff1042aac0e636013b9168a245b3cff15f5ad5d191fdb4b704fcfcb34"},
-    {file = "flake8_tidy_imports-4.7.0-py3-none-any.whl", hash = "sha256:223d360081f08d52ee85a341d27d565a61ebf2c4a032ac4c3298f47e168e02e8"},
+    {file = "flake8-tidy-imports-4.8.0.tar.gz", hash = "sha256:df44f9c841b5dfb3a7a1f0da8546b319d772c2a816a1afefcce43e167a593d83"},
+    {file = "flake8_tidy_imports-4.8.0-py3-none-any.whl", hash = "sha256:25bd9799358edefa0e010ce2c587b093c3aba942e96aeaa99b6d0500ae1bf09c"},
 ]
 flake8-todo = [
     {file = "flake8-todo-0.7.tar.gz", hash = "sha256:6e4c5491ff838c06fe5a771b0e95ee15fc005ca57196011011280fc834a85915"},
