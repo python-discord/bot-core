@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bot-core"
-version = "7.1.0"
+version = "7.1.1"
 description = "Bot-Core provides the core functionality and utilities for the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
@@ -44,13 +44,12 @@ GitPython = "3.1.27"
 sphinx-autodoc-typehints = "1.18.1"
 furo = "2022.4.7"
 releases = "1.6.3"
+sphinx-multiversion = "0.2.4"
 
 [tool.taskipy.tasks]
 lint = "pre-commit run --all-files"
 precommit = "pre-commit install"
-apidoc = "sphinx-apidoc -o docs/output botcore -feM"
-builddoc = "sphinx-build -nW -j auto -b html docs docs/build"
-docs = "task apidoc && task builddoc"
+docs = "sphinx-build -nW -j auto -b html docs docs/build"
 test = "pytest -n 8 --ff"
 retest = "pytest -n 8 --lf"
 

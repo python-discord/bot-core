@@ -3,6 +3,8 @@ Meta information about this project's documentation.
 
 Table of contents:
 - [Building the docs](#Building)
+- [Docs Layout](#Layout)
+- [Building all versions](#Versions)
 - [Writing docstrings](#Docstrings)
 - [Writing a changelog](#Changelog)
 
@@ -15,11 +17,26 @@ poetry run task docs
 
 The output will be in the [`/docs/build`](.) directory.
 
-Additionally, there are two helper tasks: `apidoc` and `builddoc`.
-`apidoc` is responsible for calling autodoc and generating docs from docstrings.
-`builddoc` generates the HTML site, and should be called after apidoc.
 
-Neither of these two tasks needs to be manually called, as the `docs` task calls both.
+## Versions
+The project supports building all different versions at once using [sphinx-multiversion][multiversion]
+after version `v7.1.0`. You can run the following command to achieve that:
+
+```shell
+poetry run sphinx_multiversion -v docs docs/build -n -j auto -n
+```
+
+This will build all tags, as well as the main branch. To build branches besides the main one
+(such as the one you are currently working on), set the `BUILD_DOCS_FOR_HEAD` environment variable
+to True.
+
+When using multi-version, keep the following in mind:
+1. This command will not fail on warnings, unlike the docs task. Make sure that passes first
+   before using this one.
+2. Make sure to clear the build directory before running this script to avoid conflicts.
+
+
+[multiversion]: https://holzhaus.github.io/sphinx-multiversion/master/index.html
 
 
 ## Docstrings

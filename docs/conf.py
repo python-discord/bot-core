@@ -3,10 +3,10 @@
 
 import functools
 import os.path
+import shutil
 import sys
 from pathlib import Path
 
-import git
 import releases
 import tomli
 from sphinx.application import Sphinx
@@ -22,10 +22,9 @@ project = "Bot Core"
 copyright = "2021, Python Discord"
 author = "Python Discord"
 
-PROJECT_ROOT = Path(__file__).parent.parent
 REPO_LINK = "https://github.com/python-discord/bot-core"
-SOURCE_FILE_LINK = f"{REPO_LINK}/blob/{git.Repo(PROJECT_ROOT).commit().hexsha}"
 
+PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT.absolute()))
 
 # The full version, including alpha/beta/rc tags
@@ -50,10 +49,11 @@ extensions = [
     "releases",
     "sphinx.ext.linkcode",
     "sphinx.ext.githubpages",
+    "sphinx_multiversion",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ["_templates"]
+templates_path = ["_templates", "pages"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -78,6 +78,13 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+
+# Html files under pages/ are rendered separately and added to the final build
+html_additional_pages = {
+    file.removesuffix(".html"): file
+    for file in utils.get_recursive_file_uris(Path("pages"), "*.html")
+}
+
 html_title = f"{project} v{version}"
 html_short_title = project
 
@@ -88,7 +95,7 @@ static = Path("_static")
 html_css_files = utils.get_recursive_file_uris(static, "*.css")
 html_js_files = utils.get_recursive_file_uris(static, "*.js")
 
-utils.cleanup()
+utils.build_api_doc()
 
 
 def skip(*args) -> bool:
@@ -103,9 +110,26 @@ def skip(*args) -> bool:
     return would_skip
 
 
+def post_build(_: Sphinx, exception: Exception) -> None:
+    """Clean up and process files after the build has finished."""
+    if exception:
+        # Don't accidentally supress exceptions
+        raise exception from None
+
+    build_folder = PROJECT_ROOT / "docs" / "build"
+    main_build = build_folder / "main"
+
+    if main_build.exists() and not (build_folder / "index.html").exists():
+        # We don't have an index in the root folder, add a redirect
+        shutil.copy((main_build / "index_redirect.html"), (build_folder / "index.html"))
+        shutil.copytree((main_build / "_static"), (build_folder / "_static"), dirs_exist_ok=True)
+        (build_folder / ".nojekyll").touch(exist_ok=True)
+
+
 def setup(app: Sphinx) -> None:
     """Add extra hook-based autodoc configuration."""
     app.connect("autodoc-skip-member", skip)
+    app.connect("build-finished", post_build)
     app.add_role("literal-url", utils.emphasized_url)
 
     # Add a `breaking` role to the changelog
@@ -154,9 +178,19 @@ intersphinx_mapping = {
 
 
 # -- Options for the linkcode extension --------------------------------------
-linkcode_resolve = functools.partial(utils.linkcode_resolve, SOURCE_FILE_LINK)
+linkcode_resolve = functools.partial(utils.linkcode_resolve, REPO_LINK)
 
 
 # -- Options for releases extension ------------------------------------------
 releases_github_path = REPO_LINK.removeprefix("https://github.com/")
 releases_release_uri = f"{REPO_LINK}/releases/tag/v%s"
+
+
+# -- Options for the multiversion extension ----------------------------------
+# Only include local refs, filter out older versions, and don't build branches other than main
+# unless `BUILD_DOCS_FOR_HEAD` env variable is True.
+smv_remote_whitelist = None
+smv_latest_version = "main"
+if os.getenv("BUILD_DOCS_FOR_HEAD", "False").lower() == "false":
+    smv_branch_whitelist = "main"
+smv_tag_whitelist = r"v(?!([0-6]\.)|(7\.[0-1]\.0))"  # Don't include any versions prior to v7.1.1
