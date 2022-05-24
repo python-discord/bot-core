@@ -351,7 +351,7 @@ flake8 = "*"
 
 [[package]]
 name = "flake8-tidy-imports"
-version = "4.7.0"
+version = "4.8.0"
 description = "A flake8 plugin that helps you write tidier imports."
 category = "dev"
 optional = false
@@ -954,7 +954,7 @@ python-versions = "*"
 
 [[package]]
 name = "taskipy"
-version = "1.10.1"
+version = "1.10.2"
 description = "tasks runner for python projects"
 category = "dev"
 optional = false
@@ -964,7 +964,7 @@ python-versions = ">=3.6,<4.0"
 colorama = ">=0.4.4,<0.5.0"
 mslex = {version = ">=0.3.0,<0.4.0", markers = "sys_platform == \"win32\""}
 psutil = ">=5.7.2,<6.0.0"
-tomli = ">=1.2.3,<2.0.0"
+tomli = {version = ">=2.0.1,<3.0.0", markers = "python_version >= \"3.7\" and python_version < \"4.0\""}
 
 [[package]]
 name = "toml"
@@ -976,11 +976,11 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "tomli"
-version = "1.2.3"
+version = "2.0.1"
 description = "A lil' TOML parser"
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [[package]]
 name = "typing-extensions"
@@ -1059,7 +1059,7 @@ async-rediscache = ["async-rediscache"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.*"
-content-hash = "704edc0246ef671ef5df988a0d7d0586c02edde6bfaab80f402ef9a7a295ddd4"
+content-hash = "437a2dc7523efe2e6031432a5935451611ba427a9314bb0287f1a9cbb4466d77"
 
 [metadata.files]
 aiohttp = [
@@ -1285,8 +1285,8 @@ flake8-string-format = [
     {file = "flake8_string_format-0.3.0-py2.py3-none-any.whl", hash = "sha256:812ff431f10576a74c89be4e85b8e075a705be39bc40c4b4278b5b13e2afa9af"},
 ]
 flake8-tidy-imports = [
-    {file = "flake8-tidy-imports-4.7.0.tar.gz", hash = "sha256:afb7d5eff1042aac0e636013b9168a245b3cff15f5ad5d191fdb4b704fcfcb34"},
-    {file = "flake8_tidy_imports-4.7.0-py3-none-any.whl", hash = "sha256:223d360081f08d52ee85a341d27d565a61ebf2c4a032ac4c3298f47e168e02e8"},
+    {file = "flake8-tidy-imports-4.8.0.tar.gz", hash = "sha256:df44f9c841b5dfb3a7a1f0da8546b319d772c2a816a1afefcce43e167a593d83"},
+    {file = "flake8_tidy_imports-4.8.0-py3-none-any.whl", hash = "sha256:25bd9799358edefa0e010ce2c587b093c3aba942e96aeaa99b6d0500ae1bf09c"},
 ]
 flake8-todo = [
     {file = "flake8-todo-0.7.tar.gz", hash = "sha256:6e4c5491ff838c06fe5a771b0e95ee15fc005ca57196011011280fc834a85915"},
@@ -1773,16 +1773,16 @@ statsd = [
     {file = "statsd-3.3.0.tar.gz", hash = "sha256:e3e6db4c246f7c59003e51c9720a51a7f39a396541cb9b147ff4b14d15b5dd1f"},
 ]
 taskipy = [
-    {file = "taskipy-1.10.1-py3-none-any.whl", hash = "sha256:9b38333654da487b6d16de6fa330b7629d1935d1e74819ba4c5f17a1c372d37b"},
-    {file = "taskipy-1.10.1.tar.gz", hash = "sha256:6fa0b11c43d103e376063e90be31d87b435aad50fb7dc1c9a2de9b60a85015ed"},
+    {file = "taskipy-1.10.2-py3-none-any.whl", hash = "sha256:58d5382d90d5dd94ca8c612855377e5a98b9cb669c208ebb55d6a45946de3f9b"},
+    {file = "taskipy-1.10.2.tar.gz", hash = "sha256:eae4feb74909da3ad0ca0275802e1c2f56048612529bd763feb922d284d8a253"},
 ]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
     {file = "toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"},
 ]
 tomli = [
-    {file = "tomli-1.2.3-py3-none-any.whl", hash = "sha256:e3069e4be3ead9668e21cb9b074cd948f7b3113fd9c8bba083f48247aab8b11c"},
-    {file = "tomli-1.2.3.tar.gz", hash = "sha256:05b6166bff487dc068d322585c7ea4ef78deed501cc124060e0f238e89a9231f"},
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
 typing-extensions = [
     {file = "typing_extensions-4.2.0-py3-none-any.whl", hash = "sha256:6657594ee297170d19f67d55c05852a874e7eb634f4f753dbd667855e07c1708"},
