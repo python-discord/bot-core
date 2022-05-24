@@ -1,5 +1,9 @@
 # Changelog
 
+## 7.1.0 24th May 2022
+- Feature: Bump Discord.py to [`4cbe8f5`](https://github.com/Rapptz/discord.py/tree/4cbe8f58e16f6a76371ce45a69e0832130d6d24f)
+   - This fixes a bug with permission resolution when dealing with timed out members.
+
 ## 7.0.0 10th May 2022
 - Fix: Capture all characters up to a whitespace in the Discord Invite regex.
 - Breaking: Discord invite regex no longer returns a URL safe result, refer to documentation for safely handling it.
