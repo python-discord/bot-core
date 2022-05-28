@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="regex" href="botcore.utils.regex.html" /><link rel="prev" title="logging" href="botcore.utils.logging.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
-        <title>members - Bot Core v7.0.0</title>
+        <title>members - Bot Core v7.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -126,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Bot Core v7.0.0</div></a>
+      <a href="../index.html"><div class="brand">Bot Core v7.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -152,7 +152,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Bot Core v7.0.0</span>
+  <span class="sidebar-brand-text">Bot Core v7.1.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -215,31 +215,31 @@
         <article role="main">
           <section id="module-botcore.utils.members">
 <span id="members"></span><h1>members<a class="headerlink" href="#module-botcore.utils.members" title="Permalink to this headline">#</a></h1>
-<p>Useful helper functions for interactin with <a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.Member" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member</span></code></a> objects.</p>
+<p>Useful helper functions for interactin with <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member</span></code></a> objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.members.get_or_fetch_member">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/cfacb4559764801fa37d631fcfe692f7197eb916/botcore/utils/members.py#L12-L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.members.get_or_fetch_member" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/837293488420f3e38dfda78c876417a72bb3b4e1/botcore/utils/members.py#L12-L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.members.get_or_fetch_member" title="Permalink to this definition">#</a></dt>
 <dd><p>Attempt to get a member from cache; on failure fetch from the API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.Member" title="(in discord.py v2.0.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Member</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member" title="(in discord.py v2.0.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Member</span></code></a>]</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The <a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.Member" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> to indicate the member could not be found.</p>
+<dd class="field-even"><p>The <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> to indicate the member could not be found.</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.members.handle_role_change">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_role_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/cfacb4559764801fa37d631fcfe692f7197eb916/botcore/utils/members.py#L31-L57"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.members.handle_role_change" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_role_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/837293488420f3e38dfda78c876417a72bb3b4e1/botcore/utils/members.py#L31-L57"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.members.handle_role_change" title="Permalink to this definition">#</a></dt>
 <dd><p>Await the given <code class="docutils literal notranslate"><span class="pre">coro</span></code> with <code class="docutils literal notranslate"><span class="pre">member</span></code> as the sole argument.</p>
 <p>Handle errors that we expect to be raised from
-<a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.Member.add_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.add_roles</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.Member.remove_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.remove_roles</span></code></a>.</p>
+<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.add_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.add_roles</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.remove_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.remove_roles</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>member</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.Member" title="(in discord.py v2.0.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Member</span></code></a>) – The member to pass to <code class="docutils literal notranslate"><span class="pre">coro</span></code>.</p></li>
-<li><p><strong>coro</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#Ellipsis" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Coroutine" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>]) – This is intended to be <a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.Member.add_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.add_roles</span></code></a> or <a class="reference external" href="https://discordpy.readthedocs.io/en/master/api.html#discord.Member.remove_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.remove_roles</span></code></a>.</p></li>
+<li><p><strong>member</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member" title="(in discord.py v2.0.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Member</span></code></a>) – The member to pass to <code class="docutils literal notranslate"><span class="pre">coro</span></code>.</p></li>
+<li><p><strong>coro</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/constants.html#Ellipsis" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Coroutine" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>]) – This is intended to be <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.add_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.add_roles</span></code></a> or <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.remove_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.remove_roles</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
