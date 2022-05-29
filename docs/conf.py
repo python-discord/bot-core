@@ -7,9 +7,13 @@ import shutil
 import sys
 from pathlib import Path
 
+import git
 import releases
+import sphinx.util.logging
 import tomli
 from sphinx.application import Sphinx
+
+logger = sphinx.util.logging.getLogger(__name__)
 
 # Handle the path not being set correctly in actions.
 sys.path.insert(0, os.path.abspath('..'))
@@ -201,6 +205,14 @@ releases.setup = _releases_setup
 # unless `BUILD_DOCS_FOR_HEAD` env variable is True.
 smv_remote_whitelist = None
 smv_latest_version = "main"
-if os.getenv("BUILD_DOCS_FOR_HEAD", "False").lower() == "false":
-    smv_branch_whitelist = "main"
+
+smv_branch_whitelist = "main"
+if os.getenv("BUILD_DOCS_FOR_HEAD", "False").lower() == "true":
+    try:
+        branch = git.Repo(PROJECT_ROOT).active_branch.name
+        logger.info(f"Adding branch {branch} to build whitelist")
+        smv_branch_whitelist = f"main|{branch}"
+    except git.InvalidGitRepositoryError:
+        pass
+
 smv_tag_whitelist = r"v(?!([0-6]\.)|(7\.[0-1]\.0))"  # Don't include any versions prior to v7.1.1
