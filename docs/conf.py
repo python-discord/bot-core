@@ -208,11 +208,14 @@ smv_latest_version = "main"
 
 smv_branch_whitelist = "main"
 if os.getenv("BUILD_DOCS_FOR_HEAD", "False").lower() == "true":
-    try:
-        branch = git.Repo(PROJECT_ROOT).active_branch.name
+    if not (branch := os.getenv("BRANCH_NAME")):
+        try:
+            branch = git.Repo(PROJECT_ROOT).active_branch.name
+        except git.InvalidGitRepositoryError:
+            pass
+
+    if branch:
         logger.info(f"Adding branch {branch} to build whitelist.")
         smv_branch_whitelist = f"main|{branch}"
-    except git.InvalidGitRepositoryError:
-        pass
 
 smv_tag_whitelist = r"v(?!([0-6]\.)|(7\.[0-1]\.0))"  # Don't include any versions prior to v7.1.1

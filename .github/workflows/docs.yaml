@@ -67,6 +67,7 @@ jobs:
         run: sphinx-multiversion docs docs/build -n -j auto
         env:
           BUILD_DOCS_FOR_HEAD: ${{ github.event_name == 'pull_request' }}
+          BRANCH_NAME: ${{ github.head_ref }}
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
