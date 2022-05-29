@@ -186,6 +186,16 @@ releases_github_path = REPO_LINK.removeprefix("https://github.com/")
 releases_release_uri = f"{REPO_LINK}/releases/tag/v%s"
 
 
+def _releases_setup(app: Sphinx) -> dict:
+    """Wrap the default setup of releases to declare it as parallel-read safe."""
+    _original_releases_setup(app)
+    return {"parallel_read_safe": True}
+
+
+_original_releases_setup = releases.setup
+releases.setup = _releases_setup
+
+
 # -- Options for the multiversion extension ----------------------------------
 # Only include local refs, filter out older versions, and don't build branches other than main
 # unless `BUILD_DOCS_FOR_HEAD` env variable is True.
