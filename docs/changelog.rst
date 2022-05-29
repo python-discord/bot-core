@@ -4,6 +4,7 @@
 Changelog
 =========
 
+- :support:`79` Add `sphinx-multiversion <https://pypi.org/project/sphinx-multiversion/>`_ to make available older doc versions.
 - :support:`79` Restore on-site changelog.
 
 
