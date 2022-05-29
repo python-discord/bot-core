@@ -201,9 +201,9 @@ releases.setup = _releases_setup
 
 
 # -- Options for the multiversion extension ----------------------------------
-# Only include local refs, filter out older versions, and don't build branches other than main
+# Filter out older versions, and don't build branches other than main
 # unless `BUILD_DOCS_FOR_HEAD` env variable is True.
-smv_remote_whitelist = None
+smv_remote_whitelist = "origin"
 smv_latest_version = "main"
 
 smv_branch_whitelist = "main"
