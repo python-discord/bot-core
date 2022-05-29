@@ -210,7 +210,7 @@ smv_branch_whitelist = "main"
 if os.getenv("BUILD_DOCS_FOR_HEAD", "False").lower() == "true":
     try:
         branch = git.Repo(PROJECT_ROOT).active_branch.name
-        logger.info(f"Adding branch {branch} to build whitelist")
+        logger.info(f"Adding branch {branch} to build whitelist.")
         smv_branch_whitelist = f"main|{branch}"
     except git.InvalidGitRepositoryError:
         pass

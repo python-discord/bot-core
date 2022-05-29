@@ -49,6 +49,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # We need to check out the entire repository to find all tags
 
       - name: Install Python Dependencies
         uses: HassanAbouelela/actions/setup-python@setup-python_v1.1.0
@@ -64,7 +66,7 @@ jobs:
       - name: Build All Doc Versions
         run: sphinx-multiversion docs docs/build -n -j auto
         env:
-          BUILD_DOCS_FOR_HEAD: True
+          BUILD_DOCS_FOR_HEAD: ${{ github.event_name == 'pull_request' }}
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
