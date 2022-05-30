@@ -1,0 +1,12 @@
+{% extends "furo/base.html" %}
+
+{# Make sure the project name uses the correct version #}
+{% if versions %}
+    {% if current_version == latest_version %}
+        {% set docstitle = "Latest (" + current_version.version + ")" %}
+    {% else %}
+        {% set docstitle = current_version.name %}
+    {% endif %}
+
+    {% set docstitle = project + " " + docstitle %}
+{% endif %}
