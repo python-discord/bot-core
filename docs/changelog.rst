@@ -11,7 +11,7 @@ Changelog
 - :release:`7.1.0 <24th May 2022>`
 - :feature:`78` Bump Discord.py to :literal-url:`4cbe8f5 <https://github.com/Rapptz/discord.py/tree/4cbe8f58e16f6a76371ce45a69e0832130d6d24f>`:
 
-   - This fixes a bug with permission resolution when dealing with timed out members.
+  - This fixes a bug with permission resolution when dealing with timed out members.
 
 
 - :release:`7.0.0 <10th May 2022>`
@@ -22,7 +22,7 @@ Changelog
 - :release:`6.4.0 <26th April 2022>`
 - :feature:`72` Bump discord.py to :literal-url:`5a06fa5 <https://github.com/Rapptz/discord.py/tree/5a06fa5f3e28d2b7191722e1a84c541560008aea>`:
 
-   - Notably, one of the commits in this bump dynamically extends the timeout of ``Guild.chunk()`` based on the number or members, so it should actually work on our guild now.
+  - Notably, one of the commits in this bump dynamically extends the timeout of ``Guild.chunk()`` based on the number or members, so it should actually work on our guild now.
 
 
 - :release:`6.3.2 <25th April 2022>`
@@ -48,8 +48,8 @@ Changelog
 - :release:`6.0.0 <19th April 2022>`
 - :breaking:`64` Bump discord.py to :literal-url:`987235d <https://github.com/Rapptz/discord.py/tree/987235d5649e7c2b1a927637bab6547244ecb2cf>`:
 
-   - This reverts a change to help command behaviour that broke our custom pagination
-   - This also adds basic forum channel support to discord.py
+  - This reverts a change to help command behaviour that broke our custom pagination
+  - This also adds basic forum channel support to discord.py
 
 
 - :release:`5.0.4 <18th April 2022>` 63
@@ -103,12 +103,12 @@ Changelog
 - :feature:`32` Add common monkey patches.
 - :feature:`29` Port many common utilities from our bots:
 
-   - caching
-   - channel
-   - extensions
-   - loggers
-   - members
-   - scheduling
+  - caching
+  - channel
+  - extensions
+  - loggers
+  - members
+  - scheduling
 - :support:`2` Added intersphinx to docs.
 
 
