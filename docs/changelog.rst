@@ -55,7 +55,7 @@ Changelog
 - :release:`5.0.4 <18th April 2022>` 63
 
    ..
-      Feature 63 Needs to be explicitly included below because it was improperly released within a bugfix version
+      Feature 63 Needs to be explicitly included above because it was improperly released within a bugfix version
       instead of a minor release
 
 - :feature:`63` Allow passing an ``api_client`` to ``BotBase.__init__`` to specify the ``botcore.site_api.APIClient`` instance to use.
