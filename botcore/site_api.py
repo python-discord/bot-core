@@ -24,7 +24,7 @@ class ResponseCodeError(ValueError):
         Initialize a new :obj:`ResponseCodeError` instance.
 
         Args:
-            response (:obj:`aiohttp.ClientResponse`): The response object from the request. This was changed in 7.1.2.
+            response (:obj:`aiohttp.ClientResponse`): The response object from the request. And then reverted in 7.1.3.
             response_json: The JSON response returned from the request, if any.
             request_text: The text of the request, if any.
         """
