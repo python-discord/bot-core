@@ -1,0 +1,46 @@
+<div class="sidebar-tree">
+    {{ furo_navigation_tree }}
+
+    {# Include a version navigation menu in the side bar #}
+    {% if versions %}
+    <ul>
+        <li class="toctree-l1 has-children {{ "current-page" if pagename == "versions" }}">
+            {# The following block is taken from furo's generated sidebar dropdown #}
+            <a class="reference internal" href="{{ pathto("versions") }}">Versions</a>
+            <input {{ "checked" if pagename == "versions" }} class="toctree-checkbox" id="toctree-checkbox-versions" name="toctree-checkbox-versions" role="switch" type="checkbox">
+            <label for="toctree-checkbox-versions">
+                <div class="visually-hidden">Toggle child pages in navigation</div>
+                <i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i>
+            </label>
+            {# End copied block #}
+
+            <ul>
+                {% for version in versions | reverse %}
+                    <li class="toctree-l2 {{ "current-page" if version == current_version }}">
+                        <a class="version_link reference internal" href="{{ version.url }}">{{ version.name }}</a>
+                    </li>
+                {% endfor %}
+
+                <script>
+                    // Make sure we keep any hyperlinked resources when switching version
+                    function updateHash() {
+                        for (let tag of document.getElementsByClassName("version_link")) {
+                            // Extract the original URL
+                            let destination = tag.getAttribute("href");
+                            if (destination.indexOf("#") !== -1) {
+                                destination = destination.slice(0, destination.indexOf("#"));
+                            }
+
+                            // Update the url with the current hash
+                            tag.setAttribute("href", destination + document.location.hash);
+                        }
+                    }
+
+                    updateHash();
+                    addEventListener("hashchange", _ => { updateHash() });
+                </script>
+            </ul>
+        </li>
+    </ul>
+    {% endif %}
+</div>

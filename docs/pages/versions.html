@@ -1,0 +1,23 @@
+{% extends "page.html" %}
+{% set title = "Versions" %}
+
+{% block content -%}
+    {% if versions %}
+        <h1>Versions</h1>
+        <dl>
+            <dt>Documentation is available for the following versions:</dt>
+            <dd><ul>
+                {# List all avaialble versions #}
+                {% for version in versions | reverse %}
+                    <li>
+                        <a class="reference internal" href="{{ version.url }}">{{ version.name }}</a>
+                        {{ "(current)" if version == current_version }}
+                        {{ "- latest" if version == latest_version }}
+                    </li>
+                {% endfor %}
+            </ul></dd>
+        </dl>
+    {% else %}
+        <h1>No version information available!</h1>
+    {% endif %}
+{%- endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% set pagename = master_doc %}
+
+{# Redirect users to the actual docs page #}
+{% block site_meta %}
+    {# Make sure this is loaded as early as possible #}
+    <script>window.location.replace("./main/index.html")</script>
+    {{ super() }}
+{% endblock %}
+
+{# Show some text in-case the redirection fails #}
+{% block body %}
+    {{ super() }}
+    <div style="display: flex; text-align: center; justify-content: center; align-items: center; height: 100%;">
+        <h2><a href="./main/index.html">
+            Please click here if you were not redirected to the latest build.
+        </a></h2>
+    </div>
+{% endblock %}

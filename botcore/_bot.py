@@ -17,8 +17,10 @@ from botcore.utils.logging import get_logger
 
 try:
     from async_rediscache import RedisSession
+    REDIS_AVAILABLE = True
 except ImportError:
-    RedisSession = discord.utils._MissingSentinel
+    RedisSession = None
+    REDIS_AVAILABLE = False
 
 log = get_logger()
 
@@ -70,7 +72,7 @@ class BotBase(commands.Bot):
         self.api_client = api_client
         self.statsd_url = statsd_url
 
-        if redis_session and RedisSession == discord.utils._MissingSentinel:
+        if redis_session and not REDIS_AVAILABLE:
             warnings.warn("redis_session kwarg passed, but async-rediscache not installed!")
         elif redis_session:
             self.redis_session = redis_session
