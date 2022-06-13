@@ -1,6 +1,6 @@
 """Useful utilities and tools for Discord bot development."""
 
-from botcore.utils import _monkey_patches, caching, channel, function, logging, members, regex, scheduling
+from botcore.utils import _monkey_patches, caching, channel, cooldown, function, logging, members, regex, scheduling
 from botcore.utils._extensions import unqualify
 
 
@@ -24,6 +24,7 @@ __all__ = [
     apply_monkey_patches,
     caching,
     channel,
+    cooldown,
     function,
     logging,
     members,
