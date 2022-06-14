@@ -99,6 +99,7 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> typin
 
 class NodeWithBody(typing.Protocol):
     """An AST node with the body attribute."""
+
     body: list[ast.AST]
 
 
@@ -113,9 +114,10 @@ def _global_assign_pos(ast_: NodeWithBody, name: str) -> typing.Union[tuple[int,
             names = []
             for target in ast_obj.targets:
                 if isinstance(target, ast.Tuple):
-                    names.extend([name.id for name in target.elts])
+                    names.extend([name.id for name in target.elts if isinstance(name, ast.Name)])
                 else:
-                    names.append(target.id)
+                    if isinstance(target, ast.Name):
+                        names.append(target.id)
 
             if name in names:
                 return ast_obj.lineno, ast_obj.end_lineno
