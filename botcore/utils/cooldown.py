@@ -20,6 +20,8 @@ from botcore.utils.function import command_wraps
 
 __all__ = ["CommandOnCooldown", "block_duplicate_invocations", "P", "R"]
 
+_KEYWORD_SEP_SENTINEL = object()
+
 _ArgsList = list[object]
 _HashableArgsTuple = tuple[Hashable, ...]
 
@@ -172,6 +174,10 @@ class _CommandCooldownManager:
                 self._cooldowns[key] = filtered_cooldowns
 
 
+def _create_argument_tuple(*args: object, **kwargs: object) -> Iterable[object]:
+    return (*args, _KEYWORD_SEP_SENTINEL, *kwargs.items())
+
+
 def block_duplicate_invocations(
     *, cooldown_duration: float = 5, send_notice: bool = False
 ) -> Callable[[Callable[P, Awaitable[R]]], Callable[P, Awaitable[R]]]:
@@ -194,7 +200,7 @@ def block_duplicate_invocations(
 
         @command_wraps(func)
         async def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
-            arg_tuple = (*args[2:], *kwargs.items())  # skip self and ctx from the command
+            arg_tuple = _create_argument_tuple(*args[2:], **kwargs)  # skip self and ctx from the command
             ctx = typing.cast("Context[BotBase]", args[1])
             channel = ctx.channel
 
