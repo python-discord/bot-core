@@ -6,6 +6,7 @@ import asyncio
 import random
 import time
 import typing
+import weakref
 from collections.abc import Awaitable, Hashable, Iterable
 from contextlib import suppress
 from dataclasses import dataclass
@@ -106,6 +107,7 @@ class _CommandCooldownManager:
             self._periodical_cleanup(random.uniform(0, 10)),
             name="CooldownManager cleanup",
         )
+        weakref.finalize(self, self.cleanup_task.cancel)
 
     def set_cooldown(self, channel: Hashable, call_arguments: Iterable[object]) -> None:
         """Set `call_arguments` arguments on cooldown in `channel`."""
@@ -145,11 +147,15 @@ class _CommandCooldownManager:
         Delete stale items every hour after waiting for `initial_delay`.
 
         The `initial_delay` ensures cleanups are not running for every command at the same time.
+        A strong reference to self is only kept while cleanup is running.
         """
+        weak_self = weakref.ref(self)
+        del self
+
         await asyncio.sleep(initial_delay)
         while True:
             await asyncio.sleep(60 * 60)
-            self._delete_stale_items()
+            weak_self()._delete_stale_items()
 
     def _delete_stale_items(self) -> None:
         """Remove expired items from internal collections."""

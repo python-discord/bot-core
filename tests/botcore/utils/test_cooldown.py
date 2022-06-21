@@ -1,10 +1,11 @@
 import unittest
+from collections.abc import Iterable
 from unittest.mock import patch
 
-from botcore.utils.cooldown import _ArgsTuple, _CommandCooldownManager
+from botcore.utils.cooldown import _CommandCooldownManager
 
 
-def create_argument_tuple(*args, **kwargs) -> _ArgsTuple:
+def create_argument_tuple(*args, **kwargs) -> Iterable[object]:
     return (*args, *kwargs.items())
 
 
