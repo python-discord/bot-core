@@ -107,7 +107,7 @@ def _global_assign_pos(ast_: NodeWithBody, name: str) -> typing.Union[tuple[int,
     """
     Find the first instance where the `name` global is defined in `ast_`.
 
-    Top level assignments, and assignments nested in top level ifs are checked.
+    Check top-level assignments and assignments nested in top-level if blocks.
     """
     for ast_obj in ast_.body:
         if isinstance(ast_obj, ast.Assign):

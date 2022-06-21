@@ -70,9 +70,9 @@ class _CommandCooldownManager:
     """
     Manage invocation cooldowns for a command through the arguments the command is called with.
 
-    A cooldown is set through `set_cooldown` for a channel with the given `call_arguments`,
-    if `is_on_cooldown` is checked within `cooldown_duration` seconds
-    of the call to `set_cooldown` with the same arguments, True is returned.
+    Use `set_cooldown` to set a cooldown,
+    and `is_on_cooldown` to check for a cooldown for a channel with the given arguments.
+    A cooldown lasts for `cooldown_duration` seconds.
     """
 
     def __init__(self, *, cooldown_duration: float):
@@ -99,7 +99,7 @@ class _CommandCooldownManager:
                 cooldowns_list.append(_CooldownItem(call_arguments, timeout_timestamp))
 
     def is_on_cooldown(self, channel: Hashable, call_arguments: _ArgsTuple) -> bool:
-        """Check whether ``call_arguments`` is on cooldown in ``channel``."""
+        """Check whether `call_arguments` is on cooldown in `channel`."""
         current_time = time.monotonic()
         try:
             return self._cooldowns.get((channel, call_arguments), -math.inf) > current_time
@@ -115,9 +115,9 @@ class _CommandCooldownManager:
 
     async def _periodical_cleanup(self, initial_delay: float) -> None:
         """
-        Wait for `initial_delay`, after that delete stale items every hour.
+        Delete stale items every hour after waiting for `initial_delay`.
 
-        The `initial_delay` ensures we're not running cleanups for every command at the same time.
+        The `initial_delay` ensures cleanups are not running for every command at the same time.
         """
         await asyncio.sleep(initial_delay)
         while True:
@@ -151,7 +151,7 @@ def block_duplicate_invocations(
 
     Args:
         cooldown_duration: Length of the cooldown in seconds.
-        send_notice: If True, the user is notified of the cooldown with a reply.
+        send_notice: If :obj:`True`, notify the user about the cooldown with a reply.
 
     Returns:
         A decorator that adds a wrapper which applies the cooldowns.

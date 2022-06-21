@@ -28,17 +28,14 @@ def update_wrapper_globals(
     ignored_conflict_names: Set[str] = frozenset(),
 ) -> Callable[_P, _R]:
     r"""
-    Update globals of the ``wrapper`` function with the globals from the ``wrapped`` function.
+    Create a copy of ``wrapper``\, the copy's globals are updated with ``wrapped``\'s globals.
 
     For forwardrefs in command annotations, discord.py uses the ``__global__`` attribute of the function
-    to resolve their values, with decorators that replace the function this breaks because they have
+    to resolve their values. This breaks for decorators that replace the function because they have
     their own globals.
 
-    This function creates a new function functionally identical to ``wrapper``\, which has the globals replaced with
-    a merge of ``wrapped``\s globals and the ``wrapper``\s globals.
-
     .. warning::
-        This function captures the state of ``wrapped``\'s module's globals when it's called,
+        This function captures the state of ``wrapped``\'s module's globals when it's called;
         changes won't be reflected in the new function's globals.
 
     Args:
