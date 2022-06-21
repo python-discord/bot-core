@@ -3,11 +3,10 @@
 from __future__ import annotations
 
 import asyncio
-import math
 import random
 import time
 import typing
-from collections.abc import Awaitable, Hashable
+from collections.abc import Awaitable, Hashable, Iterable
 from contextlib import suppress
 from dataclasses import dataclass
 from typing import Callable  # sphinx-autodoc-typehints breaks with collections.abc.Callable
@@ -20,7 +19,8 @@ from botcore.utils.function import command_wraps
 
 __all__ = ["CommandOnCooldown", "block_duplicate_invocations", "P", "R"]
 
-_ArgsTuple = tuple[object, ...]
+_ArgsList = list[object]
+_HashableArgsTuple = tuple[Hashable, ...]
 
 if typing.TYPE_CHECKING:
     from botcore import BotBase
@@ -62,8 +62,32 @@ class CommandOnCooldown(CommandError, typing.Generic[P, R]):
 
 @dataclass
 class _CooldownItem:
-    call_arguments: _ArgsTuple
+    arguments: _ArgsList
     timeout_timestamp: float
+
+
+@dataclass
+class _SeparatedArguments:
+    """Arguments separated into their hashable and non-hashable parts."""
+
+    hashable: _HashableArgsTuple
+    non_hashable: _ArgsList
+
+    @classmethod
+    def from_full_arguments(cls, call_arguments: Iterable[object]) -> typing_extensions.Self:
+        """Create a new instance from full call arguments."""
+        hashable = list[Hashable]()
+        non_hashable = list[object]()
+
+        for item in call_arguments:
+            try:
+                hash(item)
+            except TypeError:
+                non_hashable.append(item)
+            else:
+                hashable.append(item)
+
+        return cls(tuple(hashable), non_hashable)
 
 
 class _CommandCooldownManager:
@@ -76,42 +100,45 @@ class _CommandCooldownManager:
     """
 
     def __init__(self, *, cooldown_duration: float):
-        self._cooldowns = dict[tuple[Hashable, _ArgsTuple], float]()
-        self._cooldowns_non_hashable = dict[Hashable, list[_CooldownItem]]()
+        self._cooldowns = dict[tuple[Hashable, _HashableArgsTuple], list[_CooldownItem]]()
         self._cooldown_duration = cooldown_duration
         self.cleanup_task = scheduling.create_task(
             self._periodical_cleanup(random.uniform(0, 10)),
             name="CooldownManager cleanup",
         )
 
-    def set_cooldown(self, channel: Hashable, call_arguments: _ArgsTuple) -> None:
+    def set_cooldown(self, channel: Hashable, call_arguments: Iterable[object]) -> None:
         """Set `call_arguments` arguments on cooldown in `channel`."""
         timeout_timestamp = time.monotonic() + self._cooldown_duration
+        separated_arguments = _SeparatedArguments.from_full_arguments(call_arguments)
+        cooldowns_list = self._cooldowns.setdefault(
+            (channel, separated_arguments.hashable),
+            []
+        )
 
-        try:
-            self._cooldowns[(channel, call_arguments)] = timeout_timestamp
-        except TypeError:
-            cooldowns_list = self._cooldowns_non_hashable.setdefault(channel, [])
-            for item in cooldowns_list:
-                if item.call_arguments == call_arguments:
-                    item.timeout_timestamp = timeout_timestamp
-            else:
-                cooldowns_list.append(_CooldownItem(call_arguments, timeout_timestamp))
+        for item in cooldowns_list:
+            if item.arguments == separated_arguments.non_hashable:
+                item.timeout_timestamp = timeout_timestamp
+                return
 
-    def is_on_cooldown(self, channel: Hashable, call_arguments: _ArgsTuple) -> bool:
+        cooldowns_list.append(_CooldownItem(separated_arguments.non_hashable, timeout_timestamp))
+
+    def is_on_cooldown(self, channel: Hashable, call_arguments: Iterable[object]) -> bool:
         """Check whether `call_arguments` is on cooldown in `channel`."""
         current_time = time.monotonic()
-        try:
-            return self._cooldowns.get((channel, call_arguments), -math.inf) > current_time
-        except TypeError:
-            cooldowns_list = self._cooldowns_non_hashable.get(channel, None)
-            if cooldowns_list is None:
-                return False
+        separated_arguments = _SeparatedArguments.from_full_arguments(call_arguments)
+        cooldowns_list = self._cooldowns.get(
+            (channel, separated_arguments.hashable),
+            None
+        )
 
-            for item in cooldowns_list:
-                if item.call_arguments == call_arguments:
-                    return item.timeout_timestamp > current_time
+        if cooldowns_list is None:
             return False
+
+        for item in cooldowns_list:
+            if item.arguments == separated_arguments.non_hashable:
+                return item.timeout_timestamp > current_time
+        return False
 
     async def _periodical_cleanup(self, initial_delay: float) -> None:
         """
@@ -128,19 +155,15 @@ class _CommandCooldownManager:
         """Remove expired items from internal collections."""
         current_time = time.monotonic()
 
-        for key, timeout_timestamp in self._cooldowns.copy().items():
-            if timeout_timestamp < current_time:
-                del self._cooldowns[key]
-
-        for key, cooldowns_list in self._cooldowns_non_hashable.copy().items():
+        for key, cooldowns_list in self._cooldowns.copy().items():
             filtered_cooldowns = [
                 cooldown_item for cooldown_item in cooldowns_list if cooldown_item.timeout_timestamp < current_time
             ]
 
             if not filtered_cooldowns:
-                del self._cooldowns_non_hashable[key]
+                del self._cooldowns[key]
             else:
-                self._cooldowns_non_hashable[key] = filtered_cooldowns
+                self._cooldowns[key] = filtered_cooldowns
 
 
 def block_duplicate_invocations(
