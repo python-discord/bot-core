@@ -20,7 +20,7 @@ from botcore.utils.function import command_wraps
 
 __all__ = ["CommandOnCooldown", "block_duplicate_invocations", "P", "R"]
 
-_ArgsTuple = tuple[object]
+_ArgsTuple = tuple[object, ...]
 
 if typing.TYPE_CHECKING:
     from botcore import BotBase
@@ -42,8 +42,8 @@ class CommandOnCooldown(CommandError, typing.Generic[P, R]):
         self,
         message: str | None,
         function: Callable[P, Awaitable[R]],
-        *args: object,
-        **kwargs: object,
+        *args: P.args,
+        **kwargs: P.kwargs,
     ):
         super().__init__(message, function, args, kwargs)
         self._function = function
