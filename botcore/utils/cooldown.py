@@ -165,7 +165,7 @@ def block_duplicate_invocations(
 
         @command_wraps(func)
         async def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
-            arg_tuple = (*args[2:], *kwargs.items())
+            arg_tuple = (*args[2:], *kwargs.items())  # skip self and ctx from the command
             ctx = typing.cast("Context[BotBase]", args[1])
             channel = ctx.channel
 
