@@ -76,7 +76,8 @@ class APIClient:
         """Close the aiohttp session."""
         await self.session.close()
 
-    async def maybe_raise_for_status(self, response: aiohttp.ClientResponse, should_raise: bool) -> None:
+    @staticmethod
+    async def maybe_raise_for_status(response: aiohttp.ClientResponse, should_raise: bool) -> None:
         """
         Raise :exc:`ResponseCodeError` for non-OK response if an exception should be raised.
 
