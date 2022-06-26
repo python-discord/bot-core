@@ -4,6 +4,7 @@ import asyncio
 import contextlib
 import inspect
 import typing
+from collections import abc
 from datetime import datetime
 from functools import partial
 
@@ -38,7 +39,7 @@ class Scheduler:
         self.name = name
 
         self._log = logging.get_logger(f"{__name__}.{name}")
-        self._scheduled_tasks: typing.Dict[typing.Hashable, asyncio.Task] = {}
+        self._scheduled_tasks: dict[typing.Hashable, asyncio.Task] = {}
 
     def __contains__(self, task_id: typing.Hashable) -> bool:
         """
@@ -52,7 +53,7 @@ class Scheduler:
         """
         return task_id in self._scheduled_tasks
 
-    def schedule(self, task_id: typing.Hashable, coroutine: typing.Coroutine) -> None:
+    def schedule(self, task_id: typing.Hashable, coroutine: abc.Coroutine) -> None:
         """
         Schedule the execution of a ``coroutine``.
 
@@ -79,7 +80,7 @@ class Scheduler:
         self._scheduled_tasks[task_id] = task
         self._log.debug(f"Scheduled task #{task_id} {id(task)}.")
 
-    def schedule_at(self, time: datetime, task_id: typing.Hashable, coroutine: typing.Coroutine) -> None:
+    def schedule_at(self, time: datetime, task_id: typing.Hashable, coroutine: abc.Coroutine) -> None:
         """
         Schedule ``coroutine`` to be executed at the given ``time``.
 
@@ -107,7 +108,7 @@ class Scheduler:
         self,
         delay: typing.Union[int, float],
         task_id: typing.Hashable,
-        coroutine: typing.Coroutine
+        coroutine: abc.Coroutine
     ) -> None:
         """
         Schedule ``coroutine`` to be executed after ``delay`` seconds.
@@ -151,7 +152,7 @@ class Scheduler:
         self,
         delay: typing.Union[int, float],
         task_id: typing.Hashable,
-        coroutine: typing.Coroutine
+        coroutine: abc.Coroutine
     ) -> None:
         """Await ``coroutine`` after ``delay`` seconds."""
         try:
@@ -212,7 +213,7 @@ TASK_RETURN = typing.TypeVar("TASK_RETURN")
 
 
 def create_task(
-    coro: typing.Coroutine[typing.Any, typing.Any, TASK_RETURN],
+    coro: abc.Coroutine[typing.Any, typing.Any, TASK_RETURN],
     *,
     suppressed_exceptions: tuple[typing.Type[Exception]] = (),
     event_loop: typing.Optional[asyncio.AbstractEventLoop] = None,
@@ -241,7 +242,7 @@ def create_task(
     return task
 
 
-def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: typing.Tuple[typing.Type[Exception]]) -> None:
+def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: tuple[type[Exception]]) -> None:
     """Retrieve and log the exception raised in ``task`` if one exists."""
     with contextlib.suppress(asyncio.CancelledError):
         exception = task.exception()

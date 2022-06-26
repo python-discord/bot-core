@@ -1,5 +1,6 @@
 """Useful helper functions for interactin with :obj:`discord.Member` objects."""
 import typing
+from collections import abc
 
 import discord
 
@@ -29,7 +30,7 @@ async def get_or_fetch_member(guild: discord.Guild, member_id: int) -> typing.Op
 
 async def handle_role_change(
     member: discord.Member,
-    coro: typing.Callable[[discord.Role], typing.Coroutine],
+    coro: typing.Callable[[discord.Role], abc.Coroutine],
     role: discord.Role
 ) -> None:
     """
