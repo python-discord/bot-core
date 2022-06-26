@@ -10,9 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/changelog.css" />
     <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/changelog.css" />
     
     
 
@@ -205,6 +205,14 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v7.1.3/output/botcore.utils.html">v7.1.3</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v7.1.2/output/botcore.utils.html">v7.1.2</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v7.1.1/output/botcore.utils.html">v7.1.1</a>
                     </li>
                 
@@ -266,7 +274,7 @@
 <p>Useful utilities and tools for Discord bot development.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.apply_monkey_patches">
-<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6659680429eec1dd0d45a6332a329a8b5e5a0d0b/botcore/utils/__init__.py#L7-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.apply_monkey_patches" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/e00696e8996686686496edfbca51200afe951aee/botcore/utils/__init__.py#L7-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.apply_monkey_patches" title="Permalink to this definition">#</a></dt>
 <dd><p>Applies all common monkey patches for our bots.</p>
 <dl>
 <dt>Patches <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Command</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Group" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Group</span></code></a> to support root aliases.</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">root_aliases</span></code> keyword argument is added to these two objects, which is a sequence of alias names
@@ -284,7 +292,7 @@ that will act as top-level groups rather than being aliases of the command’s g
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.unqualify">
-<span class="sig-name descname"><span class="pre">unqualify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6659680429eec1dd0d45a6332a329a8b5e5a0d0b/botcore/utils/__init__.py#L10-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.unqualify" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">unqualify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/e00696e8996686686496edfbca51200afe951aee/botcore/utils/__init__.py#L10-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.unqualify" title="Permalink to this definition">#</a></dt>
 <dd><p>Return an unqualified name given a qualified module/package <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
