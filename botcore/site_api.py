@@ -26,7 +26,7 @@ class ResponseCodeError(ValueError):
         Args:
             response (:obj:`aiohttp.ClientResponse`): The response object from the request.
             response_json: The JSON response returned from the request, if any.
-            request_text: The text of the request, if any.
+            response_text: The text of the request, if any.
         """
         self.status = response.status
         self.response_json = response_json or {}

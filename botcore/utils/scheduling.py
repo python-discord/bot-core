@@ -209,7 +209,7 @@ class Scheduler:
 
 
 def create_task(
-    coro: typing.Awaitable,
+    coro: typing.Coroutine,
     *,
     suppressed_exceptions: tuple[typing.Type[Exception]] = (),
     event_loop: typing.Optional[asyncio.AbstractEventLoop] = None,
