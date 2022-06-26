@@ -4,6 +4,12 @@
 Changelog
 =========
 
+- :bug:`91` Fix incorrect docstring for ``botcore.utils.member.handle_role_change``.
+- :bug:`91` Pass missing self parameter to ``BotBase.ping_services``.
+- :bug:`91` Add missing await to ``BotBase.ping_services`` in some cases.
+
+
+- :release:`7.1.3 <30th May 2022>` 79
 - :support:`79` Add `sphinx-multiversion <https://pypi.org/project/sphinx-multiversion/>`_ to make available older doc versions.
 - :support:`79` Restore on-site changelog.
 
