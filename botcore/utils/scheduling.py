@@ -208,13 +208,16 @@ class Scheduler:
                 self._log.error(f"Error in task #{task_id} {id(done_task)}!", exc_info=exception)
 
 
+TASK_RETURN = typing.TypeVar("TASK_RETURN")
+
+
 def create_task(
-    coro: typing.Coroutine,
+    coro: typing.Coroutine[typing.Any, typing.Any, TASK_RETURN],
     *,
     suppressed_exceptions: tuple[typing.Type[Exception]] = (),
     event_loop: typing.Optional[asyncio.AbstractEventLoop] = None,
     **kwargs,
-) -> asyncio.Task:
+) -> asyncio.Task[TASK_RETURN]:
     """
     Wrapper for creating an :obj:`asyncio.Task` which logs exceptions raised in the task.
 
