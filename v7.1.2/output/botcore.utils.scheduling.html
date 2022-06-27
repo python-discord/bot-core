@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="async_stats" href="botcore.async_stats.html" /><link rel="prev" title="regex" href="botcore.utils.regex.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
         <title>scheduling - Bot Core v7.1.2</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css" />
     <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
@@ -255,7 +255,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -302,6 +303,7 @@ the same ID used to schedule it.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.utils.scheduling.Scheduler.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/utils/scheduling.py#L31-L42"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.__init__" title="Permalink to this definition">#</a></dt>
@@ -312,6 +314,7 @@ the same ID used to schedule it.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.utils.scheduling.Scheduler.cancel">
 <span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/utils/scheduling.py#L125-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.cancel" title="Permalink to this definition">#</a></dt>
@@ -325,6 +328,7 @@ the same ID used to schedule it.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.utils.scheduling.Scheduler.cancel_all">
 <span class="sig-name descname"><span class="pre">cancel_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/utils/scheduling.py#L143-L149"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.cancel_all" title="Permalink to this definition">#</a></dt>
@@ -335,6 +339,7 @@ the same ID used to schedule it.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.utils.scheduling.Scheduler.schedule">
 <span class="sig-name descname"><span class="pre">schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coroutine</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/utils/scheduling.py#L55-L81"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.schedule" title="Permalink to this definition">#</a></dt>
@@ -353,6 +358,7 @@ prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.utils.scheduling.Scheduler.schedule_at">
 <span class="sig-name descname"><span class="pre">schedule_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coroutine</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/utils/scheduling.py#L82-L105"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.schedule_at" title="Permalink to this definition">#</a></dt>
@@ -375,6 +381,7 @@ prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.utils.scheduling.Scheduler.schedule_later">
 <span class="sig-name descname"><span class="pre">schedule_later</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coroutine</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/utils/scheduling.py#L106-L124"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.schedule_later" title="Permalink to this definition">#</a></dt>
@@ -394,7 +401,9 @@ prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-
 </dd>
 </dl>
 </dd></dl>
+
 </dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.scheduling.create_task">
 <span class="sig-name descname"><span class="pre">create_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressed_exceptions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/utils/scheduling.py#L211-L239"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.create_task" title="Permalink to this definition">#</a></dt>
@@ -418,6 +427,7 @@ otherwise the running loop is used.</p>
 </dd>
 </dl>
 </dd></dl>
+
 </section>
 
         </article>
