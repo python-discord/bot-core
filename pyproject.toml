@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bot-core"
-version = "7.1.1"
+version = "7.2.0"
 description = "Bot-Core provides the core functionality and utilities for the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
@@ -16,7 +16,7 @@ exclude = ["tests", "tests.*"]
 
 [tool.poetry.dependencies]
 python = "3.9.*"
-"discord.py" = {url = "https://github.com/Rapptz/discord.py/archive/4cbe8f58e16f6a76371ce45a69e0832130d6d24f.zip"}
+"discord.py" = {url = "https://github.com/Rapptz/discord.py/archive/0eb3d26343969a25ffc43ba72eca42538d2e7e7a.zip"}
 async-rediscache = { version = "0.2.0", extras = ["fakeredis"], optional = true }
 statsd  = "3.3.0"
 
