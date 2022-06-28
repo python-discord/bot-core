@@ -1,11 +1,11 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="regex" href="botcore.utils.regex.html" /><link rel="prev" title="logging" href="botcore.utils.logging.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>members - Bot Core Latest (7.1.1)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
@@ -271,11 +271,11 @@
         </div>
         <article role="main">
           <section id="module-botcore.utils.members">
-<span id="members"></span><h1>members<a class="headerlink" href="#module-botcore.utils.members" title="Permalink to this headline">#</a></h1>
+<span id="members"></span><h1>members<a class="headerlink" href="#module-botcore.utils.members" title="Permalink to this heading">#</a></h1>
 <p>Useful helper functions for interactin with <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member</span></code></a> objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.members.get_or_fetch_member">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/utils/members.py#L12-L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.members.get_or_fetch_member" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/utils/members.py#L12-L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.members.get_or_fetch_member" title="Permalink to this definition">#</a></dt>
 <dd><p>Attempt to get a member from cache; on failure fetch from the API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -289,7 +289,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="botcore.utils.members.handle_role_change">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_role_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/utils/members.py#L31-L57"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.members.handle_role_change" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_role_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/utils/members.py#L31-L57"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.members.handle_role_change" title="Permalink to this definition">#</a></dt>
 <dd><p>Await the given <code class="docutils literal notranslate"><span class="pre">coro</span></code> with <code class="docutils literal notranslate"><span class="pre">member</span></code> as the sole argument.</p>
 <p>Handle errors that we expect to be raised from
 <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.add_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.add_roles</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.remove_roles" title="(in discord.py v2.0.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.remove_roles</span></code></a>.</p>
@@ -362,6 +362,7 @@
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/changelog.js"></script>

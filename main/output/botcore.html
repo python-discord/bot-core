@@ -1,11 +1,11 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exts" href="botcore.exts.html" /><link rel="prev" title="Bot Core Project Documentation" href="../index.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Botcore - Bot Core Latest (7.1.1)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
@@ -271,16 +271,16 @@
         </div>
         <article role="main">
           <section id="module-botcore">
-<span id="botcore"></span><h1>Botcore<a class="headerlink" href="#module-botcore" title="Permalink to this headline">#</a></h1>
+<span id="botcore"></span><h1>Botcore<a class="headerlink" href="#module-botcore" title="Permalink to this heading">#</a></h1>
 <p>Useful utilities and tools for Discord bot development.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="botcore.BotBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BotBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L36-L290"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.0.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">discord.ext.commands.bot.Bot</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BotBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L36-L290"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.0.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a></p>
 <p>A sub-class that implements many common features that Python Discord bots use.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L39-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L39-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialise the base bot instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -299,7 +299,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.add_cog">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cog</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L152-L156"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.add_cog" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cog</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L152-L156"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.add_cog" title="Permalink to this definition">#</a></dt>
 <dd><p>Add the given <code class="docutils literal notranslate"><span class="pre">cog</span></code> to the bot and log the operation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -310,7 +310,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.add_command">
-<span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L157-L161"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.add_command" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L157-L161"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.add_command" title="Permalink to this definition">#</a></dt>
 <dd><p>Add <code class="docutils literal notranslate"><span class="pre">command</span></code> as normal and then add its root aliases to the bot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -321,7 +321,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L177-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.clear" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L177-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.clear" title="Permalink to this definition">#</a></dt>
 <dd><p>Not implemented! Re-instantiate the bot instead of attempting to re-use a closed one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -332,7 +332,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.close">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L256-L290"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.close" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L256-L290"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.close" title="Permalink to this definition">#</a></dt>
 <dd><p>Close the Discord connection, and the aiohttp session, connector, statsd client, and resolver.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -343,7 +343,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.load_extensions">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_extensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L119-L130"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.load_extensions" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_extensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L119-L130"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.load_extensions" title="Permalink to this definition">#</a></dt>
 <dd><p>Load all the extensions within the given module and save them to <code class="docutils literal notranslate"><span class="pre">self.all_extensions</span></code>.</p>
 <p>This should be ran in a task on the event loop to avoid deadlocks caused by <code class="docutils literal notranslate"><span class="pre">wait_for</span></code> calls.</p>
 <dl class="field-list simple">
@@ -355,7 +355,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.log_to_dev_log">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_to_dev_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L205-L208"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.log_to_dev_log" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_to_dev_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L205-L208"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.log_to_dev_log" title="Permalink to this definition">#</a></dt>
 <dd><p>Log the given message to #dev-log.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -366,7 +366,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.on_guild_available">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L188-L204"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.on_guild_available" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L188-L204"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.on_guild_available" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the internal guild available event when self.guild_id becomes available.</p>
 <p>If the cache appears to still be empty (no members, no channels, or no roles), the event
 will not be set and <cite>guild_available_but_cache_empty</cite> event will be emitted.</p>
@@ -379,7 +379,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.on_guild_unavailable">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_unavailable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L181-L187"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.on_guild_unavailable" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_unavailable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L181-L187"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.on_guild_unavailable" title="Permalink to this definition">#</a></dt>
 <dd><p>Clear the internal guild available event when self.guild_id becomes unavailable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -390,7 +390,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.ping_services">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ping_services</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L252-L255"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.ping_services" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ping_services</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L252-L255"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.ping_services" title="Permalink to this definition">#</a></dt>
 <dd><p>Ping all required services on setup to ensure they are up before starting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -401,7 +401,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.remove_command">
-<span class="sig-name descname"><span class="pre">remove_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L162-L176"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.remove_command" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L162-L176"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.remove_command" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove a command/alias as normal and then remove its root aliases from the bot.</p>
 <p>Individual root aliases cannot be removed by this function.
 To remove them, either remove the entire command or manually edit <cite>bot.all_commands</cite>.</p>
@@ -414,7 +414,7 @@ To remove them, either remove the entire command or manually edit <cite>bot.all_
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.setup_hook">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setup_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L218-L251"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.setup_hook" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setup_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L218-L251"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.setup_hook" title="Permalink to this definition">#</a></dt>
 <dd><p>An async init to startup generic services.</p>
 <p>Connects to statsd, and calls
 <a class="reference internal" href="botcore.async_stats.html#botcore.async_stats.AsyncStatsClient.create_socket" title="botcore.async_stats.AsyncStatsClient.create_socket"><code class="xref py py-func docutils literal notranslate"><span class="pre">AsyncStatsClient.create_socket</span></code></a>
@@ -428,7 +428,7 @@ and <a class="reference internal" href="#botcore.BotBase.ping_services" title="b
 
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.wait_until_guild_available">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wait_until_guild_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L209-L217"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.wait_until_guild_available" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wait_until_guild_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L209-L217"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.wait_until_guild_available" title="Permalink to this definition">#</a></dt>
 <dd><p>Wait until the guild that matches the <code class="docutils literal notranslate"><span class="pre">guild_id</span></code> given at init is available (and the cache is ready).</p>
 <p>The on_ready event is inadequate because it only waits 2 seconds for a GUILD_CREATE
 gateway event before giving up and thus not populating the cache for unavailable guilds.</p>
@@ -443,18 +443,18 @@ gateway event before giving up and thus not populating the cache for unavailable
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="botcore.StartupError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StartupError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L28-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.StartupError" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StartupError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L28-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.StartupError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 <p>Exception class for startup errors.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.StartupError.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0c01973c33554f7da5e6c812ebaca5774f0bff57/botcore/__init__.py#L31-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.StartupError.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/109da8bdde367e85d334b8f96dfaf28e7a52afee/botcore/__init__.py#L31-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.StartupError.__init__" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">#</a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="botcore.exts.html">Exts</a></li>
@@ -474,7 +474,7 @@ gateway event before giving up and thus not populating the cache for unavailable
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="botcore.async_stats.html">async_stats</a></li>
@@ -558,6 +558,7 @@ gateway event before giving up and thus not populating the cache for unavailable
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/changelog.js"></script>
