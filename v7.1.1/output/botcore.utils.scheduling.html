@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="async_stats" href="botcore.async_stats.html" /><link rel="prev" title="regex" href="botcore.utils.regex.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
@@ -205,6 +205,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v7.2.0-alpha/output/botcore.utils.scheduling.html">v7.2.0-alpha</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v7.1.3/output/botcore.utils.scheduling.html">v7.1.3</a>
                     </li>
                 
@@ -292,13 +296,13 @@ the same ID used to schedule it.</p>
 <span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6659680429eec1dd0d45a6332a329a8b5e5a0d0b/botcore/utils/scheduling.py#L43-L54"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.__contains__" title="Permalink to this definition">#</a></dt>
 <dd><p>Return <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if a task with the given <code class="docutils literal notranslate"><span class="pre">task_id</span></code> is currently scheduled.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – The task to look for.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the task was found.</p>
 </dd>
 </dl>
@@ -309,7 +313,7 @@ the same ID used to schedule it.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6659680429eec1dd0d45a6332a329a8b5e5a0d0b/botcore/utils/scheduling.py#L31-L42"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialize a new <a class="reference internal" href="#botcore.utils.scheduling.Scheduler" title="botcore.utils.scheduling.Scheduler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scheduler</span></code></a> instance.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The name of the <a class="reference internal" href="#botcore.utils.scheduling.Scheduler" title="botcore.utils.scheduling.Scheduler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scheduler</span></code></a>. Used in logging, and namespacing.</p>
 </dd>
 </dl>
@@ -320,10 +324,10 @@ the same ID used to schedule it.</p>
 <span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6659680429eec1dd0d45a6332a329a8b5e5a0d0b/botcore/utils/scheduling.py#L125-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.cancel" title="Permalink to this definition">#</a></dt>
 <dd><p>Unschedule the task identified by <code class="docutils literal notranslate"><span class="pre">task_id</span></code>. Log a warning if the task doesn’t exist.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – The task’s unique ID.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -334,7 +338,7 @@ the same ID used to schedule it.</p>
 <span class="sig-name descname"><span class="pre">cancel_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/6659680429eec1dd0d45a6332a329a8b5e5a0d0b/botcore/utils/scheduling.py#L143-L149"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.cancel_all" title="Permalink to this definition">#</a></dt>
 <dd><p>Unschedule all known tasks.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -347,13 +351,13 @@ the same ID used to schedule it.</p>
 <p>If a task with <code class="docutils literal notranslate"><span class="pre">task_id</span></code> already exists, close <code class="docutils literal notranslate"><span class="pre">coroutine</span></code> instead of scheduling it. This
 prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-used elsewhere.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – A unique ID to create the task with.</p></li>
 <li><p><strong>coroutine</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Coroutine" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>) – The function to be called.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -369,14 +373,14 @@ If <code class="docutils literal notranslate"><span class="pre">time</span></cod
 <p>If a task with <code class="docutils literal notranslate"><span class="pre">task_id</span></code> already exists, close <code class="docutils literal notranslate"><span class="pre">coroutine</span></code> instead of scheduling it. This
 prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-used elsewhere.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>) – The time to start the task.</p></li>
 <li><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – A unique ID to create the task with.</p></li>
 <li><p><strong>coroutine</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Coroutine" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>) – The function to be called.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -389,14 +393,14 @@ prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-
 <p>If a task with <code class="docutils literal notranslate"><span class="pre">task_id</span></code> already exists, close <code class="docutils literal notranslate"><span class="pre">coroutine</span></code> instead of scheduling it. This
 prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-used elsewhere.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>delay</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – How long to wait before starting the task.</p></li>
 <li><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – A unique ID to create the task with.</p></li>
 <li><p><strong>coroutine</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Coroutine" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>) – The function to be called.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -411,7 +415,7 @@ prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-
 <p>If the <code class="docutils literal notranslate"><span class="pre">event_loop</span></code> kwarg is provided, the task is created from that event loop,
 otherwise the running loop is used.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>coro</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Awaitable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Awaitable</span></code></a>) – The function to call.</p></li>
 <li><p><strong>suppressed_exceptions</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a>]]) – Exceptions to be handled by the task.</p></li>
@@ -419,10 +423,10 @@ otherwise the running loop is used.</p>
 <li><p><strong>kwargs</strong> – Passed to <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task" title="(in Python v3.10)"><code class="xref py py-func docutils literal notranslate"><span class="pre">asyncio.create_task()</span></code></a>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The wrapped task.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.Task" title="(in Python v3.10)">asyncio.Task</a></p>
 </dd>
 </dl>

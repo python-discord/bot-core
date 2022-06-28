@@ -4,6 +4,13 @@
 Changelog
 =========
 
+- :release:`7.2.0 <28th June 2022>`
+- :support:`93` Bump Discord.py to :literal-url:`0eb3d26 <https://github.com/Rapptz/discord.py/commit/0eb3d26343969a25ffc43ba72eca42538d2e7e7a>`:
+
+  - Adds support for auto mod, of which the new auto_mod MESSAGE_TYPE is needed for our filter system.
+
+
+- :release:`7.1.3 <30th May 2022>` 79
 - :support:`79` Add `sphinx-multiversion <https://pypi.org/project/sphinx-multiversion/>`_ to make available older doc versions.
 - :support:`79` Restore on-site changelog.
 
