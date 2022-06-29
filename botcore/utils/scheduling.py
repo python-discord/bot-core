@@ -39,9 +39,9 @@ class Scheduler:
         self.name = name
 
         self._log = logging.get_logger(f"{__name__}.{name}")
-        self._scheduled_tasks: dict[typing.Hashable, asyncio.Task] = {}
+        self._scheduled_tasks: dict[abc.Hashable, asyncio.Task] = {}
 
-    def __contains__(self, task_id: typing.Hashable) -> bool:
+    def __contains__(self, task_id: abc.Hashable) -> bool:
         """
         Return :obj:`True` if a task with the given ``task_id`` is currently scheduled.
 
@@ -53,7 +53,7 @@ class Scheduler:
         """
         return task_id in self._scheduled_tasks
 
-    def schedule(self, task_id: typing.Hashable, coroutine: abc.Coroutine) -> None:
+    def schedule(self, task_id: abc.Hashable, coroutine: abc.Coroutine) -> None:
         """
         Schedule the execution of a ``coroutine``.
 
@@ -80,7 +80,7 @@ class Scheduler:
         self._scheduled_tasks[task_id] = task
         self._log.debug(f"Scheduled task #{task_id} {id(task)}.")
 
-    def schedule_at(self, time: datetime, task_id: typing.Hashable, coroutine: abc.Coroutine) -> None:
+    def schedule_at(self, time: datetime, task_id: abc.Hashable, coroutine: abc.Coroutine) -> None:
         """
         Schedule ``coroutine`` to be executed at the given ``time``.
 
@@ -107,7 +107,7 @@ class Scheduler:
     def schedule_later(
         self,
         delay: typing.Union[int, float],
-        task_id: typing.Hashable,
+        task_id: abc.Hashable,
         coroutine: abc.Coroutine
     ) -> None:
         """
@@ -123,7 +123,7 @@ class Scheduler:
         """
         self.schedule(task_id, self._await_later(delay, task_id, coroutine))
 
-    def cancel(self, task_id: typing.Hashable) -> None:
+    def cancel(self, task_id: abc.Hashable) -> None:
         """
         Unschedule the task identified by ``task_id``. Log a warning if the task doesn't exist.
 
@@ -151,7 +151,7 @@ class Scheduler:
     async def _await_later(
         self,
         delay: typing.Union[int, float],
-        task_id: typing.Hashable,
+        task_id: abc.Hashable,
         coroutine: abc.Coroutine
     ) -> None:
         """Await ``coroutine`` after ``delay`` seconds."""
@@ -174,7 +174,7 @@ class Scheduler:
             else:
                 self._log.debug(f"Finally block reached for #{task_id}; {state=}")
 
-    def _task_done_callback(self, task_id: typing.Hashable, done_task: asyncio.Task) -> None:
+    def _task_done_callback(self, task_id: abc.Hashable, done_task: asyncio.Task) -> None:
         """
         Delete the task and raise its exception if one exists.
 
@@ -215,7 +215,7 @@ TASK_RETURN = typing.TypeVar("TASK_RETURN")
 def create_task(
     coro: abc.Coroutine[typing.Any, typing.Any, TASK_RETURN],
     *,
-    suppressed_exceptions: tuple[typing.Type[Exception]] = (),
+    suppressed_exceptions: tuple[type[Exception]] = (),
     event_loop: typing.Optional[asyncio.AbstractEventLoop] = None,
     **kwargs,
 ) -> asyncio.Task[TASK_RETURN]:
