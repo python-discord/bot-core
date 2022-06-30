@@ -4,6 +4,11 @@
 Changelog
 =========
 
+- :bug:`91` Fix incorrect docstring for ``botcore.utils.member.handle_role_change``.
+- :bug:`91` Pass missing self parameter to ``BotBase.ping_services``.
+- :bug:`91` Add missing await to ``BotBase.ping_services`` in some cases.
+
+
 - :release:`7.2.0 <28th June 2022>`
 - :support:`93` Bump Discord.py to :literal-url:`0eb3d26 <https://github.com/Rapptz/discord.py/commit/0eb3d26343969a25ffc43ba72eca42538d2e7e7a>`:
 
