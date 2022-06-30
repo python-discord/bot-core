@@ -197,7 +197,7 @@ class BotBase(commands.Bot):
 
         if not guild.roles or not guild.members or not guild.channels:
             msg = "Guild available event was dispatched but the cache appears to still be empty!"
-            self.log_to_dev_log(msg)
+            await self.log_to_dev_log(msg)
             return
 
         self._guild_available.set()
@@ -249,7 +249,7 @@ class BotBase(commands.Bot):
         except Exception as e:
             raise StartupError(e)
 
-    async def ping_services() -> None:
+    async def ping_services(self) -> None:
         """Ping all required services on setup to ensure they are up before starting."""
         ...
 
