@@ -239,9 +239,11 @@ class BotBase(commands.Bot):
             # here. Normally, this shouldn't happen.
             await self.redis_session.connect()
 
-        # Create dummy stats client first, in case `statsd_url` is unreachable within `_connect_statsd()`
+        # Create dummy stats client first, in case `statsd_url` is unreachable or None
         self.stats = AsyncStatsClient(loop, "127.0.0.1")
-        self._connect_statsd(self.statsd_url, loop)
+        if self.statsd_url:
+            self._connect_statsd(self.statsd_url, loop)
+
         await self.stats.create_socket()
 
         try:
