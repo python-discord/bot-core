@@ -4,6 +4,8 @@
 Changelog
 =========
 
+- :release:`7.2.1 <30th June 2022>`
+- :bug:`96` Fix attempts to connect to ``BotBase.statsd_url`` when it is None.
 - :bug:`91` Fix incorrect docstring for ``botcore.utils.member.handle_role_change``.
 - :bug:`91` Pass missing self parameter to ``BotBase.ping_services``.
 - :bug:`91` Add missing await to ``BotBase.ping_services`` in some cases.
