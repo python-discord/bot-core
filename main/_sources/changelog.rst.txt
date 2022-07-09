@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`7.2.2 <9th July 2022>`
+- :bug:`98` Only close ``BotBase.stats._transport`` if ``BotBase.stats`` was created
+
+
 - :release:`7.2.1 <30th June 2022>`
 - :bug:`96` Fix attempts to connect to ``BotBase.statsd_url`` when it is None.
 - :bug:`91` Fix incorrect docstring for ``botcore.utils.member.handle_role_change``.
