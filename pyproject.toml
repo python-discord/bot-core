@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bot-core"
-version = "7.2.1"
+version = "7.2.2"
 description = "Bot-Core provides the core functionality and utilities for the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
