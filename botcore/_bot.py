@@ -281,7 +281,7 @@ class BotBase(commands.Bot):
         if self._resolver:
             await self._resolver.close()
 
-        if self.stats._transport:
+        if getattr(self.stats, "_transport", False):
             self.stats._transport.close()
 
         if getattr(self, "redis_session", False):
