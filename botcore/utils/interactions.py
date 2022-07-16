@@ -83,4 +83,4 @@ class DeleteMessageButton(ui.Button):
 
     async def callback(self, interaction: Interaction) -> None:
         """Delete the original message on button click."""
-        await interaction.delete_original_message()
+        await interaction.message.delete()
