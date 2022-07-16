@@ -14,6 +14,7 @@ Submodules
 
    botcore.utils.caching
    botcore.utils.channel
+   botcore.utils.interactions
    botcore.utils.logging
    botcore.utils.members
    botcore.utils.regex

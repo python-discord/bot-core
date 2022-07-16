@@ -6,13 +6,13 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="site_api" href="output/botcore.site_api.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
-        <title>Changelog - Bot Core Latest (7.2.2)</title>
+        <title>Changelog - Bot Core Latest (7.3.0)</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    <link rel="stylesheet" type="text/css" href="_static/changelog.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/index.css" />
+    <link rel="stylesheet" type="text/css" href="_static/changelog.css" />
     
     
 
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Bot Core Latest (7.2.2)</div></a>
+      <a href="index.html"><div class="brand">Bot Core Latest (7.3.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Bot Core Latest (7.2.2)</span>
+  <span class="sidebar-brand-text">Bot Core Latest (7.3.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -168,6 +168,7 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="output/botcore.utils.html">Utils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.channel.html">channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.interactions.html">interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.logging.html">logging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.members.html">members</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.regex.html">regex</a></li>
@@ -202,6 +203,10 @@
                 
                     <li class="toctree-l2 current-page">
                         <a class="version_link reference internal" href="changelog.html">main</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../v7.2.2/changelog.html">v7.2.2</a>
                     </li>
                 
                     <li class="toctree-l2 ">
@@ -280,6 +285,12 @@
         <article role="main">
           <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="7.3.0">
+<h2 style="margin-bottom: 0.3em;"><a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/v7.3.0">7.3.0</a> <span style="font-size: 75%;">16th July 2022</span></h2><ul class="simple">
+<li><p>[<span style="color: #40A056;">Feature</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/103">#103</a><span>:</span> Add a button <a class="reference internal" href="output/botcore.utils.interactions.html#botcore.utils.interactions.DeleteMessageButton" title="botcore.utils.interactions.DeleteMessageButton"><code class="xref py py-obj docutils literal notranslate"><span class="pre">botcore.utils.interactions.DeleteMessageButton</span></code></a> that deletes the message attached to its parent view.</p></li>
+<li><p>[<span style="color: #40A056;">Feature</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/103">#103</a><span>:</span> Add a generic view <a class="reference internal" href="output/botcore.utils.interactions.html#botcore.utils.interactions.ViewWithUserAndRoleCheck" title="botcore.utils.interactions.ViewWithUserAndRoleCheck"><code class="xref py py-obj docutils literal notranslate"><span class="pre">botcore.utils.interactions.ViewWithUserAndRoleCheck</span></code></a> that only allows specified users and roles to interaction with it</p></li>
+</ul>
+</section>
 <section id="7.2.2">
 <h2 style="margin-bottom: 0.3em;"><a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/v7.2.2">7.2.2</a> <span style="font-size: 75%;">9th July 2022</span></h2><ul class="simple">
 <li><p>[<span style="color: #A04040;">Bug</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/98">#98</a><span>:</span> Only close <code class="docutils literal notranslate"><span class="pre">BotBase.stats._transport</span></code> if <code class="docutils literal notranslate"><span class="pre">BotBase.stats</span></code> was created</p></li>
