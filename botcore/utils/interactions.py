@@ -1,6 +1,7 @@
+import contextlib
 from typing import Optional, Sequence
 
-from discord import ButtonStyle, Interaction, ui
+from discord import ButtonStyle, Interaction, Message, NotFound, ui
 
 from botcore.utils.logging import get_logger
 
@@ -16,6 +17,8 @@ class ViewWithUserAndRoleCheck(ui.View):
         allowed_roles: A sequence of role ids that are allowed to interact with the view.
         timeout: Timeout in seconds from last interaction with the UI before no longer accepting input.
             If ``None`` then there is no timeout.
+        message: The message to remove the view from on timeout. This can also be set with
+            ``view.message = await ctx.send( ... )``` , or similar, after the view is instantiated.
     """
 
     def __init__(
@@ -23,11 +26,13 @@ class ViewWithUserAndRoleCheck(ui.View):
         *,
         allowed_users: Sequence[int],
         allowed_roles: Sequence[int],
-        timeout: Optional[float] = 180.0
+        timeout: Optional[float] = 180.0,
+        message: Optional[Message] = None
     ) -> None:
         super().__init__(timeout=timeout)
         self.allowed_users = allowed_users
         self.allowed_roles = allowed_roles
+        self.message = message
 
     async def interaction_check(self, interaction: Interaction) -> bool:
         """
@@ -56,6 +61,13 @@ class ViewWithUserAndRoleCheck(ui.View):
 
         await interaction.response.send_message("This is not your button to click!", ephemeral=True)
         return False
+
+    async def on_timeout(self) -> None:
+        """Remove the view from ``self.message`` if set."""
+        if self.message:
+            with contextlib.suppress(NotFound):
+                # Cover the case where this message has already been deleted by external means
+                await self.message.edit(view=None)
 
 
 class DeleteMessageButton(ui.Button):
