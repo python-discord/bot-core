@@ -5,7 +5,7 @@ Changelog
 =========
 
 - :release:`7.4.0 <17th July 2022>`
-- :feature:`106` Add an optional ``message`` attr to :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has it's view removed if set.
+- :feature:`106` Add an optional ``message`` attr to :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has its view removed if set.
 
 
 - :release:`7.3.1 <16th July 2022>`
