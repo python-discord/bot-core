@@ -4,6 +4,19 @@
 Changelog
 =========
 
+- :release:`7.4.0 <17th July 2022>`
+- :feature:`106` Add an optional ``message`` attr to :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has its view removed if set.
+
+
+- :release:`7.3.1 <16th July 2022>`
+- :bug:`104` Fix :obj:`botcore.utils.interactions.DeleteMessageButton` not working due to using wrong delete method.
+
+
+- :release:`7.3.0 <16th July 2022>`
+- :feature:`103` Add a generic view :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck` that only allows specified users and roles to interaction with it
+- :feature:`103` Add a button :obj:`botcore.utils.interactions.DeleteMessageButton` that deletes the message attached to its parent view.
+
+
 - :release:`7.2.2 <9th July 2022>`
 - :bug:`98` Only close ``BotBase.stats._transport`` if ``BotBase.stats`` was created
 
