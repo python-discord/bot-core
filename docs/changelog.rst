@@ -4,6 +4,9 @@
 Changelog
 =========
 
+- :feature:`101` Add a utility to clean a string or referenced message's content
+
+
 - :release:`7.4.0 <17th July 2022>`
 - :feature:`106` Add an optional ``message`` attr to :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has its view removed if set.
 
