@@ -134,3 +134,6 @@ dmypy.json
 
 # Vscode
 .vscode
+
+# Development & prototyping environment
+/bot/

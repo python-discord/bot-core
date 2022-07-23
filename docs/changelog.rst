@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :bug:`107` Declare aiodns as a project dependency.
+- :support:`107` Add a sample project with boilerplate and documentation explaining how to develop for bot-core.
+
+
 - :release:`7.5.0 <23rd July 2022>`
 - :feature:`101` Add a utility to clean a string or referenced message's content
 
