@@ -14,7 +14,7 @@ async def clean_text_or_reply(ctx: Context, text: Optional[str] = None) -> str:
 
     Raises:
         :exc:`discord.ext.commands.BadArgument`
-            `text` wasn't provided and there's no reply message.
+            `text` wasn't provided and there's no reply message / reply message content.
 
     Returns:
          The cleaned version of `text`, if given, else replied message.
@@ -28,7 +28,11 @@ async def clean_text_or_reply(ctx: Context, text: Optional[str] = None) -> str:
         (replied_message := getattr(ctx.message.reference, "resolved", None))  # message has a cached reference
         and isinstance(replied_message, Message)  # referenced message hasn't been deleted
     ):
-        return await clean_content_converter.convert(ctx, ctx.message.reference.resolved.content)
+        if not (content := ctx.message.reference.resolved.content):
+            # The referenced message doesn't have a content (e.g. embed/image), so raise error
+            raise BadArgument("The referenced message doesn't have a text content.")
+
+        return await clean_content_converter.convert(ctx, content)
 
     # No text provided, and either no message was referenced or we can't access the content
     raise BadArgument("Couldn't find text to clean. Provide a string or reply to a message to use its content.")
