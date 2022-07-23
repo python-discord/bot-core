@@ -4,6 +4,7 @@
 Changelog
 =========
 
+- :breaking:`108` Bump async-rediscache to :literal-url:`1.0.0-rc1 <https://github.com/SebastiaanZ/async-rediscache/releases/tag/v1.0.0-rc1>`
 - :support:`108` Bump Python version to 3.10.*
 - :bug:`107` Declare aiodns as a project dependency.
 - :support:`107` Add a sample project with boilerplate and documentation explaining how to develop for bot-core.
