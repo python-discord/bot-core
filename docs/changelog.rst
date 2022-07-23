@@ -4,6 +4,7 @@
 Changelog
 =========
 
+- :release:`7.5.0 <23rd July 2022>`
 - :feature:`101` Add a utility to clean a string or referenced message's content
 
 
