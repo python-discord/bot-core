@@ -1,0 +1,7 @@
+site\_api
+========================
+
+.. automodule:: botcore.site_api
+   :members:
+   :special-members:
+   :show-inheritance:

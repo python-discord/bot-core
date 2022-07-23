@@ -1,0 +1,7 @@
+channel
+============================
+
+.. automodule:: botcore.utils.channel
+   :members:
+   :special-members:
+   :show-inheritance:
