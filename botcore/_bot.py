@@ -234,10 +234,10 @@ class BotBase(commands.Bot):
         )
         self.http.connector = self._connector
 
-        if getattr(self, "redis_session", False) and self.redis_session.closed:
+        if getattr(self, "redis_session", False) and not self.redis_session.valid:
             # If the RedisSession was somehow closed, we try to reconnect it
             # here. Normally, this shouldn't happen.
-            await self.redis_session.connect()
+            await self.redis_session.connect(ping=True)
 
         # Create dummy stats client first, in case `statsd_url` is unreachable or None
         self.stats = AsyncStatsClient(loop, "127.0.0.1")
