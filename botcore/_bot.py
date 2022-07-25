@@ -284,8 +284,5 @@ class BotBase(commands.Bot):
         if getattr(self.stats, "_transport", False):
             self.stats._transport.close()
 
-        if getattr(self, "redis_session", False):
-            await self.redis_session.close()
-
         if self._statsd_timerhandle:
             self._statsd_timerhandle.cancel()
