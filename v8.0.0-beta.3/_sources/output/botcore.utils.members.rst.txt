@@ -1,0 +1,7 @@
+members
+============================
+
+.. automodule:: botcore.utils.members
+   :members:
+   :special-members:
+   :show-inheritance:
