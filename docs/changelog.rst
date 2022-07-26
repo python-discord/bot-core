@@ -4,6 +4,18 @@
 Changelog
 =========
 
+- :bug:`107` Declare aiodns as a project dependency.
+- :support:`107` Add a sample project with boilerplate and documentation explaining how to develop for bot-core.
+
+
+- :release:`7.5.0 <23rd July 2022>`
+- :feature:`101` Add a utility to clean a string or referenced message's content
+
+
+- :release:`7.4.0 <17th July 2022>`
+- :feature:`106` Add an optional ``message`` attr to :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has its view removed if set.
+
+
 - :release:`7.3.1 <16th July 2022>`
 - :bug:`104` Fix :obj:`botcore.utils.interactions.DeleteMessageButton` not working due to using wrong delete method.
 

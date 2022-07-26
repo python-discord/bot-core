@@ -51,7 +51,7 @@ class BotBase(commands.Bot):
         Initialise the base bot instance.
 
         Args:
-            guild_id: The ID of the guild use for :func:`wait_until_guild_available`.
+            guild_id: The ID of the guild used for :func:`wait_until_guild_available`.
             allowed_roles: A list of role IDs that the bot is allowed to mention.
             http_session (aiohttp.ClientSession): The session to use for the bot.
             redis_session: The `async_rediscache.RedisSession`_ to use for the bot.
