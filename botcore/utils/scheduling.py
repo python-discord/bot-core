@@ -215,7 +215,7 @@ TASK_RETURN = typing.TypeVar("TASK_RETURN")
 def create_task(
     coro: abc.Coroutine[typing.Any, typing.Any, TASK_RETURN],
     *,
-    suppressed_exceptions: tuple[type[Exception]] = (),
+    suppressed_exceptions: tuple[type[Exception], ...] = (),
     event_loop: typing.Optional[asyncio.AbstractEventLoop] = None,
     **kwargs,
 ) -> asyncio.Task[TASK_RETURN]:
@@ -242,7 +242,7 @@ def create_task(
     return task
 
 
-def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: tuple[type[Exception]]) -> None:
+def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: tuple[type[Exception], ...]) -> None:
     """Retrieve and log the exception raised in ``task`` if one exists."""
     with contextlib.suppress(asyncio.CancelledError):
         exception = task.exception()
