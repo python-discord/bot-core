@@ -4,9 +4,10 @@
 Changelog
 =========
 
+- :release:`8.0.0 <27th July 2022>`
 - :breaking:`110` Bump async-rediscache to v1.0.0-rc2
 - :support:`108` Bump Python version to 3.10.*
-- :bug:`107` Declare aiodns as a project dependency.
+- :bug:`107 major` Declare aiodns as a project dependency.
 - :support:`107` Add a sample project with boilerplate and documentation explaining how to develop for bot-core.
 
 
