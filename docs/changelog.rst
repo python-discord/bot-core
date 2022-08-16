@@ -3,6 +3,9 @@
 
 Changelog
 =========
+- :release:`8.1.0 <16th August 2022>`
+- :support:`124` Updated Discord Invite regex to match leading http, https, www
+
 
 - :release:`8.0.0 <27th July 2022>`
 - :breaking:`110` Bump async-rediscache to v1.0.0-rc2
