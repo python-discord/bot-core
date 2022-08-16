@@ -5,7 +5,7 @@ from botcore.utils.regex import DISCORD_INVITE
 
 
 def match_regex(s: str) -> Optional[str]:
-    """Helper function to run re.search on a string.
+    """Helper function to run re.match on a string.
 
     Return the invite capture group, if the string matches the pattern
         else return None
@@ -15,7 +15,7 @@ def match_regex(s: str) -> Optional[str]:
 
 
 def search_regex(s: str) -> Optional[str]:
-    """Helper function to run re.match on a string.
+    """Helper function to run re.search on a string.
 
     Return the invite capture group, if the string matches the pattern
         else return None
