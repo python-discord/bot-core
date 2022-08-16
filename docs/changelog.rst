@@ -4,7 +4,7 @@
 Changelog
 =========
 - :release:`8.1.0 <16th August 2022>`
-- :support:`124` Updated Discord Invite regex to match leading http, https, www
+- :support:`124` Updated :obj:`botcore.utils.regex.DISCORD_INVITE` regex to optionally match leading "http[s]" and "www".
 
 
 - :release:`8.0.0 <27th July 2022>`
