@@ -3,6 +3,7 @@
 import re
 
 DISCORD_INVITE = re.compile(
+    r"((https?://)?(www\.)?)?"
     r"(discord([.,]|dot)gg|"                     # Could be discord.gg/
     r"discord([.,]|dot)com(/|slash)invite|"      # or discord.com/invite/
     r"discordapp([.,]|dot)com(/|slash)invite|"   # or discordapp.com/invite/
