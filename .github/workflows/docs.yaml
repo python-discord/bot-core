@@ -11,7 +11,6 @@ concurrency:
   group: docs-deployment-${{ github.ref }}
   cancel-in-progress: true
 
-
 jobs:
   latest-build:
     # We only need to verify that the docs build with no warnings here
@@ -22,7 +21,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.1.0
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.1
         with:
           dev: true
           python_version: "3.10"
@@ -51,7 +50,7 @@ jobs:
           fetch-depth: 0  # We need to check out the entire repository to find all tags
 
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.1.0
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.1
         with:
           dev: true
           python_version: "3.10"

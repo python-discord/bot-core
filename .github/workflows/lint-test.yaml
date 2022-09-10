@@ -14,10 +14,9 @@ jobs:
   lint:
     name: Run Linting & Test Suites
     runs-on: ubuntu-latest
-
     steps:
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.1.0
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.1
         with:
           # Set dev=true to run pre-commit which is a dev dependency
           dev: true
