@@ -29,6 +29,6 @@ async def main() -> None:
     """Run the bot."""
     bot.http_session = aiohttp.ClientSession()
     async with bot:
-        await bot.start(os.getenv("TOKEN"))
+        await bot.start(os.getenv("BOT_TOKEN"))
 
 asyncio.run(main())
