@@ -68,8 +68,9 @@ services:
     build:
       context: .
       dockerfile: dev/Dockerfile
-    volumes:
-      - .:/app:ro
+    volumes:  # Don't do .:/app here to ensure project venv from host doens't overwrite venv in image
+      - ./botcore:/app/botcore:ro
+      - ./bot:/app/bot:ro
     tty: true
     depends_on:
       - web
