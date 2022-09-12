@@ -4,6 +4,14 @@
 Changelog
 =========
 
+- :release:`8.2.0 <18th August 2022>`
+- :support:`125` Bump Discord.py to the stable :literal-url:`2.0 release <https://discordpy.readthedocs.io/en/latest/migrating.html>`.
+
+
+- :release:`8.1.0 <16th August 2022>`
+- :support:`124` Updated :obj:`botcore.utils.regex.DISCORD_INVITE` regex to optionally match leading "http[s]" and "www".
+
+
 - :release:`8.0.0 <27th July 2022>`
 - :breaking:`110` Bump async-rediscache to v1.0.0-rc2
 - :support:`108` Bump Python version to 3.10.*

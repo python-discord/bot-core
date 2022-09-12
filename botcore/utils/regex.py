@@ -3,6 +3,7 @@
 import re
 
 DISCORD_INVITE = re.compile(
+    r"(https?://)?(www\.)?"                      # Optional http(s) and www.
     r"(discord([.,]|dot)gg|"                     # Could be discord.gg/
     r"discord([.,]|dot)com(/|slash)invite|"      # or discord.com/invite/
     r"discordapp([.,]|dot)com(/|slash)invite|"   # or discordapp.com/invite/
@@ -10,7 +11,7 @@ DISCORD_INVITE = re.compile(
     r"discord([.,]|dot)li|"                      # or discord.li
     r"discord([.,]|dot)io|"                      # or discord.io.
     r"((?<!\w)([.,]|dot))gg"                     # or .gg/
-    r")([/]|slash)"                              # / or 'slash'
+    r")(/|slash)"                                # / or 'slash'
     r"(?P<invite>\S+)",                          # the invite code itself
     flags=re.IGNORECASE
 )
@@ -32,7 +33,7 @@ FORMATTED_CODE_REGEX = re.compile(
     r"(?P<code>.*?)"                        # extract all code inside the markup
     r"\s*"                                  # any more whitespace before the end of the code markup
     r"(?P=delim)",                          # match the exact same delimiter from the start again
-    re.DOTALL | re.IGNORECASE               # "." also matches newlines, case insensitive
+    flags=re.DOTALL | re.IGNORECASE         # "." also matches newlines, case insensitive
 )
 """
 Regex for formatted code, using Discord's code blocks.
@@ -44,7 +45,7 @@ RAW_CODE_REGEX = re.compile(
     r"^(?:[ \t]*\n)*"                       # any blank (empty or tabs/spaces only) lines before the code
     r"(?P<code>.*?)"                        # extract all the rest as code
     r"\s*$",                                # any trailing whitespace until the end of the string
-    re.DOTALL                               # "." also matches newlines
+    flags=re.DOTALL                         # "." also matches newlines
 )
 """
 Regex for raw code, *not* using Discord's code blocks.
