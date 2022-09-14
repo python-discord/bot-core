@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`8.3.0 <9th September 2922>`
+- :feature:`137` Add a utility to check for a job rerun
+
+
 - :release:`8.2.0 <18th August 2022>`
 - :support:`125` Bump Discord.py to the stable :literal-url:`2.0 release <https://discordpy.readthedocs.io/en/latest/migrating.html>`.
 
