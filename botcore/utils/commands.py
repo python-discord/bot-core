@@ -48,15 +48,15 @@ async def check_rerun_job(ctx: Context, response: Message) -> Optional[str]:
     """
     Check if the job should be rerun.
 
-    For a job to be rerun, the user must edit their message within `REDO_TIMEOUT` seconds,
-    and then react with the `REDO_EMOJI` within 10 seconds.
+    For a job to be rerun, the user must edit their message within ``REDO_TIMEOUT`` seconds,
+    and then react with the ``REDO_EMOJI`` within 10 seconds.
 
     Args:
         ctx: The command's context
         response: The job's response message
 
     Returns:
-         The content to be rerun, or `None`.
+         The content to be rerun, or ``None``.
     """
     # Correct message and content did actually change (i.e. wasn't a pin status udpate etc.)
     _message_edit_predicate = lambda old, new: new.id == ctx.message.id and new.content != old.content
