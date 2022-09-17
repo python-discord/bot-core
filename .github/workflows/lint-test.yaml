@@ -24,10 +24,9 @@ jobs:
           install_args: "--extras async-rediscache"
 
       # We will not run `flake8` here, as we will use a separate flake8
-      # action. As pre-commit does not support user installs, we set
-      # PIP_USER=0 to not do a user install.
+      # action.
       - name: Run pre-commit hooks
-        run: export PIP_USER=0; SKIP=flake8 pre-commit run --all-files
+        run: SKIP=flake8 pre-commit run --all-files
 
       # Run flake8 and have it format the linting errors in the format of
       # the GitHub Workflow command to register error annotations. This

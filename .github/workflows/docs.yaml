@@ -27,10 +27,6 @@ jobs:
           python_version: "3.10"
           install_args: "--extras async-rediscache"
 
-      # Undeclared dependency for `releases`... whoops
-      # https://github.com/bitprophet/releases/pull/82
-      - run: pip install six
-
       - name: Generate HTML Site
         run: sphinx-build -nW -j auto -b html docs docs/build
 
@@ -55,10 +51,6 @@ jobs:
           dev: true
           python_version: "3.10"
           install_args: "--extras async-rediscache"
-
-      # Undeclared dependency for `releases`... whoops
-      # https://github.com/bitprophet/releases/pull/82
-      - run: pip install six
 
       - name: Build All Doc Versions
         run: sphinx-multiversion docs docs/build -n -j auto
