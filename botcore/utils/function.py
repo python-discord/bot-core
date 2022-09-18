@@ -11,8 +11,7 @@ __all__ = ["command_wraps", "GlobalNameConflictError", "update_wrapper_globals"]
 
 
 if typing.TYPE_CHECKING:
-    import typing_extensions
-    _P = typing_extensions.ParamSpec("_P")
+    _P = typing.ParamSpec("_P")
     _R = typing.TypeVar("_R")
 
 

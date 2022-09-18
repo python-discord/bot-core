@@ -25,14 +25,11 @@ _ArgsList = list[object]
 _HashableArgsTuple = tuple[Hashable, ...]
 
 if typing.TYPE_CHECKING:
-    from botcore import BotBase
     import typing_extensions
-    P = typing_extensions.ParamSpec("P")
-    P.__constraints__ = ()
-else:
-    P = typing.TypeVar("P")
-    """The command's signature."""
+    from botcore import BotBase
 
+P = typing.ParamSpec("P")
+"""The command's signature."""
 R = typing.TypeVar("R")
 """The command's return value."""
 
