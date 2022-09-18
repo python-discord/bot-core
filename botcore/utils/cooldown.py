@@ -61,7 +61,7 @@ class CommandOnCooldown(CommandError, typing.Generic[P, R]):
 
 @dataclass
 class _CooldownItem:
-    arguments: _ArgsList
+    non_hashable_arguments: _ArgsList
     timeout_timestamp: float
 
 
@@ -117,7 +117,7 @@ class _CommandCooldownManager:
         )
 
         for item in cooldowns_list:
-            if item.arguments == separated_arguments.non_hashable:
+            if item.non_hashable_arguments == separated_arguments.non_hashable:
                 item.timeout_timestamp = timeout_timestamp
                 return
 
@@ -136,7 +136,7 @@ class _CommandCooldownManager:
             return False
 
         for item in cooldowns_list:
-            if item.arguments == separated_arguments.non_hashable:
+            if item.non_hashable_arguments == separated_arguments.non_hashable:
                 return item.timeout_timestamp > current_time
         return False
 
