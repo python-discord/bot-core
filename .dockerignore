@@ -1,0 +1,9 @@
+*
+
+!botcore/
+!docs/
+!tests/
+
+!pyproject.toml
+!poetry.lock
+!tox.ini

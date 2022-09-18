@@ -51,7 +51,7 @@ class BotBase(commands.Bot):
         Initialise the base bot instance.
 
         Args:
-            guild_id: The ID of the guild use for :func:`wait_until_guild_available`.
+            guild_id: The ID of the guild used for :func:`wait_until_guild_available`.
             allowed_roles: A list of role IDs that the bot is allowed to mention.
             http_session (aiohttp.ClientSession): The session to use for the bot.
             redis_session: The `async_rediscache.RedisSession`_ to use for the bot.
@@ -197,7 +197,7 @@ class BotBase(commands.Bot):
 
         if not guild.roles or not guild.members or not guild.channels:
             msg = "Guild available event was dispatched but the cache appears to still be empty!"
-            self.log_to_dev_log(msg)
+            await self.log_to_dev_log(msg)
             return
 
         self._guild_available.set()
@@ -234,14 +234,16 @@ class BotBase(commands.Bot):
         )
         self.http.connector = self._connector
 
-        if getattr(self, "redis_session", False) and self.redis_session.closed:
+        if getattr(self, "redis_session", False) and not self.redis_session.valid:
             # If the RedisSession was somehow closed, we try to reconnect it
             # here. Normally, this shouldn't happen.
-            await self.redis_session.connect()
+            await self.redis_session.connect(ping=True)
 
-        # Create dummy stats client first, in case `statsd_url` is unreachable within `_connect_statsd()`
+        # Create dummy stats client first, in case `statsd_url` is unreachable or None
         self.stats = AsyncStatsClient(loop, "127.0.0.1")
-        self._connect_statsd(self.statsd_url, loop)
+        if self.statsd_url:
+            self._connect_statsd(self.statsd_url, loop)
+
         await self.stats.create_socket()
 
         try:
@@ -249,7 +251,7 @@ class BotBase(commands.Bot):
         except Exception as e:
             raise StartupError(e)
 
-    async def ping_services() -> None:
+    async def ping_services(self) -> None:
         """Ping all required services on setup to ensure they are up before starting."""
         ...
 
@@ -279,11 +281,8 @@ class BotBase(commands.Bot):
         if self._resolver:
             await self._resolver.close()
 
-        if self.stats._transport:
+        if getattr(self.stats, "_transport", False):
             self.stats._transport.close()
-
-        if getattr(self, "redis_session", False):
-            await self.redis_session.close()
 
         if self._statsd_timerhandle:
             self._statsd_timerhandle.cancel()

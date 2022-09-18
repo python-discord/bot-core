@@ -1,0 +1,80 @@
+# Modified version of python-discord/bot
+
+version: "3.8"
+
+x-restart-policy: &restart_policy
+  restart: unless-stopped
+
+services:
+  postgres:
+    << : *restart_policy
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_DB: pysite
+      POSTGRES_PASSWORD: pysite
+      POSTGRES_USER: pysite
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pysite"]
+      interval: 2s
+      timeout: 1s
+      retries: 5
+
+  metricity:
+    restart: on-failure
+    depends_on:
+      postgres:
+        condition: service_healthy
+    image: ghcr.io/python-discord/metricity:latest
+    env_file:
+      - .env
+    environment:
+      DATABASE_URI: postgres://pysite:pysite@postgres/metricity
+      USE_METRICITY: ${USE_METRICITY-false}
+    volumes:
+      - .:/tmp/bot:ro
+
+  redis:
+    << : *restart_policy
+    image: redis:5.0.9
+    ports:
+      - "6379:6379"
+
+  snekbox:
+    << : *restart_policy
+    image: ghcr.io/python-discord/snekbox:latest
+    init: true
+    ipc: none
+    ports:
+     - "8060:8060"
+    privileged: true
+
+  web:
+    << : *restart_policy
+    image: ghcr.io/python-discord/site:latest
+    command: ["run", "--debug"]
+    ports:
+      - "8000:8000"
+    tty: true
+    environment:
+      DATABASE_URL: postgres://pysite:pysite@postgres:5432/pysite
+      METRICITY_DB_URL: postgres://pysite:pysite@postgres:5432/metricity
+      SECRET_KEY: suitable-for-development-only
+      STATIC_ROOT: /var/www/static
+    depends_on:
+      - metricity
+
+  bot:
+    << : *restart_policy
+    build:
+      context: .
+      dockerfile: dev/Dockerfile
+    volumes:  # Don't do .:/app here to ensure project venv from host doens't overwrite venv in image
+      - ./botcore:/app/botcore:ro
+      - ./bot:/app/bot:ro
+    tty: true
+    depends_on:
+      - web
+    env_file:
+      - .env
+    environment:
+      BOT_API_KEY: badbot13m0n8f570f942013fc818f234916ca531

@@ -1,6 +1,7 @@
 """Contains all common monkey patches, used to alter discord to fit our needs."""
 
 import logging
+import typing
 from datetime import datetime, timedelta
 from functools import partial, partialmethod
 
@@ -46,9 +47,9 @@ def _patch_typing() -> None:
     log.debug("Patching send_typing, which should fix things breaking when Discord disables typing events. Stay safe!")
 
     original = http.HTTPClient.send_typing
-    last_403 = None
+    last_403: typing.Optional[datetime] = None
 
-    async def honeybadger_type(self, channel_id: int) -> None:  # noqa: ANN001
+    async def honeybadger_type(self: http.HTTPClient, channel_id: int) -> None:
         nonlocal last_403
         if last_403 and (datetime.utcnow() - last_403) < timedelta(minutes=5):
             log.warning("Not sending typing event, we got a 403 less than 5 minutes ago.")

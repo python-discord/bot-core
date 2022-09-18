@@ -1,21 +1,16 @@
-FROM python:3.9-slim
+FROM --platform=linux/amd64 ghcr.io/chrislovering/python-poetry-base:3.10-slim
 
-# Set pip to have no saved cache
-ENV PIP_NO_CACHE_DIR=false \
-    POETRY_VIRTUALENVS_CREATE=false
-
-ENTRYPOINT ["/bin/bash"]
-CMD ["./docker-entrypoint.sh"]
-
-# Install poetry
-RUN pip install -U poetry
-
-RUN mkdir bot
-WORKDIR /bot
 
 # Install project dependencies
+WORKDIR /app
 COPY pyproject.toml poetry.lock ./
-RUN poetry install --no-dev
+RUN poetry install --no-root
 
 # Copy the source code in last to optimize rebuilding the image
 COPY . .
+
+# Install again, this time with the root project
+RUN poetry install
+
+ENTRYPOINT ["python"]
+CMD ["-m", "bot"]

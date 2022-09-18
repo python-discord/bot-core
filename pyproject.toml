@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bot-core"
-version = "7.1.1"
+version = "8.2.1"
 description = "Bot-Core provides the core functionality and utilities for the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
@@ -15,35 +15,36 @@ packages = [
 exclude = ["tests", "tests.*"]
 
 [tool.poetry.dependencies]
-python = "3.9.*"
-"discord.py" = {url = "https://github.com/Rapptz/discord.py/archive/4cbe8f58e16f6a76371ce45a69e0832130d6d24f.zip"}
-async-rediscache = { version = "0.2.0", extras = ["fakeredis"], optional = true }
+python = "3.10.*"
+"discord.py" = "2.0.1"
+async-rediscache = { version = "1.0.0rc2", extras = ["fakeredis"], optional = true }
 statsd  = "3.3.0"
+aiodns = "3.0.0"
 
 [tool.poetry.extras]
 async-rediscache = ["async-rediscache"]
 
 [tool.poetry.dev-dependencies]
-typing-extensions = "4.2.0"
-flake8 = "4.0.1"
-flake8-annotations = "2.9.0"
-flake8-bugbear = "22.4.25"
+typing-extensions = "4.3.0"
+flake8 = "5.0.4"
+flake8-annotations = "2.9.1"
+flake8-bugbear = "22.9.11"
 flake8-docstrings = "1.6.0"
 flake8-import-order = "0.18.1"
 flake8-string-format = "0.3.0"
 flake8-tidy-imports = "4.8.0"
 flake8-todo = "0.7"
-pep8-naming = "0.12.1"
-pre-commit = "2.19.0"
-taskipy = "1.10.2"
-python-dotenv = "0.20.0"
-pytest = "7.1.2"
+pep8-naming = "0.13.2"
+pre-commit = "2.20.0"
+taskipy = "1.10.3"
+python-dotenv = "0.21.0"
+pytest = "7.1.3"
 pytest-cov = "3.0.0"
 pytest-xdist = "2.5.0"
-Sphinx = "4.5.0"
+Sphinx = "5.1.1"
 GitPython = "3.1.27"
-sphinx-autodoc-typehints = "1.18.1"
-furo = "2022.4.7"
+sphinx-autodoc-typehints = "1.19.2"
+furo = "2022.9.15"
 releases = "1.6.3"
 sphinx-multiversion = "0.2.4"
 

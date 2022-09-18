@@ -5,8 +5,7 @@ from __future__ import annotations
 import functools
 import types
 import typing
-from collections.abc import Sequence, Set
-from typing import Callable  # sphinx-autodoc-typehints breaks with collections.abc.Callable
+from collections.abc import Callable, Sequence, Set
 
 __all__ = ["command_wraps", "GlobalNameConflictError", "update_wrapper_globals"]
 

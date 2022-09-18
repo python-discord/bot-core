@@ -17,6 +17,7 @@ Reference
    :caption: Other:
    :hidden:
 
+   development
    changelog
 
 
@@ -26,4 +27,5 @@ Extras
 * :ref:`genindex`
 * :ref:`search`
 * :repo-file:`Information <docs/README.md>`
+* :doc:`development`
 * :doc:`changelog`

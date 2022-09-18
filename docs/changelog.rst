@@ -4,6 +4,60 @@
 Changelog
 =========
 
+- :release:`8.2.1 <18th September 2022>`
+- :bug:`138` Bump Discord.py to :literal-url:`2.0.1 <https://discordpy.readthedocs.io/en/latest/whats_new.html#v2-0-1>`.
+
+
+- :release:`8.2.0 <18th August 2022>`
+- :support:`125` Bump Discord.py to the stable :literal-url:`2.0 release <https://discordpy.readthedocs.io/en/latest/migrating.html>`.
+
+
+- :release:`8.1.0 <16th August 2022>`
+- :support:`124` Updated :obj:`botcore.utils.regex.DISCORD_INVITE` regex to optionally match leading "http[s]" and "www".
+
+
+- :release:`8.0.0 <27th July 2022>`
+- :breaking:`110` Bump async-rediscache to v1.0.0-rc2
+- :support:`108` Bump Python version to 3.10.*
+- :bug:`107 major` Declare aiodns as a project dependency.
+- :support:`107` Add a sample project with boilerplate and documentation explaining how to develop for bot-core.
+
+
+- :release:`7.5.0 <23rd July 2022>`
+- :feature:`101` Add a utility to clean a string or referenced message's content
+
+
+- :release:`7.4.0 <17th July 2022>`
+- :feature:`106` Add an optional ``message`` attr to :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has its view removed if set.
+
+
+- :release:`7.3.1 <16th July 2022>`
+- :bug:`104` Fix :obj:`botcore.utils.interactions.DeleteMessageButton` not working due to using wrong delete method.
+
+
+- :release:`7.3.0 <16th July 2022>`
+- :feature:`103` Add a generic view :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck` that only allows specified users and roles to interaction with it
+- :feature:`103` Add a button :obj:`botcore.utils.interactions.DeleteMessageButton` that deletes the message attached to its parent view.
+
+
+- :release:`7.2.2 <9th July 2022>`
+- :bug:`98` Only close ``BotBase.stats._transport`` if ``BotBase.stats`` was created
+
+
+- :release:`7.2.1 <30th June 2022>`
+- :bug:`96` Fix attempts to connect to ``BotBase.statsd_url`` when it is None.
+- :bug:`91` Fix incorrect docstring for ``botcore.utils.member.handle_role_change``.
+- :bug:`91` Pass missing self parameter to ``BotBase.ping_services``.
+- :bug:`91` Add missing await to ``BotBase.ping_services`` in some cases.
+
+
+- :release:`7.2.0 <28th June 2022>`
+- :support:`93` Bump Discord.py to :literal-url:`0eb3d26 <https://github.com/Rapptz/discord.py/commit/0eb3d26343969a25ffc43ba72eca42538d2e7e7a>`:
+
+  - Adds support for auto mod, of which the new auto_mod MESSAGE_TYPE is needed for our filter system.
+
+
+- :release:`7.1.3 <30th May 2022>` 79
 - :support:`79` Add `sphinx-multiversion <https://pypi.org/project/sphinx-multiversion/>`_ to make available older doc versions.
 - :support:`79` Restore on-site changelog.
 

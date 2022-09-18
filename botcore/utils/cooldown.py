@@ -7,10 +7,9 @@ import random
 import time
 import typing
 import weakref
-from collections.abc import Awaitable, Hashable, Iterable
+from collections.abc import Awaitable, Callable, Hashable, Iterable
 from contextlib import suppress
 from dataclasses import dataclass
-from typing import Callable  # sphinx-autodoc-typehints breaks with collections.abc.Callable
 
 import discord
 from discord.ext.commands import CommandError, Context

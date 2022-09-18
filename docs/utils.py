@@ -64,6 +64,7 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> typin
 
     try:
         lines, start = inspect.getsourcelines(symbol[-1])
+        module = inspect.getmodule(symbol[-1])
         end = start + len(lines)
     except TypeError:
         # Find variables by parsing the ast

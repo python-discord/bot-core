@@ -26,7 +26,7 @@ class ResponseCodeError(ValueError):
         Args:
             response (:obj:`aiohttp.ClientResponse`): The response object from the request.
             response_json: The JSON response returned from the request, if any.
-            request_text: The text of the request, if any.
+            response_text: The text of the request, if any.
         """
         self.status = response.status
         self.response_json = response_json or {}
@@ -76,7 +76,8 @@ class APIClient:
         """Close the aiohttp session."""
         await self.session.close()
 
-    async def maybe_raise_for_status(self, response: aiohttp.ClientResponse, should_raise: bool) -> None:
+    @staticmethod
+    async def maybe_raise_for_status(response: aiohttp.ClientResponse, should_raise: bool) -> None:
         """
         Raise :exc:`ResponseCodeError` for non-OK response if an exception should be raised.
 
