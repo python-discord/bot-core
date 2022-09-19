@@ -129,11 +129,8 @@ class _CommandCooldownManager:
         separated_arguments = _SeparatedArguments.from_full_arguments(call_arguments)
         cooldowns_list = self._cooldowns.get(
             (channel, separated_arguments.hashable),
-            None
+            [],
         )
-
-        if cooldowns_list is None:
-            return False
 
         for item in cooldowns_list:
             if item.non_hashable_arguments == separated_arguments.non_hashable:
