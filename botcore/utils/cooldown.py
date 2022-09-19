@@ -113,7 +113,7 @@ class _CommandCooldownManager:
         separated_arguments = _SeparatedArguments.from_full_arguments(call_arguments)
         cooldowns_list = self._cooldowns.setdefault(
             (channel, separated_arguments.hashable),
-            []
+            [],
         )
 
         for item in cooldowns_list:
@@ -172,7 +172,9 @@ def _create_argument_tuple(*args: object, **kwargs: object) -> tuple[object, ...
 
 
 def block_duplicate_invocations(
-    *, cooldown_duration: float = 5, send_notice: bool = False
+    *,
+    cooldown_duration: float = 5,
+    send_notice: bool = False,
 ) -> Callable[[Callable[P, Awaitable[R]]], Callable[P, Awaitable[R]]]:
     """
     Prevent duplicate invocations of a command with the same arguments in a channel for ``cooldown_duration`` seconds.
