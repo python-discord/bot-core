@@ -167,7 +167,7 @@ class _CommandCooldownManager:
                 self._cooldowns[key] = filtered_cooldowns
 
 
-def _create_argument_tuple(*args: object, **kwargs: object) -> Iterable[object]:
+def _create_argument_tuple(*args: object, **kwargs: object) -> tuple[object, ...]:
     return (*args, _KEYWORD_SEP_SENTINEL, *kwargs.items())
 
 
