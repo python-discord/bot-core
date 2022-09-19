@@ -195,9 +195,8 @@ def block_duplicate_invocations(
         async def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
             arg_tuple = _create_argument_tuple(*args[2:], **kwargs)  # skip self and ctx from the command
             ctx = typing.cast("Context[BotBase]", args[1])
-            channel = ctx.channel
 
-            if not isinstance(channel, discord.DMChannel):
+            if not isinstance(ctx.channel, discord.DMChannel):
                 if mgr.is_on_cooldown(ctx.channel, arg_tuple):
                     if send_notice:
                         with suppress(discord.NotFound):
