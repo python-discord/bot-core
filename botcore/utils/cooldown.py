@@ -175,6 +175,7 @@ def block_duplicate_invocations(
     *,
     cooldown_duration: float = 5,
     send_notice: bool = False,
+    args_preprocessor: Callable[P, Iterable[object]] | None = None,
 ) -> Callable[[Callable[P, Awaitable[R]]], Callable[P, Awaitable[R]]]:
     """
     Prevent duplicate invocations of a command with the same arguments in a channel for ``cooldown_duration`` seconds.
@@ -182,6 +183,8 @@ def block_duplicate_invocations(
     Args:
         cooldown_duration: Length of the cooldown in seconds.
         send_notice: If :obj:`True`, notify the user about the cooldown with a reply.
+        args_preprocessor: If specified, this function is called with the args and kwargs the function is called with,
+                            its return value is then used to check for the cooldown instead of the raw arguments.
 
     Returns:
         A decorator that adds a wrapper which applies the cooldowns.
@@ -195,16 +198,19 @@ def block_duplicate_invocations(
 
         @command_wraps(func)
         async def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
-            arg_tuple = _create_argument_tuple(*args[2:], **kwargs)  # skip self and ctx from the command
+            if args_preprocessor is not None:
+                all_args = args_preprocessor(*args, **kwargs)
+            else:
+                all_args = _create_argument_tuple(*args[2:], **kwargs)  # skip self and ctx from the command
             ctx = typing.cast("Context[BotBase]", args[1])
 
             if not isinstance(ctx.channel, discord.DMChannel):
-                if mgr.is_on_cooldown(ctx.channel, arg_tuple):
+                if mgr.is_on_cooldown(ctx.channel, all_args):
                     if send_notice:
                         with suppress(discord.NotFound):
                             await ctx.reply("The command is on cooldown with the given arguments.")
                     raise CommandOnCooldown(ctx.message.content, func, *args, **kwargs)
-                mgr.set_cooldown(ctx.channel, arg_tuple)
+                mgr.set_cooldown(ctx.channel, all_args)
 
             return await func(*args, **kwargs)
 
