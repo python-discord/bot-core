@@ -1,5 +1,6 @@
 from asyncio import TimeoutError
 from contextlib import suppress
+from itertools import zip_longest
 from typing import Optional
 
 from discord import HTTPException, Message, NotFound
@@ -44,19 +45,16 @@ async def clean_text_or_reply(ctx: Context, text: Optional[str] = None) -> str:
     raise BadArgument("Couldn't find text to clean. Provide a string or reply to a message to use its content.")
 
 
-async def check_rerun_job(ctx: Context, response: Message) -> Optional[str]:
+async def check_rerun_command(ctx: Context, response: Message) -> None:
     """
-    Check if the job should be rerun.
+    Check if the command should be rerun (and reruns if should be).
 
-    For a job to be rerun, the user must edit their message within ``REDO_TIMEOUT`` seconds,
-    and then react with the ``REDO_EMOJI`` within 10 seconds.
+    For a command to be rerun, the user must edit their invocation message within
+    ``REDO_TIMEOUT`` seconds, and then react with the ``REDO_EMOJI`` within 10 seconds.
 
     Args:
         ctx: The command's context
         response: The job's response message
-
-    Returns:
-         The content to be rerun, or ``None``.
     """
     # Correct message and content did actually change (i.e. wasn't a pin status udpate etc.)
     _message_edit_predicate = lambda old, new: new.id == ctx.message.id and new.content != old.content
@@ -89,10 +87,76 @@ async def check_rerun_job(ctx: Context, response: Message) -> Optional[str]:
         except TimeoutError:
             # One of the `wait_for` timed out, so abort since user doesn't want to rerun
             await ctx.message.clear_reaction(REDO_EMOJI)
-            return None
+            return
 
         else:
             # Both `wait_for` triggered, so return the new content to be run since user wants to rerun
-            return new_message.content
 
-    return None  # triggered whenever a `NotFound` was raised
+            # Determine if the edited message starts with a valid prefix, and if it does store it
+            prefix_or_prefixes = await ctx.bot.get_prefix(ctx.message)
+            active_prefix = None
+            if isinstance(prefix_or_prefixes, list):
+                # Bot is listening to multiple prefixes
+                for prefix in prefix_or_prefixes:
+                    if ctx.message.content.startswith(prefix):
+                        active_prefix = prefix
+                        break
+                else:
+                    await ctx.reply(":warning: Stopped listening because you removed the prefix.")
+                    return False
+            else:
+                # Bot is only listening to one prefix
+                if not new_message.content.startswith(prefix_or_prefixes):
+                    await ctx.reply(":warning: Stopped listening because you removed the prefix.")
+                    return
+                active_prefix = prefix_or_prefixes
+
+            # The edited content has a valid prefix, so remove it
+            content = new_message.content[len(active_prefix):]
+
+            # Return whether the command of the new content is the same as `ctx.command`.
+            content_split = content.split()
+            accu = []
+            matches = False
+            for cmd_or_arg, parent in zip_longest(content_split, ctx.command.parents + [ctx.command]):
+                if cmd_or_arg is None:
+                    # `cmd_or_arg` will only ever be `None` due to `zip_longest` filling the value.
+                    # This means that `content_split` is shorter than parents+command, and thus
+                    # cannot be the same command (has to be missing at least one level of commands)
+                    matches = False
+                    break
+
+                accu.append(cmd_or_arg)
+                curr_comm = ctx.bot.get_command(' '.join(accu))
+
+                if not curr_comm:
+                    continue
+
+                if parent is None:
+                    # `parent` will only ever be `None` due to `zip_longest` filling the value.
+
+                    if curr_comm.qualified_name.endswith(cmd_or_arg):
+                        # `cmd_or_arg` is a command (not an arg), which
+                        # means it's a subcommand of `ctx.command` so not same
+                        matches = False
+                    else:
+                        # `cmd_or_arg` is an arg (not a command), which
+                        # means `curr_comm` is as deep as the command goes
+                        matches = curr_comm.qualified_name == ctx.command.qualified_name
+                    break
+
+                if not curr_comm.qualified_name == parent.qualified_name:
+                    # Command doesn't match, but there may be a valid subcommand
+                    continue
+
+                if curr_comm.qualified_name == ctx.command.qualified_name:
+                    # Currently matches, but we need to ensure that `content_split` doesn't turn into a subcommand
+                    matches = True
+                    continue
+
+                matches = False
+
+            if matches:
+                await ctx.bot.invoke(await ctx.bot.get_context(new_message))
+            else:
+                await ctx.reply(":warning: You changed the command, so no longer listening for edits.")
