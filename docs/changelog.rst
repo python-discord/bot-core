@@ -4,7 +4,7 @@
 Changelog
 =========
 
-- :release:`8.3.0 <9th September 2922>`
+- :release:`8.3.0 <9th September 2022>`
 - :feature:`137` Add a utility to check for a job rerun
 
 
