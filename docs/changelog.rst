@@ -8,6 +8,10 @@ Changelog
 - :feature:`137` Add a utility to check for a job rerun
 
 
+- :release:`8.2.1 <18th September 2022>`
+- :bug:`138` Bump Discord.py to :literal-url:`2.0.1 <https://discordpy.readthedocs.io/en/latest/whats_new.html#v2-0-1>`.
+
+
 - :release:`8.2.0 <18th August 2022>`
 - :support:`125` Bump Discord.py to the stable :literal-url:`2.0 release <https://discordpy.readthedocs.io/en/latest/migrating.html>`.
 

@@ -40,7 +40,7 @@ Option 2
 3. Configure the environment variables used by the program.
    You can set them in an ``.env`` file in the project root directory. The variables are:
 
-   - ``TOKEN`` (required): Discord bot token, with all intents enabled
+   - ``BOT_TOKEN`` (required): Discord bot token, with all intents enabled
    - ``GUILD_ID`` (required): The guild the bot should monitor
    - ``PREFIX``: The prefix to use for invoking bot commands. Defaults to mentions and ``!``
    - ``ALLOWED_ROLES``: A comma seperated list of role IDs which the bot is allowed to mention
