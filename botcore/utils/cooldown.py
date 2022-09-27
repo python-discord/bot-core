@@ -41,6 +41,7 @@ class CommandOnCooldown(CommandError, typing.Generic[P, R]):
         self,
         message: str | None,
         function: Callable[P, Awaitable[R]],
+        /,
         *args: P.args,
         **kwargs: P.kwargs,
     ):
