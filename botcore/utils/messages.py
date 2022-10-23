@@ -20,31 +20,27 @@ def reaction_check(
     user: discord.abc.User,
     *,
     message_id: int,
-    allowed_emoji: Sequence[str],
+    allowed_emojis: Sequence[str],
     allowed_users: Sequence[int],
-    mod_roles: Sequence[int],
-    allow_mods: bool = True,
+    allowed_roles: Sequence[int],
 ) -> bool:
     """
-    Check if a reaction's emoji and author are allowed and the message is `message_id`.
+    Checks if a reaction's emoji and author are allowed.
 
-    If the user is not allowed, remove the reaction. Ignore reactions made by the bot.
-    If `allow_mods` is True, allow users with `mod_roles` even if they're not in `allowed_users`.
+    A reaction's emoji is allowed when it's not by a bot, is on `message_id`, and in `allowed_emojis`.
+    A user is allowed when their id is in `allowed_users`, or they have a role that's in `allowed_roles`.
+
+    If the user is not allowed, removes the reaction.
     """
     right_reaction = (
         not user.bot
         and reaction.message.id == message_id
-        and str(reaction.emoji) in allowed_emoji
+        and str(reaction.emoji) in allowed_emojis
     )
     if not right_reaction:
         return False
 
-    is_moderator = (
-        allow_mods
-        and any(role.id in mod_roles for role in getattr(user, "roles", []))
-    )
-
-    if user.id in allowed_users or is_moderator:
+    if user.id in allowed_users or any(role.id in allowed_roles for role in getattr(user, "roles", [])):
         log.trace(f"Allowed reaction {reaction} by {user} on {reaction.message.id}.")
         return True
     else:
@@ -60,22 +56,21 @@ def reaction_check(
 async def wait_for_deletion(
     bot: commands.Bot,
     message: discord.Message,
-    user_ids: Sequence[int],
-    mod_roles: Sequence[int],
+    *,
+    allowed_users: Sequence[int],
+    allowed_roles: Sequence[int],
     deletion_emojis: Sequence[str] = ("<:trashcan:675729438528503910>",),
     timeout: float = 60 * 5,
     attach_emojis: bool = True,
-    allow_mods: bool = True
 ) -> None:
     """
-    Wait for any of `user_ids` to react with one of the `deletion_emojis` within `timeout` seconds to delete `message`.
+    Waits for an allowed user to react with one of the `deletion_emojis` within `timeout` seconds to delete `message`.
+
+    A user is defined as allowed if their id is in `allowed_users`, or they have a role that's in `allowed_roles`.
 
     If `timeout` expires then reactions are cleared to indicate the option to delete has expired.
 
-    An `attach_emojis` bool may be specified to determine whether to attach the given
-    `deletion_emojis` to the message in the given `context`.
-    An `allow_mods` bool may also be specified to allow anyone with a role in `mod_roles` to delete
-    the message.
+    An `attach_emojis` bool may be provided to determine whether to attach the given `deletion_emojis` to the `message`.
     """
     if message.guild is None:
         raise ValueError("Message must be sent on a guild")
@@ -92,9 +87,8 @@ async def wait_for_deletion(
         reaction_check,
         message_id=message.id,
         allowed_emoji=deletion_emojis,
-        allowed_users=user_ids,
-        mod_roles=mod_roles,
-        allow_mods=allow_mods,
+        allowed_users=allowed_users,
+        allowed_roles=allowed_roles,
     )
 
     try:
