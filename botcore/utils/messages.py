@@ -12,33 +12,6 @@ from botcore.utils import scheduling
 from botcore.utils.logging import get_logger
 
 
-MODERATION_ROLES = (
-    476190234653229056,  # admin
-    831924068852826163,  # moderators
-    476190357927886848,  # moderation team
-    476190391595433985  # owners
-)
-
-NEGATIVE_REPLIES = [
-    "Noooooo!!",
-    "Nope.",
-    "I'm sorry Dave, I'm afraid I can't do that.",
-    "I don't think so.",
-    "Not gonna happen.",
-    "Out of the question.",
-    "Huh? No.",
-    "Nah.",
-    "Naw.",
-    "Not likely.",
-    "No way, José.",
-    "Not in a million years.",
-    "Fat chance.",
-    "Certainly not.",
-    "NEGATORY.",
-    "Nuh-uh.",
-    "Not in my house!",
-]
-
 log = get_logger(__name__)
 
 
@@ -49,13 +22,14 @@ def reaction_check(
     message_id: int,
     allowed_emoji: Sequence[str],
     allowed_users: Sequence[int],
+    mod_roles: Sequence[int],
     allow_mods: bool = True,
 ) -> bool:
     """
     Check if a reaction's emoji and author are allowed and the message is `message_id`.
 
     If the user is not allowed, remove the reaction. Ignore reactions made by the bot.
-    If `allow_mods` is True, allow users with moderator roles even if they're not in `allowed_users`.
+    If `allow_mods` is True, allow users with `mod_roles` even if they're not in `allowed_users`.
     """
     right_reaction = (
         not user.bot
@@ -67,7 +41,7 @@ def reaction_check(
 
     is_moderator = (
         allow_mods
-        and any(role.id in MODERATION_ROLES for role in getattr(user, "roles", []))
+        and any(role.id in mod_roles for role in getattr(user, "roles", []))
     )
 
     if user.id in allowed_users or is_moderator:
@@ -87,6 +61,7 @@ async def wait_for_deletion(
     bot: commands.Bot,
     message: discord.Message,
     user_ids: Sequence[int],
+    mod_roles: Sequence[int],
     deletion_emojis: Sequence[str] = ("<:trashcan:675729438528503910>",),
     timeout: float = 60 * 5,
     attach_emojis: bool = True,
@@ -99,7 +74,7 @@ async def wait_for_deletion(
 
     An `attach_emojis` bool may be specified to determine whether to attach the given
     `deletion_emojis` to the message in the given `context`.
-    An `allow_mods` bool may also be specified to allow anyone with a role in `MODERATION_ROLES` to delete
+    An `allow_mods` bool may also be specified to allow anyone with a role in `mod_roles` to delete
     the message.
     """
     if message.guild is None:
@@ -118,6 +93,7 @@ async def wait_for_deletion(
         message_id=message.id,
         allowed_emoji=deletion_emojis,
         allowed_users=user_ids,
+        mod_roles=mod_roles,
         allow_mods=allow_mods,
     )
 
@@ -235,11 +211,11 @@ async def pin_no_system_message(message: discord.Message) -> bool:
     return False
 
 
-async def send_denial(ctx: commands.Context, reason: str) -> discord.Message:
+async def send_denial(ctx: commands.Context, reason: str, *, negative_replies: Sequence[str]) -> discord.Message:
     """Send an embed denying the user with the given reason."""
     embed = discord.Embed()
     embed.colour = discord.Colour.red()
-    embed.title = random.choice(NEGATIVE_REPLIES)
+    embed.title = random.choice(negative_replies)
     embed.description = reason
 
     return await ctx.send(embed=embed)
