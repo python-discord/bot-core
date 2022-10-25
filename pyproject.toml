@@ -46,6 +46,7 @@ GitPython = "3.1.29"
 sphinx-autodoc-typehints = "1.19.4"
 furo = "2022.9.29"
 releases = "1.6.3"
+six = "1.16.0"
 sphinx-multiversion = "0.2.4"
 
 [tool.taskipy.tasks]
