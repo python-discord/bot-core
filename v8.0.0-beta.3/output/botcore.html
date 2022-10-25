@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exts" href="botcore.exts.html" /><link rel="prev" title="Bot Core Project Documentation" href="../index.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
         <title>Botcore - Bot Core v8.0.0-beta.3</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
@@ -208,6 +208,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v8.2.1/output/botcore.html">v8.2.1</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v8.2.0/output/botcore.html">v8.2.0</a>
                     </li>
                 
@@ -346,7 +350,7 @@
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2093ab5685b2f2d7baba72ee3ee216f2519a36bc/botcore/_bot.py#L39-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialise the base bot instance.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>guild_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The ID of the guild used for <a class="reference internal" href="#botcore.BotBase.wait_until_guild_available" title="botcore.BotBase.wait_until_guild_available"><code class="xref py py-func docutils literal notranslate"><span class="pre">wait_until_guild_available()</span></code></a>.</p></li>
 <li><p><strong>allowed_roles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – A list of role IDs that the bot is allowed to mention.</p></li>
@@ -365,7 +369,7 @@ a dummy statsd client will be created.</p></li>
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cog</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2093ab5685b2f2d7baba72ee3ee216f2519a36bc/botcore/_bot.py#L152-L156"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.add_cog" title="Permalink to this definition">#</a></dt>
 <dd><p>Add the given <code class="docutils literal notranslate"><span class="pre">cog</span></code> to the bot and log the operation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -376,7 +380,7 @@ a dummy statsd client will be created.</p></li>
 <span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2093ab5685b2f2d7baba72ee3ee216f2519a36bc/botcore/_bot.py#L157-L161"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.add_command" title="Permalink to this definition">#</a></dt>
 <dd><p>Add <code class="docutils literal notranslate"><span class="pre">command</span></code> as normal and then add its root aliases to the bot.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -387,7 +391,7 @@ a dummy statsd client will be created.</p></li>
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2093ab5685b2f2d7baba72ee3ee216f2519a36bc/botcore/_bot.py#L177-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.clear" title="Permalink to this definition">#</a></dt>
 <dd><p>Not implemented! Re-instantiate the bot instead of attempting to re-use a closed one.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -398,7 +402,7 @@ a dummy statsd client will be created.</p></li>
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2093ab5685b2f2d7baba72ee3ee216f2519a36bc/botcore/_bot.py#L258-L292"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.close" title="Permalink to this definition">#</a></dt>
 <dd><p>Close the Discord connection, and the aiohttp session, connector, statsd client, and resolver.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -410,7 +414,7 @@ a dummy statsd client will be created.</p></li>
 <dd><p>Load all the extensions within the given module and save them to <code class="docutils literal notranslate"><span class="pre">self.all_extensions</span></code>.</p>
 <p>This should be ran in a task on the event loop to avoid deadlocks caused by <code class="docutils literal notranslate"><span class="pre">wait_for</span></code> calls.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -421,7 +425,7 @@ a dummy statsd client will be created.</p></li>
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_to_dev_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2093ab5685b2f2d7baba72ee3ee216f2519a36bc/botcore/_bot.py#L205-L208"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.log_to_dev_log" title="Permalink to this definition">#</a></dt>
 <dd><p>Log the given message to #dev-log.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -434,7 +438,7 @@ a dummy statsd client will be created.</p></li>
 <p>If the cache appears to still be empty (no members, no channels, or no roles), the event
 will not be set and <cite>guild_available_but_cache_empty</cite> event will be emitted.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -445,7 +449,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_unavailable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2093ab5685b2f2d7baba72ee3ee216f2519a36bc/botcore/_bot.py#L181-L187"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.on_guild_unavailable" title="Permalink to this definition">#</a></dt>
 <dd><p>Clear the internal guild available event when self.guild_id becomes unavailable.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -456,7 +460,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ping_services</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/2093ab5685b2f2d7baba72ee3ee216f2519a36bc/botcore/_bot.py#L254-L257"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase.ping_services" title="Permalink to this definition">#</a></dt>
 <dd><p>Ping all required services on setup to ensure they are up before starting.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -469,7 +473,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 <p>Individual root aliases cannot be removed by this function.
 To remove them, either remove the entire command or manually edit <cite>bot.all_commands</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.1.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a>]</p>
 </dd>
 </dl>
@@ -483,7 +487,7 @@ To remove them, either remove the entire command or manually edit <cite>bot.all_
 <a class="reference internal" href="botcore.async_stats.html#botcore.async_stats.AsyncStatsClient.create_socket" title="botcore.async_stats.AsyncStatsClient.create_socket"><code class="xref py py-func docutils literal notranslate"><span class="pre">AsyncStatsClient.create_socket</span></code></a>
 and <a class="reference internal" href="#botcore.BotBase.ping_services" title="botcore.BotBase.ping_services"><code class="xref py py-func docutils literal notranslate"><span class="pre">ping_services()</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -496,7 +500,7 @@ and <a class="reference internal" href="#botcore.BotBase.ping_services" title="b
 <p>The on_ready event is inadequate because it only waits 2 seconds for a GUILD_CREATE
 gateway event before giving up and thus not populating the cache for unavailable guilds.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -522,15 +526,48 @@ gateway event before giving up and thus not populating the cache for unavailable
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="botcore.exts.html">Exts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="botcore.utils.html">Utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="botcore.utils.html#botcore.utils.apply_monkey_patches"><code class="docutils literal notranslate"><span class="pre">apply_monkey_patches()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="botcore.utils.html#botcore.utils.unqualify"><code class="docutils literal notranslate"><span class="pre">unqualify()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="botcore.utils.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.caching.html">caching</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.channel.html">channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.commands.html">commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.interactions.html">interactions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.logging.html">logging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.members.html">members</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.regex.html">regex</a></li>
-<li class="toctree-l3"><a class="reference internal" href="botcore.utils.scheduling.html">scheduling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.caching.html">caching</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.caching.html#botcore.utils.caching.AsyncCache"><code class="docutils literal notranslate"><span class="pre">AsyncCache</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.channel.html">channel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.channel.html#botcore.utils.channel.get_or_fetch_channel"><code class="docutils literal notranslate"><span class="pre">get_or_fetch_channel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.channel.html#botcore.utils.channel.is_in_category"><code class="docutils literal notranslate"><span class="pre">is_in_category()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.commands.html">commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.commands.html#botcore.utils.commands.clean_text_or_reply"><code class="docutils literal notranslate"><span class="pre">clean_text_or_reply()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.interactions.html">interactions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.interactions.html#botcore.utils.interactions.DeleteMessageButton"><code class="docutils literal notranslate"><span class="pre">DeleteMessageButton</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.interactions.html#botcore.utils.interactions.ViewWithUserAndRoleCheck"><code class="docutils literal notranslate"><span class="pre">ViewWithUserAndRoleCheck</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.logging.html">logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.logging.html#botcore.utils.logging.CustomLogger"><code class="docutils literal notranslate"><span class="pre">CustomLogger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.logging.html#botcore.utils.logging.get_logger"><code class="docutils literal notranslate"><span class="pre">get_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.members.html">members</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.members.html#botcore.utils.members.get_or_fetch_member"><code class="docutils literal notranslate"><span class="pre">get_or_fetch_member()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.members.html#botcore.utils.members.handle_role_change"><code class="docutils literal notranslate"><span class="pre">handle_role_change()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.regex.html">regex</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.regex.html#botcore.utils.regex.DISCORD_INVITE"><code class="docutils literal notranslate"><span class="pre">DISCORD_INVITE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.regex.html#botcore.utils.regex.FORMATTED_CODE_REGEX"><code class="docutils literal notranslate"><span class="pre">FORMATTED_CODE_REGEX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.regex.html#botcore.utils.regex.RAW_CODE_REGEX"><code class="docutils literal notranslate"><span class="pre">RAW_CODE_REGEX</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.utils.scheduling.html">scheduling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.scheduling.html#botcore.utils.scheduling.Scheduler"><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="botcore.utils.scheduling.html#botcore.utils.scheduling.create_task"><code class="docutils literal notranslate"><span class="pre">create_task()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -542,8 +579,34 @@ gateway event before giving up and thus not populating the cache for unavailable
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="botcore.async_stats.html">async_stats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="botcore.site_api.html">site_api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="botcore.async_stats.html">async_stats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="botcore.async_stats.html#botcore.async_stats.AsyncStatsClient"><code class="docutils literal notranslate"><span class="pre">AsyncStatsClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="botcore.async_stats.html#botcore.async_stats.AsyncStatsClient.__init__"><code class="docutils literal notranslate"><span class="pre">AsyncStatsClient.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.async_stats.html#botcore.async_stats.AsyncStatsClient.create_socket"><code class="docutils literal notranslate"><span class="pre">AsyncStatsClient.create_socket()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="botcore.site_api.html">site_api</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient"><code class="docutils literal notranslate"><span class="pre">APIClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient.__init__"><code class="docutils literal notranslate"><span class="pre">APIClient.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient.close"><code class="docutils literal notranslate"><span class="pre">APIClient.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient.delete"><code class="docutils literal notranslate"><span class="pre">APIClient.delete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient.get"><code class="docutils literal notranslate"><span class="pre">APIClient.get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient.maybe_raise_for_status"><code class="docutils literal notranslate"><span class="pre">APIClient.maybe_raise_for_status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient.patch"><code class="docutils literal notranslate"><span class="pre">APIClient.patch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient.post"><code class="docutils literal notranslate"><span class="pre">APIClient.post()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient.put"><code class="docutils literal notranslate"><span class="pre">APIClient.put()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient.request"><code class="docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.ResponseCodeError"><code class="docutils literal notranslate"><span class="pre">ResponseCodeError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.ResponseCodeError.__init__"><code class="docutils literal notranslate"><span class="pre">ResponseCodeError.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="botcore.site_api.html#botcore.site_api.ResponseCodeError.__str__"><code class="docutils literal notranslate"><span class="pre">ResponseCodeError.__str__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -607,6 +670,26 @@ gateway event before giving up and thus not populating the cache for unavailable
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Botcore</a><ul>
+<li><a class="reference internal" href="#botcore.BotBase"><code class="docutils literal notranslate"><span class="pre">BotBase</span></code></a><ul>
+<li><a class="reference internal" href="#botcore.BotBase.__init__"><code class="docutils literal notranslate"><span class="pre">BotBase.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.add_cog"><code class="docutils literal notranslate"><span class="pre">BotBase.add_cog()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.add_command"><code class="docutils literal notranslate"><span class="pre">BotBase.add_command()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.clear"><code class="docutils literal notranslate"><span class="pre">BotBase.clear()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.close"><code class="docutils literal notranslate"><span class="pre">BotBase.close()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.load_extensions"><code class="docutils literal notranslate"><span class="pre">BotBase.load_extensions()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.log_to_dev_log"><code class="docutils literal notranslate"><span class="pre">BotBase.log_to_dev_log()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.on_guild_available"><code class="docutils literal notranslate"><span class="pre">BotBase.on_guild_available()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.on_guild_unavailable"><code class="docutils literal notranslate"><span class="pre">BotBase.on_guild_unavailable()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.ping_services"><code class="docutils literal notranslate"><span class="pre">BotBase.ping_services()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.remove_command"><code class="docutils literal notranslate"><span class="pre">BotBase.remove_command()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.setup_hook"><code class="docutils literal notranslate"><span class="pre">BotBase.setup_hook()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.BotBase.wait_until_guild_available"><code class="docutils literal notranslate"><span class="pre">BotBase.wait_until_guild_available()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#botcore.StartupError"><code class="docutils literal notranslate"><span class="pre">StartupError</span></code></a><ul>
+<li><a class="reference internal" href="#botcore.StartupError.__init__"><code class="docutils literal notranslate"><span class="pre">StartupError.__init__()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 </ul>
@@ -625,6 +708,7 @@ gateway event before giving up and thus not populating the cache for unavailable
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/changelog.js"></script>
     </body>

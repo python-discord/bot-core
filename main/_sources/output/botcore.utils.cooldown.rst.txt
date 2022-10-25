@@ -1,0 +1,7 @@
+cooldown
+=============================
+
+.. automodule:: botcore.utils.cooldown
+   :members:
+   :special-members:
+   :show-inheritance:

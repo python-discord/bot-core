@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="async_stats" href="botcore.async_stats.html" /><link rel="prev" title="regex" href="botcore.utils.regex.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
         <title>scheduling - Bot Core v7.2.2</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
@@ -138,7 +138,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -202,6 +202,10 @@
                 
                     <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../main/output/botcore.utils.scheduling.html">main</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v8.2.1/output/botcore.utils.scheduling.html">v8.2.1</a>
                     </li>
                 
                     <li class="toctree-l2 ">
@@ -324,7 +328,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -352,13 +356,13 @@ the same ID used to schedule it.</p>
 <span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/70bdf0f7e50cf182390dbeed38232438d54ea16e/botcore/utils/scheduling.py#L44-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.__contains__" title="Permalink to this definition">#</a></dt>
 <dd><p>Return <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if a task with the given <code class="docutils literal notranslate"><span class="pre">task_id</span></code> is currently scheduled.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – The task to look for.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the task was found.</p>
 </dd>
 </dl>
@@ -369,7 +373,7 @@ the same ID used to schedule it.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/70bdf0f7e50cf182390dbeed38232438d54ea16e/botcore/utils/scheduling.py#L32-L43"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialize a new <a class="reference internal" href="#botcore.utils.scheduling.Scheduler" title="botcore.utils.scheduling.Scheduler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scheduler</span></code></a> instance.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The name of the <a class="reference internal" href="#botcore.utils.scheduling.Scheduler" title="botcore.utils.scheduling.Scheduler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scheduler</span></code></a>. Used in logging, and namespacing.</p>
 </dd>
 </dl>
@@ -380,10 +384,10 @@ the same ID used to schedule it.</p>
 <span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/70bdf0f7e50cf182390dbeed38232438d54ea16e/botcore/utils/scheduling.py#L126-L143"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.cancel" title="Permalink to this definition">#</a></dt>
 <dd><p>Unschedule the task identified by <code class="docutils literal notranslate"><span class="pre">task_id</span></code>. Log a warning if the task doesn’t exist.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – The task’s unique ID.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -394,7 +398,7 @@ the same ID used to schedule it.</p>
 <span class="sig-name descname"><span class="pre">cancel_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/70bdf0f7e50cf182390dbeed38232438d54ea16e/botcore/utils/scheduling.py#L144-L150"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.scheduling.Scheduler.cancel_all" title="Permalink to this definition">#</a></dt>
 <dd><p>Unschedule all known tasks.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -407,13 +411,13 @@ the same ID used to schedule it.</p>
 <p>If a task with <code class="docutils literal notranslate"><span class="pre">task_id</span></code> already exists, close <code class="docutils literal notranslate"><span class="pre">coroutine</span></code> instead of scheduling it. This
 prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-used elsewhere.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – A unique ID to create the task with.</p></li>
 <li><p><strong>coroutine</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Coroutine" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>) – The function to be called.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -429,14 +433,14 @@ If <code class="docutils literal notranslate"><span class="pre">time</span></cod
 <p>If a task with <code class="docutils literal notranslate"><span class="pre">task_id</span></code> already exists, close <code class="docutils literal notranslate"><span class="pre">coroutine</span></code> instead of scheduling it. This
 prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-used elsewhere.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>) – The time to start the task.</p></li>
 <li><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – A unique ID to create the task with.</p></li>
 <li><p><strong>coroutine</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Coroutine" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>) – The function to be called.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -449,14 +453,14 @@ prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-
 <p>If a task with <code class="docutils literal notranslate"><span class="pre">task_id</span></code> already exists, close <code class="docutils literal notranslate"><span class="pre">coroutine</span></code> instead of scheduling it. This
 prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-used elsewhere.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>delay</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – How long to wait before starting the task.</p></li>
 <li><p><strong>task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Hashable" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hashable</span></code></a>) – A unique ID to create the task with.</p></li>
 <li><p><strong>coroutine</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Coroutine" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>) – The function to be called.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -471,7 +475,7 @@ prevents unawaited coroutine warnings. Don’t pass a coroutine that’ll be re-
 <p>If the <code class="docutils literal notranslate"><span class="pre">event_loop</span></code> kwarg is provided, the task is created from that event loop,
 otherwise the running loop is used.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>coro</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Coroutine" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">TASK_RETURN</span></code>)]) – The function to call.</p></li>
 <li><p><strong>suppressed_exceptions</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a>]]) – Exceptions to be handled by the task.</p></li>
@@ -479,10 +483,10 @@ otherwise the running loop is used.</p>
 <li><p><strong>kwargs</strong> – Passed to <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task" title="(in Python v3.10)"><code class="xref py py-func docutils literal notranslate"><span class="pre">asyncio.create_task()</span></code></a>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The wrapped task.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.Task" title="(in Python v3.10)">asyncio.Task</a></p>
 </dd>
 </dl>
@@ -535,8 +539,37 @@ otherwise the running loop is used.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">scheduling</a><ul>
+<li><a class="reference internal" href="#botcore.utils.scheduling.Scheduler"><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code></a><ul>
+<li><a class="reference internal" href="#botcore.utils.scheduling.Scheduler.__contains__"><code class="docutils literal notranslate"><span class="pre">Scheduler.__contains__()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.utils.scheduling.Scheduler.__init__"><code class="docutils literal notranslate"><span class="pre">Scheduler.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.utils.scheduling.Scheduler.cancel"><code class="docutils literal notranslate"><span class="pre">Scheduler.cancel()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.utils.scheduling.Scheduler.cancel_all"><code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_all()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.utils.scheduling.Scheduler.schedule"><code class="docutils literal notranslate"><span class="pre">Scheduler.schedule()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.utils.scheduling.Scheduler.schedule_at"><code class="docutils literal notranslate"><span class="pre">Scheduler.schedule_at()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.utils.scheduling.Scheduler.schedule_later"><code class="docutils literal notranslate"><span class="pre">Scheduler.schedule_later()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#botcore.utils.scheduling.create_task"><code class="docutils literal notranslate"><span class="pre">create_task()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -546,6 +579,7 @@ otherwise the running loop is used.</p>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/changelog.js"></script>
     </body>

@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="logging" href="botcore.utils.logging.html" /><link rel="prev" title="commands" href="botcore.utils.commands.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
         <title>interactions - Bot Core v7.5.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
@@ -138,7 +138,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -204,6 +204,10 @@
                 
                     <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../main/output/botcore.utils.interactions.html">main</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v8.2.1/output/botcore.utils.interactions.html">v8.2.1</a>
                     </li>
                 
                     <li class="toctree-l2 ">
@@ -326,7 +330,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -342,7 +346,7 @@
 <p>This button itself carries out no interaction checks, these should be done by the parent view.</p>
 <p>See <a class="reference internal" href="#botcore.utils.interactions.ViewWithUserAndRoleCheck" title="botcore.utils.interactions.ViewWithUserAndRoleCheck"><code class="xref py py-obj docutils literal notranslate"><span class="pre">botcore.utils.interactions.ViewWithUserAndRoleCheck</span></code></a> for a view that implements basic checks.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>style</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ButtonStyle"><code class="docutils literal notranslate"><span class="pre">ButtonStyle</span></code></a>) – The style of the button, set to <code class="docutils literal notranslate"><span class="pre">ButtonStyle.secondary</span></code> if not specified.</p></li>
 <li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The label of the button, set to “Delete” if not specified.</p></li>
@@ -359,7 +363,7 @@
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interaction</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/cfdc1b7c3dedae53f15ce696aee0c7141ba8c606/botcore/utils/interactions.py#L96-L99"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.interactions.DeleteMessageButton.callback" title="Permalink to this definition">#</a></dt>
 <dd><p>Delete the original message on button click.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -373,7 +377,7 @@
 <dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ui.View" title="(in discord.py v2.1.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a></p>
 <p>A view that allows the original invoker and moderators to interact with it.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>allowed_users</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – A sequence of user’s ids who are allowed to interact with the view.</p></li>
 <li><p><strong>allowed_roles</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – A sequence of role ids that are allowed to interact with the view.</p></li>
@@ -394,10 +398,10 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">interaction_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interaction</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/cfdc1b7c3dedae53f15ce696aee0c7141ba8c606/botcore/utils/interactions.py#L37-L64"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.interactions.ViewWithUserAndRoleCheck.interaction_check" title="Permalink to this definition">#</a></dt>
 <dd><p>Ensure the user clicking the button is the view invoker, or a moderator.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>interaction</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.Interaction" title="(in discord.py v2.1.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interaction</span></code></a>) – The interaction that occurred.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
 </dl>
@@ -408,7 +412,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_timeout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/cfdc1b7c3dedae53f15ce696aee0c7141ba8c606/botcore/utils/interactions.py#L65-L71"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.interactions.ViewWithUserAndRoleCheck.on_timeout" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove the view from <code class="docutils literal notranslate"><span class="pre">self.message</span></code> if set.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -463,8 +467,37 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">interactions</a><ul>
+<li><a class="reference internal" href="#botcore.utils.interactions.DeleteMessageButton"><code class="docutils literal notranslate"><span class="pre">DeleteMessageButton</span></code></a><ul>
+<li><a class="reference internal" href="#botcore.utils.interactions.DeleteMessageButton.__init__"><code class="docutils literal notranslate"><span class="pre">DeleteMessageButton.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.utils.interactions.DeleteMessageButton.callback"><code class="docutils literal notranslate"><span class="pre">DeleteMessageButton.callback()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#botcore.utils.interactions.ViewWithUserAndRoleCheck"><code class="docutils literal notranslate"><span class="pre">ViewWithUserAndRoleCheck</span></code></a><ul>
+<li><a class="reference internal" href="#botcore.utils.interactions.ViewWithUserAndRoleCheck.__init__"><code class="docutils literal notranslate"><span class="pre">ViewWithUserAndRoleCheck.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.utils.interactions.ViewWithUserAndRoleCheck.interaction_check"><code class="docutils literal notranslate"><span class="pre">ViewWithUserAndRoleCheck.interaction_check()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.utils.interactions.ViewWithUserAndRoleCheck.on_timeout"><code class="docutils literal notranslate"><span class="pre">ViewWithUserAndRoleCheck.on_timeout()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -474,6 +507,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/changelog.js"></script>
     </body>

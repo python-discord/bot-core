@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/><title>Index - Bot Core Latest (8.2.1)</title>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/><title>Index - Bot Core Latest (8.2.1)</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -167,6 +167,8 @@
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.channel.html">channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.commands.html">commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.cooldown.html">cooldown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.function.html">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.interactions.html">interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.logging.html">logging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/botcore.utils.members.html">members</a></li>
@@ -203,6 +205,10 @@
                 
                     <li class="toctree-l2 current-page">
                         <a class="version_link reference internal" href="genindex.html">main</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../v8.2.1/index.html">v8.2.1</a>
                     </li>
                 
                     <li class="toctree-l2 ">
@@ -353,6 +359,8 @@
 </li>
           <li><a href="output/botcore.html#botcore.BotBase.__init__">(BotBase method)</a>
 </li>
+          <li><a href="output/botcore.utils.cooldown.html#botcore.utils.cooldown.CommandOnCooldown.__init__">(CommandOnCooldown method)</a>
+</li>
           <li><a href="output/botcore.utils.interactions.html#botcore.utils.interactions.DeleteMessageButton.__init__">(DeleteMessageButton method)</a>
 </li>
           <li><a href="output/botcore.site_api.html#botcore.site_api.ResponseCodeError.__init__">(ResponseCodeError method)</a>
@@ -398,6 +406,8 @@
   <h2>B</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="output/botcore.utils.cooldown.html#botcore.utils.cooldown.block_duplicate_invocations">block_duplicate_invocations() (in module botcore.utils.cooldown)</a>
+</li>
         <li><a href="output/botcore.html#botcore.BotBase">BotBase (class in botcore)</a>
 </li>
         <li>
@@ -442,8 +452,6 @@
           <li><a href="output/botcore.utils.caching.html#module-botcore.utils.caching">module</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li>
     botcore.utils.channel
 
@@ -451,11 +459,27 @@
           <li><a href="output/botcore.utils.channel.html#module-botcore.utils.channel">module</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li>
     botcore.utils.commands
 
         <ul>
           <li><a href="output/botcore.utils.commands.html#module-botcore.utils.commands">module</a>
+</li>
+        </ul></li>
+        <li>
+    botcore.utils.cooldown
+
+        <ul>
+          <li><a href="output/botcore.utils.cooldown.html#module-botcore.utils.cooldown">module</a>
+</li>
+        </ul></li>
+        <li>
+    botcore.utils.function
+
+        <ul>
+          <li><a href="output/botcore.utils.function.html#module-botcore.utils.function">module</a>
 </li>
         </ul></li>
         <li>
@@ -501,6 +525,8 @@
   <h2>C</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="output/botcore.utils.cooldown.html#botcore.utils.cooldown.CommandOnCooldown.call_without_cooldown">call_without_cooldown() (CommandOnCooldown method)</a>
+</li>
         <li><a href="output/botcore.utils.interactions.html#botcore.utils.interactions.DeleteMessageButton.callback">callback() (DeleteMessageButton method)</a>
 </li>
         <li><a href="output/botcore.utils.scheduling.html#botcore.utils.scheduling.Scheduler.cancel">cancel() (Scheduler method)</a>
@@ -523,6 +549,10 @@
           <li><a href="output/botcore.html#botcore.BotBase.close">(BotBase method)</a>
 </li>
         </ul></li>
+        <li><a href="output/botcore.utils.function.html#botcore.utils.function.command_wraps">command_wraps() (in module botcore.utils.function)</a>
+</li>
+        <li><a href="output/botcore.utils.cooldown.html#botcore.utils.cooldown.CommandOnCooldown">CommandOnCooldown</a>
+</li>
         <li><a href="output/botcore.async_stats.html#botcore.async_stats.AsyncStatsClient.create_socket">create_socket() (AsyncStatsClient method)</a>
 </li>
         <li><a href="output/botcore.utils.scheduling.html#botcore.utils.scheduling.create_task">create_task() (in module botcore.utils.scheduling)</a>
@@ -572,6 +602,8 @@
         <li><a href="output/botcore.utils.channel.html#botcore.utils.channel.get_or_fetch_channel">get_or_fetch_channel() (in module botcore.utils.channel)</a>
 </li>
         <li><a href="output/botcore.utils.members.html#botcore.utils.members.get_or_fetch_member">get_or_fetch_member() (in module botcore.utils.members)</a>
+</li>
+        <li><a href="output/botcore.utils.function.html#botcore.utils.function.GlobalNameConflictError">GlobalNameConflictError</a>
 </li>
     </ul></td>
   </tr></table>
@@ -641,6 +673,10 @@
 </li>
           <li><a href="output/botcore.utils.commands.html#module-botcore.utils.commands">botcore.utils.commands</a>
 </li>
+          <li><a href="output/botcore.utils.cooldown.html#module-botcore.utils.cooldown">botcore.utils.cooldown</a>
+</li>
+          <li><a href="output/botcore.utils.function.html#module-botcore.utils.function">botcore.utils.function</a>
+</li>
           <li><a href="output/botcore.utils.interactions.html#module-botcore.utils.interactions">botcore.utils.interactions</a>
 </li>
           <li><a href="output/botcore.utils.logging.html#module-botcore.utils.logging">botcore.utils.logging</a>
@@ -676,12 +712,14 @@
   <h2>P</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="output/botcore.site_api.html#botcore.site_api.APIClient.patch">patch() (APIClient method)</a>
+        <li><a href="output/botcore.utils.cooldown.html#botcore.utils.cooldown.P">P (in module botcore.utils.cooldown)</a>
 </li>
-        <li><a href="output/botcore.html#botcore.BotBase.ping_services">ping_services() (BotBase method)</a>
+        <li><a href="output/botcore.site_api.html#botcore.site_api.APIClient.patch">patch() (APIClient method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="output/botcore.html#botcore.BotBase.ping_services">ping_services() (BotBase method)</a>
+</li>
         <li><a href="output/botcore.site_api.html#botcore.site_api.APIClient.post">post() (APIClient method)</a>
 </li>
         <li><a href="output/botcore.site_api.html#botcore.site_api.APIClient.put">put() (APIClient method)</a>
@@ -694,12 +732,14 @@
   <h2>R</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="output/botcore.utils.regex.html#botcore.utils.regex.RAW_CODE_REGEX">RAW_CODE_REGEX (in module botcore.utils.regex)</a>
+        <li><a href="output/botcore.utils.cooldown.html#botcore.utils.cooldown.R">R (in module botcore.utils.cooldown)</a>
 </li>
-        <li><a href="output/botcore.html#botcore.BotBase.remove_command">remove_command() (BotBase method)</a>
+        <li><a href="output/botcore.utils.regex.html#botcore.utils.regex.RAW_CODE_REGEX">RAW_CODE_REGEX (in module botcore.utils.regex)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="output/botcore.html#botcore.BotBase.remove_command">remove_command() (BotBase method)</a>
+</li>
         <li><a href="output/botcore.site_api.html#botcore.site_api.APIClient.request">request() (APIClient method)</a>
 </li>
         <li><a href="output/botcore.site_api.html#botcore.site_api.ResponseCodeError">ResponseCodeError</a>
@@ -745,6 +785,10 @@
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="output/botcore.utils.html#botcore.utils.unqualify">unqualify() (in module botcore.utils)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="output/botcore.utils.function.html#botcore.utils.function.update_wrapper_globals">update_wrapper_globals() (in module botcore.utils.function)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -809,6 +853,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/changelog.js"></script>
     </body>

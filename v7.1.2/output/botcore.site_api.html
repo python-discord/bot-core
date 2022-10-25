@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Changelog" href="../changelog.html" /><link rel="prev" title="async_stats" href="botcore.async_stats.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
         <title>site_api - Bot Core v7.1.2</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
@@ -138,7 +138,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -202,6 +202,10 @@
                 
                     <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../main/output/botcore.site_api.html">main</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v8.2.1/output/botcore.site_api.html">v8.2.1</a>
                     </li>
                 
                     <li class="toctree-l2 ">
@@ -324,7 +328,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -343,7 +347,7 @@
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_api_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_api_token</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">session_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L48-L71"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.APIClient.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialize a new <a class="reference internal" href="#botcore.site_api.APIClient" title="botcore.site_api.APIClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">APIClient</span></code></a> instance.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>site_api_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The URL of the site API.</p></li>
 <li><p><strong>site_api_token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The token to use for authentication.</p></li>
@@ -358,7 +362,7 @@
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L75-L78"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.APIClient.close" title="Permalink to this definition">#</a></dt>
 <dd><p>Close the aiohttp session.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -369,17 +373,17 @@
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L136-L154"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.APIClient.delete" title="Permalink to this definition">#</a></dt>
 <dd><p>Send a DELETE request to the site API and return the JSON response.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>endpoint</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The endpoint to send the request to.</p></li>
 <li><p><strong>raise_for_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Whether or not to raise an exception if the response is not OK.</p></li>
 <li><p><strong>**kwargs</strong> – Any extra keyword arguments to pass to <a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.request" title="(in aiohttp v3.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">aiohttp.request()</span></code></a>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]</p>
 </dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The JSON response the API returns, or None if the response is 204 No Content.</p>
 </dd>
 </dl>
@@ -390,7 +394,7 @@
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L120-L123"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.APIClient.get" title="Permalink to this definition">#</a></dt>
 <dd><p>Equivalent to <a class="reference internal" href="#botcore.site_api.APIClient.request" title="botcore.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with GET passed as the method.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
@@ -401,16 +405,16 @@
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maybe_raise_for_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_raise</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L79-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.APIClient.maybe_raise_for_status" title="Permalink to this definition">#</a></dt>
 <dd><p>Raise <a class="reference internal" href="#botcore.site_api.ResponseCodeError" title="botcore.site_api.ResponseCodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ResponseCodeError</span></code></a> for non-OK response if an exception should be raised.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>response</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse" title="(in aiohttp v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aiohttp.ClientResponse</span></code></a>) – The response to check.</p></li>
 <li><p><strong>should_raise</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Whether or not to raise an exception.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference internal" href="#botcore.site_api.ResponseCodeError" title="botcore.site_api.ResponseCodeError"><strong>ResponseCodeError</strong></a> – If the response is not OK and <code class="docutils literal notranslate"><span class="pre">should_raise</span></code> is True.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
@@ -421,7 +425,7 @@
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L124-L127"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.APIClient.patch" title="Permalink to this definition">#</a></dt>
 <dd><p>Equivalent to <a class="reference internal" href="#botcore.site_api.APIClient.request" title="botcore.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with PATCH passed as the method.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
@@ -432,7 +436,7 @@
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L128-L131"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.APIClient.post" title="Permalink to this definition">#</a></dt>
 <dd><p>Equivalent to <a class="reference internal" href="#botcore.site_api.APIClient.request" title="botcore.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with POST passed as the method.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
@@ -443,7 +447,7 @@
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L132-L135"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.APIClient.put" title="Permalink to this definition">#</a></dt>
 <dd><p>Equivalent to <a class="reference internal" href="#botcore.site_api.APIClient.request" title="botcore.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with PUT passed as the method.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
@@ -454,7 +458,7 @@
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L99-L119"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.APIClient.request" title="Permalink to this definition">#</a></dt>
 <dd><p>Send an HTTP request to the site API and return the JSON response.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The HTTP method to use.</p></li>
 <li><p><strong>endpoint</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The endpoint to send the request to.</p></li>
@@ -462,13 +466,13 @@
 <li><p><strong>**kwargs</strong> – Any extra keyword arguments to pass to <a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.request" title="(in aiohttp v3.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">aiohttp.request()</span></code></a>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The JSON response the API returns.</p>
 </dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference internal" href="#botcore.site_api.ResponseCodeError" title="botcore.site_api.ResponseCodeError"><strong>ResponseCodeError</strong></a> – If the response is not OK and <code class="docutils literal notranslate"><span class="pre">raise_for_status</span></code> is True.</p>
 </dd>
 </dl>
@@ -486,7 +490,7 @@
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/88373772f264ee359d60072aea1578cbf50ff4ff/botcore/site_api.py#L17-L35"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.site_api.ResponseCodeError.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialize a new <a class="reference internal" href="#botcore.site_api.ResponseCodeError" title="botcore.site_api.ResponseCodeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResponseCodeError</span></code></a> instance.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>response</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse" title="(in aiohttp v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aiohttp.ClientResponse</span></code></a>) – The response object from the request. This was changed in 7.1.2.</p></li>
 <li><p><strong>response_json</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]) – The JSON response returned from the request, if any.</p></li>
@@ -551,8 +555,43 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">site_api</a><ul>
+<li><a class="reference internal" href="#botcore.site_api.APIClient"><code class="docutils literal notranslate"><span class="pre">APIClient</span></code></a><ul>
+<li><a class="reference internal" href="#botcore.site_api.APIClient.__init__"><code class="docutils literal notranslate"><span class="pre">APIClient.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.site_api.APIClient.close"><code class="docutils literal notranslate"><span class="pre">APIClient.close()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.site_api.APIClient.delete"><code class="docutils literal notranslate"><span class="pre">APIClient.delete()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.site_api.APIClient.get"><code class="docutils literal notranslate"><span class="pre">APIClient.get()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.site_api.APIClient.maybe_raise_for_status"><code class="docutils literal notranslate"><span class="pre">APIClient.maybe_raise_for_status()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.site_api.APIClient.patch"><code class="docutils literal notranslate"><span class="pre">APIClient.patch()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.site_api.APIClient.post"><code class="docutils literal notranslate"><span class="pre">APIClient.post()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.site_api.APIClient.put"><code class="docutils literal notranslate"><span class="pre">APIClient.put()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.site_api.APIClient.request"><code class="docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#botcore.site_api.ResponseCodeError"><code class="docutils literal notranslate"><span class="pre">ResponseCodeError</span></code></a><ul>
+<li><a class="reference internal" href="#botcore.site_api.ResponseCodeError.__init__"><code class="docutils literal notranslate"><span class="pre">ResponseCodeError.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#botcore.site_api.ResponseCodeError.__str__"><code class="docutils literal notranslate"><span class="pre">ResponseCodeError.__str__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -562,6 +601,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/changelog.js"></script>
     </body>
