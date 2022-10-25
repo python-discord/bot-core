@@ -23,7 +23,8 @@ repository = "https://github.com/python-discord/bot-core"
 keywords = ["bot", "discord", "discord.py"]
 
 [tool.poetry.dependencies]
-python = "3.10.*"
+python = "3.10.* || 3.11.*"
+
 "discord.py" = "2.1.0"
 async-rediscache = { version = "1.0.0rc2", extras = ["fakeredis"], optional = true }
 statsd  = "4.0.1"

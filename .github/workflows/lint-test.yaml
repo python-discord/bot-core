@@ -16,11 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.1
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.2
         with:
           # Set dev=true to run pre-commit which is a dev dependency
           dev: true
-          python_version: "3.10"
+          python_version: "3.11"
           install_args: "--extras async-rediscache"
 
       # We will not run `flake8` here, as we will use a separate flake8
