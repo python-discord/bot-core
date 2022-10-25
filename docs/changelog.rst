@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`8.3.0 <25th October 2022>`
+- :feature:`88` Add a decorator that stops successive duplicate invocations of commands
+- :support:`151` Add support for Python 3.11
+
 - :release:`8.2.1 <18th September 2022>`
 - :bug:`138` Bump Discord.py to :literal-url:`2.0.1 <https://discordpy.readthedocs.io/en/latest/whats_new.html#v2-0-1>`.
 
