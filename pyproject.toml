@@ -44,7 +44,7 @@ pytest-xdist = "2.5.0"
 Sphinx = "5.2.2"
 GitPython = "3.1.27"
 sphinx-autodoc-typehints = "1.19.4"
-furo = "2022.9.15"
+furo = "2022.9.29"
 releases = "1.6.3"
 sphinx-multiversion = "0.2.4"
 
