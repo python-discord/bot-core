@@ -21,10 +21,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.1
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.2
         with:
           dev: true
-          python_version: "3.10"
+          python_version: "3.11"
           install_args: "--extras async-rediscache"
 
       - name: Generate HTML Site
@@ -46,10 +46,10 @@ jobs:
           fetch-depth: 0  # We need to check out the entire repository to find all tags
 
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.1
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.2
         with:
           dev: true
-          python_version: "3.10"
+          python_version: "3.11"
           install_args: "--extras async-rediscache"
 
       - name: Build All Doc Versions

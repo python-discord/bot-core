@@ -1080,8 +1080,8 @@ async-rediscache = ["async-rediscache"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "3.10.*"
-content-hash = "3493b80e4e51967f9441c0c7035969a39c9f34c541bd6477af7ee8b84c8529d9"
+python-versions = "3.10.* || 3.11.*"
+content-hash = "a4ec22a98b0b67b8ff84abf87fa000813ad5bf67d65b8a4e8b7949feb748f331"
 
 [metadata.files]
 aiodns = [
