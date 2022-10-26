@@ -1,7 +1,0 @@
-logging
-============================
-
-.. automodule:: botcore.utils.logging
-   :members:
-   :special-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-scheduling
-===============================
-
-.. automodule:: botcore.utils.scheduling
-   :members:
-   :special-members:
-   :show-inheritance:

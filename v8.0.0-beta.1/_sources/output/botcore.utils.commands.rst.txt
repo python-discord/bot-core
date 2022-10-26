@@ -1,7 +1,0 @@
-commands
-=============================
-
-.. automodule:: botcore.utils.commands
-   :members:
-   :special-members:
-   :show-inheritance:

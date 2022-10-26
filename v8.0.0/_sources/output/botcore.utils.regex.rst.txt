@@ -1,7 +1,0 @@
-regex
-==========================
-
-.. automodule:: botcore.utils.regex
-   :members:
-   :special-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-interactions
-=================================
-
-.. automodule:: botcore.utils.interactions
-   :members:
-   :special-members:
-   :show-inheritance:

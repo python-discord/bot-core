@@ -1,7 +1,0 @@
-function
-=============================
-
-.. automodule:: botcore.utils.function
-   :members:
-   :special-members:
-   :show-inheritance:

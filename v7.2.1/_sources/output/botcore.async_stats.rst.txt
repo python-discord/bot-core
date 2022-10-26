@@ -1,7 +1,0 @@
-async\_stats
-===========================
-
-.. automodule:: botcore.async_stats
-   :members:
-   :special-members:
-   :show-inheritance:
