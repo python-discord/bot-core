@@ -72,21 +72,11 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> typin
         while isinstance(source.body[0], ast.ClassDef):
             source = source.body[0]
 
-        for ast_obj in source.body:
-            if isinstance(ast_obj, ast.Assign):
-                names = []
-                for target in ast_obj.targets:
-                    if isinstance(target, ast.Tuple):
-                        names.extend([name.id for name in target.elts])
-                    else:
-                        names.append(target.id)
-
-                if symbol_name in names:
-                    start, end = ast_obj.lineno, ast_obj.end_lineno
-                    break
-        else:
+        pos = _global_assign_pos(source, symbol_name)
+        if pos is None:
             raise Exception(f"Could not find symbol `{symbol_name}` in {module.__name__}.")
-
+        else:
+            start, end = pos
         _, offset = inspect.getsourcelines(symbol[-2])
         if offset != 0:
             offset -= 1
@@ -106,6 +96,37 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> typin
         url += f"-L{end}"
 
     return url
+
+
+class NodeWithBody(typing.Protocol):
+    """An AST node with the body attribute."""
+
+    body: list[ast.AST]
+
+
+def _global_assign_pos(ast_: NodeWithBody, name: str) -> typing.Union[tuple[int, int], None]:
+    """
+    Find the first instance where the `name` global is defined in `ast_`.
+
+    Check top-level assignments and assignments nested in top-level if blocks.
+    """
+    for ast_obj in ast_.body:
+        if isinstance(ast_obj, ast.Assign):
+            names = []
+            for target in ast_obj.targets:
+                if isinstance(target, ast.Tuple):
+                    names.extend([name.id for name in target.elts if isinstance(name, ast.Name)])
+                else:
+                    if isinstance(target, ast.Name):
+                        names.append(target.id)
+
+            if name in names:
+                return ast_obj.lineno, ast_obj.end_lineno
+
+        elif isinstance(ast_obj, ast.If):
+            pos_in_if = _global_assign_pos(ast_obj, name)
+            if pos_in_if is not None:
+                return pos_in_if
 
 
 def cleanup() -> None:
