@@ -1,0 +1,17 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-test:
+    uses: ./.github/workflows/lint-test.yaml
+  docs:
+    uses: ./.github/workflows/docs.yaml

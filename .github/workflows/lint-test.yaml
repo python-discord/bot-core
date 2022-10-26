@@ -1,17 +1,14 @@
 name: Lint & Test
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  workflow_call:
 
 jobs:
   lint:
+    strategy:
+      fail-fast: false
+      matrix:
+        python_version: ["3.10", "3.11"]
     name: Run Linting & Test Suites
     runs-on: ubuntu-latest
     steps:
@@ -20,8 +17,8 @@ jobs:
         with:
           # Set dev=true to run pre-commit which is a dev dependency
           dev: true
-          python_version: "3.11"
-          install_args: "--extras async-rediscache"
+          python_version: ${{ matrix.python_version }}
+          install_args: "--extras async-rediscache --only main --only lint --only test"
 
       # We will not run `flake8` here, as we will use a separate flake8
       # action.
@@ -44,7 +41,7 @@ jobs:
         run: python -m pytest -n auto --cov pydis_core -q
 
       - name: Build and dry run the example bot to ensure deps can be installed & imported
-        run: docker run --rm -it --env GUILD_ID=1234 --env IN_CI=true $(docker build -q -f .\dev\Dockerfile .) run python -m dev.bot
+        run: docker run --rm --env GUILD_ID=1234 --env IN_CI=true $(docker build --build-arg python_version=${{ matrix.python_version }} -q -f ./dev/Dockerfile .) run python -m dev.bot
 
       # Prepare the Pull Request Payload artifact. If this fails, we
       # we fail silently using the `continue-on-error` option. It's
