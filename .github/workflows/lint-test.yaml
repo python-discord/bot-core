@@ -43,6 +43,9 @@ jobs:
       - name: Run tests and generate coverage report
         run: python -m pytest -n auto --cov pydis_core -q
 
+      - name: Build and dry run the example bot to ensure deps can be installed & imported
+        run: docker run --rm -it --env GUILD_ID=1234 --env IN_CI=true $(docker build -q -f .\dev\Dockerfile .) run python -m dev.bot
+
       # Prepare the Pull Request Payload artifact. If this fails, we
       # we fail silently using the `continue-on-error` option. It's
       # nice if this succeeds, but if it fails for any reason, it
