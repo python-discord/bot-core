@@ -14,8 +14,8 @@ from dataclasses import dataclass
 import discord
 from discord.ext.commands import CommandError, Context
 
-from botcore.utils import scheduling
-from botcore.utils.function import command_wraps
+from pydis_core.utils import scheduling
+from pydis_core.utils.function import command_wraps
 
 __all__ = ["CommandOnCooldown", "block_duplicate_invocations", "P", "R"]
 
@@ -26,7 +26,7 @@ _HashableArgsTuple = tuple[Hashable, ...]
 
 if typing.TYPE_CHECKING:
     import typing_extensions
-    from botcore import BotBase
+    from pydis_core import BotBase
 
 P = typing.ParamSpec("P")
 """The command's signature."""

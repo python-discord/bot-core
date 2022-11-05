@@ -3,7 +3,7 @@ import logging
 import os
 import sys
 
-import botcore
+import pydis_core
 
 if os.name == "nt":
     # Change the event loop policy on Windows to avoid exceptions on exit
@@ -15,7 +15,7 @@ logging.getLogger().setLevel(logging.DEBUG)
 logging.getLogger("discord").setLevel(logging.ERROR)
 
 
-class Bot(botcore.BotBase):
+class Bot(pydis_core.BotBase):
     """Sample Bot implementation."""
 
     async def setup_hook(self) -> None:

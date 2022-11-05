@@ -3,7 +3,7 @@
 import discord
 from discord.ext.commands import Bot
 
-from botcore.utils import logging
+from pydis_core.utils import logging
 
 log = logging.get_logger(__name__)
 

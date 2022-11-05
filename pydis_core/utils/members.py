@@ -4,7 +4,7 @@ from collections import abc
 
 import discord
 
-from botcore.utils import logging
+from pydis_core.utils import logging
 
 log = logging.get_logger(__name__)
 

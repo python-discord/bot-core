@@ -134,12 +134,12 @@ def cleanup() -> None:
     included = __get_included()
 
     for file in (get_build_root() / "docs" / "output").iterdir():
-        if file.name in ("botcore.rst", "botcore.exts.rst", "botcore.utils.rst") and file.name in included:
+        if file.name in ("pydis_core.rst", "pydis_core.exts.rst", "pydis_core.utils.rst") and file.name in included:
             content = file.read_text(encoding="utf-8").splitlines(keepends=True)
 
             # Rename the extension to be less wordy
-            # Example: botcore.exts -> Botcore Exts
-            title = content[0].split()[0].strip().replace("botcore.", "").replace(".", " ").title()
+            # Example: pydis_core.exts -> pydis_core Exts
+            title = content[0].split()[0].strip().replace("pydis_core.", "").replace(".", " ").title()
             title = f"{title}\n{'=' * len(title)}\n\n"
             content = title, *content[3:]
 
@@ -147,7 +147,7 @@ def cleanup() -> None:
 
         elif file.name in included:
             # Clean up the submodule name so it's just the name without the top level module name
-            # example: `botcore.regex module` -> `regex`
+            # example: `pydis_core.regex module` -> `regex`
             lines = file.read_text(encoding="utf-8").splitlines(keepends=True)
             lines[0] = lines[0].replace("module", "").strip().split(".")[-1] + "\n"
             file.write_text("".join(lines))
@@ -164,7 +164,7 @@ def cleanup() -> None:
 
 def build_api_doc() -> None:
     """Generate auto-module directives using apidoc."""
-    cmd = os.getenv("APIDOC_COMMAND") or "sphinx-apidoc -o docs/output botcore -feM"
+    cmd = os.getenv("APIDOC_COMMAND") or "sphinx-apidoc -o docs/output pydis_core -feM"
     cmd = cmd.split()
 
     build_root = get_build_root()
@@ -196,7 +196,7 @@ def __get_included() -> set[str]:
 
         return _modules
 
-    return get_all_from_module("botcore")
+    return get_all_from_module("pydis_core")
 
 
 def reorder_release_entries(release_list: list[releases.Release]) -> None:

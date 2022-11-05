@@ -41,7 +41,7 @@ jobs:
         --format='::error file=%(path)s,line=%(row)d,col=%(col)d::[flake8] %(code)s: %(text)s'"
 
       - name: Run tests and generate coverage report
-        run: python -m pytest -n auto --cov botcore -q
+        run: python -m pytest -n auto --cov pydis_core -q
 
       # Prepare the Pull Request Payload artifact. If this fails, we
       # we fail silently using the `continue-on-error` option. It's

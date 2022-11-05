@@ -45,7 +45,7 @@ def get_logger(name: typing.Optional[str] = None) -> CustomLogger:
     return typing.cast(CustomLogger, logging.getLogger(name))
 
 
-# Setup trace level logging so that we can use it within botcore.
+# Setup trace level logging so that we can use it within pydis_core.
 logging.TRACE = TRACE_LEVEL
 logging.setLoggerClass(CustomLogger)
 logging.addLevelName(TRACE_LEVEL, "TRACE")

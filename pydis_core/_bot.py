@@ -9,11 +9,11 @@ import aiohttp
 import discord
 from discord.ext import commands
 
-from botcore.async_stats import AsyncStatsClient
-from botcore.site_api import APIClient
-from botcore.utils import scheduling
-from botcore.utils._extensions import walk_extensions
-from botcore.utils.logging import get_logger
+from pydis_core.async_stats import AsyncStatsClient
+from pydis_core.site_api import APIClient
+from pydis_core.utils import scheduling
+from pydis_core.utils._extensions import walk_extensions
+from pydis_core.utils.logging import get_logger
 
 try:
     from async_rediscache import RedisSession
@@ -55,7 +55,7 @@ class BotBase(commands.Bot):
             allowed_roles: A list of role IDs that the bot is allowed to mention.
             http_session (aiohttp.ClientSession): The session to use for the bot.
             redis_session: The `async_rediscache.RedisSession`_ to use for the bot.
-            api_client: The :obj:`botcore.site_api.APIClient` instance to use for the bot.
+            api_client: The :obj:`pydis_core.site_api.APIClient` instance to use for the bot.
             statsd_url: The URL of the statsd server to use for the bot. If not given,
                 a dummy statsd client will be created.
 
@@ -220,7 +220,7 @@ class BotBase(commands.Bot):
         An async init to startup generic services.
 
         Connects to statsd, and calls
-        :func:`AsyncStatsClient.create_socket <botcore.async_stats.AsyncStatsClient.create_socket>`
+        :func:`AsyncStatsClient.create_socket <pydis_core.async_stats.AsyncStatsClient.create_socket>`
         and :func:`ping_services`.
         """
         loop = asyncio.get_running_loop()
