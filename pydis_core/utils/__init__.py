@@ -1,6 +1,6 @@
 """Useful utilities and tools for Discord bot development."""
 
-from botcore.utils import (
+from pydis_core.utils import (
     _monkey_patches,
     caching,
     channel,
@@ -13,7 +13,7 @@ from botcore.utils import (
     regex,
     scheduling,
 )
-from botcore.utils._extensions import unqualify
+from pydis_core.utils._extensions import unqualify
 
 
 def apply_monkey_patches() -> None:

@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`9.0.0 <5th November 2022>`
+- :breaking:`157` Rename project to pydis_core to allow for publishing to pypi.
+
+
 - :release:`8.2.1 <18th September 2022>`
 - :bug:`138` Bump Discord.py to :literal-url:`2.0.1 <https://discordpy.readthedocs.io/en/latest/whats_new.html#v2-0-1>`.
 
@@ -13,7 +17,7 @@ Changelog
 
 
 - :release:`8.1.0 <16th August 2022>`
-- :support:`124` Updated :obj:`botcore.utils.regex.DISCORD_INVITE` regex to optionally match leading "http[s]" and "www".
+- :support:`124` Updated :obj:`pydis_core.utils.regex.DISCORD_INVITE` regex to optionally match leading "http[s]" and "www".
 
 
 - :release:`8.0.0 <27th July 2022>`
@@ -28,16 +32,16 @@ Changelog
 
 
 - :release:`7.4.0 <17th July 2022>`
-- :feature:`106` Add an optional ``message`` attr to :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has its view removed if set.
+- :feature:`106` Add an optional ``message`` attr to :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has its view removed if set.
 
 
 - :release:`7.3.1 <16th July 2022>`
-- :bug:`104` Fix :obj:`botcore.utils.interactions.DeleteMessageButton` not working due to using wrong delete method.
+- :bug:`104` Fix :obj:`pydis_core.utils.interactions.DeleteMessageButton` not working due to using wrong delete method.
 
 
 - :release:`7.3.0 <16th July 2022>`
-- :feature:`103` Add a generic view :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck` that only allows specified users and roles to interaction with it
-- :feature:`103` Add a button :obj:`botcore.utils.interactions.DeleteMessageButton` that deletes the message attached to its parent view.
+- :feature:`103` Add a generic view :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck` that only allows specified users and roles to interaction with it
+- :feature:`103` Add a button :obj:`pydis_core.utils.interactions.DeleteMessageButton` that deletes the message attached to its parent view.
 
 
 - :release:`7.2.2 <9th July 2022>`
@@ -46,7 +50,7 @@ Changelog
 
 - :release:`7.2.1 <30th June 2022>`
 - :bug:`96` Fix attempts to connect to ``BotBase.statsd_url`` when it is None.
-- :bug:`91` Fix incorrect docstring for ``botcore.utils.member.handle_role_change``.
+- :bug:`91` Fix incorrect docstring for ``pydis_core.utils.member.handle_role_change``.
 - :bug:`91` Pass missing self parameter to ``BotBase.ping_services``.
 - :bug:`91` Add missing await to ``BotBase.ping_services`` in some cases.
 
@@ -96,7 +100,7 @@ Changelog
 
 
 - :release:`6.1.0 <20th April 2022>`
-- :feature:`65` Add ``unqualify`` to the ``botcore.utils`` namespace for use in bots that manipulate extensions.
+- :feature:`65` Add ``unqualify`` to the ``pydis_core.utils`` namespace for use in bots that manipulate extensions.
 
 
 - :release:`6.0.0 <19th April 2022>`
@@ -112,7 +116,7 @@ Changelog
       Feature 63 Needs to be explicitly included above because it was improperly released within a bugfix version
       instead of a minor release
 
-- :feature:`63` Allow passing an ``api_client`` to ``BotBase.__init__`` to specify the ``botcore.site_api.APIClient`` instance to use.
+- :feature:`63` Allow passing an ``api_client`` to ``BotBase.__init__`` to specify the ``pydis_core.site_api.APIClient`` instance to use.
 
 
 - :release:`5.0.3 <18th April 2022>`
@@ -140,11 +144,11 @@ Changelog
 
 
 - :release:`3.0.1 <5th March 2022>`
-- :bug:`37` Setup log tracing when ``botcore.utils.logging`` is imported so that it can be used within botcore functions.
+- :bug:`37` Setup log tracing when ``pydis_core.utils.logging`` is imported so that it can be used within pydis_core functions.
 
 
 - :release:`3.0.0 <3rd March 2022>`
-- :breaking:`35` Move ``apply_monkey_patches()`` directly to `botcore.utils` namespace.
+- :breaking:`35` Move ``apply_monkey_patches()`` directly to `pydis_core.utils` namespace.
 
 
 - :release:`2.1.0 <24th February 2022>`
@@ -152,7 +156,7 @@ Changelog
 
 
 - :release:`2.0.0 <22nd February 2022>`
-- :breaking:`35` Moved regex to ``botcore.utils`` namespace
+- :breaking:`35` Moved regex to ``pydis_core.utils`` namespace
 - :breaking:`32` Migrate from discord.py 2.0a0 to disnake.
 - :feature:`32` Add common monkey patches.
 - :feature:`29` Port many common utilities from our bots:

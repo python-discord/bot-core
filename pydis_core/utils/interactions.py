@@ -3,7 +3,7 @@ from typing import Optional, Sequence
 
 from discord import ButtonStyle, Interaction, Message, NotFound, ui
 
-from botcore.utils.logging import get_logger
+from pydis_core.utils.logging import get_logger
 
 log = get_logger(__name__)
 
@@ -76,7 +76,7 @@ class DeleteMessageButton(ui.Button):
 
     This button itself carries out no interaction checks, these should be done by the parent view.
 
-    See :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck` for a view that implements basic checks.
+    See :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck` for a view that implements basic checks.
 
     Args:
         style (:literal-url:`ButtonStyle <https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ButtonStyle>`):

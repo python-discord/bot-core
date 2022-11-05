@@ -3,7 +3,7 @@ Local Development & Testing
 
 To test your features locally, there are a few possible approaches:
 
-1. Install your local copy of botcore into a pre-existing project such as bot
+1. Install your local copy of pydis_core into a pre-existing project such as bot
 2. Use the provided template from the :repo-file:`dev/bot <dev/bot>` folder
 
 See below for more info on both approaches.
@@ -17,12 +17,12 @@ vary by the feature you're working on.
 Option 1
 --------
 1. Navigate to the project you want to install bot-core in, such as bot or sir-lancebot
-2. Run ``pip install /path/to/botcore`` in the project's environment
+2. Run ``pip install /path/to/pydis_core`` in the project's environment
 
    - The path provided to install should be the root directory of this project on your machine.
      That is, the folder which contains the ``pyproject.toml`` file.
    - Make sure to install in the correct environment. Most Python Discord projects use
-     poetry, so you can run ``poetry run pip install /path/to/botcore``.
+     poetry, so you can run ``poetry run pip install /path/to/pydis_core``.
 
 3. You can now use features from your local bot-core changes.
    To load new changes, run the install command again.

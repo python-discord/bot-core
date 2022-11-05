@@ -69,7 +69,7 @@ services:
       context: .
       dockerfile: dev/Dockerfile
     volumes:  # Don't do .:/app here to ensure project venv from host doens't overwrite venv in image
-      - ./botcore:/app/botcore:ro
+      - ./pydis_core:/app/pydis_core:ro
       - ./bot:/app/bot:ro
     tty: true
     depends_on:

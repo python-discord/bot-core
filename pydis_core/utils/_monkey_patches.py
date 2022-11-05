@@ -64,7 +64,7 @@ def _patch_typing() -> None:
 
 
 def _apply_monkey_patches() -> None:
-    """This is surfaced directly in botcore.utils.apply_monkey_patches()."""
+    """This is surfaced directly in pydis_core.utils.apply_monkey_patches()."""
     commands.command = partial(commands.command, cls=_Command)
     commands.GroupMixin.command = partialmethod(commands.GroupMixin.command, cls=_Command)
 

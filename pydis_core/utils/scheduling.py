@@ -8,7 +8,7 @@ from collections import abc
 from datetime import datetime
 from functools import partial
 
-from botcore.utils import logging
+from pydis_core.utils import logging
 
 
 class Scheduler:

@@ -11,7 +11,7 @@ Reference
    :maxdepth: 4
    :caption: Modules:
 
-   output/botcore
+   output/pydis_core
 
 .. toctree::
    :caption: Other:

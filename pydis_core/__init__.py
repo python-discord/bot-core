@@ -1,7 +1,7 @@
 """Useful utilities and tools for Discord bot development."""
 
-from botcore import async_stats, exts, site_api, utils
-from botcore._bot import BotBase, StartupError
+from pydis_core import async_stats, exts, site_api, utils
+from pydis_core._bot import BotBase, StartupError
 
 __all__ = [
     async_stats,
