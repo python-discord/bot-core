@@ -1,18 +1,25 @@
 [tool.poetry]
 name = "bot-core"
 version = "8.2.1"
-description = "Bot-Core provides the core functionality and utilities for the bots of the Python Discord community."
+description = "PyDis bot core provides core functionality and utility to the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
 classifiers=[
-    "Programming Language :: Python :: 3",
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
 ]
 packages = [
     { include = "botcore" },
 ]
+include = ["LICENSE"]
 exclude = ["tests", "tests.*"]
+readme = "README.md"
+documentation = "https://bot-core.pythondiscord.com/"
+repository = "https://github.com/python-discord/bot-core"
+keywords = ["bot", "discord", "discord.py"]
 
 [tool.poetry.dependencies]
 python = "3.10.*"
