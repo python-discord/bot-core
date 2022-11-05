@@ -53,6 +53,7 @@ Sphinx = "5.2.2"
 GitPython = "3.1.27"
 sphinx-autodoc-typehints = "1.19.4"
 furo = "2022.9.15"
+six = "1.16.0"
 releases = "1.6.3"
 sphinx-multiversion = "0.2.4"
 
