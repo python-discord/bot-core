@@ -5,9 +5,11 @@ import importlib.util
 import inspect
 import os
 import subprocess
+import types
 import typing
 from pathlib import Path
 
+import docstring_parser
 import docutils.nodes
 import docutils.parsers.rst.states
 import git
@@ -23,6 +25,18 @@ def get_build_root() -> Path:
     if root.name == "docs":
         root = root.parent
     return root
+
+
+def is_attribute(module: types.ModuleType, parameter: str) -> bool:
+    """Returns true if `parameter` is an attribute of `module`."""
+    docs = docstring_parser.parse(inspect.getdoc(module), docstring_parser.DocstringStyle.GOOGLE)
+    for param in docs.params:
+        # The docstring_parser library can mis-parse arguments like `arg (:obj:`str`)` as `arg (`
+        # which would create a false-negative below, so we just strip away the extra parenthesis.
+        if param.args[0] == "attribute" and param.arg_name.rstrip(" (") == parameter:
+            return True
+
+    return False
 
 
 def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> typing.Optional[str]:
@@ -59,7 +73,15 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> typin
 
     symbol = [module]
     for name in symbol_name.split("."):
-        symbol.append(getattr(symbol[-1], name))
+        try:
+            symbol.append(getattr(symbol[-1], name))
+        except AttributeError as e:
+            # This could be caused by trying to link a class attribute
+            if is_attribute(symbol[-1], name):
+                break
+            else:
+                raise e
+
         symbol_name = name
 
     try:
