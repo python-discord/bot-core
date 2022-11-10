@@ -160,9 +160,13 @@ def cleanup() -> None:
             content = file.read_text(encoding="utf-8").splitlines(keepends=True)
 
             # Rename the extension to be less wordy
-            # Example: pydis_core.exts -> pydis_core Exts
-            title = content[0].split()[0].strip().replace("pydis_core.", "").replace(".", " ").title()
-            title = f"{title}\n{'=' * len(title)}\n\n"
+            # Example: pydis_core.exts -> Exts
+            title = content[0].split()[0].strip().replace("\\", "").replace("pydis_core.", "").replace(".", " ")
+            if "pydis_core" in title:
+                # Root title: pydis_core -> pydis core
+                title = title.replace("_", " ")
+
+            title = f"{title.title()}\n{'=' * len(title)}\n\n"
             content = title, *content[3:]
 
             file.write_text("".join(content), encoding="utf-8")
