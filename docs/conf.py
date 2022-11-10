@@ -22,7 +22,7 @@ from docs import utils  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 
-project = "Bot Core"
+project = "Pydis Core"
 copyright = "2021, Python Discord"
 author = "Python Discord"
 
