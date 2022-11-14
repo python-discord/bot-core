@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`9.1.1 <14th November 2022>`
+- :bug:`162` Handle not being able to delete the interaction message on button press/timeout.
+
+
 - :release:`9.1.0 <13th November 2022>`
 - :feature:`158` Bump Discord.py to :literal-url:`2.1.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.0>`.
 
