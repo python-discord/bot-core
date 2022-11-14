@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exts" href="botcore.exts.html" /><link rel="prev" title="Bot Core Project Documentation" href="../index.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Botcore - Pydis Core v7.2.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css" />
@@ -328,7 +328,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -348,7 +349,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="botcore.BotBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BotBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/149e278d3b6111a6f45f31e993114b38745bb545/botcore/_bot.py#L36-L290"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.BotBase" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.1.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a></p>
 <p>A sub-class that implements many common features that Python Discord bots use.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="botcore.BotBase.__init__">
@@ -479,7 +480,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 To remove them, either remove the entire command or manually edit <cite>bot.all_commands</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.1.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>

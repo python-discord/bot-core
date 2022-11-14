@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="logging" href="botcore.utils.logging.html" /><link rel="prev" title="channel" href="botcore.utils.channel.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>interactions - Pydis Core v7.3.1</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css" />
@@ -329,7 +329,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -348,7 +349,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="botcore.utils.interactions.DeleteMessageButton">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DeleteMessageButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style=&lt;ButtonStyle.secondary:</span> <span class="pre">2&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label='Delete'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c448b69160e287826268db6f499eef81c4005e5a/botcore/utils/interactions.py#L61-L87"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.interactions.DeleteMessageButton" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ui.Button" title="(in discord.py v2.1.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ui.Button" title="(in discord.py v2.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a></p>
 <p>A button that can be added to a view to delete the message containing the view on click.</p>
 <p>This button itself carries out no interaction checks, these should be done by the parent view.</p>
 <p>See <a class="reference internal" href="#botcore.utils.interactions.ViewWithUserAndRoleCheck" title="botcore.utils.interactions.ViewWithUserAndRoleCheck"><code class="xref py py-obj docutils literal notranslate"><span class="pre">botcore.utils.interactions.ViewWithUserAndRoleCheck</span></code></a> for a view that implements basic checks.</p>
@@ -381,7 +382,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="botcore.utils.interactions.ViewWithUserAndRoleCheck">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ViewWithUserAndRoleCheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_users</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">180.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c448b69160e287826268db6f499eef81c4005e5a/botcore/utils/interactions.py#L10-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.interactions.ViewWithUserAndRoleCheck" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ui.View" title="(in discord.py v2.1.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ui.View" title="(in discord.py v2.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a></p>
 <p>A view that allows the original invoker and moderators to interact with it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -404,7 +405,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dd><p>Ensure the user clicking the button is the view invoker, or a moderator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>interaction</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.Interaction" title="(in discord.py v2.1.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interaction</span></code></a>) – The interaction that occurred.</p>
+<dd class="field-odd"><p><strong>interaction</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.Interaction" title="(in discord.py v2.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interaction</span></code></a>) – The interaction that occurred.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
