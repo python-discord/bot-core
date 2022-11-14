@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`9.1.0 <13th November 2022>`
+- :feature:`158` Bump Discord.py to :literal-url:`2.1.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.0>`.
+
+
 - :release:`9.0.0 <5th November 2022>`
 - :breaking:`157` Rename project to pydis_core to allow for publishing to pypi.
 
