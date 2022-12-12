@@ -68,9 +68,8 @@ services:
     build:
       context: .
       dockerfile: dev/Dockerfile
-    volumes:  # Don't do .:/app here to ensure project venv from host doens't overwrite venv in image
-      - ./pydis_core:/app/pydis_core:ro
-      - ./bot:/app/bot:ro
+    volumes:
+      - .:/app:ro
     tty: true
     depends_on:
       - web

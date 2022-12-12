@@ -1,9 +1,7 @@
 *
 
 !pydis_core/
-!docs/
-!tests/
-
+!dev/
 !pyproject.toml
 !poetry.lock
-!tox.ini
+!README.md

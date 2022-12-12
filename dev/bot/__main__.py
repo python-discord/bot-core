@@ -31,4 +31,5 @@ async def main() -> None:
     async with bot:
         await bot.start(os.getenv("BOT_TOKEN"))
 
-asyncio.run(main())
+if os.getenv("IN_CI", "").lower() != "true":
+    asyncio.run(main())

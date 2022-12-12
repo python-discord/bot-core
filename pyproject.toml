@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydis_core"
-version = "9.1.1"
+version = "9.2.0"
 description = "PyDis core provides core functionality and utility to the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
@@ -23,7 +23,8 @@ repository = "https://github.com/python-discord/bot-core"
 keywords = ["bot", "discord", "discord.py"]
 
 [tool.poetry.dependencies]
-python = "3.10.*"
+python = "3.10.* || 3.11.*"
+
 "discord.py" = "2.1.0"
 async-rediscache = { version = "1.0.0rc2", extras = ["fakeredis"], optional = true }
 statsd  = "4.0.1"
@@ -32,31 +33,39 @@ aiodns = "3.0.0"
 [tool.poetry.extras]
 async-rediscache = ["async-rediscache"]
 
-[tool.poetry.dev-dependencies]
-typing-extensions = "4.4.0"
-flake8 = "5.0.4"
+[tool.poetry.group.dev.dependencies]
+taskipy = "1.10.3"
+python-dotenv = "0.21.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "7.2.0"
+pytest-cov = "4.0.0"
+pytest-xdist = "3.1.0"
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "6.0.0"
 flake8-annotations = "2.9.1"
-flake8-bugbear = "22.10.27"
+flake8-bugbear = "22.12.6"
 flake8-docstrings = "1.6.0"
-flake8-import-order = "0.18.1"
+flake8-import-order = "0.18.2"
 flake8-string-format = "0.3.0"
 flake8-tidy-imports = "4.8.0"
 flake8-todo = "0.7"
 pep8-naming = "0.13.2"
 pre-commit = "2.20.0"
-taskipy = "1.10.3"
-python-dotenv = "0.21.0"
-pytest = "7.2.0"
-pytest-cov = "4.0.0"
-pytest-xdist = "3.0.2"
+typing-extensions = "4.4.0"
+
+[tool.poetry.group.doc.dependencies]
 Sphinx = "5.3.0"
 GitPython = "3.1.29"
 sphinx-autodoc-typehints = "1.19.5"
-furo = "2022.9.29"
+furo = "2022.12.7"
 six = "1.16.0"
 releases = "1.6.3"
 sphinx-multiversion = "0.2.4"
 docstring-parser = "0.15"
+typing-extensions = "4.4.0"
+tomli = "2.0.1"
 
 [tool.taskipy.tasks]
 lint = "pre-commit run --all-files"
@@ -66,7 +75,7 @@ test = "pytest -n 8 --ff"
 retest = "pytest -n 8 --lf"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.2.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.coverage.run]

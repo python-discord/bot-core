@@ -4,12 +4,16 @@
 Changelog
 =========
 
+- :release:`9.2.0 <17th November 2022>`
+- :support:`151` Add support for Python 3.11
+
 - :release:`9.1.1 <14th November 2022>`
 - :bug:`162` Handle not being able to delete the interaction message on button press/timeout.
 
 
 - :release:`9.1.0 <13th November 2022>`
 - :feature:`158` Bump Discord.py to :literal-url:`2.1.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.0>`.
+- :feature:`88` Add a decorator that stops successive duplicate invocations of commands
 
 
 - :release:`9.0.0 <5th November 2022>`
