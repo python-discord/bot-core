@@ -5,7 +5,7 @@ Changelog
 =========
 
 - :release:`9.3.0 <13th December 2022>`
-- :feature:`169` Return None upon sending a bad request to fetch a member
+- :feature:`169` Return :obj:`None` upon receiving a bad request from Discord in :obj:`pydis_core.utils.members.get_or_fetch_member`
 
 - :release:`9.2.0 <17th November 2022>`
 - :support:`151` Add support for Python 3.11
