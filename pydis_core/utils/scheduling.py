@@ -10,7 +10,7 @@ from functools import partial
 
 from pydis_core.utils import logging
 
-TASKS = set[asyncio.Task]
+_background_tasks = set[asyncio.Task]
 
 
 class Scheduler:
@@ -241,8 +241,8 @@ def create_task(
     else:
         task = asyncio.create_task(coro, **kwargs)
 
-    TASKS.add(task)
-    task.add_done_callback(TASKS.discard)
+    _background_tasks.add(task)
+    task.add_done_callback(_background_tasks.discard)
     task.add_done_callback(partial(_log_task_exception, suppressed_exceptions=suppressed_exceptions))
     return task
 
