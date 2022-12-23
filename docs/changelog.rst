@@ -4,6 +4,10 @@
 Changelog
 =========
 
+
+- :release:`9.3.1 <23rd December 2022>`
+- :bug:`170` Save references of newly created tasks in :obj:`pydis_core.utils.scheduling`
+
 - :release:`9.3.0 <13th December 2022>`
 - :feature:`169` Return :obj:`None` upon receiving a bad request from Discord in :obj:`pydis_core.utils.members.get_or_fetch_member`
 
