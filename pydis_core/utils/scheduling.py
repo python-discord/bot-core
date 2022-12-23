@@ -10,7 +10,7 @@ from functools import partial
 
 from pydis_core.utils import logging
 
-_background_tasks = set[asyncio.Task]
+_background_tasks: set[asyncio.Task] = set()
 
 
 class Scheduler:
