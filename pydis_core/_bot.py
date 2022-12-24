@@ -82,6 +82,7 @@ class BotBase(commands.Bot):
 
         self._statsd_timerhandle: Optional[asyncio.TimerHandle] = None
         self._guild_available: Optional[asyncio.Event] = None
+        self._extension_loading_task: asyncio.Task | None = None
 
         self.stats: Optional[AsyncStatsClient] = None
 
@@ -116,17 +117,30 @@ class BotBase(commands.Bot):
                 attempt + 1
             )
 
-    async def load_extensions(self, module: types.ModuleType) -> None:
-        """
-        Load all the extensions within the given module and save them to ``self.all_extensions``.
-
-        This should be ran in a task on the event loop to avoid deadlocks caused by ``wait_for`` calls.
-        """
+    async def _load_extensions(self, module: types.ModuleType) -> None:
+        """Load all the extensions within the given module and save them to ``self.all_extensions``."""
         await self.wait_until_guild_available()
         self.all_extensions = walk_extensions(module)
 
         for extension in self.all_extensions:
             scheduling.create_task(self.load_extension(extension))
+
+    async def _sync_app_commands(self) -> None:
+        """Sync global & guild specific application commands after extensions are loaded."""
+        await self._extension_loading_task
+        await self.tree.sync()
+        await self.tree.sync(guild=discord.Object(self.guild_id))
+
+    async def load_extensions(self, module: types.ModuleType, sync_app_commands: bool = True) -> None:
+        """
+        Load all the extensions within the given ``module`` and save them to ``self.all_extensions``.
+
+        Args:
+            sync_app_commands: Whether to sync app commands after all extensions are loaded.
+        """
+        self._extension_loading_task = scheduling.create_task(self._load_extensions(module))
+        if sync_app_commands:
+            scheduling.create_task(self._sync_app_commands())
 
     def _add_root_aliases(self, command: commands.Command) -> None:
         """Recursively add root aliases for ``command`` and any of its subcommands."""
