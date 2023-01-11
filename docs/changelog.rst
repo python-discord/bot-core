@@ -4,6 +4,9 @@
 Changelog
 =========
 
+- :release:`9.4.0 <24th December 2022>`
+- :feature:`171` Sync all app commands after extensions have been loaded. This release also removes the need to run :obj:`pydis_core.BotBase.load_extensions` in a task.
+
 
 - :release:`9.3.1 <23rd December 2022>`
 - :bug:`170` Save references of newly created tasks in :obj:`pydis_core.utils.scheduling`
