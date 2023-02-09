@@ -4,12 +4,16 @@
 Changelog
 =========
 
+- :release:`9.4.1 <9th February 2023>`
+- :feature:`158` Bump Discord.py to :literal-url:`2.1.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.0>`.
+
+
 - :release:`9.4.0 <24th December 2022>`
 - :feature:`171` Sync all app commands after extensions have been loaded. This release also removes the need to run :obj:`pydis_core.BotBase.load_extensions` in a task.
 
 
 - :release:`9.3.1 <23rd December 2022>`
-- :bug:`170` Save references of newly created tasks in :obj:`pydis_core.utils.scheduling`
+- :bug:`172` Bump discord.py to :literal-url:`2.1.1 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.1>`.
 
 - :release:`9.3.0 <13th December 2022>`
 - :feature:`169` Return :obj:`None` upon receiving a bad request from Discord in :obj:`pydis_core.utils.members.get_or_fetch_member`
