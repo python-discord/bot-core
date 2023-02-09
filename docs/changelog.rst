@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`9.4.1 <9th February 2023>`
+- :feature:`172` Bump Discord.py to :literal-url:`2.1.1 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.1>`.
+
+
 - :release:`9.4.0 <24th December 2022>`
 - :feature:`171` Sync all app commands after extensions have been loaded. This release also removes the need to run :obj:`pydis_core.BotBase.load_extensions` in a task.
 
