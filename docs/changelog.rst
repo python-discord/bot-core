@@ -4,6 +4,9 @@
 Changelog
 =========
 
+- :release:`9.5.0 <28th February 2023>`
+- :feature:`173` Bump Discord.py to :literal-url:`2.2.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.0>`.
+
 - :release:`9.4.1 <9th February 2023>`
 - :feature:`172` Bump Discord.py to :literal-url:`2.1.1 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.1>`.
 

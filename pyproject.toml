@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydis_core"
-version = "9.4.1"
+version = "9.5.0"
 description = "PyDis core provides core functionality and utility to the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
@@ -25,7 +25,7 @@ keywords = ["bot", "discord", "discord.py"]
 [tool.poetry.dependencies]
 python = "3.10.* || 3.11.*"
 
-"discord.py" = "2.1.1"
+"discord.py" = "2.2.0"
 async-rediscache = { version = "1.0.0rc2", extras = ["fakeredis"], optional = true }
 statsd  = "4.0.1"
 aiodns = "3.0.0"
