@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
     
     
 
@@ -209,6 +209,10 @@
                         <a class="version_link reference internal" href="../../main/output/pydis_core.utils.cooldown.html">main</a>
                     </li>
                 
+                    <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v9.4.1/output/pydis_core.utils.cooldown.html">v9.4.1</a>
+                    </li>
+                
                     <li class="toctree-l2 current-page">
                         <a class="version_link reference internal" href="pydis_core.utils.cooldown.html">v9.4.0</a>
                     </li>
@@ -370,7 +374,7 @@
 <dl class="py exception">
 <dt class="sig sig-object py" id="pydis_core.utils.cooldown.CommandOnCooldown">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CommandOnCooldown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/08a7a742f61d655c2bd4fd02b95bb70e3d4b815e/pydis_core/utils/cooldown.py#L37-L61"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.CommandOnCooldown" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.CommandError" title="(in discord.py v2.2.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandError</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<a class="reference internal" href="#pydis_core.utils.cooldown.P" title="pydis_core.utils.cooldown.P"><code class="xref py py-obj docutils literal notranslate"><span class="pre">P</span></code></a>, <a class="reference internal" href="#pydis_core.utils.cooldown.R" title="pydis_core.utils.cooldown.R"><code class="xref py py-obj docutils literal notranslate"><span class="pre">R</span></code></a>]</p>
+<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.CommandError" title="(in discord.py v2.3.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandError</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<a class="reference internal" href="#pydis_core.utils.cooldown.P" title="pydis_core.utils.cooldown.P"><code class="xref py py-obj docutils literal notranslate"><span class="pre">P</span></code></a>, <a class="reference internal" href="#pydis_core.utils.cooldown.R" title="pydis_core.utils.cooldown.R"><code class="xref py py-obj docutils literal notranslate"><span class="pre">R</span></code></a>]</p>
 <p>Raised when a command is invoked while on cooldown.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.cooldown.CommandOnCooldown.__init__">

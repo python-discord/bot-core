@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css" />
     
     
 
@@ -208,6 +208,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v9.4.1/index.html">v9.4.1</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v9.4.0/index.html">v9.4.0</a>
                     </li>
                 
@@ -370,7 +374,7 @@
 <span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/e88ef3cc14010c43667e9bbd3d468361c02fae61/botcore/utils/__init__.py#L7-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#botcore.utils.apply_monkey_patches" title="Permalink to this definition">#</a></dt>
 <dd><p>Applies all common monkey patches for our bots.</p>
 <dl>
-<dt>Patches <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.2.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Command</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Group" title="(in discord.py v2.2.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Group</span></code></a> to support root aliases.</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">root_aliases</span></code> keyword argument is added to these two objects, which is a sequence of alias names
+<dt>Patches <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.3.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Command</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Group" title="(in discord.py v2.3.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Group</span></code></a> to support root aliases.</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">root_aliases</span></code> keyword argument is added to these two objects, which is a sequence of alias names
 that will act as top-level groups rather than being aliases of the command’s group.</p>
 <p>It’s stored as an attribute also named <code class="docutils literal notranslate"><span class="pre">root_aliases</span></code></p>
 </dd>
