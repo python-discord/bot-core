@@ -73,7 +73,7 @@ class BotBase(commands.Bot):
         self.statsd_url = statsd_url
 
         if redis_session and not REDIS_AVAILABLE:
-            warnings.warn("redis_session kwarg passed, but async-rediscache not installed!")
+            warnings.warn("redis_session kwarg passed, but async-rediscache not installed!", stacklevel=2)
         elif redis_session:
             self.redis_session = redis_session
 
