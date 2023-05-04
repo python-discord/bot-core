@@ -1,7 +1,7 @@
 import unittest
 from typing import Optional
 
-from botcore.utils.regex import DISCORD_INVITE
+from pydis_core.utils.regex import DISCORD_INVITE
 
 
 def match_regex(s: str) -> Optional[str]:

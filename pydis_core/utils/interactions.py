@@ -1,11 +1,28 @@
-import contextlib
-from typing import Optional, Sequence
+from typing import Literal, Optional, Sequence
 
-from discord import ButtonStyle, Interaction, Message, NotFound, ui
+from discord import ButtonStyle, HTTPException, Interaction, Message, NotFound, ui
 
-from botcore.utils.logging import get_logger
+from pydis_core.utils.logging import get_logger
 
 log = get_logger(__name__)
+
+
+async def _handle_modify_message(message: Message, action: Literal["edit", "delete"]) -> None:
+    """Remove the view from, or delete the given message depending on the specified action."""
+    try:
+        if action == "edit":
+            await message.edit(view=None)
+        elif action == "delete":
+            await message.delete()
+    except HTTPException as e:
+        # Cover the case where this message has been deleted by external means,
+        # or the message is now in an archived/locked thread.
+        if e.code == 50083:
+            log.debug(f"Could not {action} message {message.id} due to it being in an archived thread.")
+        elif isinstance(e, NotFound):
+            log.info(f"Could not find message {message.id} when attempting to {action} it.")
+        else:
+            log.error(f"Could not {action} message {message.id} due to Discord HTTP error:\n{str(e)}")
 
 
 class ViewWithUserAndRoleCheck(ui.View):
@@ -65,9 +82,7 @@ class ViewWithUserAndRoleCheck(ui.View):
     async def on_timeout(self) -> None:
         """Remove the view from ``self.message`` if set."""
         if self.message:
-            with contextlib.suppress(NotFound):
-                # Cover the case where this message has already been deleted by external means
-                await self.message.edit(view=None)
+            await _handle_modify_message(self.message, "edit")
 
 
 class DeleteMessageButton(ui.Button):
@@ -76,7 +91,7 @@ class DeleteMessageButton(ui.Button):
 
     This button itself carries out no interaction checks, these should be done by the parent view.
 
-    See :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck` for a view that implements basic checks.
+    See :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck` for a view that implements basic checks.
 
     Args:
         style (:literal-url:`ButtonStyle <https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ButtonStyle>`):
@@ -95,4 +110,4 @@ class DeleteMessageButton(ui.Button):
 
     async def callback(self, interaction: Interaction) -> None:
         """Delete the original message on button click."""
-        await interaction.message.delete()
+        await _handle_modify_message(interaction.message, "delete")

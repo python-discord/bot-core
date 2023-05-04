@@ -4,8 +4,43 @@
 Changelog
 =========
 
-- :release:`8.3.0 <9th September 2022>`
+- :release:`9.6.0 <4th May 2023>`
 - :feature:`137` Add a utility to check for a job rerun
+
+- :release:`9.5.1 <2nd March 2023>`
+- :bug:`174` Bump Discord.py to :literal-url:`2.2.2 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.2>`.
+
+- :release:`9.5.0 <28th February 2023>`
+- :feature:`173` Bump Discord.py to :literal-url:`2.2.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.0>`.
+
+- :release:`9.4.1 <9th February 2023>`
+- :bug:`172` Bump Discord.py to :literal-url:`2.1.1 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.1>`.
+
+
+- :release:`9.4.0 <24th December 2022>`
+- :feature:`171` Sync all app commands after extensions have been loaded. This release also removes the need to run :obj:`pydis_core.BotBase.load_extensions` in a task.
+
+
+- :release:`9.3.1 <23rd December 2022>`
+- :bug:`170` Save references of newly created tasks in :obj:`pydis_core.utils.scheduling`
+
+- :release:`9.3.0 <13th December 2022>`
+- :feature:`169` Return :obj:`None` upon receiving a bad request from Discord in :obj:`pydis_core.utils.members.get_or_fetch_member`
+
+- :release:`9.2.0 <17th November 2022>`
+- :support:`151` Add support for Python 3.11
+
+- :release:`9.1.1 <14th November 2022>`
+- :bug:`162` Handle not being able to delete the interaction message on button press/timeout.
+
+
+- :release:`9.1.0 <13th November 2022>`
+- :feature:`158` Bump Discord.py to :literal-url:`2.1.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.0>`.
+- :feature:`88` Add a decorator that stops successive duplicate invocations of commands
+
+
+- :release:`9.0.0 <5th November 2022>`
+- :breaking:`157` Rename project to pydis_core to allow for publishing to pypi.
 
 
 - :release:`8.2.1 <18th September 2022>`
@@ -17,7 +52,7 @@ Changelog
 
 
 - :release:`8.1.0 <16th August 2022>`
-- :support:`124` Updated :obj:`botcore.utils.regex.DISCORD_INVITE` regex to optionally match leading "http[s]" and "www".
+- :support:`124` Updated :obj:`pydis_core.utils.regex.DISCORD_INVITE` regex to optionally match leading "http[s]" and "www".
 
 
 - :release:`8.0.0 <27th July 2022>`
@@ -32,16 +67,16 @@ Changelog
 
 
 - :release:`7.4.0 <17th July 2022>`
-- :feature:`106` Add an optional ``message`` attr to :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has its view removed if set.
+- :feature:`106` Add an optional ``message`` attr to :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck`. On view timeout, this message has its view removed if set.
 
 
 - :release:`7.3.1 <16th July 2022>`
-- :bug:`104` Fix :obj:`botcore.utils.interactions.DeleteMessageButton` not working due to using wrong delete method.
+- :bug:`104` Fix :obj:`pydis_core.utils.interactions.DeleteMessageButton` not working due to using wrong delete method.
 
 
 - :release:`7.3.0 <16th July 2022>`
-- :feature:`103` Add a generic view :obj:`botcore.utils.interactions.ViewWithUserAndRoleCheck` that only allows specified users and roles to interaction with it
-- :feature:`103` Add a button :obj:`botcore.utils.interactions.DeleteMessageButton` that deletes the message attached to its parent view.
+- :feature:`103` Add a generic view :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck` that only allows specified users and roles to interaction with it
+- :feature:`103` Add a button :obj:`pydis_core.utils.interactions.DeleteMessageButton` that deletes the message attached to its parent view.
 
 
 - :release:`7.2.2 <9th July 2022>`
@@ -50,7 +85,7 @@ Changelog
 
 - :release:`7.2.1 <30th June 2022>`
 - :bug:`96` Fix attempts to connect to ``BotBase.statsd_url`` when it is None.
-- :bug:`91` Fix incorrect docstring for ``botcore.utils.member.handle_role_change``.
+- :bug:`91` Fix incorrect docstring for ``pydis_core.utils.member.handle_role_change``.
 - :bug:`91` Pass missing self parameter to ``BotBase.ping_services``.
 - :bug:`91` Add missing await to ``BotBase.ping_services`` in some cases.
 
@@ -100,7 +135,7 @@ Changelog
 
 
 - :release:`6.1.0 <20th April 2022>`
-- :feature:`65` Add ``unqualify`` to the ``botcore.utils`` namespace for use in bots that manipulate extensions.
+- :feature:`65` Add ``unqualify`` to the ``pydis_core.utils`` namespace for use in bots that manipulate extensions.
 
 
 - :release:`6.0.0 <19th April 2022>`
@@ -116,7 +151,7 @@ Changelog
       Feature 63 Needs to be explicitly included above because it was improperly released within a bugfix version
       instead of a minor release
 
-- :feature:`63` Allow passing an ``api_client`` to ``BotBase.__init__`` to specify the ``botcore.site_api.APIClient`` instance to use.
+- :feature:`63` Allow passing an ``api_client`` to ``BotBase.__init__`` to specify the ``pydis_core.site_api.APIClient`` instance to use.
 
 
 - :release:`5.0.3 <18th April 2022>`
@@ -144,11 +179,11 @@ Changelog
 
 
 - :release:`3.0.1 <5th March 2022>`
-- :bug:`37` Setup log tracing when ``botcore.utils.logging`` is imported so that it can be used within botcore functions.
+- :bug:`37` Setup log tracing when ``pydis_core.utils.logging`` is imported so that it can be used within pydis_core functions.
 
 
 - :release:`3.0.0 <3rd March 2022>`
-- :breaking:`35` Move ``apply_monkey_patches()`` directly to `botcore.utils` namespace.
+- :breaking:`35` Move ``apply_monkey_patches()`` directly to `pydis_core.utils` namespace.
 
 
 - :release:`2.1.0 <24th February 2022>`
@@ -156,7 +191,7 @@ Changelog
 
 
 - :release:`2.0.0 <22nd February 2022>`
-- :breaking:`35` Moved regex to ``botcore.utils`` namespace
+- :breaking:`35` Moved regex to ``pydis_core.utils`` namespace
 - :breaking:`32` Migrate from discord.py 2.0a0 to disnake.
 - :feature:`32` Add common monkey patches.
 - :feature:`29` Port many common utilities from our bots:

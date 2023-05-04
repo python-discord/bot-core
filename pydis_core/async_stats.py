@@ -6,7 +6,7 @@ from typing import Optional
 
 from statsd.client.base import StatsClientBase
 
-from botcore.utils import scheduling
+from pydis_core.utils import scheduling
 
 
 class AsyncStatsClient(StatsClientBase):

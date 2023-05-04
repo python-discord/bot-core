@@ -8,7 +8,9 @@ from collections import abc
 from datetime import datetime
 from functools import partial
 
-from botcore.utils import logging
+from pydis_core.utils import logging
+
+_background_tasks: set[asyncio.Task] = set()
 
 
 class Scheduler:
@@ -238,6 +240,9 @@ def create_task(
         task = event_loop.create_task(coro, **kwargs)
     else:
         task = asyncio.create_task(coro, **kwargs)
+
+    _background_tasks.add(task)
+    task.add_done_callback(_background_tasks.discard)
     task.add_done_callback(partial(_log_task_exception, suppressed_exceptions=suppressed_exceptions))
     return task
 

@@ -4,7 +4,7 @@ from collections import abc
 
 import discord
 
-from botcore.utils import logging
+from pydis_core.utils import logging
 
 log = logging.get_logger(__name__)
 
@@ -18,13 +18,15 @@ async def get_or_fetch_member(guild: discord.Guild, member_id: int) -> typing.Op
     """
     if member := guild.get_member(member_id):
         log.trace(f"{member} retrieved from cache.")
-    else:
-        try:
-            member = await guild.fetch_member(member_id)
-        except discord.errors.NotFound:
-            log.trace(f"Failed to fetch {member_id} from API.")
+        return member
+    try:
+        member = await guild.fetch_member(member_id)
+    except discord.errors.HTTPException as e:
+        log.trace(f"Failed to fetch {member_id} from API.")
+        if e.status in [400, 404]:
             return None
-        log.trace(f"{member} fetched from API.")
+        raise
+    log.trace(f"{member} fetched from API.")
     return member
 
 

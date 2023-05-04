@@ -1,9 +1,7 @@
 *
 
-!botcore/
-!docs/
-!tests/
-
+!pydis_core/
+!dev/
 !pyproject.toml
 !poetry.lock
-!tox.ini
+!README.md

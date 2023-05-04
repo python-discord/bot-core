@@ -1,7 +1,19 @@
 """Useful utilities and tools for Discord bot development."""
 
-from botcore.utils import _monkey_patches, caching, channel, commands, interactions, logging, members, regex, scheduling
-from botcore.utils._extensions import unqualify
+from pydis_core.utils import (
+    _monkey_patches,
+    caching,
+    channel,
+    commands,
+    cooldown,
+    function,
+    interactions,
+    logging,
+    members,
+    regex,
+    scheduling,
+)
+from pydis_core.utils._extensions import unqualify
 
 
 def apply_monkey_patches() -> None:
@@ -25,6 +37,8 @@ __all__ = [
     caching,
     channel,
     commands,
+    cooldown,
+    function,
     interactions,
     logging,
     members,

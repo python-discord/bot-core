@@ -1,11 +1,11 @@
 import unittest
 from unittest.mock import MagicMock
 
-from botcore import site_api
+from pydis_core import site_api
 
 
 class APIClientTests(unittest.IsolatedAsyncioTestCase):
-    """Tests for botcore's site API client."""
+    """Tests for pydis_core's site API client."""
 
     @classmethod
     def setUpClass(cls):

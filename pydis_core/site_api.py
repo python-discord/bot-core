@@ -6,7 +6,7 @@ from urllib.parse import quote as quote_url
 
 import aiohttp
 
-from botcore.utils.logging import get_logger
+from pydis_core.utils.logging import get_logger
 
 log = get_logger(__name__)
 

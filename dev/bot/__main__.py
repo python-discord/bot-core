@@ -6,11 +6,11 @@ import discord
 import dotenv
 from discord.ext import commands
 
-import botcore
+import pydis_core
 from . import Bot
 
 dotenv.load_dotenv()
-botcore.utils.apply_monkey_patches()
+pydis_core.utils.apply_monkey_patches()
 
 roles = os.getenv("ALLOWED_ROLES")
 roles = [int(role) for role in roles.split(",")] if roles else []
@@ -31,4 +31,5 @@ async def main() -> None:
     async with bot:
         await bot.start(os.getenv("BOT_TOKEN"))
 
-asyncio.run(main())
+if os.getenv("IN_CI", "").lower() != "true":
+    asyncio.run(main())
