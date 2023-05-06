@@ -3,12 +3,18 @@
 
 Changelog
 =========
+- :release:`9.6.0 <6th May 2023>`
+- :feature:`175` Log when waiting for the guild to be available before loading cogs
+- :support:`175` Bump Discord.py to :literal-url:`2.2.3 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.3>`.
+
 
 - :release:`9.5.1 <2nd March 2023>`
 - :bug:`174` Bump Discord.py to :literal-url:`2.2.2 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.2>`.
 
+
 - :release:`9.5.0 <28th February 2023>`
 - :feature:`173` Bump Discord.py to :literal-url:`2.2.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.0>`.
+
 
 - :release:`9.4.1 <9th February 2023>`
 - :bug:`172` Bump Discord.py to :literal-url:`2.1.1 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.1>`.
