@@ -13,10 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.2
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.0
         with:
-          # Set dev=true to run pre-commit which is a dev dependency
-          dev: true
           python_version: ${{ matrix.python_version }}
           install_args: "--extras async-rediscache --only main --only lint --only test"
 
@@ -50,7 +48,7 @@ jobs:
       - name: Upload a Build Artifact
         if: always() && steps.prepare-artifact.outcome == 'success'
         continue-on-error: true
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: pull-request-payload
           path: pull_request_payload.json

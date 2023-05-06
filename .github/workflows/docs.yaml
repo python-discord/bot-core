@@ -11,12 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.2
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.0
         with:
-          dev: true
           python_version: "3.11"
           install_args: "--extras async-rediscache --only main --only doc"
 
@@ -24,7 +23,7 @@ jobs:
         run: sphinx-build -nW -j auto -b html docs docs/build
 
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: docs-latest
           path: docs/build/*
@@ -34,14 +33,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # We need to check out the entire repository to find all tags
 
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.2
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.0
         with:
-          dev: true
           python_version: "3.11"
           install_args: "--extras async-rediscache"
 
@@ -57,13 +55,13 @@ jobs:
           rm -r docs/build/**/.doctrees
 
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: docs
           path: docs/build/*
 
       - name: Deploy To GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.7
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: docs
           folder: docs/build
