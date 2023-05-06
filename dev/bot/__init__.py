@@ -21,4 +21,4 @@ class Bot(pydis_core.BotBase):
     async def setup_hook(self) -> None:
         """Load extensions on startup."""
         await super().setup_hook()
-        asyncio.create_task(self.load_extensions(sys.modules[__name__]))
+        await self.load_extensions(sys.modules[__name__])

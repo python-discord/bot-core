@@ -1,7 +1,6 @@
 """An API wrapper around the Site API."""
 
 import asyncio
-from typing import Optional
 from urllib.parse import quote as quote_url
 
 import aiohttp
@@ -17,8 +16,8 @@ class ResponseCodeError(ValueError):
     def __init__(
         self,
         response: aiohttp.ClientResponse,
-        response_json: Optional[dict] = None,
-        response_text: Optional[str] = None
+        response_json: dict | None = None,
+        response_text: str | None = None
     ):
         """
         Initialize a new :obj:`ResponseCodeError` instance.
@@ -42,7 +41,7 @@ class ResponseCodeError(ValueError):
 class APIClient:
     """A wrapper for the Django Site API."""
 
-    session: Optional[aiohttp.ClientSession] = None
+    session: aiohttp.ClientSession | None = None
     loop: asyncio.AbstractEventLoop = None
 
     def __init__(self, site_api_url: str, site_api_token: str, **session_kwargs):
@@ -57,13 +56,13 @@ class APIClient:
         self.site_api_url = site_api_url
 
         auth_headers = {
-            'Authorization': f"Token {site_api_token}"
+            "Authorization": f"Token {site_api_token}"
         }
 
-        if 'headers' in session_kwargs:
-            session_kwargs['headers'].update(auth_headers)
+        if "headers" in session_kwargs:
+            session_kwargs["headers"].update(auth_headers)
         else:
-            session_kwargs['headers'] = auth_headers
+            session_kwargs["headers"] = auth_headers
 
         # aiohttp will complain if APIClient gets instantiated outside a coroutine. Thankfully, we
         # don't and shouldn't need to do that, so we can avoid scheduling a task to create it.
@@ -134,7 +133,7 @@ class APIClient:
         """Equivalent to :meth:`APIClient.request` with PUT passed as the method."""
         return await self.request("PUT", endpoint, raise_for_status=raise_for_status, **kwargs)
 
-    async def delete(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> Optional[dict]:
+    async def delete(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:
         """
         Send a DELETE request to the site API and return the JSON response.
 
@@ -154,4 +153,4 @@ class APIClient:
             return await resp.json()
 
 
-__all__ = ['APIClient', 'ResponseCodeError']
+__all__ = ["APIClient", "ResponseCodeError"]

@@ -1,4 +1,5 @@
-from typing import Literal, Optional, Sequence
+from collections.abc import Sequence
+from typing import Literal
 
 from discord import ButtonStyle, HTTPException, Interaction, Message, NotFound, ui
 
@@ -43,8 +44,8 @@ class ViewWithUserAndRoleCheck(ui.View):
         *,
         allowed_users: Sequence[int],
         allowed_roles: Sequence[int],
-        timeout: Optional[float] = 180.0,
-        message: Optional[Message] = None
+        timeout: float | None = 180.0,
+        message: Message | None = None
     ) -> None:
         super().__init__(timeout=timeout)
         self.allowed_users = allowed_users
@@ -97,7 +98,7 @@ class DeleteMessageButton(ui.Button):
         style (:literal-url:`ButtonStyle <https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ButtonStyle>`):
             The style of the button, set to ``ButtonStyle.secondary`` if not specified.
         label: The label of the button, set to "Delete" if not specified.
-    """  # noqa: E501
+    """
 
     def __init__(
         self,

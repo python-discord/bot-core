@@ -7,6 +7,7 @@ import dotenv
 from discord.ext import commands
 
 import pydis_core
+
 from . import Bot
 
 dotenv.load_dotenv()
@@ -17,7 +18,7 @@ roles = [int(role) for role in roles.split(",")] if roles else []
 
 bot = Bot(
     guild_id=int(os.getenv("GUILD_ID")),
-    http_session=None,  # type: ignore # We need to instantiate the session in an async context
+    http_session=None,  # type: ignore We need to instantiate the session in an async context
     allowed_roles=roles,
     command_prefix=commands.when_mentioned_or(os.getenv("PREFIX", "!")),
     intents=discord.Intents.all(),

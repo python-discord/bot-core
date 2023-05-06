@@ -1,10 +1,9 @@
-from typing import Optional
 
 from discord import Message
 from discord.ext.commands import BadArgument, Context, clean_content
 
 
-async def clean_text_or_reply(ctx: Context, text: Optional[str] = None) -> str:
+async def clean_text_or_reply(ctx: Context, text: str | None = None) -> str:
     """
     Cleans a text argument or replied message's content.
 

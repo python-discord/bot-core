@@ -26,6 +26,7 @@ _HashableArgsTuple = tuple[Hashable, ...]
 
 if typing.TYPE_CHECKING:
     import typing_extensions
+
     from pydis_core import BotBase
 
 P = typing.ParamSpec("P")
@@ -34,7 +35,7 @@ R = typing.TypeVar("R")
 """The command's return value."""
 
 
-class CommandOnCooldown(CommandError, typing.Generic[P, R]):
+class CommandOnCooldown(CommandError, typing.Generic[P, R]):  # noqa: N818
     """Raised when a command is invoked while on cooldown."""
 
     def __init__(

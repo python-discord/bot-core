@@ -2,7 +2,6 @@
 
 import asyncio
 import socket
-from typing import Optional
 
 from statsd.client.base import StatsClientBase
 
@@ -15,7 +14,7 @@ class AsyncStatsClient(StatsClientBase):
     def __init__(
         self,
         loop: asyncio.AbstractEventLoop,
-        host: str = 'localhost',
+        host: str = "localhost",
         port: int = 8125,
         prefix: str = None
     ):
@@ -35,7 +34,7 @@ class AsyncStatsClient(StatsClientBase):
         self._addr = addr
         self._prefix = prefix
         self._loop = loop
-        self._transport: Optional[asyncio.DatagramTransport] = None
+        self._transport: asyncio.DatagramTransport | None = None
 
     async def create_socket(self) -> None:
         """Use :obj:`asyncio.loop.create_datagram_endpoint` from the loop given on init to create a socket."""
@@ -51,7 +50,7 @@ class AsyncStatsClient(StatsClientBase):
 
     async def _async_send(self, data: str) -> None:
         """Send data to the statsd server using the async transport."""
-        self._transport.sendto(data.encode('ascii'), self._addr)
+        self._transport.sendto(data.encode("ascii"), self._addr)
 
 
-__all__ = ['AsyncStatsClient']
+__all__ = ["AsyncStatsClient"]

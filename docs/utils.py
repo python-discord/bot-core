@@ -30,16 +30,15 @@ def get_build_root() -> Path:
 def is_attribute(module: types.ModuleType, parameter: str) -> bool:
     """Returns true if `parameter` is an attribute of `module`."""
     docs = docstring_parser.parse(inspect.getdoc(module), docstring_parser.DocstringStyle.GOOGLE)
-    for param in docs.params:
+    for param in docs.params:  # noqa: SIM110
         # The docstring_parser library can mis-parse arguments like `arg (:obj:`str`)` as `arg (`
         # which would create a false-negative below, so we just strip away the extra parenthesis.
         if param.args[0] == "attribute" and param.arg_name.rstrip(" (") == parameter:
             return True
-
     return False
 
 
-def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> typing.Optional[str]:
+def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> str | None:
     """
     Function called by linkcode to get the URL for a given resource.
 
@@ -79,8 +78,7 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> typin
             # This could be caused by trying to link a class attribute
             if is_attribute(symbol[-1], name):
                 break
-            else:
-                raise e
+            raise e
 
         symbol_name = name
 
@@ -97,8 +95,8 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> typin
         pos = _global_assign_pos(source, symbol_name)
         if pos is None:
             raise Exception(f"Could not find symbol `{symbol_name}` in {module.__name__}.")
-        else:
-            start, end = pos
+
+        start, end = pos
         _, offset = inspect.getsourcelines(symbol[-2])
         if offset != 0:
             offset -= 1
@@ -126,7 +124,7 @@ class NodeWithBody(typing.Protocol):
     body: list[ast.AST]
 
 
-def _global_assign_pos(ast_: NodeWithBody, name: str) -> typing.Union[tuple[int, int], None]:
+def _global_assign_pos(ast_: NodeWithBody, name: str) -> tuple[int, int] | None:
     """
     Find the first instance where the `name` global is defined in `ast_`.
 
@@ -149,6 +147,7 @@ def _global_assign_pos(ast_: NodeWithBody, name: str) -> typing.Union[tuple[int,
             pos_in_if = _global_assign_pos(ast_obj, name)
             if pos_in_if is not None:
                 return pos_in_if
+    return None
 
 
 def cleanup() -> None:
@@ -200,7 +199,7 @@ def build_api_doc() -> None:
         logger.info(f"Skipping api-doc for {output_folder.as_posix()} as it already exists.")
         return
 
-    result = subprocess.run(cmd, cwd=build_root, stdout=subprocess.PIPE, check=True, env=os.environ)
+    result = subprocess.run(cmd, cwd=build_root, stdout=subprocess.PIPE, check=True, env=os.environ)  # noqa: S603
     logger.debug("api-doc Output:\n" + result.stdout.decode(encoding="utf-8") + "\n")
 
     cleanup()

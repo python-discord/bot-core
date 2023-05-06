@@ -1,17 +1,7 @@
 """Useful utilities and tools for Discord bot development."""
 
 from pydis_core.utils import (
-    _monkey_patches,
-    caching,
-    channel,
-    commands,
-    cooldown,
-    function,
-    interactions,
-    logging,
-    members,
-    regex,
-    scheduling,
+    _monkey_patches, caching, channel, commands, cooldown, function, interactions, logging, members, regex, scheduling
 )
 from pydis_core.utils._extensions import unqualify
 
@@ -47,4 +37,4 @@ __all__ = [
     unqualify,
 ]
 
-__all__ = list(map(lambda module: module.__name__, __all__))
+__all__ = [module.__name__ for module in __all__]
