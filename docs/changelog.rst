@@ -3,6 +3,9 @@
 
 Changelog
 =========
+- :feature:`176` Migrate repo to use ruff for linting
+
+
 - :release:`9.6.0 <6th May 2023>`
 - :feature:`175` Log when waiting for the guild to be available before loading cogs
 - :support:`175` Bump Discord.py to :literal-url:`2.2.3 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.3>`.
