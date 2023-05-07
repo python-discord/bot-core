@@ -5,6 +5,7 @@ Changelog
 =========
 - :release:`9.7.0 <10th June 2023>`
 - :feature:`179` Add paste service utility to upload text to our paste service.
+- :feature:`177` Automatically handle discord.Forbidden 90001 errors in all schedules
 - :feature:`176` Migrate repo to use ruff for linting
 
 
