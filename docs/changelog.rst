@@ -8,6 +8,9 @@ Changelog
 - :support:`175` Bump Discord.py to :literal-url:`2.2.3 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.3>`.
 
 
+- :release:`9.6.0 <4th May 2023>`
+- :feature:`137` Add a utility to check for a job rerun
+
 - :release:`9.5.1 <2nd March 2023>`
 - :bug:`174` Bump Discord.py to :literal-url:`2.2.2 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.2>`.
 
