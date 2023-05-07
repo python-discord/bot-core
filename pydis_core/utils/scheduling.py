@@ -8,7 +8,9 @@ from collections import abc
 from datetime import datetime, timezone
 from functools import partial
 
+from discord.errors import Forbidden
 from pydis_core.utils import logging
+from pydis_core.utils.errors import handle_forbidden_from_block
 
 _background_tasks: set[asyncio.Task] = set()
 
@@ -249,10 +251,19 @@ def create_task(
 
 
 def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: tuple[type[Exception], ...]) -> None:
-    """Retrieve and log the exception raised in ``task`` if one exists."""
+    """Retrieve and log the exception raised in ``task`` if one exists and it's not suppressed/handled."""
     with contextlib.suppress(asyncio.CancelledError):
         exception = task.exception()
-        # Log the exception if one exists.
+        # Log the exception if one exists and it's not suppressed/handled.
         if exception and not isinstance(exception, suppressed_exceptions):
+            if isinstance(exception, Forbidden):
+                try:
+                    await handle_forbidden_from_block(exception)
+                except Forbidden:
+                    # Wasn't handled, so handle below
+                    pass
+                else:
+                    # Was handled, so return
+                    return
             log = logging.get_logger(__name__)
             log.error(f"Error in task {task.get_name()} {id(task)}!", exc_info=exception)
