@@ -250,7 +250,7 @@ def create_task(
     task.add_done_callback(
         partial(
             asyncio.run,
-            _log_task_exception(suppressed_exceptions=suppressed_exceptions)
+            partial(_log_task_exception, task, suppressed_exceptions=suppressed_exceptions)
         )
     )
     return task
