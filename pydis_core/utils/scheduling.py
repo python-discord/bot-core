@@ -246,11 +246,16 @@ def create_task(
 
     _background_tasks.add(task)
     task.add_done_callback(_background_tasks.discard)
-    task.add_done_callback(partial(_log_task_exception, suppressed_exceptions=suppressed_exceptions))
+    task.add_done_callback(
+        partial(
+            asyncio.run,
+            _log_task_exception(suppressed_exceptions=suppressed_exceptions)
+        )
+    )
     return task
 
 
-def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: tuple[type[Exception], ...]) -> None:
+async def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: tuple[type[Exception], ...]) -> None:
     """Retrieve and log the exception raised in ``task`` if one exists and it's not suppressed/handled."""
     with contextlib.suppress(asyncio.CancelledError):
         exception = task.exception()
