@@ -1,7 +1,14 @@
+from discord import Forbidden, Message
+
+from pydis_core.utils import logging
+
+log = logging.get_logger(__name__)
+
+
 async def handle_forbidden_from_block(error: Forbidden, message: Message | None = None) -> None:
     """
     Handles ``discord.Forbidden`` 90001 errors, or re-raises if ``error`` isn't a 90001 error.
-    
+
     Args:
         error: The raised ``discord.Forbidden`` to check.
         message: The message to reply to and include in logs, if error is 90001 and message is provided.
