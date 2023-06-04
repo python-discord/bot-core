@@ -1,6 +1,7 @@
 # Configuration file for the Sphinx documentation builder.
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import contextlib
 import functools
 import os.path
 import shutil
@@ -16,7 +17,7 @@ from sphinx.application import Sphinx
 logger = sphinx.util.logging.getLogger(__name__)
 
 # Handle the path not being set correctly in actions.
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath(".."))
 
 from docs import utils  # noqa: E402
 
@@ -209,10 +210,9 @@ smv_latest_version = "main"
 smv_branch_whitelist = "main"
 if os.getenv("BUILD_DOCS_FOR_HEAD", "False").lower() == "true":
     if not (branch := os.getenv("BRANCH_NAME")):
-        try:
+        with contextlib.suppress(git.InvalidGitRepositoryError):
             branch = git.Repo(PROJECT_ROOT).active_branch.name
-        except git.InvalidGitRepositoryError:
-            pass
+
 
     if branch:
         logger.info(f"Adding branch {branch} to build whitelist.")

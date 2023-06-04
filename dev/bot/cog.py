@@ -12,7 +12,7 @@ class Cog(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self) -> None:
         """Print a message when the client (re)connects."""
-        print("Client is ready.")
+        print("Client is ready.")  # noqa: T201
 
     @commands.command()
     async def reload(self, ctx: commands.Context) -> None:

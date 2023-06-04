@@ -22,5 +22,5 @@ OUTPUT.write_text(build_script.text, encoding="utf-8")
 
 if __name__ == "__main__":
     # Run the build script
-    print("Build started")
-    subprocess.run([sys.executable, OUTPUT.absolute()])
+    print("Build started")  # noqa: T201
+    subprocess.run([sys.executable, OUTPUT.absolute()])  # noqa: S603

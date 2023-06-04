@@ -5,7 +5,7 @@ import contextlib
 import inspect
 import typing
 from collections import abc
-from datetime import datetime
+from datetime import datetime, timezone
 from functools import partial
 
 from pydis_core.utils import logging
@@ -69,7 +69,8 @@ class Scheduler:
         self._log.trace(f"Scheduling task #{task_id}...")
 
         msg = f"Cannot schedule an already started coroutine for #{task_id}"
-        assert inspect.getcoroutinestate(coroutine) == "CORO_CREATED", msg
+        if inspect.getcoroutinestate(coroutine) != "CORO_CREATED":
+            raise ValueError(msg)
 
         if task_id in self._scheduled_tasks:
             self._log.debug(f"Did not schedule task #{task_id}; task was already scheduled.")
@@ -99,7 +100,7 @@ class Scheduler:
             task_id: A unique ID to create the task with.
             coroutine: The function to be called.
         """
-        now_datetime = datetime.now(time.tzinfo) if time.tzinfo else datetime.utcnow()
+        now_datetime = datetime.now(time.tzinfo) if time.tzinfo else datetime.now(tz=timezone.utc)
         delay = (time - now_datetime).total_seconds()
         if delay > 0:
             coroutine = self._await_later(delay, task_id, coroutine)
@@ -108,7 +109,7 @@ class Scheduler:
 
     def schedule_later(
         self,
-        delay: typing.Union[int, float],
+        delay: int | float,
         task_id: abc.Hashable,
         coroutine: abc.Coroutine
     ) -> None:
@@ -152,7 +153,7 @@ class Scheduler:
 
     async def _await_later(
         self,
-        delay: typing.Union[int, float],
+        delay: int | float,
         task_id: abc.Hashable,
         coroutine: abc.Coroutine
     ) -> None:
@@ -218,7 +219,7 @@ def create_task(
     coro: abc.Coroutine[typing.Any, typing.Any, TASK_RETURN],
     *,
     suppressed_exceptions: tuple[type[Exception], ...] = (),
-    event_loop: typing.Optional[asyncio.AbstractEventLoop] = None,
+    event_loop: asyncio.AbstractEventLoop | None = None,
     **kwargs,
 ) -> asyncio.Task[TASK_RETURN]:
     """

@@ -99,7 +99,7 @@ def command_wraps(
     Returns:
         A decorator that behaves like :func:`functools.wraps`,
         with the wrapper replaced with the function :func:`update_wrapper_globals` returned.
-    """  # noqa: D200
+    """
     def decorator(wrapper: Callable[_P, _R]) -> Callable[_P, _R]:
         return functools.update_wrapper(
             update_wrapper_globals(wrapper, wrapped, ignored_conflict_names=ignored_conflict_names),

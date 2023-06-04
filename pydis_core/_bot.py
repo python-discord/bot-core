@@ -3,7 +3,6 @@ import socket
 import types
 import warnings
 from contextlib import suppress
-from typing import Optional
 
 import aiohttp
 import discord
@@ -19,7 +18,7 @@ try:
     from async_rediscache import RedisSession
     REDIS_AVAILABLE = True
 except ImportError:
-    RedisSession = None
+    RedisSession = object
     REDIS_AVAILABLE = False
 
 log = get_logger()
@@ -42,9 +41,9 @@ class BotBase(commands.Bot):
         guild_id: int,
         allowed_roles: list,
         http_session: aiohttp.ClientSession,
-        redis_session: Optional[RedisSession] = None,
-        api_client: Optional[APIClient] = None,
-        statsd_url: Optional[str] = None,
+        redis_session: RedisSession | None = None,
+        api_client: APIClient | None = None,
+        statsd_url: str | None = None,
         **kwargs,
     ):
         """
@@ -77,16 +76,16 @@ class BotBase(commands.Bot):
         elif redis_session:
             self.redis_session = redis_session
 
-        self._resolver: Optional[aiohttp.AsyncResolver] = None
-        self._connector: Optional[aiohttp.TCPConnector] = None
+        self._resolver: aiohttp.AsyncResolver | None = None
+        self._connector: aiohttp.TCPConnector | None = None
 
-        self._statsd_timerhandle: Optional[asyncio.TimerHandle] = None
-        self._guild_available: Optional[asyncio.Event] = None
+        self._statsd_timerhandle: asyncio.TimerHandle | None = None
+        self._guild_available: asyncio.Event | None = None
         self._extension_loading_task: asyncio.Task | None = None
 
-        self.stats: Optional[AsyncStatsClient] = None
+        self.stats: AsyncStatsClient | None = None
 
-        self.all_extensions: Optional[frozenset[str]] = None
+        self.all_extensions: frozenset[str] | None = None
 
     def _connect_statsd(
         self,
@@ -176,7 +175,7 @@ class BotBase(commands.Bot):
         super().add_command(command)
         self._add_root_aliases(command)
 
-    def remove_command(self, name: str) -> Optional[commands.Command]:
+    def remove_command(self, name: str) -> commands.Command | None:
         """
         Remove a command/alias as normal and then remove its root aliases from the bot.
 

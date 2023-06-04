@@ -1,10 +1,9 @@
 import unittest
-from typing import Optional
 
 from pydis_core.utils.regex import DISCORD_INVITE
 
 
-def match_regex(s: str) -> Optional[str]:
+def match_regex(s: str) -> str | None:
     """Helper function to run re.match on a string.
 
     Return the invite capture group, if the string matches the pattern
@@ -14,7 +13,7 @@ def match_regex(s: str) -> Optional[str]:
     return result if result is None else result.group("invite")
 
 
-def search_regex(s: str) -> Optional[str]:
+def search_regex(s: str) -> str | None:
     """Helper function to run re.search on a string.
 
     Return the invite capture group, if the string matches the pattern

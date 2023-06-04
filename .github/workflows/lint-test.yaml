@@ -13,29 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.3.2
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.0
         with:
-          # Set dev=true to run pre-commit which is a dev dependency
-          dev: true
           python_version: ${{ matrix.python_version }}
           install_args: "--extras async-rediscache --only main --only lint --only test"
 
-      # We will not run `flake8` here, as we will use a separate flake8
-      # action.
       - name: Run pre-commit hooks
-        run: SKIP=flake8 pre-commit run --all-files
+        run: SKIP=ruff pre-commit run --all-files
 
-      # Run flake8 and have it format the linting errors in the format of
-      # the GitHub Workflow command to register error annotations. This
-      # means that our flake8 output is automatically added as an error
-      # annotation to both the run result and in the "Files" tab of a
-      # pull request.
-      #
-      # Format used:
-      # ::error file={filename},line={line},col={col}::{message}
-      - name: Run flake8
-        run: "flake8 \
-        --format='::error file=%(path)s,line=%(row)d,col=%(col)d::[flake8] %(code)s: %(text)s'"
+      # Run `ruff` using github formatting to enable automatic inline annotations.
+      - name: Run ruff
+        run: "ruff check --format=github ."
 
       - name: Run tests and generate coverage report
         run: python -m pytest -n auto --cov pydis_core -q
@@ -60,7 +48,7 @@ jobs:
       - name: Upload a Build Artifact
         if: always() && steps.prepare-artifact.outcome == 'success'
         continue-on-error: true
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: pull-request-payload
           path: pull_request_payload.json

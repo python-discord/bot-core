@@ -32,7 +32,7 @@ class CustomLogger(LoggerClass):
             self.log(TRACE_LEVEL, msg, *args, **kwargs)
 
 
-def get_logger(name: typing.Optional[str] = None) -> CustomLogger:
+def get_logger(name: str | None = None) -> CustomLogger:
     """
     Utility to make mypy recognise that logger is of type :obj:`CustomLogger`.
 
