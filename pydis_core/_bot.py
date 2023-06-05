@@ -118,7 +118,7 @@ class BotBase(commands.Bot):
 
     async def _load_extensions(self, module: types.ModuleType) -> None:
         """Load all the extensions within the given module and save them to ``self.all_extensions``."""
-        log.info("Waiting for guild %d to be avialable before loading extensions.", self.guild_id)
+        log.info("Waiting for guild %d to be available before loading extensions.", self.guild_id)
 
         await self.wait_until_guild_available()
         log.info("Loading extensions...")
