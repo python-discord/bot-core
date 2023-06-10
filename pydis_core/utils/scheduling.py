@@ -241,9 +241,9 @@ def create_task(
         asyncio.Task: The wrapped task.
     """
     if event_loop is not None:
-        task = event_loop.create_task(partial(_coro_wrapper, coro), **kwargs)
+        task = event_loop.create_task(_coro_wrapper(coro), **kwargs)
     else:
-        task = asyncio.create_task(partial(_coro_wrapper, coro), **kwargs)
+        task = asyncio.create_task(_coro_wrapper(coro), **kwargs)
 
     _background_tasks.add(task)
     task.add_done_callback(_background_tasks.discard)
