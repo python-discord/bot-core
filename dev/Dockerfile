@@ -1,6 +1,6 @@
 ARG python_version=3.11
 
-FROM --platform=linux/amd64 ghcr.io/chrislovering/python-poetry-base:$python_version-slim
+FROM --platform=linux/amd64 ghcr.io/owl-corp/python-poetry-base:$python_version-slim
 
 # Install project dependencies
 WORKDIR /app
