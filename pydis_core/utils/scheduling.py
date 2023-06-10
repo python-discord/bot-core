@@ -8,7 +8,10 @@ from collections import abc
 from datetime import datetime, timezone
 from functools import partial
 
+from discord.errors import Forbidden
+
 from pydis_core.utils import logging
+from pydis_core.utils.error_handling import handle_forbidden_from_block
 
 _background_tasks: set[asyncio.Task] = set()
 
@@ -77,7 +80,7 @@ class Scheduler:
             coroutine.close()
             return
 
-        task = asyncio.create_task(coroutine, name=f"{self.name}_{task_id}")
+        task = asyncio.create_task(_coro_wrapper(coroutine), name=f"{self.name}_{task_id}")
         task.add_done_callback(partial(self._task_done_callback, task_id))
 
         self._scheduled_tasks[task_id] = task
@@ -238,9 +241,9 @@ def create_task(
         asyncio.Task: The wrapped task.
     """
     if event_loop is not None:
-        task = event_loop.create_task(coro, **kwargs)
+        task = event_loop.create_task(_coro_wrapper(coro), **kwargs)
     else:
-        task = asyncio.create_task(coro, **kwargs)
+        task = asyncio.create_task(_coro_wrapper(coro), **kwargs)
 
     _background_tasks.add(task)
     task.add_done_callback(_background_tasks.discard)
@@ -248,11 +251,19 @@ def create_task(
     return task
 
 
+async def _coro_wrapper(coro: abc.Coroutine[typing.Any, typing.Any, TASK_RETURN]) -> None:
+    """Wraps `coro` in a try/except block that will handle 90001 Forbidden errors."""
+    try:
+        await coro
+    except Forbidden as e:
+        await handle_forbidden_from_block(e)
+
+
 def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: tuple[type[Exception], ...]) -> None:
-    """Retrieve and log the exception raised in ``task`` if one exists."""
+    """Retrieve and log the exception raised in ``task``, if one exists and it's not suppressed."""
     with contextlib.suppress(asyncio.CancelledError):
         exception = task.exception()
-        # Log the exception if one exists.
+        # Log the exception if one exists and it's not suppressed/handled.
         if exception and not isinstance(exception, suppressed_exceptions):
             log = logging.get_logger(__name__)
             log.error(f"Error in task {task.get_name()} {id(task)}!", exc_info=exception)
