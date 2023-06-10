@@ -80,7 +80,7 @@ class Scheduler:
             coroutine.close()
             return
 
-        task = asyncio.create_task(coroutine, name=f"{self.name}_{task_id}")
+        task = asyncio.create_task(_coro_wrapper(coroutine), name=f"{self.name}_{task_id}")
         task.add_done_callback(partial(self._task_done_callback, task_id))
 
         self._scheduled_tasks[task_id] = task
@@ -252,6 +252,7 @@ def create_task(
 
 
 async def _coro_wrapper(coro: abc.Coroutine[typing.Any, typing.Any, TASK_RETURN]) -> None:
+    """Wraps `coro` in a try/except block that will handle 90001 Forbidden errors."""
     try:
         await coro
     except Forbidden as e:
