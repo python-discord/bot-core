@@ -13,21 +13,23 @@ async def handle_forbidden_from_block(error: Forbidden, message: Message | None 
         error: The raised ``discord.Forbidden`` to check.
         message: The message to reply to and include in logs, if error is 90001 and message is provided.
     """
-    if error.code == 90001:
-        # Occurs when the bot attempted to add a reaction
-        # to a message from a user that has blocked the bot.
-        if message:
-            log.info(
-                "Failed to add reaction(s) to message %d-%d since the message author (%d) has blocked the bot",
-                message.channel.id,
-                message.id,
-                message.author.id,
-            )
-            await message.channel.send(
-                f":x: {message.author.mention} failed to add reaction(s) to your message as you've blocked me.",
-                delete_after=30
-            )
-        else:
-            log.info("Failed to add reaction(s) to a message since the message author has blocked the bot")
-    else:
+    if error.code != 90001:
+        # The error ISN'T caused by the bot attempting to add a reaction
+        # to a message whose author has blocked the bot, so re-raise it
         raise error
+
+    if not message:
+        log.info("Failed to add reaction(s) to a message since the message author has blocked the bot")
+        return
+
+    if message:
+        log.info(
+            "Failed to add reaction(s) to message %d-%d since the message author (%d) has blocked the bot",
+            message.channel.id,
+            message.id,
+            message.author.id,
+        )
+        await message.channel.send(
+            f":x: {message.author.mention} failed to add reaction(s) to your message as you've blocked me.",
+            delete_after=30
+        )
