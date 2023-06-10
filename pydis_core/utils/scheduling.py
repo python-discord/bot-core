@@ -241,35 +241,28 @@ def create_task(
         asyncio.Task: The wrapped task.
     """
     if event_loop is not None:
-        task = event_loop.create_task(coro, **kwargs)
+        task = event_loop.create_task(partial(_coro_wrapper, coro), **kwargs)
     else:
-        task = asyncio.create_task(coro, **kwargs)
+        task = asyncio.create_task(partial(_coro_wrapper, coro), **kwargs)
 
     _background_tasks.add(task)
     task.add_done_callback(_background_tasks.discard)
-    task.add_done_callback(
-        partial(
-            asyncio.run,
-            partial(_log_task_exception, task, suppressed_exceptions=suppressed_exceptions)
-        )
-    )
+    task.add_done_callback(partial(_log_task_exception, suppressed_exceptions=suppressed_exceptions))
     return task
 
 
-async def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: tuple[type[Exception], ...]) -> None:
-    """Retrieve and log the exception raised in ``task`` if one exists and it's not suppressed/handled."""
+async def _coro_wrapper(coro: abc.Coroutine[typing.Any, typing.Any, TASK_RETURN]) -> None:
+    try:
+        await coro
+    except Forbidden as e:
+        await handle_forbidden_from_block(e)
+
+
+def _log_task_exception(task: asyncio.Task, *, suppressed_exceptions: tuple[type[Exception], ...]) -> None:
+    """Retrieve and log the exception raised in ``task``, if one exists and it's not suppressed."""
     with contextlib.suppress(asyncio.CancelledError):
         exception = task.exception()
         # Log the exception if one exists and it's not suppressed/handled.
         if exception and not isinstance(exception, suppressed_exceptions):
-            if isinstance(exception, Forbidden):
-                try:
-                    await handle_forbidden_from_block(exception)
-                except Forbidden:
-                    # Wasn't handled, so handle below
-                    pass
-                else:
-                    # Was handled, so return
-                    return
             log = logging.get_logger(__name__)
             log.error(f"Error in task {task.get_name()} {id(task)}!", exc_info=exception)
