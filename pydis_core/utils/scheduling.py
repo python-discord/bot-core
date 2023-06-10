@@ -11,7 +11,7 @@ from functools import partial
 from discord.errors import Forbidden
 
 from pydis_core.utils import logging
-from pydis_core.utils.errors import handle_forbidden_from_block
+from pydis_core.utils.error_handling import handle_forbidden_from_block
 
 _background_tasks: set[asyncio.Task] = set()
 
