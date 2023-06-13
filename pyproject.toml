@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydis_core"
-version = "9.7.0"
+version = "9.8.0"
 description = "PyDis core provides core functionality and utility to the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
@@ -25,7 +25,7 @@ keywords = ["bot", "discord", "discord.py"]
 [tool.poetry.dependencies]
 python = "3.10.* || 3.11.*"
 
-"discord.py" = "2.2.3"
+"discord.py" = "2.3.0"
 async-rediscache = { version = "1.0.0rc2", extras = ["fakeredis"], optional = true }
 statsd  = "4.0.1"
 aiodns = "3.0.0"
@@ -38,15 +38,15 @@ taskipy = "1.11.0"
 python-dotenv = "1.0.0"
 
 [tool.poetry.group.test.dependencies]
-pytest = "7.3.1"
+pytest = "7.3.2"
 pytest-cov = "4.1.0"
 pytest-xdist = "3.3.1"
 
 [tool.poetry.group.lint.dependencies]
 isort = "5.12.0"
-ruff = "0.0.270"
+ruff = "0.0.272"
 pre-commit = "3.3.2"
-typing-extensions = "4.6.2"
+typing-extensions = "4.6.3"
 
 [tool.poetry.group.doc.dependencies]
 Sphinx = "7.0.1"
@@ -57,7 +57,7 @@ six = "1.16.0"
 releases = "2.1.1"
 sphinx-multiversion = "0.2.4"
 docstring-parser = "0.15"
-typing-extensions = "4.6.2"
+typing-extensions = "4.6.3"
 tomli = "2.0.1"
 
 [tool.taskipy.tasks]

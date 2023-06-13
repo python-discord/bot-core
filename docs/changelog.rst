@@ -3,6 +3,10 @@
 
 Changelog
 =========
+- :release:`9.8.0 <13th June 2023>`
+- :support:`181` Bump Discord.py to :literal-url:`2.3.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.3.0>`.
+
+
 - :release:`9.7.0 <10th June 2023>`
 - :feature:`179` Add paste service utility to upload text to our paste service.
 - :feature:`177` Automatically handle discord.Forbidden 90001 errors in all schedules
