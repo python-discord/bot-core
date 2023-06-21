@@ -3,6 +3,11 @@
 
 Changelog
 =========
+- :release:`9.9.0 <18th June 2023>`
+- :feature:`182` Default pastebin url to https://paste.pythondiscord.com
+- :feature:`182` Add supported lexer validation to paste service.
+
+
 - :release:`9.8.0 <13th June 2023>`
 - :support:`181` Bump Discord.py to :literal-url:`2.3.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.3.0>`.
 
