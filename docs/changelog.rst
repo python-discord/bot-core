@@ -3,6 +3,10 @@
 
 Changelog
 =========
+- :release:`9.9.0 <22th June 2023>`
+- :bug:`183` Push the correct changeset to pypi.
+
+
 - :release:`9.9.0 <18th June 2023>`
 - :feature:`182` Default pastebin url to https://paste.pythondiscord.com
 - :feature:`182` Add supported lexer validation to paste service.
