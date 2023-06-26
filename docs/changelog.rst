@@ -4,7 +4,10 @@
 Changelog
 =========
 
+
 - :bug:`187` Fix :obj:`pydis_core.utils.channel.get_or_fetch_channel`'s return type to include :obj:`discord.abc.PrivateChannel` and :obj:`discord.Thread`.
+- :bug:`184` Bump Discord.py to :literal-url:`2.3.1 <https://github.com/Rapptz/discord.py/releases/tag/v2.3.1>`.
+
 
 - :release:`9.9.2 <2nd July 2023>`
 - :bug:`185` Update expiry label from 1 month to 30 days in paste service.
