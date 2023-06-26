@@ -16,7 +16,7 @@ class AsyncStatsClient(StatsClientBase):
         loop: asyncio.AbstractEventLoop,
         host: str = "localhost",
         port: int = 8125,
-        prefix: str = None
+        prefix: str | None = None
     ):
         """
         Create a new :obj:`AsyncStatsClient`.
