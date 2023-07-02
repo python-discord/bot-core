@@ -90,7 +90,7 @@ async def send_to_paste_service(
 
     log.debug(f"Sending contents of size {contents_size} bytes to paste service.")
     payload = {
-        "expiry": "1month",
+        "expiry": "30days",
         "long": "on",  # Use a longer URI for the paste.
         "files": [
             {"name": file_name, "lexer": lexer, "content": contents},

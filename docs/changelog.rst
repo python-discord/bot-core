@@ -3,7 +3,11 @@
 
 Changelog
 =========
-- :release:`9.9.0 <22th June 2023>`
+- :release:`9.9.2 <2nd July 2023>`
+- :bug:`185` Update expiry label from 1 month to 30 days in paste service.
+
+
+- :release:`9.9.1 <22nd June 2023>`
 - :bug:`183` Push the correct changeset to pypi.
 
 
