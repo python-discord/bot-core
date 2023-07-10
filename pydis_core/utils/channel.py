@@ -22,7 +22,10 @@ def is_in_category(channel: discord.TextChannel, category_id: int) -> bool:
     return getattr(channel, "category_id", None) == category_id
 
 
-async def get_or_fetch_channel(bot: Bot, channel_id: int) -> discord.abc.GuildChannel:
+async def get_or_fetch_channel(
+    bot: Bot,
+    channel_id: int,
+) -> discord.abc.GuildChannel | discord.abc.PrivateChannel | discord.Thread:
     """
     Attempt to get or fetch the given ``channel_id`` from the bots cache, and return it.
 
