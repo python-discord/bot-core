@@ -130,8 +130,8 @@ def skip(*args) -> bool:
 def post_build(_: Sphinx, exception: Exception) -> None:
     """Clean up and process files after the build has finished."""
     if exception:
-        # Don't accidentally supress exceptions
-        raise exception from None
+        # Don't accidentally suppress exceptions
+        raise exception
 
     build_folder = PROJECT_ROOT / "docs" / "build"
     main_build = build_folder / "main"
