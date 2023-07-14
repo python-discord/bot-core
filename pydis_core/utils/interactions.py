@@ -4,6 +4,7 @@ from typing import Literal
 from discord import ButtonStyle, HTTPException, Interaction, Message, NotFound, ui
 
 from pydis_core.utils.logging import get_logger
+from pydis_core.utils.scheduling import create_task
 
 log = get_logger(__name__)
 
@@ -79,6 +80,12 @@ class ViewWithUserAndRoleCheck(ui.View):
 
         await interaction.response.send_message("This is not your button to click!", ephemeral=True)
         return False
+
+    def stop(self) -> None:
+        """Stop listening for interactions, and remove the view from ``self.message`` if set."""
+        super().stop()
+        if self.message:
+            create_task(_handle_modify_message(self.message, "edit"))
 
     async def on_timeout(self) -> None:
         """Remove the view from ``self.message`` if set."""
