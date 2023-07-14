@@ -5,7 +5,7 @@ By default, the values defined in the classes are used, these can be overridden 
 
 `.env` and `.env.server` files are used to populate env vars, if present.
 """
-from pydantic import BaseSettings
+from pydantic import BaseSettings, Field
 
 
 class EnvConfig(BaseSettings):
@@ -21,10 +21,10 @@ class EnvConfig(BaseSettings):
 
 class _PaginationEmojis(EnvConfig):
 
-    EnvConfig.Config.env_prefix = "emojis__pagination_"
+    EnvConfig.Config.env_prefix = "emojis_"
 
     first: str = "\u23EE"
     left: str = "\u2B05"
     right: str = "\u27A1"
     last: str = "\u23ED"
-    delete: str = "<:trashcan:637136429717389331>"
+    delete: str = Field(env="emojis_trashcan", default="<:trashcan:637136429717389331>")
