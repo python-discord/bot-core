@@ -8,7 +8,7 @@ By default, the values defined in the classes are used, these can be overridden 
 from pydantic import BaseSettings, Field
 
 
-class EnvConfig(BaseSettings):
+class EnvironmentSettings(BaseSettings):
     """Our default configuration for models that should load from .env files."""
 
     class Config:
@@ -19,9 +19,9 @@ class EnvConfig(BaseSettings):
         env_nested_delimiter = "__"
 
 
-class _PaginationEmojis(EnvConfig):
+class PaginationEmojisSettings(EnvironmentSettings):
 
-    EnvConfig.Config.env_prefix = "emojis_"
+    EnvironmentSettings.Config.env_prefix = "emojis_"
 
     first: str = "\u23EE"
     left: str = "\u2B05"
