@@ -10,7 +10,7 @@ from discord.abc import User
 from discord.ext.commands import Context, Paginator
 
 
-from pydis_core.settings import _PaginationEmojis
+from pydis_core.settings import PaginationEmojisSettings
 from pydis_core.utils.messages import reaction_check
 
 log = get_logger(__name__)
@@ -39,7 +39,7 @@ class LinePaginator(Paginator):
 
     def __init__(
         self,
-        pagination_emojis: _PaginationEmojis,
+        pagination_emojis: PaginationEmojisSettings,
         prefix: str = "```",
         suffix: str = "```",
         max_size: int = 4000,
@@ -185,7 +185,7 @@ class LinePaginator(Paginator):
     @classmethod
     async def paginate(
         cls,
-        pagination_emojis: _PaginationEmojis,
+        pagination_emojis: PaginationEmojisSettings,
         lines: list[str],
         ctx: Context | discord.Interaction,
         embed: discord.Embed,
@@ -219,7 +219,7 @@ class LinePaginator(Paginator):
         Example:
         >>> embed = discord.Embed()
         >>> embed.set_author(name="Some Operation", url=url, icon_url=icon)
-        >>> await LinePaginator.paginate([line for line in lines], ctx, embed)
+        >>> await LinePaginator.paginate(pagination_emojis, [line for line in lines], ctx, embed)
         """
         paginator = cls(prefix=prefix, suffix=suffix, max_size=max_size, max_lines=max_lines,
                         scale_to_size=scale_to_size, pagination_emojis=pagination_emojis)
