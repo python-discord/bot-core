@@ -3,6 +3,7 @@
 
 import contextlib
 import functools
+import logging
 import os.path
 import shutil
 import sys
@@ -103,6 +104,17 @@ html_js_files = utils.get_recursive_file_uris(static, "*.js")
 utils.build_api_doc()
 
 
+class AutoDocFilter(logging.Filter):
+    """Filter out warnings that we deem not important."""
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        """Return whether to filter out a specific warning line."""
+        return "cannot import name 'AbstractSetIntStr' from 'pydantic._internal._utils" not in record.msg
+
+
+sphinx.util.logging.getLogger("sphinx_autodoc_typehints").logger.addFilter(AutoDocFilter())
+
+
 def skip(*args) -> bool:
     """Things that should be skipped by the autodoc generation."""
     name = args[2]
@@ -179,6 +191,7 @@ intersphinx_mapping = {
     "discord": ("https://discordpy.readthedocs.io/en/latest/", None),
     "aiohttp": ("https://docs.aiohttp.org/en/stable/", None),
     "statsd": ("https://statsd.readthedocs.io/en/v3.3/", ("_static/statsd_additional_objects.inv", None)),
+    "pydantic": ("https://docs.pydantic.dev/latest/", None),
 }
 
 

@@ -1,7 +1,7 @@
 import json
-from typing import TypedDict
 
 from aiohttp import ClientConnectorError, ClientSession
+from pydantic import BaseModel
 
 from pydis_core.utils import logging
 
@@ -16,11 +16,11 @@ MAX_PASTE_SIZE = 512 * 1024  # 512kB
 _lexers_supported_by_pastebin: dict[str,list[str]] = {}
 
 
-class PasteResponse(TypedDict):
+class PasteResponse(BaseModel):
     """
     A successful response from the paste service.
 
-    args:
+    Args:
         link: The URL to the saved paste.
         removal: The URL to delete the saved paste.
     """
@@ -29,8 +29,24 @@ class PasteResponse(TypedDict):
     removal: str
 
 
+class PasteFile(BaseModel):
+    """
+    A file to be pasted to the paste service.
+
+    Args:
+        content: The content of the file.
+        name: The file name of the file to upload.
+        lexer: The lexer to use when applying text formatting.
+    """
+
+    content: str
+    name: str = ""
+    lexer: str = "python"
+
+
 class PasteUploadError(Exception):
     """Raised when an error is encountered uploading to the paste service."""
+
 
 class PasteUnsupportedLexerError(Exception):
     """Raised when an unsupported lexer is used."""
@@ -40,12 +56,20 @@ class PasteTooLongError(Exception):
     """Raised when content is too large to upload to the paste service."""
 
 
+def _validate_file(file: PasteFile, paste_url: str, max_size: int) -> None:
+    if file.lexer not in _lexers_supported_by_pastebin[paste_url]:
+        raise PasteUnsupportedLexerError(f"Lexer '{file.lexer}' not supported by pastebin.")
+
+    content_size = len(file.content.encode())
+    if content_size > max_size:
+        log.info("Contents too large to send to paste service.")
+        raise PasteTooLongError(f"Contents of size {content_size} greater than maximum size {max_size}")
+
+
 async def send_to_paste_service(
     *,
-    contents: str,
+    files: list[PasteFile],
     http_session: ClientSession,
-    file_name: str = "",
-    lexer: str = "python",
     paste_url: str = DEFAULT_PASTEBIN,
     max_size: int = MAX_PASTE_SIZE,
 ) -> PasteResponse:
@@ -53,10 +77,8 @@ async def send_to_paste_service(
     Upload some contents to the paste service.
 
     Args:
-        contents: The content to upload to the paste service.
+        files: The files to be uploaded to the paste service.
         http_session (aiohttp.ClientSession): The session to use when POSTing the content to the paste service.
-        file_name: The name of the file to save to the paste service.
-        lexer: The lexer to save the content with.
         paste_url: The base url to the paste service.
         max_size: The max number of bytes to be allowed. Anything larger than :obj:`MAX_PASTE_SIZE` will be rejected.
 
@@ -66,7 +88,7 @@ async def send_to_paste_service(
         :exc:`PasteUploadError`: Uploading failed.
 
     Returns:
-        A :obj:`TypedDict` containing both the URL of the paste, and a URL to remove the paste.
+        A pydantic model containing both the URL of the paste, and a URL to remove the paste.
     """
     if max_size > MAX_PASTE_SIZE:
         raise ValueError(f"`max_length` must not be greater than {MAX_PASTE_SIZE}")
@@ -80,21 +102,13 @@ async def send_to_paste_service(
 
         _lexers_supported_by_pastebin[paste_url] = list(response_json)
 
-    if lexer not in _lexers_supported_by_pastebin[paste_url]:
-        raise PasteUnsupportedLexerError(f"Lexer '{lexer}' not supported by pastebin.")
+    for file in files:
+        _validate_file(file, paste_url, max_size)
 
-    contents_size = len(contents.encode())
-    if contents_size > max_size:
-        log.info("Contents too large to send to paste service.")
-        raise PasteTooLongError(f"Contents of size {contents_size} greater than maximum size {max_size}")
-
-    log.debug(f"Sending contents of size {contents_size} bytes to paste service.")
     payload = {
         "expiry": "30days",
         "long": "on",  # Use a longer URI for the paste.
-        "files": [
-            {"name": file_name, "lexer": lexer, "content": contents},
-        ]
+        "files": [file.dict() for file in files]  # Use file.model_dump() when we drop support for pydantic 1.X
     }
     for attempt in range(1, FAILED_REQUEST_ATTEMPTS + 1):
         try:
@@ -116,7 +130,7 @@ async def send_to_paste_service(
         if "Text exceeds size limit" in response_text:
             log.info("Contents too large to send to paste service after lexing.")
             raise PasteTooLongError(
-                f"Contents of size {contents_size} greater than maximum size {max_size} after lexing"
+                f"Contents of file greater than maximum size {max_size} after lexing."
             )
 
         response_json = json.loads(response_text)

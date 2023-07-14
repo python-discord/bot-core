@@ -5,9 +5,11 @@ Changelog
 =========
 
 
+- :release:`10.0.0 <14th July 2023>`
+- :breaking:`188` Support sending multiple files at once to paste service. All calls to :obj:`pydis_core.utils.paste_service.send_to_paste_service` must now provide a list of :obj:`pydis_core.utils.paste_service.PasteFile`
+- :bug:`187 major` Fix :obj:`pydis_core.utils.channel.get_or_fetch_channel`'s return type to include :obj:`discord.abc.PrivateChannel` and :obj:`discord.Thread`.
 - :feature:`184` Remove the message stored in the ``message`` attr of :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck` when the interaction is stopped, in additional to the exist logic for timeout.
 - :support:`184` Bump Discord.py to :literal-url:`2.3.1 <https://github.com/Rapptz/discord.py/releases/tag/v2.3.1>`.
-- :bug:`187` Fix :obj:`pydis_core.utils.channel.get_or_fetch_channel`'s return type to include :obj:`discord.abc.PrivateChannel` and :obj:`discord.Thread`.
 
 
 - :release:`9.9.2 <2nd July 2023>`
