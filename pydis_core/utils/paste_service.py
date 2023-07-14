@@ -21,8 +21,8 @@ class PasteResponse(BaseModel):
     A successful response from the paste service.
 
     Args:
-        link: The URL to the saved paste.
-        removal: The URL to delete the saved paste.
+        link (:obj:`str`): The URL to the saved paste.
+        removal (:obj:`str`): The URL to delete the saved paste.
     """
 
     link: str
@@ -34,9 +34,9 @@ class PasteFile(BaseModel):
     A file to be pasted to the paste service.
 
     Args:
-        content: The content of the file.
-        name: The file name of the file to upload.
-        lexer: The lexer to use when applying text formatting.
+        content (:obj:`str`): The content of the file.
+        name (:obj:`str`): The file name of the file to upload. Defaults to ``""``
+        lexer (:obj:`str`): The lexer to use when applying text formatting. Defaults to ``"python"``
     """
 
     content: str
