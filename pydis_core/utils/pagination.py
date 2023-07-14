@@ -185,6 +185,7 @@ class LinePaginator(Paginator):
     @classmethod
     async def paginate(
         cls,
+        pagination_emojis: _PaginationEmojis,
         lines: list[str],
         ctx: Context | discord.Interaction,
         embed: discord.Embed,
@@ -221,7 +222,8 @@ class LinePaginator(Paginator):
         >>> await LinePaginator.paginate([line for line in lines], ctx, embed)
         """
         paginator = cls(prefix=prefix, suffix=suffix, max_size=max_size, max_lines=max_lines,
-                        scale_to_size=scale_to_size)
+                        scale_to_size=scale_to_size, pagination_emojis=pagination_emojis)
+
         current_page = 0
 
         if not restrict_to_user:
@@ -288,9 +290,9 @@ class LinePaginator(Paginator):
 
         log.debug("Adding emoji reactions to message...")
 
-        pagination_emoji = list(paginator.pagination_emojis.dict().values())
+        pagination_emoji_list = list(pagination_emojis.dict().values())
 
-        for emoji in pagination_emoji:
+        for emoji in pagination_emoji_list:
             # Add all the applicable emoji to the message
             log.trace(f"Adding reaction: {emoji!r}")
             await message.add_reaction(emoji)
@@ -298,7 +300,7 @@ class LinePaginator(Paginator):
         check = partial(
             reaction_check,
             message_id=message.id,
-            allowed_emoji=pagination_emoji,
+            allowed_emoji=pagination_emoji_list,
             allowed_users=(restrict_to_user.id,),
             allowed_roles=allowed_roles,
         )
@@ -317,7 +319,7 @@ class LinePaginator(Paginator):
             if str(reaction.emoji) == paginator.pagination_emojis.delete:
                 log.debug("Got delete reaction")
                 return await message.delete()
-            if reaction.emoji in pagination_emoji:
+            if reaction.emoji in pagination_emoji_list:
                 total_pages = len(paginator.pages)
                 try:
                     await message.remove_reaction(reaction.emoji, user)
