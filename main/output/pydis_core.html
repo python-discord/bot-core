@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exts" href="pydis_core.exts.html" /><link rel="prev" title="Bot Core Project Documentation" href="../index.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.0.1 and Furo 2023.05.20 -->
-        <title>Pydis Core - Pydis Core Latest (9.9.1)</title>
+        <title>Pydis Core - Pydis Core Latest (9.9.2)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core Latest (9.9.1)</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core Latest (9.9.2)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (9.9.1)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (9.9.2)</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -257,6 +257,14 @@
                 
                     <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v9.2.0/output/pydis_core.html">v9.2.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v9.10.0-alpha.2/output/pydis_core.html">v9.10.0-alpha.2</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v9.10.0-alpha.1/output/pydis_core.html">v9.10.0-alpha.1</a>
                     </li>
                 
                     <li class="toctree-l2 ">
@@ -407,12 +415,12 @@
 <p>Useful utilities and tools for Discord bot development.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.BotBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BotBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L35-L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BotBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L35-L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a></p>
 <p>A sub-class that implements many common features that Python Discord bots use.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L38-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L38-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialise the base bot instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -431,7 +439,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.add_cog">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cog</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L168-L172"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.add_cog" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cog</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L168-L172"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.add_cog" title="Permalink to this definition">#</a></dt>
 <dd><p>Add the given <code class="docutils literal notranslate"><span class="pre">cog</span></code> to the bot and log the operation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -442,7 +450,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.add_command">
-<span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L173-L177"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.add_command" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L173-L177"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.add_command" title="Permalink to this definition">#</a></dt>
 <dd><p>Add <code class="docutils literal notranslate"><span class="pre">command</span></code> as normal and then add its root aliases to the bot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -453,7 +461,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L193-L196"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.clear" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L193-L196"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.clear" title="Permalink to this definition">#</a></dt>
 <dd><p>Not implemented! Re-instantiate the bot instead of attempting to re-use a closed one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -464,7 +472,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.close">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L274-L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.close" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L274-L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.close" title="Permalink to this definition">#</a></dt>
 <dd><p>Close the Discord connection, and the aiohttp session, connector, statsd client, and resolver.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -475,7 +483,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.load_extensions">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_extensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_app_commands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L136-L146"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.load_extensions" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_extensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_app_commands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L136-L146"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.load_extensions" title="Permalink to this definition">#</a></dt>
 <dd><p>Load all the extensions within the given <code class="docutils literal notranslate"><span class="pre">module</span></code> and save them to <code class="docutils literal notranslate"><span class="pre">self.all_extensions</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -489,7 +497,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.log_to_dev_log">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_to_dev_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L221-L224"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.log_to_dev_log" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_to_dev_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L221-L224"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.log_to_dev_log" title="Permalink to this definition">#</a></dt>
 <dd><p>Log the given message to #dev-log.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -500,7 +508,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.on_guild_available">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L204-L220"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.on_guild_available" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L204-L220"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.on_guild_available" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the internal guild available event when self.guild_id becomes available.</p>
 <p>If the cache appears to still be empty (no members, no channels, or no roles), the event
 will not be set and <cite>guild_available_but_cache_empty</cite> event will be emitted.</p>
@@ -513,7 +521,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.on_guild_unavailable">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_unavailable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L197-L203"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.on_guild_unavailable" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_unavailable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L197-L203"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.on_guild_unavailable" title="Permalink to this definition">#</a></dt>
 <dd><p>Clear the internal guild available event when self.guild_id becomes unavailable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -524,7 +532,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.ping_services">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ping_services</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L270-L273"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.ping_services" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ping_services</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L270-L273"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.ping_services" title="Permalink to this definition">#</a></dt>
 <dd><p>Ping all required services on setup to ensure they are up before starting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -535,7 +543,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.remove_command">
-<span class="sig-name descname"><span class="pre">remove_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L178-L192"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.remove_command" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L178-L192"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.remove_command" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove a command/alias as normal and then remove its root aliases from the bot.</p>
 <p>Individual root aliases cannot be removed by this function.
 To remove them, either remove the entire command or manually edit <cite>bot.all_commands</cite>.</p>
@@ -548,7 +556,7 @@ To remove them, either remove the entire command or manually edit <cite>bot.all_
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.setup_hook">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setup_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L234-L269"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.setup_hook" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setup_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L234-L269"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.setup_hook" title="Permalink to this definition">#</a></dt>
 <dd><p>An async init to startup generic services.</p>
 <p>Connects to statsd, and calls
 <a class="reference internal" href="pydis_core.async_stats.html#pydis_core.async_stats.AsyncStatsClient.create_socket" title="pydis_core.async_stats.AsyncStatsClient.create_socket"><code class="xref py py-func docutils literal notranslate"><span class="pre">AsyncStatsClient.create_socket</span></code></a>
@@ -562,7 +570,7 @@ and <a class="reference internal" href="#pydis_core.BotBase.ping_services" title
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.wait_until_guild_available">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wait_until_guild_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L225-L233"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.wait_until_guild_available" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wait_until_guild_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L225-L233"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.wait_until_guild_available" title="Permalink to this definition">#</a></dt>
 <dd><p>Wait until the guild that matches the <code class="docutils literal notranslate"><span class="pre">guild_id</span></code> given at init is available (and the cache is ready).</p>
 <p>The on_ready event is inadequate because it only waits 2 seconds for a GUILD_CREATE
 gateway event before giving up and thus not populating the cache for unavailable guilds.</p>
@@ -577,12 +585,12 @@ gateway event before giving up and thus not populating the cache for unavailable
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="pydis_core.StartupError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StartupError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L27-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.StartupError" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StartupError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L27-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.StartupError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 <p>Exception class for startup errors.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.StartupError.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/4c1060a334301265dd8b620c91a815a5ed72bb34/pydis_core/_bot.py#L30-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.StartupError.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/_bot.py#L30-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.StartupError.__init__" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
