@@ -21,6 +21,8 @@ class EnvConfig(BaseSettings):
 
 class _PaginationEmojis(EnvConfig):
 
+    EnvConfig.Config.env_prefix = "emojis__pagination_"
+
     first: str = "\u23EE"
     left: str = "\u2B05"
     right: str = "\u27A1"
