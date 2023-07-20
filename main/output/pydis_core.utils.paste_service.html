@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="regex" href="pydis_core.utils.regex.html" /><link rel="prev" title="members" href="pydis_core.utils.members.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.0.1 and Furo 2023.05.20 -->
-        <title>paste_service - Pydis Core Latest (9.9.2)</title>
+        <title>paste_service - Pydis Core Latest (10.0.0)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core Latest (9.9.2)</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core Latest (10.0.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (9.9.2)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (10.0.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -414,20 +414,36 @@
 <span id="paste-service"></span><h1>paste_service<a class="headerlink" href="#module-pydis_core.utils.paste_service" title="Permalink to this heading">#</a></h1>
 <dl class="py data">
 <dt class="sig sig-object py" id="pydis_core.utils.paste_service.MAX_PASTE_SIZE">
-<span class="sig-name descname"><span class="pre">MAX_PASTE_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">524288</span></em><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/utils/paste_service.py#L12"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.MAX_PASTE_SIZE" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">MAX_PASTE_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">524288</span></em><a class="reference external" href="https://github.com/python-discord/bot-core/blob/b52f1ab731e2a55d08c0de64401721fc5034865c/pydis_core/utils/paste_service.py#L12"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.MAX_PASTE_SIZE" title="Permalink to this definition">#</a></dt>
 <dd><p>The maximum allows size of a paste, in bytes.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="pydis_core.utils.paste_service.PasteFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasteFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/b52f1ab731e2a55d08c0de64401721fc5034865c/pydis_core/utils/paste_service.py#L32-L45"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.PasteFile" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.pydantic.dev/latest/api/main/#pydantic.main.BaseModel" title="(in Pydantic v0.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p>A file to be pasted to the paste service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>content</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>) – The content of the file.</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>) – The name of the file to upload. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></li>
+<li><p><strong>lexer</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>) – The lexer to use when applying text formatting. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;python&quot;</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.utils.paste_service.PasteResponse">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasteResponse</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/utils/paste_service.py#L19-L30"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.PasteResponse" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypedDict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypedDict</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasteResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/b52f1ab731e2a55d08c0de64401721fc5034865c/pydis_core/utils/paste_service.py#L19-L30"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.PasteResponse" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.pydantic.dev/latest/api/main/#pydantic.main.BaseModel" title="(in Pydantic v0.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
 <p>A successful response from the paste service.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>link</strong> – The URL to the saved paste.</p></li>
-<li><p><strong>removal</strong> – The URL to delete the saved paste.</p></li>
+<li><p><strong>link</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>) – The URL to the saved paste.</p></li>
+<li><p><strong>removal</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>) – The URL to delete the saved paste.</p></li>
 </ul>
 </dd>
 </dl>
@@ -435,36 +451,34 @@
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="pydis_core.utils.paste_service.PasteTooLongError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasteTooLongError</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/utils/paste_service.py#L39-L41"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.PasteTooLongError" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasteTooLongError</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/b52f1ab731e2a55d08c0de64401721fc5034865c/pydis_core/utils/paste_service.py#L55-L57"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.PasteTooLongError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 <p>Raised when content is too large to upload to the paste service.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="pydis_core.utils.paste_service.PasteUnsupportedLexerError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasteUnsupportedLexerError</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/utils/paste_service.py#L35-L37"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.PasteUnsupportedLexerError" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasteUnsupportedLexerError</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/b52f1ab731e2a55d08c0de64401721fc5034865c/pydis_core/utils/paste_service.py#L51-L53"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.PasteUnsupportedLexerError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 <p>Raised when an unsupported lexer is used.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="pydis_core.utils.paste_service.PasteUploadError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasteUploadError</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/utils/paste_service.py#L32-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.PasteUploadError" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PasteUploadError</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/b52f1ab731e2a55d08c0de64401721fc5034865c/pydis_core/utils/paste_service.py#L47-L49"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.PasteUploadError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 <p>Raised when an error is encountered uploading to the paste service.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.paste_service.send_to_paste_service">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_to_paste_service</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lexer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'python'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paste_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://paste.pythondiscord.com'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">524288</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/29af8a99dea22358ba0774f6b4eb9fbfbaeae353/pydis_core/utils/paste_service.py#L43-L140"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.send_to_paste_service" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_to_paste_service</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paste_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://paste.pythondiscord.com'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">524288</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/b52f1ab731e2a55d08c0de64401721fc5034865c/pydis_core/utils/paste_service.py#L69-L154"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.paste_service.send_to_paste_service" title="Permalink to this definition">#</a></dt>
 <dd><p>Upload some contents to the paste service.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>contents</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The content to upload to the paste service.</p></li>
+<li><p><strong>files</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference internal" href="#pydis_core.utils.paste_service.PasteFile" title="pydis_core.utils.paste_service.PasteFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasteFile</span></code></a>]) – The files to be uploaded to the paste service.</p></li>
 <li><p><strong>http_session</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession" title="(in aiohttp v3.8)"><em>aiohttp.ClientSession</em></a>) – The session to use when POSTing the content to the paste service.</p></li>
-<li><p><strong>file_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The name of the file to save to the paste service.</p></li>
-<li><p><strong>lexer</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The lexer to save the content with.</p></li>
 <li><p><strong>paste_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The base url to the paste service.</p></li>
 <li><p><strong>max_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The max number of bytes to be allowed. Anything larger than <a class="reference internal" href="#pydis_core.utils.paste_service.MAX_PASTE_SIZE" title="pydis_core.utils.paste_service.MAX_PASTE_SIZE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAX_PASTE_SIZE</span></code></a> will be rejected.</p></li>
 </ul>
@@ -480,7 +494,7 @@
 <dd class="field-odd"><p><a class="reference internal" href="#pydis_core.utils.paste_service.PasteResponse" title="pydis_core.utils.paste_service.PasteResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasteResponse</span></code></a></p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedDict</span></code> containing both the URL of the paste, and a URL to remove the paste.</p>
+<dd class="field-even"><p>A pydantic model containing both the URL of the paste, and a URL to remove the paste.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -544,6 +558,7 @@
             <ul>
 <li><a class="reference internal" href="#">paste_service</a><ul>
 <li><a class="reference internal" href="#pydis_core.utils.paste_service.MAX_PASTE_SIZE"><code class="docutils literal notranslate"><span class="pre">MAX_PASTE_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#pydis_core.utils.paste_service.PasteFile"><code class="docutils literal notranslate"><span class="pre">PasteFile</span></code></a></li>
 <li><a class="reference internal" href="#pydis_core.utils.paste_service.PasteResponse"><code class="docutils literal notranslate"><span class="pre">PasteResponse</span></code></a></li>
 <li><a class="reference internal" href="#pydis_core.utils.paste_service.PasteTooLongError"><code class="docutils literal notranslate"><span class="pre">PasteTooLongError</span></code></a></li>
 <li><a class="reference internal" href="#pydis_core.utils.paste_service.PasteUnsupportedLexerError"><code class="docutils literal notranslate"><span class="pre">PasteUnsupportedLexerError</span></code></a></li>
