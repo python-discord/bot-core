@@ -35,7 +35,7 @@ class PasteFile(BaseModel):
 
     Args:
         content (:obj:`str`): The content of the file.
-        name (:obj:`str`): The file name of the file to upload. Defaults to ``""``
+        name (:obj:`str`): The name of the file to upload. Defaults to ``""``
         lexer (:obj:`str`): The lexer to use when applying text formatting. Defaults to ``"python"``
     """
 
