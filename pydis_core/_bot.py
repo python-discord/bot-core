@@ -231,6 +231,16 @@ class BotBase(commands.Bot):
         """
         await self._guild_available.wait()
 
+    async def process_commands(self, message: discord.Message) -> None:
+        """
+        Overwrite default Discord.py behaviour to process commands only after ensuring extensions are loaded.
+
+        This extension check is only relevant for clients that make use of :obj:`pydis_core.BotBase.load_extensions`.
+        """
+        if self._extension_loading_task:
+            await self._extension_loading_task
+        await super().process_commands(message)
+
     async def setup_hook(self) -> None:
         """
         An async init to startup generic services.
