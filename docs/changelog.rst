@@ -6,11 +6,11 @@ Changelog
 
 
 - :release:`10.1.0 <25th July 2023>`
-- :feature:`190` Overwrite :obj:`discord.ext.commands.Bot.process_commands` to ensure no commands are processed until all extensions are loaded. This only works for clients using :obj:`pydis_core.BotBase.load_extensions`
+- :feature:`190` Overwrite :obj:`discord.ext.commands.Bot.process_commands` to ensure no commands are processed until all extensions are loaded. This only works for clients using :obj:`pydis_core.BotBase.load_extensions`.
 
 
 - :release:`10.0.0 <14th July 2023>`
-- :breaking:`188` Support sending multiple files at once to paste service. All calls to :obj:`pydis_core.utils.paste_service.send_to_paste_service` must now provide a list of :obj:`pydis_core.utils.paste_service.PasteFile`
+- :breaking:`188` Support sending multiple files at once to paste service. All calls to :obj:`pydis_core.utils.paste_service.send_to_paste_service` must now provide a list of :obj:`pydis_core.utils.paste_service.PasteFile`.
 - :bug:`187 major` Fix :obj:`pydis_core.utils.channel.get_or_fetch_channel`'s return type to include :obj:`discord.abc.PrivateChannel` and :obj:`discord.Thread`.
 - :feature:`184` Remove the message stored in the ``message`` attr of :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck` when the interaction is stopped, in additional to the exist logic for timeout.
 - :support:`184` Bump Discord.py to :literal-url:`2.3.1 <https://github.com/Rapptz/discord.py/releases/tag/v2.3.1>`.
@@ -25,7 +25,7 @@ Changelog
 
 
 - :release:`9.9.0 <18th June 2023>`
-- :feature:`182` Default pastebin url to https://paste.pythondiscord.com
+- :feature:`182` Default pastebin url to https://paste.pythondiscord.com.
 - :feature:`182` Add supported lexer validation to paste service.
 
 
@@ -35,12 +35,12 @@ Changelog
 
 - :release:`9.7.0 <10th June 2023>`
 - :feature:`179` Add paste service utility to upload text to our paste service.
-- :feature:`177` Automatically handle discord.Forbidden 90001 errors in all schedules
-- :feature:`176` Migrate repo to use ruff for linting
+- :feature:`177` Automatically handle discord.Forbidden 90001 errors in all schedules.
+- :feature:`176` Migrate repo to use ruff for linting.
 
 
 - :release:`9.6.0 <6th May 2023>`
-- :feature:`175` Log when waiting for the guild to be available before loading cogs
+- :feature:`175` Log when waiting for the guild to be available before loading cogs.
 - :support:`175` Bump Discord.py to :literal-url:`2.2.3 <https://github.com/Rapptz/discord.py/releases/tag/v2.2.3>`.
 
 
@@ -61,13 +61,13 @@ Changelog
 
 
 - :release:`9.3.1 <23rd December 2022>`
-- :bug:`170` Save references of newly created tasks in :obj:`pydis_core.utils.scheduling`
+- :bug:`170` Save references of newly created tasks in :obj:`pydis_core.utils.scheduling`.
 
 - :release:`9.3.0 <13th December 2022>`
-- :feature:`169` Return :obj:`None` upon receiving a bad request from Discord in :obj:`pydis_core.utils.members.get_or_fetch_member`
+- :feature:`169` Return :obj:`None` upon receiving a bad request from Discord in :obj:`pydis_core.utils.members.get_or_fetch_member`.
 
 - :release:`9.2.0 <17th November 2022>`
-- :support:`151` Add support for Python 3.11
+- :support:`151` Add support for Python 3.11.
 
 - :release:`9.1.1 <14th November 2022>`
 - :bug:`162` Handle not being able to delete the interaction message on button press/timeout.
@@ -75,7 +75,7 @@ Changelog
 
 - :release:`9.1.0 <13th November 2022>`
 - :feature:`158` Bump Discord.py to :literal-url:`2.1.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.1.0>`.
-- :feature:`88` Add a decorator that stops successive duplicate invocations of commands
+- :feature:`88` Add a decorator that stops successive duplicate invocations of commands.
 
 
 - :release:`9.0.0 <5th November 2022>`
@@ -95,14 +95,14 @@ Changelog
 
 
 - :release:`8.0.0 <27th July 2022>`
-- :breaking:`110` Bump async-rediscache to v1.0.0-rc2
-- :support:`108` Bump Python version to 3.10.*
+- :breaking:`110` Bump async-rediscache to v1.0.0-rc2.
+- :support:`108` Bump Python version to 3.10.*.
 - :bug:`107 major` Declare aiodns as a project dependency.
 - :support:`107` Add a sample project with boilerplate and documentation explaining how to develop for bot-core.
 
 
 - :release:`7.5.0 <23rd July 2022>`
-- :feature:`101` Add a utility to clean a string or referenced message's content
+- :feature:`101` Add a utility to clean a string or referenced message's content.
 
 
 - :release:`7.4.0 <17th July 2022>`
@@ -114,12 +114,12 @@ Changelog
 
 
 - :release:`7.3.0 <16th July 2022>`
-- :feature:`103` Add a generic view :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck` that only allows specified users and roles to interaction with it
+- :feature:`103` Add a generic view :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck` that only allows specified users and roles to interaction with it.
 - :feature:`103` Add a button :obj:`pydis_core.utils.interactions.DeleteMessageButton` that deletes the message attached to its parent view.
 
 
 - :release:`7.2.2 <9th July 2022>`
-- :bug:`98` Only close ``BotBase.stats._transport`` if ``BotBase.stats`` was created
+- :bug:`98` Only close ``BotBase.stats._transport`` if ``BotBase.stats`` was created.
 
 
 - :release:`7.2.1 <30th June 2022>`
@@ -162,11 +162,11 @@ Changelog
 
 
 - :release:`6.3.1 <21st April 2022>`
-- :bug:`68` Correct version number in pyproject.toml
+- :bug:`68` Correct version number in pyproject.toml.
 
 
 - :release:`6.3.0 <21st April 2022>`
-- :feature:`-` (Committed directly to main) Don't load modules starting with ``_``
+- :feature:`-` (Committed directly to main) Don't load modules starting with ``_``.
 
 
 - :release:`6.2.0 <21st April 2022>`
@@ -180,8 +180,8 @@ Changelog
 - :release:`6.0.0 <19th April 2022>`
 - :breaking:`64` Bump discord.py to :literal-url:`987235d <https://github.com/Rapptz/discord.py/tree/987235d5649e7c2b1a927637bab6547244ecb2cf>`:
 
-  - This reverts a change to help command behaviour that broke our custom pagination
-  - This also adds basic forum channel support to discord.py
+  - This reverts a change to help command behaviour that broke our custom pagination.
+  - This also adds basic forum channel support to discord.py.
 
 
 - :release:`5.0.4 <18th April 2022>` 63
@@ -203,7 +203,7 @@ Changelog
 
 
 - :release:`5.0.1 <2nd April 2022>`
-- :bug:`54` Move creation of BotBase's ``aiohttp.AsyncResolver`` to the async setup hook, to avoid deprecation notice
+- :bug:`54` Move creation of BotBase's ``aiohttp.AsyncResolver`` to the async setup hook, to avoid deprecation notice.
 
 
 - :release:`5.0.0 <2nd April 2022>`
@@ -230,7 +230,7 @@ Changelog
 
 
 - :release:`2.0.0 <22nd February 2022>`
-- :breaking:`35` Moved regex to ``pydis_core.utils`` namespace
+- :breaking:`35` Moved regex to ``pydis_core.utils`` namespace.
 - :breaking:`32` Migrate from discord.py 2.0a0 to disnake.
 - :feature:`32` Add common monkey patches.
 - :feature:`29` Port many common utilities from our bots:
