@@ -231,6 +231,12 @@ class BotBase(commands.Bot):
         """
         await self._guild_available.wait()
 
+    async def process_commands(self, message: discord.Message) -> None:
+        """Wait until all extensions are loaded before processing commands."""
+        if self._extension_loading_task:
+            await self._extension_loading_task
+        await super().process_commands(message)
+
     async def setup_hook(self) -> None:
         """
         An async init to startup generic services.

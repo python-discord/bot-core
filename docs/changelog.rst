@@ -5,6 +5,10 @@ Changelog
 =========
 
 
+- :release:`10.1.0 <25th July 2023>`
+- :feature:`190` Overwrite :obj:`discord.ext.commands.Bot.process_commands` to ensure no commands are processed until all extensions are loaded. This only works for clients using :obj:`pydis_core.BotBase.load_extensions`
+
+
 - :release:`10.0.0 <14th July 2023>`
 - :breaking:`188` Support sending multiple files at once to paste service. All calls to :obj:`pydis_core.utils.paste_service.send_to_paste_service` must now provide a list of :obj:`pydis_core.utils.paste_service.PasteFile`
 - :bug:`187 major` Fix :obj:`pydis_core.utils.channel.get_or_fetch_channel`'s return type to include :obj:`discord.abc.PrivateChannel` and :obj:`discord.Thread`.
