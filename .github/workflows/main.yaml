@@ -13,5 +13,11 @@ concurrency:
 jobs:
   lint-test:
     uses: ./.github/workflows/lint-test.yaml
+
+  fixup-commit-blocker:
+    if: github.ref != 'refs/heads/main'
+    uses: python-discord/.github/.github/workflows/block-fixup-commits.yaml@main
+    needs: lint-test
+
   docs:
     uses: ./.github/workflows/docs.yaml
