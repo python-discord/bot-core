@@ -5,6 +5,10 @@ Changelog
 =========
 
 
+- :release:`10.2.0 <28th August 2023>`
+- :support:`192` Bump Discord.py to :literal-url:`2.3.2 <https://github.com/Rapptz/discord.py/releases/tag/v2.3.2>`.
+
+
 - :release:`10.1.0 <25th July 2023>`
 - :feature:`190` Overwrite :obj:`discord.ext.commands.Bot.process_commands` to ensure no commands are processed until all extensions are loaded. This only works for clients using :obj:`pydis_core.BotBase.load_extensions`.
 
