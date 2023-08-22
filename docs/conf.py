@@ -155,14 +155,15 @@ def setup(app: Sphinx) -> None:
     app.add_role("breaking", releases.issues_role)
 
 
-ignored_modules = [
+ignored_targets = [
     "async_rediscache",
+    "pydantic.main.BaseModel"
 ]
 
 # nitpick raises warnings as errors. This regex tells nitpick to ignore any warnings that match this regex.
-# This is a workaround for modules that do not have docs that can be linked out to.
+# This is a workaround for modules/classes that do not have docs that can be linked out to.
 nitpick_ignore_regex = [
-    ("py:.*", "|".join([f".*{entry}.*" for entry in ignored_modules])),
+    ("py:.*", "|".join([f".*{entry}.*" for entry in ignored_targets])),
 ]
 
 # -- Extension configuration -------------------------------------------------
