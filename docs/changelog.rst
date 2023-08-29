@@ -5,6 +5,10 @@ Changelog
 =========
 
 
+- :release:`10.3.0 <29th August 2023>`
+- :support:`193` Migrate testing helpers from bot repo.
+
+
 - :release:`10.2.0 <28th August 2023>`
 - :support:`192` Bump Discord.py to :literal-url:`2.3.2 <https://github.com/Rapptz/discord.py/releases/tag/v2.3.2>`.
 
