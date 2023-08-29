@@ -11,11 +11,11 @@ from functools import cached_property
 
 import discord
 from aiohttp import ClientSession
+from bot.bot import Bot
 from discord.ext.commands import Context
+
 from pydis_core.async_stats import AsyncStatsClient
 from pydis_core.site_api import APIClient
-
-from bot.bot import Bot
 from tests._autospec import autospec  # noqa: F401 other modules import it via this module
 
 for logger in logging.Logger.manager.loggerDict.values():

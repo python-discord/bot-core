@@ -2,6 +2,7 @@ import logging
 import unittest.mock
 
 from bot.log import get_logger
+
 from tests.base import LoggingTestsMixin, _CaptureLogHandler
 
 

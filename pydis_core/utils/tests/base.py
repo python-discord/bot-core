@@ -4,16 +4,14 @@ from contextlib import contextmanager
 
 import discord
 from async_rediscache import RedisSession
+from bot.log import get_logger
 from discord.ext import commands
 
-from bot.log import get_logger
 from tests import helpers
 
 
 class _CaptureLogHandler(logging.Handler):
-    """
-    A logging handler capturing all (raw and formatted) logging output.
-    """
+    """A logging handler capturing all (raw and formatted) logging output."""
 
     def __init__(self):
         super().__init__()
