@@ -1,14 +1,21 @@
 import logging
 import unittest
+import warnings
 from contextlib import contextmanager
 
 import discord
-from async_rediscache import RedisSession
-from bot.log import get_logger
 from discord.ext import commands
 
-from tests import helpers
+from pydis_core.utils.logging import get_logger
 
+from . import helpers
+
+try:
+    from async_rediscache import RedisSession
+    REDIS_AVAILABLE = True
+except ImportError:
+    RedisSession = object
+    REDIS_AVAILABLE = False
 
 class _CaptureLogHandler(logging.Handler):
     """A logging handler capturing all (raw and formatted) logging output."""
@@ -119,6 +126,8 @@ class RedisTestCase(unittest.IsolatedAsyncioTestCase):
         await self.session.client.flushall()
 
     async def asyncSetUp(self):
+        if not REDIS_AVAILABLE:
+            warnings.warn("redis_session kwarg passed, but async-rediscache not installed!", stacklevel=2)
         self.session = await RedisSession(use_fakeredis=True).connect()
         await self.flush()
 

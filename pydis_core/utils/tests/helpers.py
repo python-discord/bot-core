@@ -11,12 +11,13 @@ from functools import cached_property
 
 import discord
 from aiohttp import ClientSession
-from bot.bot import Bot
 from discord.ext.commands import Context
 
+from pydis_core._bot import BotBase
 from pydis_core.async_stats import AsyncStatsClient
 from pydis_core.site_api import APIClient
-from tests._autospec import autospec  # noqa: F401 other modules import it via this module
+
+from ._autospec import autospec  # noqa: F401 other modules import it via this module
 
 for logger in logging.Logger.manager.loggerDict.values():
     # Set all loggers to CRITICAL by default to prevent screen clutter during testing
@@ -320,7 +321,7 @@ class MockBot(CustomMockMixin, unittest.mock.MagicMock):
     Instances of this class will follow the specifications of `discord.ext.commands.Bot` instances.
     For more information, see the `MockGuild` docstring.
     """
-    spec_set = Bot(
+    spec_set = BotBase(
         command_prefix=unittest.mock.MagicMock(),
         loop=_get_mock_loop(),
         redis_session=unittest.mock.MagicMock(),

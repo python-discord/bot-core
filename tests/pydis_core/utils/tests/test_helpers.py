@@ -4,7 +4,7 @@ import unittest.mock
 
 import discord
 
-from tests import helpers
+from pydis_core.utils.tests import helpers
 
 
 class DiscordMocksTests(unittest.TestCase):

@@ -1,9 +1,8 @@
 import logging
 import unittest.mock
 
-from bot.log import get_logger
-
-from tests.base import LoggingTestsMixin, _CaptureLogHandler
+from pydis_core.utils.logging import get_logger
+from pydis_core.utils.tests.base import LoggingTestsMixin, _CaptureLogHandler
 
 
 class LoggingTestCase(LoggingTestsMixin, unittest.TestCase):
@@ -29,7 +28,7 @@ class LoggingTestCaseTests(unittest.TestCase):
         """Test if LoggingTestCase.assertNotLogs raises AssertionError when logs were emitted."""
         msg_regex = (
             r"1 logs of DEBUG or higher were triggered on root:\n"
-            r'<LogRecord: tests\.test_base, [\d]+, .+[/\\]tests[/\\]test_base\.py, [\d]+, "Log!">'
+            r'<LogRecord: test_base, [\d]+, .+[/\\]tests[/\\]test_base\.py, [\d]+, "Log!">'
         )
         with (
             self.assertRaisesRegex(AssertionError, msg_regex),
