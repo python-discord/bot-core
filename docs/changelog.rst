@@ -4,6 +4,8 @@
 Changelog
 =========
 
+- :feature:`194` Add the :obj:`pydis_core.utils.interactions.user_has_access` helper function, that returns whether the given user is in the allowed_users list, or has a role from allowed_roles.
+
 - :release:`10.6.0 <30th January 2024>`
 - :feature:`189` Add :obj:`pydis_core.utils.pagination.LinePaginator` which allows users to paginate over content using Embeds, with emoji reactions facilitating navigation.
 - :feature:`189` Add :obj:`pydis_core.utils.messages.reaction_check`, a predicate that dictates whether a user has the right to add a specific set of reactions based on certain criteria.
