@@ -7,6 +7,7 @@ Changelog
 
 - :release:`10.3.0 <19th September 2023>`
 - :feature:`195` Add `log_format` to `pydis_core.utils.logging` to allow for standardised logging across all services using pydis_core.
+- :feature:`195` Set `discord`, `websockets`, `chardet` & `async_rediscache` loggers to warning level and `asyncio` to info level by default.
 
 
 - :release:`10.2.0 <28th August 2023>`

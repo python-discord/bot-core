@@ -55,3 +55,10 @@ def get_logger(name: str | None = None) -> CustomLogger:
 logging.TRACE = TRACE_LEVEL
 logging.setLoggerClass(CustomLogger)
 logging.addLevelName(TRACE_LEVEL, "TRACE")
+
+get_logger("discord").setLevel(logging.WARNING)
+get_logger("websockets").setLevel(logging.WARNING)
+get_logger("chardet").setLevel(logging.WARNING)
+get_logger("async_rediscache").setLevel(logging.WARNING)
+# Set back to the default of INFO even if asyncio's debug mode is enabled.
+get_logger("asyncio").setLevel(logging.INFO)
