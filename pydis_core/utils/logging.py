@@ -9,6 +9,12 @@ else:
     LoggerClass = logging.getLoggerClass()
 
 TRACE_LEVEL = 5
+log_format = logging.Formatter("%(asctime)s | %(levelname)s | %(name)s | %(message)s")
+"""
+A :obj:`logging.Formatter` that can be used to standardise logging across all projects using pydis_core.
+
+:meta hide-value:
+"""
 
 
 class CustomLogger(LoggerClass):
