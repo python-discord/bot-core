@@ -13,7 +13,7 @@ MAX_PASTE_SIZE = 512 * 1024  # 512kB
 """The maximum allows size of a paste, in bytes."""
 
 # A dict where the keys are paste services and the keys are the lists of lexers that paste service supports.
-_lexers_supported_by_pastebin: dict[str,list[str]] = {}
+_lexers_supported_by_pastebin: dict[str, list[str]] = {}
 
 
 class PasteResponse(BaseModel):
