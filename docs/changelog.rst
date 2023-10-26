@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`10.4.0 <26th October 2023>`
+- :support:`196` Bump aiodns to :literal-url:`3.1.1 <https://github.com/saghul/aiodns/releases/tag/v3.1.1>`.
+- :support:`196` Bump many development dependencies.
+
 
 - :release:`10.3.0 <19th September 2023>`
 - :feature:`195` Add `log_format` to `pydis_core.utils.logging` to allow for standardised logging across all services using pydis_core.
