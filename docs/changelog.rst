@@ -4,6 +4,8 @@
 Changelog
 =========
 
+- :support:`197` Mark dependencies using tilde version specifiers. This is to allow user of pydis core to use newer versions of these libraries without us having to cut a new release.
+
 - :release:`10.4.0 <26th October 2023>`
 - :support:`196` Bump aiodns to :literal-url:`3.1.1 <https://github.com/saghul/aiodns/releases/tag/v3.1.1>`.
 - :support:`196` Bump many development dependencies.
