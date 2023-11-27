@@ -220,7 +220,6 @@ class BotBase(commands.Bot):
 
     async def log_to_dev_log(self, message: str) -> None:
         """Log the given message to #dev-log."""
-        ...
 
     async def wait_until_guild_available(self) -> None:
         """
@@ -279,7 +278,6 @@ class BotBase(commands.Bot):
 
     async def ping_services(self) -> None:
         """Ping all required services on setup to ensure they are up before starting."""
-        ...
 
     async def close(self) -> None:
         """Close the Discord connection, and the aiohttp session, connector, statsd client, and resolver."""
