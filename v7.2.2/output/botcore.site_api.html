@@ -10,9 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -349,6 +349,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v10.4.0/index.html">v10.4.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v10.3.0/index.html">v10.3.0</a>
                     </li>
                 
@@ -434,9 +438,9 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>site_api_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The URL of the site API.</p></li>
-<li><p><strong>site_api_token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The token to use for authentication.</p></li>
-<li><p><strong>session_kwargs</strong> – Keyword arguments to pass to the <a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession" title="(in aiohttp v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aiohttp.ClientSession</span></code></a> constructor.</p></li>
+<li><p><strong>site_api_url</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – The URL of the site API.</p></li>
+<li><p><strong>site_api_token</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – The token to use for authentication.</p></li>
+<li><p><strong>session_kwargs</strong> – Keyword arguments to pass to the <a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession" title="(in aiohttp v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aiohttp.ClientSession</span></code></a> constructor.</p></li>
 </ul>
 </dd>
 </dl>
@@ -448,7 +452,7 @@
 <dd><p>Close the aiohttp session.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -460,13 +464,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>endpoint</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The endpoint to send the request to.</p></li>
-<li><p><strong>raise_for_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Whether or not to raise an exception if the response is not OK.</p></li>
-<li><p><strong>**kwargs</strong> – Any extra keyword arguments to pass to <a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.request" title="(in aiohttp v3.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">aiohttp.request()</span></code></a>.</p></li>
+<li><p><strong>endpoint</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – The endpoint to send the request to.</p></li>
+<li><p><strong>raise_for_status</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></span>) – Whether or not to raise an exception if the response is not OK.</p></li>
+<li><p><strong>**kwargs</strong> – Any extra keyword arguments to pass to <a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.request" title="(in aiohttp v3.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">aiohttp.request()</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]</p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]</span></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The JSON response the API returns, or None if the response is 204 No Content.</p>
@@ -480,7 +484,7 @@
 <dd><p>Equivalent to <a class="reference internal" href="#botcore.site_api.APIClient.request" title="botcore.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with GET passed as the method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -492,15 +496,15 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>response</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse" title="(in aiohttp v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aiohttp.ClientResponse</span></code></a>) – The response to check.</p></li>
-<li><p><strong>should_raise</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Whether or not to raise an exception.</p></li>
+<li><p><strong>response</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse" title="(in aiohttp v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aiohttp.ClientResponse</span></code></a>) – The response to check.</p></li>
+<li><p><strong>should_raise</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></span>) – Whether or not to raise an exception.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#botcore.site_api.ResponseCodeError" title="botcore.site_api.ResponseCodeError"><strong>ResponseCodeError</strong></a> – If the response is not OK and <code class="docutils literal notranslate"><span class="pre">should_raise</span></code> is True.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -511,7 +515,7 @@
 <dd><p>Equivalent to <a class="reference internal" href="#botcore.site_api.APIClient.request" title="botcore.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with PATCH passed as the method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -522,7 +526,7 @@
 <dd><p>Equivalent to <a class="reference internal" href="#botcore.site_api.APIClient.request" title="botcore.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with POST passed as the method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -533,7 +537,7 @@
 <dd><p>Equivalent to <a class="reference internal" href="#botcore.site_api.APIClient.request" title="botcore.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with PUT passed as the method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -545,14 +549,14 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The HTTP method to use.</p></li>
-<li><p><strong>endpoint</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The endpoint to send the request to.</p></li>
-<li><p><strong>raise_for_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Whether or not to raise an exception if the response is not OK.</p></li>
-<li><p><strong>**kwargs</strong> – Any extra keyword arguments to pass to <a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.request" title="(in aiohttp v3.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">aiohttp.request()</span></code></a>.</p></li>
+<li><p><strong>method</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – The HTTP method to use.</p></li>
+<li><p><strong>endpoint</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – The endpoint to send the request to.</p></li>
+<li><p><strong>raise_for_status</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></span>) – Whether or not to raise an exception if the response is not OK.</p></li>
+<li><p><strong>**kwargs</strong> – Any extra keyword arguments to pass to <a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.request" title="(in aiohttp v3.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">aiohttp.request()</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></span></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The JSON response the API returns.</p>
@@ -577,9 +581,9 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>response</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse" title="(in aiohttp v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aiohttp.ClientResponse</span></code></a>) – The response object from the request.</p></li>
-<li><p><strong>response_json</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]) – The JSON response returned from the request, if any.</p></li>
-<li><p><strong>response_text</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – The text of the request, if any.</p></li>
+<li><p><strong>response</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse" title="(in aiohttp v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aiohttp.ClientResponse</span></code></a>) – The response object from the request.</p></li>
+<li><p><strong>response_json</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]</span>) – The JSON response returned from the request, if any.</p></li>
+<li><p><strong>response_text</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</span>) – The text of the request, if any.</p></li>
 </ul>
 </dd>
 </dl>

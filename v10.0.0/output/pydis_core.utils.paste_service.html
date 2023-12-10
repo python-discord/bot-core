@@ -10,9 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -356,6 +356,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v10.4.0/output/pydis_core.utils.paste_service.html">v10.4.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v10.3.0/output/pydis_core.utils.paste_service.html">v10.3.0</a>
                     </li>
                 
@@ -521,10 +525,10 @@ mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>files</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference internal" href="#pydis_core.utils.paste_service.PasteFile" title="pydis_core.utils.paste_service.PasteFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasteFile</span></code></a>]) – The files to be uploaded to the paste service.</p></li>
-<li><p><strong>http_session</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession" title="(in aiohttp v3.8)"><em>aiohttp.ClientSession</em></a>) – The session to use when POSTing the content to the paste service.</p></li>
-<li><p><strong>paste_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The base url to the paste service.</p></li>
-<li><p><strong>max_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The max number of bytes to be allowed. Anything larger than <a class="reference internal" href="#pydis_core.utils.paste_service.MAX_PASTE_SIZE" title="pydis_core.utils.paste_service.MAX_PASTE_SIZE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAX_PASTE_SIZE</span></code></a> will be rejected.</p></li>
+<li><p><strong>files</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference internal" href="#pydis_core.utils.paste_service.PasteFile" title="pydis_core.utils.paste_service.PasteFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasteFile</span></code></a>]</span>) – The files to be uploaded to the paste service.</p></li>
+<li><p><strong>http_session</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession" title="(in aiohttp v3.9)"><em>aiohttp.ClientSession</em></a>) – The session to use when POSTing the content to the paste service.</p></li>
+<li><p><strong>paste_url</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – The base url to the paste service.</p></li>
+<li><p><strong>max_size</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span>) – The max number of bytes to be allowed. Anything larger than <a class="reference internal" href="#pydis_core.utils.paste_service.MAX_PASTE_SIZE" title="pydis_core.utils.paste_service.MAX_PASTE_SIZE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAX_PASTE_SIZE</span></code></a> will be rejected.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
@@ -535,7 +539,7 @@ mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pydis_core.utils.paste_service.PasteResponse" title="pydis_core.utils.paste_service.PasteResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasteResponse</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#pydis_core.utils.paste_service.PasteResponse" title="pydis_core.utils.paste_service.PasteResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasteResponse</span></code></a></span></p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A pydantic model containing both the URL of the paste, and a URL to remove the paste.</p>

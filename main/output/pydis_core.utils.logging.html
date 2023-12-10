@@ -6,13 +6,13 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="members" href="pydis_core.utils.members.html" /><link rel="prev" title="interactions" href="pydis_core.utils.interactions.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>logging - Pydis Core Latest (10.4.0)</title>
+        <title>logging - Pydis Core Latest (10.5.0)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core Latest (10.4.0)</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core Latest (10.5.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (10.4.0)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (10.5.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -356,6 +356,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v10.4.0/output/pydis_core.utils.logging.html">v10.4.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v10.3.0/output/pydis_core.utils.logging.html">v10.3.0</a>
                     </li>
                 
@@ -431,12 +435,12 @@
 <p>Common logging related functions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.utils.logging.CustomLogger">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustomLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ee2501e36aa4cb6e809de9873e3d607bdf3309db/pydis_core/utils/logging.py#L20-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.CustomLogger" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustomLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/3ed1d4be2328b59577afde058105fd071184bd95/pydis_core/utils/logging.py#L20-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.CustomLogger" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Logger</span></code></a></p>
 <p>Custom implementation of the <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.Logger</span></code></a> class with an added <a class="reference internal" href="#pydis_core.utils.logging.CustomLogger.trace" title="pydis_core.utils.logging.CustomLogger.trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace</span></code></a> method.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.logging.CustomLogger.trace">
-<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ee2501e36aa4cb6e809de9873e3d607bdf3309db/pydis_core/utils/logging.py#L23-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.CustomLogger.trace" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/3ed1d4be2328b59577afde058105fd071184bd95/pydis_core/utils/logging.py#L23-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.CustomLogger.trace" title="Link to this definition">#</a></dt>
 <dd><p>Log the given message with the severity <code class="docutils literal notranslate"><span class="pre">&quot;TRACE&quot;</span></code>.</p>
 <p>To pass exception information, use the keyword argument exc_info with a true value:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="s2">&quot;Houston, we have an </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;interesting problem&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -445,13 +449,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The message to be logged.</p></li>
+<li><p><strong>msg</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – The message to be logged.</p></li>
 <li><p><strong>args</strong> – Passed to the base log function as is.</p></li>
 <li><p><strong>kwargs</strong> – Passed to the base log function as is.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -460,14 +464,14 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.logging.get_logger">
-<span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ee2501e36aa4cb6e809de9873e3d607bdf3309db/pydis_core/utils/logging.py#L41-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.get_logger" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/3ed1d4be2328b59577afde058105fd071184bd95/pydis_core/utils/logging.py#L41-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.get_logger" title="Link to this definition">#</a></dt>
 <dd><p>Utility to make mypy recognise that logger is of type <a class="reference internal" href="#pydis_core.utils.logging.CustomLogger" title="pydis_core.utils.logging.CustomLogger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomLogger</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – The name given to the logger.</p>
+<dd class="field-odd"><p><strong>name</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</span>) – The name given to the logger.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#pydis_core.utils.logging.CustomLogger" title="pydis_core.utils.logging.CustomLogger"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomLogger</span></code></a></p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#pydis_core.utils.logging.CustomLogger" title="pydis_core.utils.logging.CustomLogger"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomLogger</span></code></a></span></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>An instance of the <a class="reference internal" href="#pydis_core.utils.logging.CustomLogger" title="pydis_core.utils.logging.CustomLogger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomLogger</span></code></a> class.</p>
@@ -477,7 +481,7 @@
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pydis_core.utils.logging.log_format">
-<span class="sig-name descname"><span class="pre">log_format</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ee2501e36aa4cb6e809de9873e3d607bdf3309db/pydis_core/utils/logging.py#L12"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.log_format" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">log_format</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/3ed1d4be2328b59577afde058105fd071184bd95/pydis_core/utils/logging.py#L12"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.log_format" title="Link to this definition">#</a></dt>
 <dd><p>A <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Formatter" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.Formatter</span></code></a> that can be used to standardise logging across all projects using pydis_core.</p>
 <dl class="field-list simple">
 </dl>
@@ -558,7 +562,7 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=2f7da7c1"></script>
+</div><script src="../_static/documentation_options.js?v=5ea8ed98"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

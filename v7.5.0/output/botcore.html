@@ -10,9 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -351,6 +351,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v10.4.0/index.html">v10.4.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v10.3.0/index.html">v10.3.0</a>
                     </li>
                 
@@ -436,12 +440,12 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>guild_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The ID of the guild use for <a class="reference internal" href="#botcore.BotBase.wait_until_guild_available" title="botcore.BotBase.wait_until_guild_available"><code class="xref py py-func docutils literal notranslate"><span class="pre">wait_until_guild_available()</span></code></a>.</p></li>
-<li><p><strong>allowed_roles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – A list of role IDs that the bot is allowed to mention.</p></li>
-<li><p><strong>http_session</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession" title="(in aiohttp v3.8)"><em>aiohttp.ClientSession</em></a>) – The session to use for the bot.</p></li>
-<li><p><strong>redis_session</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">RedisSession</span></code>]) – The <a class="reference external" href="https://github.com/SebastiaanZ/async-rediscache#creating-a-redissession">async_rediscache.RedisSession</a> to use for the bot.</p></li>
-<li><p><strong>api_client</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient" title="botcore.site_api.APIClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">APIClient</span></code></a>]) – The <a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient" title="botcore.site_api.APIClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">botcore.site_api.APIClient</span></code></a> instance to use for the bot.</p></li>
-<li><p><strong>statsd_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – The URL of the statsd server to use for the bot. If not given,
+<li><p><strong>guild_id</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span>) – The ID of the guild use for <a class="reference internal" href="#botcore.BotBase.wait_until_guild_available" title="botcore.BotBase.wait_until_guild_available"><code class="xref py py-func docutils literal notranslate"><span class="pre">wait_until_guild_available()</span></code></a>.</p></li>
+<li><p><strong>allowed_roles</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></span>) – A list of role IDs that the bot is allowed to mention.</p></li>
+<li><p><strong>http_session</strong> (<a class="reference external" href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession" title="(in aiohttp v3.9)"><em>aiohttp.ClientSession</em></a>) – The session to use for the bot.</p></li>
+<li><p><strong>redis_session</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">RedisSession</span></code>]</span>) – The <a class="reference external" href="https://github.com/SebastiaanZ/async-rediscache#creating-a-redissession">async_rediscache.RedisSession</a> to use for the bot.</p></li>
+<li><p><strong>api_client</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient" title="botcore.site_api.APIClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">APIClient</span></code></a>]</span>) – The <a class="reference internal" href="botcore.site_api.html#botcore.site_api.APIClient" title="botcore.site_api.APIClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">botcore.site_api.APIClient</span></code></a> instance to use for the bot.</p></li>
+<li><p><strong>statsd_url</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</span>) – The URL of the statsd server to use for the bot. If not given,
 a dummy statsd client will be created.</p></li>
 </ul>
 </dd>
@@ -454,7 +458,7 @@ a dummy statsd client will be created.</p></li>
 <dd><p>Add the given <code class="docutils literal notranslate"><span class="pre">cog</span></code> to the bot and log the operation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -465,7 +469,7 @@ a dummy statsd client will be created.</p></li>
 <dd><p>Add <code class="docutils literal notranslate"><span class="pre">command</span></code> as normal and then add its root aliases to the bot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -476,7 +480,7 @@ a dummy statsd client will be created.</p></li>
 <dd><p>Not implemented! Re-instantiate the bot instead of attempting to re-use a closed one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -487,7 +491,7 @@ a dummy statsd client will be created.</p></li>
 <dd><p>Close the Discord connection, and the aiohttp session, connector, statsd client, and resolver.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -499,7 +503,7 @@ a dummy statsd client will be created.</p></li>
 <p>This should be ran in a task on the event loop to avoid deadlocks caused by <code class="docutils literal notranslate"><span class="pre">wait_for</span></code> calls.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -510,7 +514,7 @@ a dummy statsd client will be created.</p></li>
 <dd><p>Log the given message to #dev-log.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -523,7 +527,7 @@ a dummy statsd client will be created.</p></li>
 will not be set and <cite>guild_available_but_cache_empty</cite> event will be emitted.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -534,7 +538,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 <dd><p>Clear the internal guild available event when self.guild_id becomes unavailable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -545,7 +549,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 <dd><p>Ping all required services on setup to ensure they are up before starting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -558,7 +562,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 To remove them, either remove the entire command or manually edit <cite>bot.all_commands</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a>]</p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Command" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a>]</span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -572,7 +576,7 @@ To remove them, either remove the entire command or manually edit <cite>bot.all_
 and <a class="reference internal" href="#botcore.BotBase.ping_services" title="botcore.BotBase.ping_services"><code class="xref py py-func docutils literal notranslate"><span class="pre">ping_services()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -585,7 +589,7 @@ and <a class="reference internal" href="#botcore.BotBase.ping_services" title="b
 gateway event before giving up and thus not populating the cache for unavailable guilds.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
 </dd>
 </dl>
 </dd></dl>
