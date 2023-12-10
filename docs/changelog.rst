@@ -4,6 +4,7 @@
 Changelog
 =========
 
+- :release:`10.5.0 <10th December 2023>`
 - :support:`197` Mark dependencies using tilde version specifiers. This is to allow user of pydis core to use newer versions of these libraries without us having to cut a new release.
 
 - :release:`10.4.0 <26th October 2023>`
