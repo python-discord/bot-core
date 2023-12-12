@@ -34,7 +34,7 @@ The docs folder has a few moving components, here's a brief description of each:
 - `conf.py`: Configuration for Sphinx. This includes things such as the project name, version,
   plugins and their configuration.
 - `utils.py`: Helpful function used by `conf.py` to properly create the docs.
-- `netliy_build.py`: Script which downloads the build output in netlify. Refer to [Static Netlify Build](#static-builds)
+- `netlify_build.py`: Script which downloads the build output in netlify. Refer to [Static Netlify Build](#static-builds)
 
 
 ## Versions
