@@ -46,17 +46,21 @@ def in_whitelist_check(
     fail_silently: bool = False,
 ) -> bool:
     """
-    Check if a command was issued in a whitelisted context.
+    Check if a command was issued in a context that is whitelisted by channel, category, or roles.
 
-    The whitelists that can be provided are:
+    Args:
+        ctx (:obj:`discord.ext.commands.Context`): The context in which the command is being invoked.
+        redirect (int | None): The channel ID to redirect the user to, if any.
+        channels (Container[int]): Whitelisted channel IDs. Defaults to ().
+        categories (Container[int]): Whitelisted category IDs. Defaults to ().
+        roles (Container[int]): Whitelisted role IDs. Defaults to ().
+        fail_silently (bool): Whether to fail silently without raising an exception. Defaults to False.
 
-    - `channels`: a container with channel ids for whitelisted channels
-    - `categories`: a container with category ids for whitelisted categories
-    - `roles`: a container with with role ids for whitelisted roles
+    Returns:
+        bool: True if the command is used in a whitelisted context; False otherwise.
 
-    If the command was invoked in a context that was not whitelisted, the member is either
-    redirected to the `redirect` channel that was passed (default: #bot-commands) or simply
-    told that they're not allowed to use this particular command (if `None` was passed).
+    Raises:
+        InWhitelistCheckFailure: If the context is not whitelisted and `fail_silently` is False.
     """
     if redirect not in channels:
         # It does not make sense for the channel whitelist to not contain the redirection
@@ -92,12 +96,29 @@ def in_whitelist_check(
     return False
 
 
-def cooldown_with_role_bypass(rate: int, per: float, type: BucketType = BucketType.default, *,
-                              bypass_roles: Iterable[int]) -> Callable:
+def cooldown_with_role_bypass(
+    rate: int,
+    per: float,
+    type: BucketType = BucketType.default,
+    *,
+    bypass_roles: Iterable[int]
+) -> Callable:
     """
-    Applies a cooldown to a command, but allows members with certain roles to be ignored.
+    Decorate a command to have a cooldown, which can be bypassed by users with specified roles.
 
-    NOTE: this replaces the `Command.before_invoke` callback, which *might* introduce problems in the future.
+    Note: This replaces the `Command.before_invoke` callback, which *might* introduce problems in the future.
+
+    Args:
+        rate (int): Number of times a command can be used before triggering a cooldown.
+        per (float): The duration (in seconds) for how long the cooldown lasts.
+        type (:obj:`discord.ext.commands.BucketType`): The type of cooldown (per user, per channel, per guild, etc.).
+        bypass_roles (Iterable[int]): An iterable of role IDs that bypass the cooldown.
+
+    Returns:
+        Callable: A decorator that adds the described cooldown behavior to the command.
+
+    Raises:
+        TypeError: If the decorator is not applied to an instance of `Command`.
     """
     # Make it a set so lookup is hash based.
     bypass = set(bypass_roles)
@@ -140,10 +161,16 @@ def cooldown_with_role_bypass(rate: int, per: float, type: BucketType = BucketTy
 
 async def has_any_role_check(ctx: Context, *roles: str | int) -> bool:
     """
-    Returns True if the context's author has any of the specified roles.
+    Verify if the context's author has any of the specified roles.
 
-    `roles` are the names or IDs of the roles for which to check.
-    False is always returns if the context is outside a guild.
+    This check will always fail if the context is a DM, since DMs don't have roles.
+
+    Args:
+        ctx (:obj:`discord.ext.commands.Context`): The context where the command is being invoked.
+        roles (Union[str, int], ...): A collection of role IDs.
+
+    Returns:
+        bool: True if the context's author has at least one of the specified roles; False otherwise.
     """
     if not ctx.guild:  # Return False in a DM
         log.trace(
@@ -166,10 +193,16 @@ async def has_any_role_check(ctx: Context, *roles: str | int) -> bool:
 
 async def has_no_roles_check(ctx: Context, *roles: str | int) -> bool:
     """
-    Returns True if the context's author doesn't have any of the specified roles.
+    Verify if the context's author doesn't have any of the specified roles.
 
-    `roles` are the names or IDs of the roles for which to check.
-    False is always returns if the context is outside a guild.
+    This check will always fail if the context is a DM, since DMs don't have roles.
+
+    Args:
+        ctx (:obj:`discord.ext.commands.Context`): The context where the command is being invoked.
+        roles (Union[str, int], ...): A collection of role IDs.
+
+    Returns:
+        bool: True if the context's author doesn't have any of the specified roles; False otherwise.
     """
     if not ctx.guild:  # Return False in a DM
         log.trace(
