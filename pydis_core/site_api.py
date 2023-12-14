@@ -96,7 +96,7 @@ class APIClient:
                 response_text = await response.text()
                 raise ResponseCodeError(response=response, response_text=response_text)
 
-    async def request(self, method: str, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict:
+    async def request(self, method: str, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:
         """
         Send an HTTP request to the site API and return the JSON response.
 
@@ -107,50 +107,38 @@ class APIClient:
             **kwargs: Any extra keyword arguments to pass to :func:`aiohttp.request`.
 
         Returns:
-            The JSON response the API returns.
+            The JSON response the API returns, or :obj:`None` if the response code is 204.
 
         Raises:
             :exc:`ResponseCodeError`:
                 If the response is not OK and ``raise_for_status`` is True.
         """
         async with self.session.request(method.upper(), self._url_for(endpoint), **kwargs) as resp:
-            await self.maybe_raise_for_status(resp, raise_for_status)
-            return await resp.json()
-
-    async def get(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict:
-        """Equivalent to :meth:`APIClient.request` with GET passed as the method."""
-        return await self.request("GET", endpoint, raise_for_status=raise_for_status, **kwargs)
-
-    async def patch(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict:
-        """Equivalent to :meth:`APIClient.request` with PATCH passed as the method."""
-        return await self.request("PATCH", endpoint, raise_for_status=raise_for_status, **kwargs)
-
-    async def post(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict:
-        """Equivalent to :meth:`APIClient.request` with POST passed as the method."""
-        return await self.request("POST", endpoint, raise_for_status=raise_for_status, **kwargs)
-
-    async def put(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict:
-        """Equivalent to :meth:`APIClient.request` with PUT passed as the method."""
-        return await self.request("PUT", endpoint, raise_for_status=raise_for_status, **kwargs)
-
-    async def delete(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:
-        """
-        Send a DELETE request to the site API and return the JSON response.
-
-        Args:
-            endpoint: The endpoint to send the request to.
-            raise_for_status: Whether or not to raise an exception if the response is not OK.
-            **kwargs: Any extra keyword arguments to pass to :func:`aiohttp.request`.
-
-        Returns:
-            The JSON response the API returns, or None if the response is 204 No Content.
-        """
-        async with self.session.delete(self._url_for(endpoint), **kwargs) as resp:
             if resp.status == 204:
                 return None
 
             await self.maybe_raise_for_status(resp, raise_for_status)
             return await resp.json()
+
+    async def get(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:
+        """Equivalent to :meth:`APIClient.request` with GET passed as the method."""
+        return await self.request("GET", endpoint, raise_for_status=raise_for_status, **kwargs)
+
+    async def patch(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:
+        """Equivalent to :meth:`APIClient.request` with PATCH passed as the method."""
+        return await self.request("PATCH", endpoint, raise_for_status=raise_for_status, **kwargs)
+
+    async def post(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:
+        """Equivalent to :meth:`APIClient.request` with POST passed as the method."""
+        return await self.request("POST", endpoint, raise_for_status=raise_for_status, **kwargs)
+
+    async def put(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:
+        """Equivalent to :meth:`APIClient.request` with PUT passed as the method."""
+        return await self.request("PUT", endpoint, raise_for_status=raise_for_status, **kwargs)
+
+    async def delete(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:
+        """Equivalent to :meth:`APIClient.request` with DELETE passed as the method."""
+        return await self.request("DELETE", endpoint, raise_for_status=raise_for_status, **kwargs)
 
 
 __all__ = ["APIClient", "ResponseCodeError"]
