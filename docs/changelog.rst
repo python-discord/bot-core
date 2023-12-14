@@ -4,6 +4,9 @@
 Changelog
 =========
 
+- :release:`10.5.1 <14th December 2023>`
+- :bug:`198` Do not attempt to read response body if the HTTP response code is 204. Previously only :obj:`pydis_core.site_api.APIClient.delete` did this.
+
 - :release:`10.5.0 <10th December 2023>`
 - :support:`197` Mark dependencies using tilde version specifiers. This is to allow user of pydis core to use newer versions of these libraries without us having to cut a new release.
 
