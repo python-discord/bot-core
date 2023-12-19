@@ -4,6 +4,9 @@
 Changelog
 =========
 
+- :release:`10.6.0 <12th December 2023>`
+- :feature:`199` Port all common checks to :obj:`pydis_core.utils.checks`.
+
 - :release:`10.5.1 <14th December 2023>`
 - :bug:`200` Do not attempt to read response body if the HTTP response code is 204. Previously only :obj:`pydis_core.site_api.APIClient.delete` did this.
 
