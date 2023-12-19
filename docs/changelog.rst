@@ -4,9 +4,10 @@
 Changelog
 =========
 
-- :release:`10.6.0 <4th January 2024>`
+- :release:`10.6.0 <30th January 2024>`
 - :feature:`189` Add :obj:`pydis_core.utils.pagination.LinePaginator` which allows users to paginate over content using Embeds, with emoji reactions facilitating navigation.
 - :feature:`189` Add :obj:`pydis_core.utils.messages.reaction_check`, a predicate that dictates whether a user has the right to add a specific set of reactions based on certain criteria.
+- :feature:`199` Port common discord.commands checks from other bots to :obj:`pydis_core.utils.checks`.
 
 - :release:`10.5.1 <14th December 2023>`
 - :bug:`200` Do not attempt to read response body if the HTTP response code is 204. Previously only :obj:`pydis_core.site_api.APIClient.delete` did this.
