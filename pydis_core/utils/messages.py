@@ -1,10 +1,9 @@
-from typing import Sequence
-
-from pydis_core.utils.logging import get_logger
-from pydis_core.utils.scheduling import create_task
+from collections.abc import Sequence
 
 import discord
 
+from pydis_core.utils.logging import get_logger
+from pydis_core.utils.scheduling import create_task
 
 log = get_logger(__name__)
 
