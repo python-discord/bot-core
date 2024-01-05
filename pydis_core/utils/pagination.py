@@ -246,7 +246,7 @@ class LinePaginator(Paginator):
         >>> await LinePaginator.paginate(pagination_emojis, [line for line in lines], ctx, embed)
         """
         paginator = cls(prefix=prefix, suffix=suffix, max_size=max_size,
-                        max_lines=max_lines, scale_to_size=scale_to_size, pagination_emojis=pagination_emojis)
+                        max_lines=max_lines, scale_to_size=scale_to_size)
         current_page = 0
 
         if not restrict_to_user:
@@ -313,7 +313,7 @@ class LinePaginator(Paginator):
 
         log.debug("Adding emoji reactions to message...")
 
-        pagination_emoji = list(paginator.pagination_emojis.dict().values())
+        pagination_emoji = list(pagination_emojis.model_dump().values())
 
         for emoji in pagination_emoji:
             # Add all the applicable emoji to the message
@@ -339,7 +339,7 @@ class LinePaginator(Paginator):
                 log.debug("Timed out waiting for a reaction")
                 break  # We're done, no reactions for the last 5 minutes
 
-            if str(reaction.emoji) == paginator.pagination_emojis.delete:
+            if str(reaction.emoji) == pagination_emojis.delete:
                 log.debug("Got delete reaction")
                 return await message.delete()
             if reaction.emoji in pagination_emoji:
@@ -351,20 +351,20 @@ class LinePaginator(Paginator):
                     if e.code != 50083:
                         raise e
 
-                if reaction.emoji == paginator.pagination_emojis.first:
+                if reaction.emoji == pagination_emojis.first:
                     current_page = 0
                     log.debug(f"Got first page reaction - changing to page 1/{total_pages}")
-                elif reaction.emoji == paginator.pagination_emojis.last:
+                elif reaction.emoji == pagination_emojis.last:
                     current_page = len(paginator.pages) - 1
                     log.debug(f"Got last page reaction - changing to page {current_page + 1}/{total_pages}")
-                elif reaction.emoji == paginator.pagination_emojis.left:
+                elif reaction.emoji == pagination_emojis.left:
                     if current_page <= 0:
                         log.debug("Got previous page reaction, but we're on the first page - ignoring")
                         continue
 
                     current_page -= 1
                     log.debug(f"Got previous page reaction - changing to page {current_page + 1}/{total_pages}")
-                elif reaction.emoji == paginator.pagination_emojis.right:
+                elif reaction.emoji == pagination_emojis.right:
                     if current_page >= len(paginator.pages) - 1:
                         log.debug("Got next page reaction, but we're on the last page - ignoring")
                         continue
