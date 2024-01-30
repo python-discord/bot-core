@@ -3,16 +3,16 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="paste_service" href="pydis_core.utils.paste_service.html" /><link rel="prev" title="logging" href="pydis_core.utils.logging.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="messages" href="pydis_core.utils.messages.html" /><link rel="prev" title="logging" href="pydis_core.utils.logging.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>members - Pydis Core Latest (10.5.1)</title>
+        <title>members - Pydis Core Latest (10.6.0)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
-    <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
+    <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core Latest (10.5.1)</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core Latest (10.6.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (10.5.1)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (10.6.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -168,6 +168,7 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="pydis_core.utils.html">Utils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.channel.html">channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.checks.html">checks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.commands.html">commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.cooldown.html">cooldown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.error_handling.html">error_handling</a></li>
@@ -175,6 +176,8 @@
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.interactions.html">interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.logging.html">logging</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">members</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.messages.html">messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html">pagination</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.paste_service.html">paste_service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.regex.html">regex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.scheduling.html">scheduling</a></li>
@@ -356,6 +359,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v10.6.0/output/pydis_core.utils.members.html">v10.6.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v10.5.1/output/pydis_core.utils.members.html">v10.5.1</a>
                     </li>
                 
@@ -443,7 +450,7 @@
 <p>Useful helper functions for interactin with <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member</span></code></a> objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.members.get_or_fetch_member">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/utils/members.py#L12-L31"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.members.get_or_fetch_member" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/members.py#L12-L31"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.members.get_or_fetch_member" title="Link to this definition">#</a></dt>
 <dd><p>Attempt to get a member from cache; on failure fetch from the API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -457,7 +464,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.members.handle_role_change">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_role_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/utils/members.py#L33-L60"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.members.handle_role_change" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_role_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/members.py#L33-L60"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.members.handle_role_change" title="Link to this definition">#</a></dt>
 <dd><p>Await the given <code class="docutils literal notranslate"><span class="pre">coro</span></code> with <code class="docutils literal notranslate"><span class="pre">role</span></code> as the sole argument.</p>
 <p>Handle errors that we expect to be raised from
 <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.add_roles" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.add_roles</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.remove_roles" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.remove_roles</span></code></a>.</p>
@@ -482,12 +489,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="pydis_core.utils.paste_service.html">
+          <a class="next-page" href="pydis_core.utils.messages.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">paste_service</div>
+                <div class="title">messages</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -546,7 +553,7 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=fad06981"></script>
+</div><script src="../_static/documentation_options.js?v=ccd73373"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

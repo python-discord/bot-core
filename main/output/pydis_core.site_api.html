@@ -6,13 +6,13 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Local Development &amp; Testing" href="../development.html" /><link rel="prev" title="async_stats" href="pydis_core.async_stats.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>site_api - Pydis Core Latest (10.5.1)</title>
+        <title>site_api - Pydis Core Latest (10.6.0)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
-    <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
+    <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core Latest (10.5.1)</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core Latest (10.6.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (10.5.1)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (10.6.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -168,6 +168,7 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="pydis_core.utils.html">Utils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.channel.html">channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.checks.html">checks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.commands.html">commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.cooldown.html">cooldown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.error_handling.html">error_handling</a></li>
@@ -175,6 +176,8 @@
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.interactions.html">interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.logging.html">logging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.members.html">members</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.messages.html">messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html">pagination</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.paste_service.html">paste_service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.regex.html">regex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.scheduling.html">scheduling</a></li>
@@ -356,6 +359,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v10.6.0/output/pydis_core.site_api.html">v10.6.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v10.5.1/output/pydis_core.site_api.html">v10.5.1</a>
                     </li>
                 
@@ -443,12 +450,12 @@
 <p>An API wrapper around the Site API.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">APIClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_api_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_api_token</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">session_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L41-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">APIClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_api_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_api_token</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">session_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L41-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A wrapper for the Django Site API.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_api_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_api_token</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">session_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L47-L70"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_api_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_api_token</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">session_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L47-L70"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.__init__" title="Link to this definition">#</a></dt>
 <dd><p>Initialize a new <a class="reference internal" href="#pydis_core.site_api.APIClient" title="pydis_core.site_api.APIClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">APIClient</span></code></a> instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -463,7 +470,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient.close">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L74-L77"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.close" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L74-L77"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.close" title="Link to this definition">#</a></dt>
 <dd><p>Close the aiohttp session.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -474,7 +481,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient.delete">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L139-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.delete" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L139-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.delete" title="Link to this definition">#</a></dt>
 <dd><p>Equivalent to <a class="reference internal" href="#pydis_core.site_api.APIClient.request" title="pydis_core.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with DELETE passed as the method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -485,7 +492,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient.get">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L123-L126"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.get" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L123-L126"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.get" title="Link to this definition">#</a></dt>
 <dd><p>Equivalent to <a class="reference internal" href="#pydis_core.site_api.APIClient.request" title="pydis_core.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with GET passed as the method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -496,7 +503,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient.maybe_raise_for_status">
-<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maybe_raise_for_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_raise</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L78-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.maybe_raise_for_status" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maybe_raise_for_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_raise</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L78-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.maybe_raise_for_status" title="Link to this definition">#</a></dt>
 <dd><p>Raise <a class="reference internal" href="#pydis_core.site_api.ResponseCodeError" title="pydis_core.site_api.ResponseCodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ResponseCodeError</span></code></a> for non-OK response if an exception should be raised.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -516,7 +523,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient.patch">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L127-L130"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.patch" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L127-L130"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.patch" title="Link to this definition">#</a></dt>
 <dd><p>Equivalent to <a class="reference internal" href="#pydis_core.site_api.APIClient.request" title="pydis_core.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with PATCH passed as the method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -527,7 +534,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient.post">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L131-L134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.post" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L131-L134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.post" title="Link to this definition">#</a></dt>
 <dd><p>Equivalent to <a class="reference internal" href="#pydis_core.site_api.APIClient.request" title="pydis_core.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with POST passed as the method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -538,7 +545,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient.put">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L135-L138"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.put" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L135-L138"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.put" title="Link to this definition">#</a></dt>
 <dd><p>Equivalent to <a class="reference internal" href="#pydis_core.site_api.APIClient.request" title="pydis_core.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> with PUT passed as the method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -549,7 +556,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.APIClient.request">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L99-L122"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.request" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_for_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L99-L122"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.APIClient.request" title="Link to this definition">#</a></dt>
 <dd><p>Send an HTTP request to the site API and return the JSON response.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -576,12 +583,12 @@
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="pydis_core.site_api.ResponseCodeError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ResponseCodeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L13-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.ResponseCodeError" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ResponseCodeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L13-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.ResponseCodeError" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a></p>
 <p>Raised in <a class="reference internal" href="#pydis_core.site_api.APIClient.request" title="pydis_core.site_api.APIClient.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">APIClient.request()</span></code></a> when a non-OK HTTP response is received.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.ResponseCodeError.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L16-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.ResponseCodeError.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L16-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.ResponseCodeError.__init__" title="Link to this definition">#</a></dt>
 <dd><p>Initialize a new <a class="reference internal" href="#pydis_core.site_api.ResponseCodeError" title="pydis_core.site_api.ResponseCodeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResponseCodeError</span></code></a> instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -596,7 +603,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.site_api.ResponseCodeError.__str__">
-<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/site_api.py#L35-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.ResponseCodeError.__str__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/site_api.py#L35-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.site_api.ResponseCodeError.__str__" title="Link to this definition">#</a></dt>
 <dd><p>Return a string representation of the error.</p>
 </dd></dl>
 
@@ -688,7 +695,7 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=fad06981"></script>
+</div><script src="../_static/documentation_options.js?v=ccd73373"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

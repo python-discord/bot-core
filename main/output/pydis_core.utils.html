@@ -6,13 +6,13 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="caching" href="pydis_core.utils.caching.html" /><link rel="prev" title="Exts" href="pydis_core.exts.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>Utils - Pydis Core Latest (10.5.1)</title>
+        <title>Utils - Pydis Core Latest (10.6.0)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
-    <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
+    <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core Latest (10.5.1)</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core Latest (10.6.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (10.5.1)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (10.6.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -168,6 +168,7 @@
 <li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Utils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.channel.html">channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.checks.html">checks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.commands.html">commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.cooldown.html">cooldown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.error_handling.html">error_handling</a></li>
@@ -175,6 +176,8 @@
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.interactions.html">interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.logging.html">logging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.members.html">members</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.messages.html">messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html">pagination</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.paste_service.html">paste_service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.regex.html">regex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.scheduling.html">scheduling</a></li>
@@ -356,6 +359,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v10.6.0/output/pydis_core.utils.html">v10.6.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v10.5.1/output/pydis_core.utils.html">v10.5.1</a>
                     </li>
                 
@@ -443,7 +450,7 @@
 <p>Useful utilities and tools for Discord bot development.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.apply_monkey_patches">
-<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/utils/__init__.py#L21-L35"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.apply_monkey_patches" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">apply_monkey_patches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/__init__.py#L24-L38"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.apply_monkey_patches" title="Link to this definition">#</a></dt>
 <dd><p>Applies all common monkey patches for our bots.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -462,7 +469,7 @@ that will act as top-level groups rather than being aliases of the command’s g
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.unqualify">
-<span class="sig-name descname"><span class="pre">unqualify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/utils/_extensions.py#L10-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.unqualify" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">unqualify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/_extensions.py#L10-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.unqualify" title="Link to this definition">#</a></dt>
 <dd><p>Return an unqualified name given a qualified module/package <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -493,6 +500,18 @@ that will act as top-level groups rather than being aliases of the command’s g
 <li class="toctree-l1"><a class="reference internal" href="pydis_core.utils.channel.html">channel</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.channel.html#pydis_core.utils.channel.get_or_fetch_channel"><code class="docutils literal notranslate"><span class="pre">get_or_fetch_channel()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.channel.html#pydis_core.utils.channel.is_in_category"><code class="docutils literal notranslate"><span class="pre">is_in_category()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pydis_core.utils.checks.html">checks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.ContextCheckFailure"><code class="docutils literal notranslate"><span class="pre">ContextCheckFailure</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.ContextCheckFailure.__init__"><code class="docutils literal notranslate"><span class="pre">ContextCheckFailure.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.InWhitelistCheckFailure"><code class="docutils literal notranslate"><span class="pre">InWhitelistCheckFailure</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.cooldown_with_role_bypass"><code class="docutils literal notranslate"><span class="pre">cooldown_with_role_bypass()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.has_any_role_check"><code class="docutils literal notranslate"><span class="pre">has_any_role_check()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.has_no_roles_check"><code class="docutils literal notranslate"><span class="pre">has_no_roles_check()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.in_whitelist_check"><code class="docutils literal notranslate"><span class="pre">in_whitelist_check()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pydis_core.utils.commands.html">commands</a><ul>
@@ -547,6 +566,25 @@ that will act as top-level groups rather than being aliases of the command’s g
 <li class="toctree-l1"><a class="reference internal" href="pydis_core.utils.members.html">members</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.members.html#pydis_core.utils.members.get_or_fetch_member"><code class="docutils literal notranslate"><span class="pre">get_or_fetch_member()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.members.html#pydis_core.utils.members.handle_role_change"><code class="docutils literal notranslate"><span class="pre">handle_role_change()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pydis_core.utils.messages.html">messages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.messages.html#pydis_core.utils.messages.reaction_check"><code class="docutils literal notranslate"><span class="pre">reaction_check()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pydis_core.utils.pagination.html">pagination</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.EmptyPaginatorEmbedError"><code class="docutils literal notranslate"><span class="pre">EmptyPaginatorEmbedError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.LinePaginator"><code class="docutils literal notranslate"><span class="pre">LinePaginator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.LinePaginator.__init__"><code class="docutils literal notranslate"><span class="pre">LinePaginator.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.LinePaginator.add_line"><code class="docutils literal notranslate"><span class="pre">LinePaginator.add_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.LinePaginator.paginate"><code class="docutils literal notranslate"><span class="pre">LinePaginator.paginate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.PaginationEmojis"><code class="docutils literal notranslate"><span class="pre">PaginationEmojis</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.PaginationEmojis.model_config"><code class="docutils literal notranslate"><span class="pre">PaginationEmojis.model_config</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.PaginationEmojis.model_fields"><code class="docutils literal notranslate"><span class="pre">PaginationEmojis.model_fields</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pydis_core.utils.paste_service.html">paste_service</a><ul>
@@ -662,7 +700,7 @@ that will act as top-level groups rather than being aliases of the command’s g
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=fad06981"></script>
+</div><script src="../_static/documentation_options.js?v=ccd73373"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

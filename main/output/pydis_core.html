@@ -6,13 +6,13 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exts" href="pydis_core.exts.html" /><link rel="prev" title="Bot Core Project Documentation" href="../index.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>Pydis Core - Pydis Core Latest (10.5.1)</title>
+        <title>Pydis Core - Pydis Core Latest (10.6.0)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
-    <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
+    <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core Latest (10.5.1)</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core Latest (10.6.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (10.5.1)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (10.6.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -168,6 +168,7 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="pydis_core.utils.html">Utils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.channel.html">channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.checks.html">checks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.commands.html">commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.cooldown.html">cooldown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.error_handling.html">error_handling</a></li>
@@ -175,6 +176,8 @@
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.interactions.html">interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.logging.html">logging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.members.html">members</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.messages.html">messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html">pagination</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.paste_service.html">paste_service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.regex.html">regex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.scheduling.html">scheduling</a></li>
@@ -356,6 +359,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v10.6.0/output/pydis_core.html">v10.6.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v10.5.1/output/pydis_core.html">v10.5.1</a>
                     </li>
                 
@@ -443,12 +450,12 @@
 <p>Useful utilities and tools for Discord bot development.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.BotBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BotBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L35-L313"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BotBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L35-L313"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a></p>
 <p>A sub-class that implements many common features that Python Discord bots use.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L38-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guild_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redis_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statsd_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L38-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.__init__" title="Link to this definition">#</a></dt>
 <dd><p>Initialise the base bot instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -467,7 +474,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.add_cog">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cog</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L168-L172"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.add_cog" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cog</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L168-L172"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.add_cog" title="Link to this definition">#</a></dt>
 <dd><p>Add the given <code class="docutils literal notranslate"><span class="pre">cog</span></code> to the bot and log the operation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -478,7 +485,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.add_command">
-<span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L173-L177"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.add_command" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L173-L177"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.add_command" title="Link to this definition">#</a></dt>
 <dd><p>Add <code class="docutils literal notranslate"><span class="pre">command</span></code> as normal and then add its root aliases to the bot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -489,7 +496,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L193-L196"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.clear" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L193-L196"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.clear" title="Link to this definition">#</a></dt>
 <dd><p>Not implemented! Re-instantiate the bot instead of attempting to re-use a closed one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -500,7 +507,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.close">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L282-L313"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.close" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L282-L313"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.close" title="Link to this definition">#</a></dt>
 <dd><p>Close the Discord connection, and the aiohttp session, connector, statsd client, and resolver.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -511,7 +518,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.load_extensions">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_extensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_app_commands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L136-L146"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.load_extensions" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_extensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_app_commands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L136-L146"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.load_extensions" title="Link to this definition">#</a></dt>
 <dd><p>Load all the extensions within the given <code class="docutils literal notranslate"><span class="pre">module</span></code> and save them to <code class="docutils literal notranslate"><span class="pre">self.all_extensions</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -525,7 +532,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.log_to_dev_log">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_to_dev_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L221-L223"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.log_to_dev_log" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_to_dev_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L221-L223"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.log_to_dev_log" title="Link to this definition">#</a></dt>
 <dd><p>Log the given message to #dev-log.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -536,7 +543,7 @@ a dummy statsd client will be created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.on_guild_available">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L204-L220"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.on_guild_available" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L204-L220"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.on_guild_available" title="Link to this definition">#</a></dt>
 <dd><p>Set the internal guild available event when self.guild_id becomes available.</p>
 <p>If the cache appears to still be empty (no members, no channels, or no roles), the event
 will not be set and <cite>guild_available_but_cache_empty</cite> event will be emitted.</p>
@@ -549,7 +556,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.on_guild_unavailable">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_unavailable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L197-L203"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.on_guild_unavailable" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_guild_unavailable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L197-L203"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.on_guild_unavailable" title="Link to this definition">#</a></dt>
 <dd><p>Clear the internal guild available event when self.guild_id becomes unavailable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -560,7 +567,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.ping_services">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ping_services</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L279-L281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.ping_services" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ping_services</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L279-L281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.ping_services" title="Link to this definition">#</a></dt>
 <dd><p>Ping all required services on setup to ensure they are up before starting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -571,7 +578,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.process_commands">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_commands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L233-L242"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.process_commands" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_commands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L233-L242"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.process_commands" title="Link to this definition">#</a></dt>
 <dd><p>Overwrite default Discord.py behaviour to process commands only after ensuring extensions are loaded.</p>
 <p>This extension check is only relevant for clients that make use of <a class="reference internal" href="#pydis_core.BotBase.load_extensions" title="pydis_core.BotBase.load_extensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pydis_core.BotBase.load_extensions</span></code></a>.</p>
 <dl class="field-list simple">
@@ -583,7 +590,7 @@ will not be set and <cite>guild_available_but_cache_empty</cite> event will be e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.remove_command">
-<span class="sig-name descname"><span class="pre">remove_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L178-L192"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.remove_command" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L178-L192"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.remove_command" title="Link to this definition">#</a></dt>
 <dd><p>Remove a command/alias as normal and then remove its root aliases from the bot.</p>
 <p>Individual root aliases cannot be removed by this function.
 To remove them, either remove the entire command or manually edit <cite>bot.all_commands</cite>.</p>
@@ -596,7 +603,7 @@ To remove them, either remove the entire command or manually edit <cite>bot.all_
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.setup_hook">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setup_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L243-L278"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.setup_hook" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setup_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L243-L278"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.setup_hook" title="Link to this definition">#</a></dt>
 <dd><p>An async init to startup generic services.</p>
 <p>Connects to statsd, and calls
 <a class="reference internal" href="pydis_core.async_stats.html#pydis_core.async_stats.AsyncStatsClient.create_socket" title="pydis_core.async_stats.AsyncStatsClient.create_socket"><code class="xref py py-func docutils literal notranslate"><span class="pre">AsyncStatsClient.create_socket</span></code></a>
@@ -610,7 +617,7 @@ and <a class="reference internal" href="#pydis_core.BotBase.ping_services" title
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.BotBase.wait_until_guild_available">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wait_until_guild_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L224-L232"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.wait_until_guild_available" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wait_until_guild_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L224-L232"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.BotBase.wait_until_guild_available" title="Link to this definition">#</a></dt>
 <dd><p>Wait until the guild that matches the <code class="docutils literal notranslate"><span class="pre">guild_id</span></code> given at init is available (and the cache is ready).</p>
 <p>The on_ready event is inadequate because it only waits 2 seconds for a GUILD_CREATE
 gateway event before giving up and thus not populating the cache for unavailable guilds.</p>
@@ -624,13 +631,137 @@ gateway event before giving up and thus not populating the cache for unavailable
 </dd></dl>
 
 <dl class="py exception">
+<dt class="sig sig-object py" id="pydis_core.EmptyPaginatorEmbedError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EmptyPaginatorEmbedError</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/pagination.py#L27-L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.EmptyPaginatorEmbedError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Raised when attempting to paginate with empty contents.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydis_core.LinePaginator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LinePaginator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'```'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'```'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_to_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linesep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\\n'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/pagination.py#L31-L398"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.LinePaginator" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Paginator" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Paginator</span></code></a></p>
+<p>A class that aids in paginating code blocks for Discord messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pagination_emojis</strong> (<a class="reference internal" href="#pydis_core.PaginationEmojis" title="pydis_core.PaginationEmojis"><em>PaginationEmojis</em></a>) – The emojis used to navigate pages.</p></li>
+<li><p><strong>prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The prefix inserted to every page. e.g. three backticks.</p></li>
+<li><p><strong>suffix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The suffix appended at the end of every page. e.g. three backticks.</p></li>
+<li><p><strong>max_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The maximum amount of codepoints allowed in a page.</p></li>
+<li><p><strong>scale_to_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The maximum amount of characters a single line can scale up to.</p></li>
+<li><p><strong>max_lines</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The maximum amount of lines allowed in a page.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydis_core.LinePaginator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'```'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'```'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_to_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linesep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\\n'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/pagination.py#L44-L82"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.LinePaginator.__init__" title="Link to this definition">#</a></dt>
+<dd><p>This function overrides the Paginator.__init__ from inside discord.ext.commands.</p>
+<p>It overrides in order to allow us to configure the maximum number of lines per page.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydis_core.LinePaginator.add_line">
+<span class="sig-name descname"><span class="pre">add_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/pagination.py#L83-L135"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.LinePaginator.add_line" title="Link to this definition">#</a></dt>
+<dd><p>Adds a line to the current page.</p>
+<p>If a line on a page exceeds <cite>max_size</cite> characters, then <cite>max_size</cite> will go up to
+<cite>scale_to_size</cite> for a single line before creating a new page for the overflow words. If it
+is still exceeded, the excess characters are stored and placed on the next pages unti
+there are none remaining (by word boundary). The line is truncated if <cite>scale_to_size</cite> is
+still exceeded after attempting to continue onto the next page.</p>
+<p>In the case that the page already contains one or more lines and the new lines would cause
+<cite>max_size</cite> to be exceeded, a new page is created. This is done in order to make a best
+effort to avoid breaking up single lines across pages, while keeping the total length of the
+page at a reasonable size.</p>
+<p>This function overrides the <cite>Paginator.add_line</cite> from inside <cite>discord.ext.commands</cite>.</p>
+<p>It overrides in order to allow us to configure the maximum number of lines per page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The line to add to the paginated content.</p></li>
+<li><p><strong>empty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – Indicates whether an empty line should be added at the end.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydis_core.LinePaginator.paginate">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">paginate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pagination_emojis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_to_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restrict_to_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">footer_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception_on_empty_embed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/pagination.py#L190-L398"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.LinePaginator.paginate" title="Link to this definition">#</a></dt>
+<dd><p>Use a paginator and set of reactions to provide pagination over a set of lines.</p>
+<p>The reactions are used to switch page, or to finish with pagination.</p>
+<p>When used, this will send a message using <cite>ctx.send()</cite> and apply a set of reactions to it. These reactions may
+be used to change page, or to remove pagination from the message.</p>
+<p>Pagination will also be removed automatically if no reaction is added for five minutes (300 seconds).</p>
+<p>The interaction will be limited to <cite>restrict_to_user</cite> (ctx.author by default) or
+to any user with a moderation role.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pagination_emojis</strong> (<a class="reference internal" href="#pydis_core.PaginationEmojis" title="pydis_core.PaginationEmojis"><em>PaginationEmojis</em></a>) – The emojis used to navigate pages.</p></li>
+<li><p><strong>lines</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – A list of lines to be added to the paginated content.</p></li>
+<li><p><strong>ctx</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Context" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Context</span></code></a>) – The context in which the pagination is needed.</p></li>
+<li><p><strong>embed</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Embed" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Embed</span></code></a>) – The embed that holds the content, it serves as the page.</p></li>
+<li><p><strong>prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The prefix inserted to every page. e.g. three backticks.</p></li>
+<li><p><strong>suffix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The suffix appended at the end of every page. e.g. three backticks.</p></li>
+<li><p><strong>max_lines</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The maximum amount of lines allowed in a page.</p></li>
+<li><p><strong>max_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The maximum amount of codepoints allowed in a page.</p></li>
+<li><p><strong>scale_to_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The maximum amount of characters a single line can scale up to.</p></li>
+<li><p><strong>empty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – Indicates whether an empty line should be added to each provided line.</p></li>
+<li><p><strong>restrict_to_user</strong> (<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.User" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.User</span></code></a>) – The user to whom interaction with the pages should be restricted.</p></li>
+<li><p><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The timeout after which users cannot change pages anymore.</p></li>
+<li><p><strong>footer_text</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Text to be added as a footer for each page.</p></li>
+<li><p><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The url to be set for the pagination embed.</p></li>
+<li><p><strong>exception_on_empty_embed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – Indicates whether to raise an exception when no lines are provided.</p></li>
+<li><p><strong>reply</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – Indicates whether to send the page as a reply to the context’s message.</p></li>
+<li><p><strong>allowed_roles</strong> (<em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em>]</em>) – A list of role ids that are allowed to change pages.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Message" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a>]</span></p>
+</dd>
+</dl>
+<p>Example:
+&gt;&gt;&gt; embed = discord.Embed()
+&gt;&gt;&gt; embed.set_author(name=”Some Operation”, url=url, icon_url=icon)
+&gt;&gt;&gt; await LinePaginator.paginate(pagination_emojis, [line for line in lines], ctx, embed)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydis_core.PaginationEmojis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PaginationEmojis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/utils/pagination.py#L17-L25"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.PaginationEmojis" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.pydantic.dev/latest/api/base_model/#pydantic.BaseModel" title="(in Pydantic v0.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p>The emojis that will be used for pagination.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydis_core.PaginationEmojis.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar[ConfigDict]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#pydis_core.PaginationEmojis.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydis_core.PaginationEmojis.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar[dict[str,</span> <span class="pre">FieldInfo]]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'delete':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='&lt;:trashcan:637136429717389331&gt;'),</span> <span class="pre">'first':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='⏮'),</span> <span class="pre">'last':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='⏭'),</span> <span class="pre">'left':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='⬅'),</span> <span class="pre">'right':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='➡')}</span></em><a class="headerlink" href="#pydis_core.PaginationEmojis.model_fields" title="Link to this definition">#</a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
 <dt class="sig sig-object py" id="pydis_core.StartupError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StartupError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L27-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.StartupError" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StartupError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L27-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.StartupError" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 <p>Exception class for startup errors.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.StartupError.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/_bot.py#L30-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.StartupError.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/ba5a37c84d7d5c92e583b2dd93bcd78c81e7b51d/pydis_core/_bot.py#L30-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.StartupError.__init__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -651,6 +782,15 @@ gateway event before giving up and thus not populating the cache for unavailable
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.channel.html">channel</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.channel.html#pydis_core.utils.channel.get_or_fetch_channel"><code class="docutils literal notranslate"><span class="pre">get_or_fetch_channel()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.channel.html#pydis_core.utils.channel.is_in_category"><code class="docutils literal notranslate"><span class="pre">is_in_category()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.checks.html">checks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.ContextCheckFailure"><code class="docutils literal notranslate"><span class="pre">ContextCheckFailure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.InWhitelistCheckFailure"><code class="docutils literal notranslate"><span class="pre">InWhitelistCheckFailure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.cooldown_with_role_bypass"><code class="docutils literal notranslate"><span class="pre">cooldown_with_role_bypass()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.has_any_role_check"><code class="docutils literal notranslate"><span class="pre">has_any_role_check()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.has_no_roles_check"><code class="docutils literal notranslate"><span class="pre">has_no_roles_check()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.checks.html#pydis_core.utils.checks.in_whitelist_check"><code class="docutils literal notranslate"><span class="pre">in_whitelist_check()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.commands.html">commands</a><ul>
@@ -688,6 +828,16 @@ gateway event before giving up and thus not populating the cache for unavailable
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.members.html">members</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.members.html#pydis_core.utils.members.get_or_fetch_member"><code class="docutils literal notranslate"><span class="pre">get_or_fetch_member()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.members.html#pydis_core.utils.members.handle_role_change"><code class="docutils literal notranslate"><span class="pre">handle_role_change()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.messages.html">messages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.messages.html#pydis_core.utils.messages.reaction_check"><code class="docutils literal notranslate"><span class="pre">reaction_check()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.pagination.html">pagination</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.EmptyPaginatorEmbedError"><code class="docutils literal notranslate"><span class="pre">EmptyPaginatorEmbedError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.LinePaginator"><code class="docutils literal notranslate"><span class="pre">LinePaginator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydis_core.utils.pagination.html#pydis_core.utils.pagination.PaginationEmojis"><code class="docutils literal notranslate"><span class="pre">PaginationEmojis</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.paste_service.html">paste_service</a><ul>
@@ -828,6 +978,18 @@ gateway event before giving up and thus not populating the cache for unavailable
 <li><a class="reference internal" href="#pydis_core.BotBase.wait_until_guild_available"><code class="docutils literal notranslate"><span class="pre">BotBase.wait_until_guild_available()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#pydis_core.EmptyPaginatorEmbedError"><code class="docutils literal notranslate"><span class="pre">EmptyPaginatorEmbedError</span></code></a></li>
+<li><a class="reference internal" href="#pydis_core.LinePaginator"><code class="docutils literal notranslate"><span class="pre">LinePaginator</span></code></a><ul>
+<li><a class="reference internal" href="#pydis_core.LinePaginator.__init__"><code class="docutils literal notranslate"><span class="pre">LinePaginator.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#pydis_core.LinePaginator.add_line"><code class="docutils literal notranslate"><span class="pre">LinePaginator.add_line()</span></code></a></li>
+<li><a class="reference internal" href="#pydis_core.LinePaginator.paginate"><code class="docutils literal notranslate"><span class="pre">LinePaginator.paginate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pydis_core.PaginationEmojis"><code class="docutils literal notranslate"><span class="pre">PaginationEmojis</span></code></a><ul>
+<li><a class="reference internal" href="#pydis_core.PaginationEmojis.model_config"><code class="docutils literal notranslate"><span class="pre">PaginationEmojis.model_config</span></code></a></li>
+<li><a class="reference internal" href="#pydis_core.PaginationEmojis.model_fields"><code class="docutils literal notranslate"><span class="pre">PaginationEmojis.model_fields</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#pydis_core.StartupError"><code class="docutils literal notranslate"><span class="pre">StartupError</span></code></a><ul>
 <li><a class="reference internal" href="#pydis_core.StartupError.__init__"><code class="docutils literal notranslate"><span class="pre">StartupError.__init__()</span></code></a></li>
 </ul>
@@ -845,7 +1007,7 @@ gateway event before giving up and thus not populating the cache for unavailable
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=fad06981"></script>
+</div><script src="../_static/documentation_options.js?v=ccd73373"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
