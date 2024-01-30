@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/changelog.css?v=117bb91a" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=41ebe54c" />
     
     
 
@@ -174,6 +174,7 @@
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.error_handling.html">error_handling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.function.html">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.interactions.html">interactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.lock.html">lock</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.logging.html">logging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.members.html">members</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.messages.html">messages</a></li>
@@ -359,6 +360,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../v10.7.0/changelog.html">v10.7.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../v10.6.0/changelog.html">v10.6.0</a>
                     </li>
                 
@@ -447,9 +452,10 @@
         <article role="main">
           <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
-<section id="Next 10.x feature release">
-<h2 style="margin-bottom: 0.3em;"><a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/vmaster">Next 10.x feature release</a></h2><ul class="simple">
+<section id="10.7.0">
+<h2 style="margin-bottom: 0.3em;"><a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/v10.7.0">10.7.0</a> <span style="font-size: 75%;">30th January 2024</span></h2><ul class="simple">
 <li><p>[<span style="color: #40A056;">Feature</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/194">#194</a><span>:</span> Add the <a class="reference internal" href="output/pydis_core.utils.interactions.html#pydis_core.utils.interactions.user_has_access" title="pydis_core.utils.interactions.user_has_access"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pydis_core.utils.interactions.user_has_access</span></code></a> helper function, that returns whether the given user is in the allowed_users list, or has a role from allowed_roles.</p></li>
+<li><p>[<span style="color: #40A056;">Feature</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/158">#158</a><span>:</span> Add locking utilities for controlling concurrency logic</p></li>
 <li><p>[<span style="color: #4070A0;">Support</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/202">#202</a><span>:</span> Bump various development dependencies and CI workflow action versions</p></li>
 </ul>
 </section>

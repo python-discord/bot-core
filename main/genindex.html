@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/changelog.css?v=117bb91a" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=41ebe54c" />
     
     
 
@@ -172,6 +172,7 @@
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.error_handling.html">error_handling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.function.html">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.interactions.html">interactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.lock.html">lock</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.logging.html">logging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.members.html">members</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.messages.html">messages</a></li>
@@ -357,6 +358,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../v10.7.0/index.html">v10.7.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../v10.6.0/index.html">v10.6.0</a>
                     </li>
                 
@@ -455,6 +460,10 @@
 </li>
         <li><a href="output/pydis_core.utils.scheduling.html#pydis_core.utils.scheduling.Scheduler.__contains__">__contains__() (Scheduler method)</a>
 </li>
+        <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.SharedEvent.__enter__">__enter__() (SharedEvent method)</a>
+</li>
+        <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.SharedEvent.__exit__">__exit__() (SharedEvent method)</a>
+</li>
         <li><a href="output/pydis_core.site_api.html#pydis_core.site_api.APIClient.__init__">__init__() (APIClient method)</a>
 
         <ul>
@@ -472,9 +481,13 @@
 </li>
           <li><a href="output/pydis_core.html#pydis_core.LinePaginator.__init__">(LinePaginator method)</a>, <a href="output/pydis_core.utils.pagination.html#pydis_core.utils.pagination.LinePaginator.__init__">[1]</a>
 </li>
+          <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.LockedResourceError.__init__">(LockedResourceError method)</a>
+</li>
           <li><a href="output/pydis_core.site_api.html#pydis_core.site_api.ResponseCodeError.__init__">(ResponseCodeError method)</a>
 </li>
           <li><a href="output/pydis_core.utils.scheduling.html#pydis_core.utils.scheduling.Scheduler.__init__">(Scheduler method)</a>
+</li>
+          <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.SharedEvent.__init__">(SharedEvent method)</a>
 </li>
           <li><a href="output/pydis_core.html#pydis_core.StartupError.__init__">(StartupError method)</a>
 </li>
@@ -615,10 +628,16 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="output/pydis_core.site_api.html#pydis_core.site_api.APIClient.get">get() (APIClient method)</a>
 </li>
-        <li><a href="output/pydis_core.utils.logging.html#pydis_core.utils.logging.get_logger">get_logger() (in module pydis_core.utils.logging)</a>
+        <li><a href="output/pydis_core.utils.function.html#pydis_core.utils.function.get_arg_value">get_arg_value() (in module pydis_core.utils.function)</a>
+</li>
+        <li><a href="output/pydis_core.utils.function.html#pydis_core.utils.function.get_arg_value_wrapper">get_arg_value_wrapper() (in module pydis_core.utils.function)</a>
+</li>
+        <li><a href="output/pydis_core.utils.function.html#pydis_core.utils.function.get_bound_args">get_bound_args() (in module pydis_core.utils.function)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="output/pydis_core.utils.logging.html#pydis_core.utils.logging.get_logger">get_logger() (in module pydis_core.utils.logging)</a>
+</li>
         <li><a href="output/pydis_core.utils.channel.html#pydis_core.utils.channel.get_or_fetch_channel">get_or_fetch_channel() (in module pydis_core.utils.channel)</a>
 </li>
         <li><a href="output/pydis_core.utils.members.html#pydis_core.utils.members.get_or_fetch_member">get_or_fetch_member() (in module pydis_core.utils.members)</a>
@@ -651,12 +670,14 @@
   <h2>I</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="output/pydis_core.utils.checks.html#pydis_core.utils.checks.in_whitelist_check">in_whitelist_check() (in module pydis_core.utils.checks)</a>
+        <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.LockedResourceError.id">id (LockedResourceError attribute)</a>
 </li>
-        <li><a href="output/pydis_core.utils.interactions.html#pydis_core.utils.interactions.ViewWithUserAndRoleCheck.interaction_check">interaction_check() (ViewWithUserAndRoleCheck method)</a>
+        <li><a href="output/pydis_core.utils.checks.html#pydis_core.utils.checks.in_whitelist_check">in_whitelist_check() (in module pydis_core.utils.checks)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="output/pydis_core.utils.interactions.html#pydis_core.utils.interactions.ViewWithUserAndRoleCheck.interaction_check">interaction_check() (ViewWithUserAndRoleCheck method)</a>
+</li>
         <li><a href="output/pydis_core.utils.checks.html#pydis_core.utils.checks.InWhitelistCheckFailure">InWhitelistCheckFailure</a>
 </li>
         <li><a href="output/pydis_core.utils.channel.html#pydis_core.utils.channel.is_in_category">is_in_category() (in module pydis_core.utils.channel)</a>
@@ -675,9 +696,15 @@
           <li><a href="output/pydis_core.utils.pagination.html#pydis_core.utils.pagination.LinePaginator">(class in pydis_core.utils.pagination)</a>
 </li>
         </ul></li>
+        <li><a href="output/pydis_core.html#pydis_core.BotBase.load_extensions">load_extensions() (BotBase method)</a>
+</li>
+        <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.lock">lock() (in module pydis_core.utils.lock)</a>
+</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="output/pydis_core.html#pydis_core.BotBase.load_extensions">load_extensions() (BotBase method)</a>
+        <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.lock_arg">lock_arg() (in module pydis_core.utils.lock)</a>
+</li>
+        <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.LockedResourceError">LockedResourceError</a>
 </li>
         <li><a href="output/pydis_core.utils.logging.html#pydis_core.utils.logging.log_format">log_format (in module pydis_core.utils.logging)</a>
 </li>
@@ -748,6 +775,8 @@
           <li><a href="output/pydis_core.utils.function.html#module-pydis_core.utils.function">pydis_core.utils.function</a>
 </li>
           <li><a href="output/pydis_core.utils.interactions.html#module-pydis_core.utils.interactions">pydis_core.utils.interactions</a>
+</li>
+          <li><a href="output/pydis_core.utils.lock.html#module-pydis_core.utils.lock">pydis_core.utils.lock</a>
 </li>
           <li><a href="output/pydis_core.utils.logging.html#module-pydis_core.utils.logging">pydis_core.utils.logging</a>
 </li>
@@ -912,6 +941,13 @@
 </li>
         </ul></li>
         <li>
+    pydis_core.utils.lock
+
+        <ul>
+          <li><a href="output/pydis_core.utils.lock.html#module-pydis_core.utils.lock">module</a>
+</li>
+        </ul></li>
+        <li>
     pydis_core.utils.logging
 
         <ul>
@@ -1004,6 +1040,8 @@
 </li>
         <li><a href="output/pydis_core.html#pydis_core.BotBase.setup_hook">setup_hook() (BotBase method)</a>
 </li>
+        <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.SharedEvent">SharedEvent (class in pydis_core.utils.lock)</a>
+</li>
         <li><a href="output/pydis_core.html#pydis_core.StartupError">StartupError</a>
 </li>
         <li><a href="output/pydis_core.utils.interactions.html#pydis_core.utils.interactions.ViewWithUserAndRoleCheck.stop">stop() (ViewWithUserAndRoleCheck method)</a>
@@ -1017,6 +1055,10 @@
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="output/pydis_core.utils.logging.html#pydis_core.utils.logging.CustomLogger.trace">trace() (CustomLogger method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.LockedResourceError.type">type (LockedResourceError attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1051,6 +1093,10 @@
 <section id="W" class="genindex-section">
   <h2>W</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="output/pydis_core.utils.lock.html#pydis_core.utils.lock.SharedEvent.wait">wait() (SharedEvent method)</a>
+</li>
+    </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="output/pydis_core.html#pydis_core.BotBase.wait_until_guild_available">wait_until_guild_available() (BotBase method)</a>
 </li>
