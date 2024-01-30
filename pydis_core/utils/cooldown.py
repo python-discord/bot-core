@@ -17,7 +17,7 @@ from discord.ext.commands import CommandError, Context
 from pydis_core.utils import scheduling
 from pydis_core.utils.function import command_wraps
 
-__all__ = ["CommandOnCooldown", "block_duplicate_invocations", "P", "R"]
+__all__ = ["CommandOnCooldown", "P", "R", "block_duplicate_invocations"]
 
 _KEYWORD_SEP_SENTINEL = object()
 

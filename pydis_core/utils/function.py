@@ -7,7 +7,7 @@ import types
 import typing
 from collections.abc import Callable, Sequence, Set
 
-__all__ = ["command_wraps", "GlobalNameConflictError", "update_wrapper_globals"]
+__all__ = ["GlobalNameConflictError", "command_wraps", "update_wrapper_globals"]
 
 
 if typing.TYPE_CHECKING:
