@@ -4,6 +4,7 @@
 Changelog
 =========
 
+- :release:`10.7.0 <30th January 2024>`
 - :feature:`158` Add locking utilities for controlling concurrency logic
 - :support:`202` Bump various development dependencies and CI workflow action versions
 - :feature:`194` Add the :obj:`pydis_core.utils.interactions.user_has_access` helper function, that returns whether the given user is in the allowed_users list, or has a role from allowed_roles.
