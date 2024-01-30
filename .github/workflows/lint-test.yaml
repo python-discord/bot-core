@@ -9,11 +9,12 @@ jobs:
       fail-fast: false
       matrix:
         python_version: ["3.10", "3.11"]
+
     name: Run Linting & Test Suites
     runs-on: ubuntu-latest
     steps:
       - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.0
+        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.2
         with:
           python_version: ${{ matrix.python_version }}
           install_args: "--extras async-rediscache --only main --only lint --only test"
@@ -39,7 +40,7 @@ jobs:
         id: prepare-artifact
         if: always() && github.event_name == 'pull_request'
         continue-on-error: true
-        run: cat $GITHUB_EVENT_PATH | jq '.pull_request' > pull_request_payload.json
+        run: cat $GITHUB_EVENT_PATH | jq '.pull_request' > pull_request_payload${{ matrix.python_version }}.json
 
       # This only makes sense if the previous step succeeded. To
       # get the original outcome of the previous step before the
@@ -48,7 +49,7 @@ jobs:
       - name: Upload a Build Artifact
         if: always() && steps.prepare-artifact.outcome == 'success'
         continue-on-error: true
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: pull-request-payload
-          path: pull_request_payload.json
+          name: pull-request-payload-${{ matrix.python_version }}
+          path: pull_request_payload${{ matrix.python_version }}.json
