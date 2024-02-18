@@ -6,12 +6,14 @@ from contextlib import suppress
 
 import aiohttp
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 from pydis_core.async_stats import AsyncStatsClient
 from pydis_core.site_api import APIClient
 from pydis_core.utils import scheduling
 from pydis_core.utils._extensions import walk_extensions
+from pydis_core.utils.error_handling.commands import CommandErrorManager
 from pydis_core.utils.logging import get_logger
 
 try:
@@ -30,6 +32,23 @@ class StartupError(Exception):
     def __init__(self, base: Exception):
         super().__init__()
         self.exception = base
+
+
+class CommandTreeBase(app_commands.CommandTree):
+    """A sub-class of the Command tree that implements common features that Python Discord bots use."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Instance is None since discordpy only passes an instance of the client to the command tree in its constructor.
+        self.command_error_manager: CommandErrorManager | None = None
+
+    async def on_error(self, interaction: discord.Interaction, error: app_commands.AppCommandError) -> None:
+        """A callback that is called when any command raises an :exc:`AppCommandError`."""
+        if not self.command_error_manager:
+            log.warning("Command error manager hasn't been loaded in the command tree.")
+            await super().on_error(interaction, error)
+            return
+        await self.command_error_manager.handle_error(error, interaction)
 
 
 class BotBase(commands.Bot):
