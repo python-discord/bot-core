@@ -4,6 +4,8 @@
 Changelog
 =========
 
+- :support:`204` Document the instance attributes of :obj:`pydis_core.BotBase`.
+
 - :release:`10.7.0 <30th January 2024>`
 - :feature:`158` Add locking utilities for controlling concurrency logic
 - :support:`202` Bump various development dependencies and CI workflow action versions

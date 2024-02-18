@@ -33,7 +33,20 @@ class StartupError(Exception):
 
 
 class BotBase(commands.Bot):
-    """A sub-class that implements many common features that Python Discord bots use."""
+    """
+    A sub-class that implements many common features that Python Discord bots use.
+
+    Attributes:
+        guild_id (int): ID of the guild that the bot belongs to.
+        http_session (aiohttp.ClientSession): The http session used for sending out HTTP requests.
+        api_client (pydis_core.site_api.APIClient): The API client used for communications with the site service.
+        statsd_url (str): The url that statsd sends metrics to.
+        redis_session (async_rediscache.RedisSession): The redis session used to communicate with the Redis instance.
+        stats (pydis_core.async_stats.AsyncStatsClient): The statsd client that sends metrics.
+        all_extensions (frozenset[str]): All extensions that were found within the ``module`` passed to
+            ``self.load_extensions``. Use ``self.extensions`` to get the loaded extensions.
+
+    """
 
     def __init__(
         self,
