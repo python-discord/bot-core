@@ -95,9 +95,11 @@ class BotBase(commands.Bot):
         super().__init__(
             *args,
             allowed_roles=allowed_roles,
+            tree_cls=CommandTreeBase,
             **kwargs,
         )
 
+        self.command_error_manager: CommandErrorManager | None = None
         self.guild_id = guild_id
         self.http_session = http_session
         self.api_client = api_client
@@ -118,6 +120,16 @@ class BotBase(commands.Bot):
         self.stats: AsyncStatsClient | None = None
 
         self.all_extensions: frozenset[str] | None = None
+
+    def register_command_error_manager(self, manager: CommandErrorManager) -> None:
+        """
+        Bind an instance of the command error manager to both the bot and the command tree.
+
+        The reason this doesn't happen in the constructor is because error handlers might need an instance of the bot.
+        So registration needs to happen once the bot instance has been created.
+        """
+        self.command_error_manager = manager
+        self.tree.command_error_manager = manager
 
     def _connect_statsd(
         self,
