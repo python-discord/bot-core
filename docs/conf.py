@@ -227,7 +227,6 @@ if os.getenv("BUILD_DOCS_FOR_HEAD", "False").lower() == "true":
         with contextlib.suppress(git.InvalidGitRepositoryError):
             branch = git.Repo(PROJECT_ROOT).active_branch.name
 
-
     if branch:
         logger.info(f"Adding branch {branch} to build whitelist.")
         smv_branch_whitelist = f"main|{branch}"
