@@ -4,6 +4,7 @@
 Changelog
 =========
 
+- :support:`206` Bump ruff from 0.1.15 to 0.2.2, using the new lint config namespace, and linting with the new rules.
 - :support:`204` Document the instance attributes of :obj:`pydis_core.BotBase`.
 
 - :release:`10.7.0 <30th January 2024>`
