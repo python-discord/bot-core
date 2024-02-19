@@ -43,7 +43,7 @@ async def _handle_modify_message(message: Message, action: Literal["edit", "dele
         elif isinstance(e, NotFound):
             log.info(f"Could not find message {message.id} when attempting to {action} it.")
         else:
-            log.error(f"Could not {action} message {message.id} due to Discord HTTP error:\n{e!s}")
+            log.exception(f"Could not {action} message {message.id} due to Discord HTTP error:\n{e!s}")
 
 
 class ViewWithUserAndRoleCheck(ui.View):

@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from pydis_core.utils.cooldown import _CommandCooldownManager, _create_argument_tuple
+from pydis_core.utils.cooldown import _CommandCooldownManager, _create_argument_tuple  # noqa: PLC2701
 
 
 class CommandCooldownManagerTests(unittest.IsolatedAsyncioTestCase):

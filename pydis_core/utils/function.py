@@ -6,7 +6,6 @@ import functools
 import inspect
 import types
 import typing
-from collections.abc import Callable, Sequence, Set
 
 __all__ = [
     "GlobalNameConflictError",
@@ -19,6 +18,7 @@ __all__ = [
 
 
 if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Sequence, Set as AbstractSet
     _P = typing.ParamSpec("_P")
     _R = typing.TypeVar("_R")
 
@@ -114,7 +114,7 @@ def update_wrapper_globals(
     wrapper: Callable[_P, _R],
     wrapped: Callable[_P, _R],
     *,
-    ignored_conflict_names: Set[str] = frozenset(),
+    ignored_conflict_names: AbstractSet[str] = frozenset(),
 ) -> Callable[_P, _R]:
     r"""
     Create a copy of ``wrapper``\, the copy's globals are updated with ``wrapped``\'s globals.
@@ -174,7 +174,7 @@ def command_wraps(
     assigned: Sequence[str] = functools.WRAPPER_ASSIGNMENTS,
     updated: Sequence[str] = functools.WRAPPER_UPDATES,
     *,
-    ignored_conflict_names: Set[str] = frozenset(),
+    ignored_conflict_names: AbstractSet[str] = frozenset(),
 ) -> Callable[[Callable[_P, _R]], Callable[_P, _R]]:
     r"""
     Update the decorated function to look like ``wrapped``\, and update globals for discord.py forwardref evaluation.

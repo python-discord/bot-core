@@ -49,11 +49,11 @@ async def handle_role_change(
     try:
         await coro(role)
     except discord.NotFound:
-        log.error(f"Failed to change role for {member} ({member.id}): member not found")
+        log.exception(f"Failed to change role for {member} ({member.id}): member not found")
     except discord.Forbidden:
-        log.error(
+        log.exception(
             f"Forbidden to change role for {member} ({member.id}); "
             f"possibly due to role hierarchy"
         )
     except discord.HTTPException as e:
-        log.error(f"Failed to change role for {member} ({member.id}): {e.status} {e.code}")
+        log.exception(f"Failed to change role for {member} ({member.id}): {e.status} {e.code}")

@@ -120,9 +120,7 @@ def skip(*args) -> bool:
     name = args[2]
     would_skip = args[4]
 
-    if name in (
-        "__weakref__",
-    ):
+    if name == "__weakref__":
         return True
     return would_skip
 

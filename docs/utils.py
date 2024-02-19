@@ -74,11 +74,11 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> str |
     for name in symbol_name.split("."):
         try:
             symbol.append(getattr(symbol[-1], name))
-        except AttributeError as e:
+        except AttributeError:
             # This could be caused by trying to link a class attribute
             if is_attribute(symbol[-1], name):
                 break
-            raise e
+            raise
 
         symbol_name = name
 

@@ -349,7 +349,7 @@ class LinePaginator(Paginator):
                 except discord.HTTPException as e:
                     # Suppress if trying to act on an archived thread.
                     if e.code != 50083:
-                        raise e
+                        raise
 
                 if reaction.emoji == pagination_emojis.first:
                     current_page = 0
@@ -385,7 +385,7 @@ class LinePaginator(Paginator):
                     if e.code == 50083:
                         # Trying to act on an archived thread, just ignore and abort
                         break
-                    raise e
+                    raise
 
         log.debug("Ending pagination and clearing reactions.")
         with suppress(discord.NotFound):
@@ -394,4 +394,4 @@ class LinePaginator(Paginator):
             except discord.HTTPException as e:
                 # Suppress if trying to act on an archived thread.
                 if e.code != 50083:
-                    raise e
+                    raise
