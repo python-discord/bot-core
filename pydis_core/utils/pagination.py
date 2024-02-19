@@ -266,7 +266,7 @@ class LinePaginator(Paginator):
         for line in lines:
             try:
                 paginator.add_line(line, empty=empty)
-            except Exception:
+            except Exception:  # noqa: PERF203
                 log.exception(f"Failed to add line to paginator: '{line}'")
                 raise  # Should propagate
             else:

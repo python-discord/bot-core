@@ -83,7 +83,7 @@ class _SeparatedArguments:
         for item in call_arguments:
             try:
                 hash(item)
-            except TypeError:
+            except TypeError:  # noqa: PERF203
                 non_hashable.append(item)
             else:
                 hashable.append(item)
@@ -152,7 +152,7 @@ class _CommandCooldownManager:
         await asyncio.sleep(initial_delay)
         while True:
             await asyncio.sleep(60 * 60)
-            weak_self()._delete_stale_items()
+            weak_self()._delete_stale_items()  # noqa: SLF001
 
     def _delete_stale_items(self) -> None:
         """Remove expired items from internal collections."""

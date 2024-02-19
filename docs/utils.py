@@ -204,7 +204,7 @@ def build_api_doc() -> None:
         return
 
     result = subprocess.run(cmd, cwd=build_root, stdout=subprocess.PIPE, check=True, env=os.environ)  # noqa: S603
-    logger.debug("api-doc Output:\n" + result.stdout.decode(encoding="utf-8") + "\n")
+    logger.debug(f"api-doc Output:\n{result.stdout.decode(encoding='utf-8')}\n")
 
     cleanup()
 

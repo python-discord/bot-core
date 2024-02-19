@@ -51,9 +51,10 @@ def get_arg_value(name_or_pos: Argument, arguments: BoundArgs) -> typing.Any:
 
         try:
             _name, value = arg_values[arg_pos]
-            return value
         except IndexError:
             raise ValueError(f"Argument position {arg_pos} is out of bounds.")
+        else:
+            return value
     elif isinstance(name_or_pos, str):
         arg_name = name_or_pos
         try:

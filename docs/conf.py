@@ -18,14 +18,14 @@ from sphinx.application import Sphinx
 logger = sphinx.util.logging.getLogger(__name__)
 
 # Handle the path not being set correctly in actions.
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, Path("..").resolve())
 
 from docs import utils  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 
 project = "Pydis Core"
-copyright = "2021, Python Discord"
+copyright = "2021, Python Discord"  # noqa: A001
 author = "Python Discord"
 
 REPO_LINK = "https://github.com/python-discord/bot-core"

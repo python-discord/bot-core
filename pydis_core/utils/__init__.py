@@ -35,7 +35,7 @@ def apply_monkey_patches() -> None:
     Patches discord's internal ``send_typing`` method so that it ignores 403 errors from Discord.
         When under heavy load Discord has added a CloudFlare worker to this route, which causes 403 errors to be thrown.
     """
-    _monkey_patches._apply_monkey_patches()
+    _monkey_patches._apply_monkey_patches()  # noqa: SLF001
 
 
 __all__ = [

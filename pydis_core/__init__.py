@@ -5,15 +5,15 @@ from pydis_core._bot import BotBase, StartupError
 from pydis_core.utils.pagination import EmptyPaginatorEmbedError, LinePaginator, PaginationEmojis
 
 __all__ = [
-    async_stats,
     BotBase,
-    exts,
-    utils,
-    site_api,
-    StartupError,
+    EmptyPaginatorEmbedError,
     LinePaginator,
     PaginationEmojis,
-    EmptyPaginatorEmbedError
+    StartupError,
+    async_stats,
+    exts,
+    site_api,
+    utils,
 ]
 
 __all__ = [module.__name__ for module in __all__]

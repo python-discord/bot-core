@@ -112,7 +112,7 @@ class Scheduler:
 
     def schedule_later(
         self,
-        delay: int | float,
+        delay: float,
         task_id: abc.Hashable,
         coroutine: abc.Coroutine
     ) -> None:
@@ -156,7 +156,7 @@ class Scheduler:
 
     async def _await_later(
         self,
-        delay: int | float,
+        delay: float,
         task_id: abc.Hashable,
         coroutine: abc.Coroutine
     ) -> None:

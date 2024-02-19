@@ -99,7 +99,7 @@ def in_whitelist_check(
 def cooldown_with_role_bypass(
     rate: int,
     per: float,
-    type: BucketType = BucketType.default,
+    type_: BucketType = BucketType.default,
     *,
     bypass_roles: Iterable[int]
 ) -> Callable:
@@ -124,11 +124,11 @@ def cooldown_with_role_bypass(
     bypass = set(bypass_roles)
 
     # This handles the actual cooldown logic.
-    buckets = CooldownMapping(Cooldown(rate, per, type))
+    buckets = CooldownMapping(Cooldown(rate, per, type_))
 
     # Will be called after the command has been parse but before it has been invoked, ensures that
     # the cooldown won't be updated if the user screws up their input to the command.
-    async def predicate(cog: Cog, ctx: Context) -> None:
+    async def predicate(_: Cog, ctx: Context) -> None:
         nonlocal bypass, buckets
 
         if any(role.id in bypass for role in ctx.author.roles):
@@ -152,7 +152,7 @@ def cooldown_with_role_bypass(
                 "This means it has to be above the command decorator in the code."
             )
 
-        command._before_invoke = predicate
+        command._before_invoke = predicate  # noqa: SLF001
 
         return command
 

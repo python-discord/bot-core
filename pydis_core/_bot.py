@@ -286,7 +286,7 @@ class BotBase(commands.Bot):
 
         try:
             await self.ping_services()
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             raise StartupError(e)
 
     async def ping_services(self) -> None:
@@ -319,7 +319,7 @@ class BotBase(commands.Bot):
             await self._resolver.close()
 
         if getattr(self.stats, "_transport", False):
-            self.stats._transport.close()
+            self.stats._transport.close()  # noqa: SLF001
 
         if self._statsd_timerhandle:
             self._statsd_timerhandle.cancel()
