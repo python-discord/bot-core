@@ -43,6 +43,7 @@ def in_whitelist_check(
     channels: Container[int] = (),
     categories: Container[int] = (),
     roles: Container[int] = (),
+    *,
     fail_silently: bool = False,
 ) -> bool:
     """

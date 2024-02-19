@@ -194,6 +194,7 @@ class LinePaginator(Paginator):
         lines: list[str],
         ctx: Context | discord.Interaction,
         embed: discord.Embed,
+        *,
         prefix: str = "",
         suffix: str = "",
         max_lines: int | None = None,

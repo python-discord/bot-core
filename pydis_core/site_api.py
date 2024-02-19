@@ -76,7 +76,7 @@ class APIClient:
         await self.session.close()
 
     @staticmethod
-    async def maybe_raise_for_status(response: aiohttp.ClientResponse, should_raise: bool) -> None:
+    async def maybe_raise_for_status(response: aiohttp.ClientResponse, *, should_raise: bool) -> None:
         """
         Raise :exc:`ResponseCodeError` for non-OK response if an exception should be raised.
 
@@ -117,7 +117,7 @@ class APIClient:
             if resp.status == 204:
                 return None
 
-            await self.maybe_raise_for_status(resp, raise_for_status)
+            await self.maybe_raise_for_status(resp, should_raise=raise_for_status)
             return await resp.json()
 
     async def get(self, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:

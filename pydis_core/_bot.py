@@ -146,7 +146,7 @@ class BotBase(commands.Bot):
         await self.tree.sync()
         await self.tree.sync(guild=discord.Object(self.guild_id))
 
-    async def load_extensions(self, module: types.ModuleType, sync_app_commands: bool = True) -> None:
+    async def load_extensions(self, module: types.ModuleType, *, sync_app_commands: bool = True) -> None:
         """
         Load all the extensions within the given ``module`` and save them to ``self.all_extensions``.
 
