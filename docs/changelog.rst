@@ -4,6 +4,7 @@
 Changelog
 =========
 
+- :breaking:`208` Drop support for Pydantic 1.X
 - :breaking:`207` Enable more ruff linting rules. See :literal-url:`GitHub release notes <https://github.com/python-discord/bot-core/releases/tag/v11.0.0>` for breaking changes.
 - :support:`206` Bump ruff from 0.1.15 to 0.2.2, using the new lint config namespace, and linting with the new rules.
 - :support:`204` Document the instance attributes of :obj:`pydis_core.BotBase`.

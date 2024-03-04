@@ -109,7 +109,7 @@ async def send_to_paste_service(
     payload = {
         "expiry": "30days",
         "long": "on",  # Use a longer URI for the paste.
-        "files": [file.dict() for file in files]  # Use file.model_dump() when we drop support for pydantic 1.X
+        "files": [file.model_dump() for file in files]
     }
     for attempt in range(1, FAILED_REQUEST_ATTEMPTS + 1):
         try:

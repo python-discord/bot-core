@@ -2051,4 +2051,4 @@ async-rediscache = ["async-rediscache"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.* || 3.11.*"
-content-hash = "012783d11abde1a1db5165482a61de9a342e6dd3f2a0ecba5f56777486af4e7f"
+content-hash = "10074d9691a66b5086362d12ff78bc54028382f17b3b512d942e7d47c6b7d86d"
