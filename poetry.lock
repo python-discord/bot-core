@@ -158,7 +158,6 @@ files = [
 ]
 
 [package.dependencies]
-fakeredis = {version = ">=1.7.1", extras = ["lua"], optional = true, markers = "extra == \"fakeredis\""}
 redis = ">=4.2,<5.0"
 
 [package.extras]
@@ -2046,9 +2045,11 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [extras]
+all = ["async-rediscache", "fakeredis"]
 async-rediscache = ["async-rediscache"]
+fakeredis = ["fakeredis"]
 
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.* || 3.11.*"
-content-hash = "10074d9691a66b5086362d12ff78bc54028382f17b3b512d942e7d47c6b7d86d"
+content-hash = "088f8fb148adf7b38413f7888329059ad8f8f6a99d973d22506b86328678c54d"

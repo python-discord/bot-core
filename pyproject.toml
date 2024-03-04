@@ -26,13 +26,16 @@ keywords = ["bot", "discord", "discord.py"]
 python = "3.10.* || 3.11.*"
 
 "discord.py" = "~=2.3.2"
-async-rediscache = { version = "1.0.0rc2", extras = ["fakeredis"], optional = true }
+async-rediscache = { version = "1.0.0rc2", optional = true }
+fakeredis = { version = "~=2.0", extras = ["lua"], optional = true }
 pydantic = "~=2.6"
 statsd  = "~=4.0"
 aiodns = "~=3.1"
 
 [tool.poetry.extras]
 async-rediscache = ["async-rediscache"]
+fakeredis = ["fakeredis"]
+all = ["async-rediscache", "fakeredis"]
 
 [tool.poetry.group.dev.dependencies]
 taskipy = "1.12.2"
