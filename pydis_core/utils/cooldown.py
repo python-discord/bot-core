@@ -81,7 +81,7 @@ class _SeparatedArguments:
         for item in call_arguments:
             try:
                 hash(item)
-            except TypeError:  # noqa: PERF203
+            except TypeError:
                 non_hashable.append(item)
             else:
                 hashable.append(item)

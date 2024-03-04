@@ -1,4 +1,3 @@
-import asyncio
 from collections.abc import Sequence
 from contextlib import suppress
 from functools import partial
@@ -267,7 +266,7 @@ class LinePaginator(Paginator):
         for line in lines:
             try:
                 paginator.add_line(line, empty=empty)
-            except Exception:  # noqa: PERF203
+            except Exception:
                 log.exception(f"Failed to add line to paginator: '{line}'")
                 raise  # Should propagate
             else:
@@ -336,7 +335,7 @@ class LinePaginator(Paginator):
                 else:
                     reaction, user = await ctx.bot.wait_for("reaction_add", timeout=timeout, check=check)
                 log.trace(f"Got reaction: {reaction}")
-            except asyncio.TimeoutError:
+            except TimeoutError:
                 log.debug("Timed out waiting for a reaction")
                 break  # We're done, no reactions for the last 5 minutes
 

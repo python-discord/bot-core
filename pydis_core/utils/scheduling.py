@@ -5,7 +5,7 @@ import contextlib
 import inspect
 import typing
 from collections import abc
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from functools import partial
 
 from discord.errors import Forbidden
@@ -103,7 +103,7 @@ class Scheduler:
             task_id: A unique ID to create the task with.
             coroutine: The function to be called.
         """
-        now_datetime = datetime.now(time.tzinfo) if time.tzinfo else datetime.now(tz=timezone.utc)
+        now_datetime = datetime.now(time.tzinfo) if time.tzinfo else datetime.now(tz=UTC)
         delay = (time - now_datetime).total_seconds()
         if delay > 0:
             coroutine = self._await_later(delay, task_id, coroutine)
