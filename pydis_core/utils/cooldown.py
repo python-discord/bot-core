@@ -25,8 +25,6 @@ _ArgsList = list[object]
 _HashableArgsTuple = tuple[Hashable, ...]
 
 if typing.TYPE_CHECKING:
-    import typing_extensions
-
     from pydis_core import BotBase
 
 P = typing.ParamSpec("P")
@@ -75,7 +73,7 @@ class _SeparatedArguments:
     non_hashable: _ArgsList
 
     @classmethod
-    def from_full_arguments(cls, call_arguments: Iterable[object]) -> typing_extensions.Self:
+    def from_full_arguments(cls, call_arguments: Iterable[object]) -> typing.Self:
         """Create a new instance from full call arguments."""
         hashable = list[Hashable]()
         non_hashable = list[object]()

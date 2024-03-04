@@ -6,6 +6,7 @@ Changelog
 
 - :breaking:`208` Split ``fakeredis`` optional dependency from the ``async-rediscache`` extra. You can now install with ``[fakeredis]`` to just install fakeredis (with lua support), ``[async-rediscache]`` to install just ``async-rediscache``, or use either ``[all]`` or ``[async-rediscache,fakeredis]`` to install both. This allows users who do no rely on fakeredis to install in 3.12 environments.
 - :support:`208` Add support for Python 3.12. Be aware, at time of writing, our usage of fakeredis does not currently support 3.12. This is due to :literal-url:`this lupa issue<https://github.com/scoder/lupa/issues/245>`. Lupa is required by async-rediscache for lua script support within fakeredis. As such, fakeredis can not be installed in a Python 3.12 environment.
+- :breaking:`208` Drop support for Python 3.10
 - :breaking:`208` Drop support for Pydantic 1.X
 - :breaking:`207` Enable more ruff linting rules. See :literal-url:`GitHub release notes <https://github.com/python-discord/bot-core/releases/tag/v11.0.0>` for breaking changes.
 - :support:`206` Bump ruff from 0.1.15 to 0.2.2, using the new lint config namespace, and linting with the new rules.
