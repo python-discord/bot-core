@@ -1,5 +1,8 @@
 """Useful utilities and tools for Discord bot development."""
 
+import pydis_core.utils.error_handling.commands as command_error_handling_module
+import pydis_core.utils.error_handling.commands.abc as error_handling_abstractions
+import pydis_core.utils.error_handling.commands.manager as command_error_manager
 from pydis_core.utils import (
     _monkey_patches,
     caching,
@@ -44,6 +47,9 @@ __all__ = [
     channel,
     checks,
     commands,
+    command_error_handling_module,
+    error_handling_abstractions,
+    command_error_manager,
     cooldown,
     error_handling,
     function,
