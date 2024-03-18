@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="members" href="pydis_core.utils.members.html" /><link rel="prev" title="lock" href="pydis_core.utils.lock.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>logging - Pydis Core Latest (10.7.0)</title>
+        <title>logging - Pydis Core Latest (11.0.0)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core Latest (10.7.0)</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core Latest (11.0.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (10.7.0)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (11.0.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -166,12 +166,19 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="pydis_core.html">Pydis Core</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Pydis Core</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pydis_core.exts.html">Exts</a></li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="pydis_core.utils.html">Utils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="pydis_core.utils.error_handling.html">error_handling package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of error_handling package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="pydis_core.utils.error_handling.commands.html">commands package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of commands package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="pydis_core.utils.error_handling.commands.abc.html">abc</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydis_core.utils.error_handling.commands.manager.html">manager</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.channel.html">channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.checks.html">checks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.commands.html">commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.cooldown.html">cooldown</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.error_handling.html">error_handling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.function.html">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.interactions.html">interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydis_core.utils.lock.html">lock</a></li>
@@ -280,6 +287,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v11.0.0/output/pydis_core.utils.logging.html">v11.0.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v10.7.0/output/pydis_core.utils.logging.html">v10.7.0</a>
                     </li>
                 
@@ -375,12 +386,12 @@
 <p>Common logging related functions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.utils.logging.CustomLogger">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustomLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/9a497193db7cca2d64cd99251f34b83bec2d9137/pydis_core/utils/logging.py#L20-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.CustomLogger" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustomLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/logging.py#L20-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.CustomLogger" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Logger</span></code></a></p>
 <p>Custom implementation of the <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.Logger</span></code></a> class with an added <a class="reference internal" href="#pydis_core.utils.logging.CustomLogger.trace" title="pydis_core.utils.logging.CustomLogger.trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace</span></code></a> method.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.logging.CustomLogger.trace">
-<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/9a497193db7cca2d64cd99251f34b83bec2d9137/pydis_core/utils/logging.py#L23-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.CustomLogger.trace" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/logging.py#L23-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.CustomLogger.trace" title="Link to this definition">#</a></dt>
 <dd><p>Log the given message with the severity <code class="docutils literal notranslate"><span class="pre">&quot;TRACE&quot;</span></code>.</p>
 <p>To pass exception information, use the keyword argument exc_info with a true value:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="s2">&quot;Houston, we have an </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;interesting problem&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -404,7 +415,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.logging.get_logger">
-<span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/9a497193db7cca2d64cd99251f34b83bec2d9137/pydis_core/utils/logging.py#L41-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.get_logger" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/logging.py#L41-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.get_logger" title="Link to this definition">#</a></dt>
 <dd><p>Utility to make mypy recognise that logger is of type <a class="reference internal" href="#pydis_core.utils.logging.CustomLogger" title="pydis_core.utils.logging.CustomLogger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomLogger</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -421,7 +432,7 @@
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pydis_core.utils.logging.log_format">
-<span class="sig-name descname"><span class="pre">log_format</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/9a497193db7cca2d64cd99251f34b83bec2d9137/pydis_core/utils/logging.py#L12"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.log_format" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">log_format</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/logging.py#L12"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.logging.log_format" title="Link to this definition">#</a></dt>
 <dd><p>A <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Formatter" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.Formatter</span></code></a> that can be used to standardise logging across all projects using pydis_core.</p>
 <dl class="field-list simple">
 </dl>
@@ -502,7 +513,7 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=bd02792a"></script>
+</div><script src="../_static/documentation_options.js?v=ce29b7a2"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

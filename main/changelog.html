@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Local Development &amp; Testing" href="development.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>Changelog - Pydis Core Latest (10.7.0)</title>
+        <title>Changelog - Pydis Core Latest (11.0.0)</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Pydis Core Latest (10.7.0)</div></a>
+      <a href="index.html"><div class="brand">Pydis Core Latest (11.0.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (10.7.0)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (11.0.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -166,12 +166,19 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="output/pydis_core.html">Pydis Core</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Pydis Core</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="output/pydis_core.exts.html">Exts</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="output/pydis_core.utils.html">Utils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="output/pydis_core.utils.error_handling.html">error_handling package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of error_handling package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="output/pydis_core.utils.error_handling.commands.html">commands package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of commands package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="output/pydis_core.utils.error_handling.commands.abc.html">abc</a></li>
+<li class="toctree-l5"><a class="reference internal" href="output/pydis_core.utils.error_handling.commands.manager.html">manager</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.caching.html">caching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.channel.html">channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.checks.html">checks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.commands.html">commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.cooldown.html">cooldown</a></li>
-<li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.error_handling.html">error_handling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.function.html">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.interactions.html">interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output/pydis_core.utils.lock.html">lock</a></li>
@@ -280,6 +287,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../v11.0.0/changelog.html">v11.0.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../v10.7.0/changelog.html">v10.7.0</a>
                     </li>
                 
@@ -372,12 +383,13 @@
         <article role="main">
           <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
-<section id="Next 10.x feature release">
-<h2 style="margin-bottom: 0.3em;"><a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/vmaster">Next 10.x feature release</a></h2><ul class="simple">
+<section id="11.0.0">
+<h2 style="margin-bottom: 0.3em;"><a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/v11.0.0">11.0.0</a> <span style="font-size: 75%;">18th March 2024</span></h2><ul class="simple">
 <li><p>[<span style="color: #F50F10;">Breaking</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/207">#207</a><span>:</span> Enable more ruff linting rules. See <a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/v11.0.0"><code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">release</span> <span class="pre">notes</span></code></a> for breaking changes.</p></li>
 <li><p>[<span style="color: #F50F10;">Breaking</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/208">#208</a><span>:</span> Drop support for Pydantic 1.X</p></li>
 <li><p>[<span style="color: #F50F10;">Breaking</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/208">#208</a><span>:</span> Drop support for Python 3.10</p></li>
 <li><p>[<span style="color: #F50F10;">Breaking</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/208">#208</a><span>:</span> Split <code class="docutils literal notranslate"><span class="pre">fakeredis</span></code> optional dependency from the <code class="docutils literal notranslate"><span class="pre">async-rediscache</span></code> extra. You can now install with <code class="docutils literal notranslate"><span class="pre">[fakeredis]</span></code> to just install fakeredis (with lua support), <code class="docutils literal notranslate"><span class="pre">[async-rediscache]</span></code> to install just <code class="docutils literal notranslate"><span class="pre">async-rediscache</span></code>, or use either <code class="docutils literal notranslate"><span class="pre">[all]</span></code> or <code class="docutils literal notranslate"><span class="pre">[async-rediscache,fakeredis]</span></code> to install both. This allows users who do no rely on fakeredis to install in 3.12 environments.</p></li>
+<li><p>[<span style="color: #40A056;">Feature</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/205">#205</a><span>:</span> Add <a class="reference internal" href="output/pydis_core.utils.error_handling.commands.abc.html#pydis_core.utils.error_handling.commands.abc.AbstractCommandErrorHandler" title="pydis_core.utils.error_handling.commands.abc.AbstractCommandErrorHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pydis_core.utils.error_handling.commands.abc.AbstractCommandErrorHandler</span></code></a> and <a class="reference internal" href="output/pydis_core.utils.error_handling.commands.manager.html#pydis_core.utils.error_handling.commands.manager.CommandErrorManager" title="pydis_core.utils.error_handling.commands.manager.CommandErrorManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pydis_core.utils.error_handling.commands.manager.CommandErrorManager</span></code></a> to implement and register command error handlers independantly.</p></li>
 <li><p>[<span style="color: #4070A0;">Support</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/204">#204</a><span>:</span> Document the instance attributes of <a class="reference internal" href="output/pydis_core.html#pydis_core.BotBase" title="pydis_core.BotBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pydis_core.BotBase</span></code></a>.</p></li>
 <li><p>[<span style="color: #4070A0;">Support</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/206">#206</a><span>:</span> Bump ruff from 0.1.15 to 0.2.2, using the new lint config namespace, and linting with the new rules.</p></li>
 <li><p>[<span style="color: #4070A0;">Support</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/208">#208</a><span>:</span> Bump ruff to 0.3.0 and target Python 3.11 now that 3.10 isn’t supported.</p></li>
@@ -780,7 +792,7 @@
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=bd02792a"></script>
+</div><script src="_static/documentation_options.js?v=ce29b7a2"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
