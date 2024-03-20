@@ -29,6 +29,7 @@ class CommandErrorManager:
         Iterate through available handlers by registration order, and choose the first one capable of handling
         the error as determined by `should_handle_error`; there is no priority system.
         """
+        error = getattr(error, "original", error)
         for handler in self._handlers + [self._default]:
             if await handler.should_handle_error(error):
                 callback = self._get_callback(handler, context_or_interaction)
