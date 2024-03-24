@@ -19,6 +19,8 @@ logger = sphinx.util.logging.getLogger(__name__)
 
 # Handle the path not being set correctly in actions.
 sys.path.insert(0, Path("..").resolve())
+PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(PROJECT_ROOT.absolute()))
 
 from docs import utils  # noqa: E402
 
@@ -29,9 +31,6 @@ copyright = "2021, Python Discord"  # noqa: A001
 author = "Python Discord"
 
 REPO_LINK = "https://github.com/python-discord/bot-core"
-
-PROJECT_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(PROJECT_ROOT.absolute()))
 
 # The full version, including alpha/beta/rc tags
 release = version = tomli.loads(

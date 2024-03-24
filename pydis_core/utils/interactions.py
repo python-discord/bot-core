@@ -23,9 +23,10 @@ def user_has_access(
         allowed_users: A sequence of user ids that are allowed access
         allowed_roles: A sequence of role ids that are allowed access
     """
-    if user.id in allowed_users or any(role.id in allowed_roles for role in getattr(user, "roles", [])):
-        return True
-    return False
+    return bool(
+        user.id in allowed_users or
+        any(role.id in allowed_roles for role in getattr(user, "roles", []))
+    )
 
 
 async def _handle_modify_message(message: Message, action: Literal["edit", "delete"]) -> None:
