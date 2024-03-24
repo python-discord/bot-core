@@ -42,13 +42,13 @@ taskipy = "1.12.2"
 python-dotenv = "1.0.1"
 
 [tool.poetry.group.test.dependencies]
-pytest = "8.1.0"
-pytest-cov = "4.1.0"
+pytest = "8.1.1"
+pytest-cov = "5.0.0"
 pytest-xdist = "3.5.0"
 
 [tool.poetry.group.lint.dependencies]
-ruff = "0.3.0"
-pre-commit = "3.6.2"
+ruff = "0.3.4"
+pre-commit = "3.7.0"
 
 [tool.poetry.group.doc.dependencies]
 Sphinx = "7.2.6"
@@ -58,7 +58,7 @@ furo = "2024.1.29"
 six = "1.16.0"
 releases = "2.1.1"
 sphinx-multiversion = "0.2.4"
-docstring-parser = "0.15"
+docstring-parser = "0.16"
 tomli = "2.0.1"
 
 [tool.taskipy.tasks]
