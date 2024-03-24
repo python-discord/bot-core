@@ -4,6 +4,8 @@
 Changelog
 =========
 
+- :support:`210` Drop the restriction that meant fakeredis could not be installed on Python 3.12 as lupa now supports 3.12
+
 - :release:`11.0.1 <20th March 2024>`
 - :bug:`209` Extract original error from :obj:`discord.ext.commands.errors.CommandInvokeError` before handling it.
 
