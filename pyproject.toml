@@ -27,7 +27,7 @@ python = "3.11.* || 3.12.*"
 
 "discord.py" = "~=2.3.2"
 async-rediscache = { version = "1.0.0rc2", optional = true }
-fakeredis = { version = "~=2.0", extras = ["lua"], optional = true, python = "<3.12" }
+fakeredis = { version = "~=2.0", extras = ["lua"], optional = true }
 pydantic = "~=2.6"
 statsd  = "~=4.0"
 aiodns = "~=3.1"
