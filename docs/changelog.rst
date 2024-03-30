@@ -4,6 +4,7 @@
 Changelog
 =========
 
+- :release:`11.1.0 <30th March 2024>`
 - :support:`210` Drop the restriction that meant fakeredis could not be installed on Python 3.12 as lupa now supports 3.12
 
 - :release:`11.0.1 <20th March 2024>`
