@@ -5,14 +5,14 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="error_handling" href="pydis_core.utils.error_handling.html" /><link rel="prev" title="commands" href="pydis_core.utils.commands.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
         <title>cooldown - Pydis Core v9.7.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -379,21 +379,21 @@
         </div>
         <article role="main">
           <section id="module-pydis_core.utils.cooldown">
-<span id="cooldown"></span><h1>cooldown<a class="headerlink" href="#module-pydis_core.utils.cooldown" title="Link to this heading">#</a></h1>
+<span id="cooldown"></span><h1>cooldown<a class="headerlink" href="#module-pydis_core.utils.cooldown" title="Link to this heading">¶</a></h1>
 <p>Helpers for setting a cooldown on commands.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="pydis_core.utils.cooldown.CommandOnCooldown">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CommandOnCooldown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L38-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.CommandOnCooldown" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CommandOnCooldown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L38-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.CommandOnCooldown" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.CommandError" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandError</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<a class="reference internal" href="#pydis_core.utils.cooldown.P" title="pydis_core.utils.cooldown.P"><code class="xref py py-obj docutils literal notranslate"><span class="pre">P</span></code></a>, <a class="reference internal" href="#pydis_core.utils.cooldown.R" title="pydis_core.utils.cooldown.R"><code class="xref py py-obj docutils literal notranslate"><span class="pre">R</span></code></a>]</p>
 <p>Raised when a command is invoked while on cooldown.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.cooldown.CommandOnCooldown.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L41-L53"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.CommandOnCooldown.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L41-L53"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.CommandOnCooldown.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.cooldown.CommandOnCooldown.call_without_cooldown">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">call_without_cooldown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L54-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.CommandOnCooldown.call_without_cooldown" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">call_without_cooldown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L54-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.CommandOnCooldown.call_without_cooldown" title="Link to this definition">¶</a></dt>
 <dd><p>Run the command this cooldown blocked.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -409,20 +409,20 @@
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pydis_core.utils.cooldown.P">
-<span class="sig-name descname"><span class="pre">P</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">~P</span></em><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.P" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">P</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">~P</span></em><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.P" title="Link to this definition">¶</a></dt>
 <dd><p>The command’s signature.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.utils.cooldown.R">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">R</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.R" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">R</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.R" title="Link to this definition">¶</a></dt>
 <dd><p>The command’s return value.</p>
 <p>alias of TypeVar(‘R’)</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.cooldown.block_duplicate_invocations">
-<span class="sig-name descname"><span class="pre">block_duplicate_invocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooldown_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">send_notice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_preprocessor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L176-L222"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.block_duplicate_invocations" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">block_duplicate_invocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooldown_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">send_notice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_preprocessor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c57fae8198cadcab3f9c0b09d1189d6b4eb9daf3/pydis_core/utils/cooldown.py#L176-L222"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.cooldown.block_duplicate_invocations" title="Link to this definition">¶</a></dt>
 <dd><p>Prevent duplicate invocations of a command with the same arguments in a channel for <code class="docutils literal notranslate"><span class="pre">cooldown_duration</span></code> seconds.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -524,7 +524,7 @@ its return value is then used to check for the cooldown instead of the raw argum
     </aside>
   </div>
 </div><script src="../_static/documentation_options.js?v=854825c2"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../_static/changelog.js?v=11ff7913"></script>

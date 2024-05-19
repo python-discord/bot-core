@@ -5,14 +5,14 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="paste_service" href="pydis_core.utils.paste_service.html" /><link rel="prev" title="logging" href="pydis_core.utils.logging.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
         <title>members - Pydis Core v10.5.1</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -379,11 +379,11 @@
         </div>
         <article role="main">
           <section id="module-pydis_core.utils.members">
-<span id="members"></span><h1>members<a class="headerlink" href="#module-pydis_core.utils.members" title="Link to this heading">#</a></h1>
+<span id="members"></span><h1>members<a class="headerlink" href="#module-pydis_core.utils.members" title="Link to this heading">¶</a></h1>
 <p>Useful helper functions for interactin with <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member</span></code></a> objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.members.get_or_fetch_member">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/utils/members.py#L12-L31"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.members.get_or_fetch_member" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guild</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/utils/members.py#L12-L31"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.members.get_or_fetch_member" title="Link to this definition">¶</a></dt>
 <dd><p>Attempt to get a member from cache; on failure fetch from the API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -397,7 +397,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.members.handle_role_change">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_role_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/utils/members.py#L33-L60"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.members.handle_role_change" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_role_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/8877fa154439f0ef44366d5808769a50f0c2915f/pydis_core/utils/members.py#L33-L60"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.members.handle_role_change" title="Link to this definition">¶</a></dt>
 <dd><p>Await the given <code class="docutils literal notranslate"><span class="pre">coro</span></code> with <code class="docutils literal notranslate"><span class="pre">role</span></code> as the sole argument.</p>
 <p>Handle errors that we expect to be raised from
 <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.add_roles" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.add_roles</span></code></a> and <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member.remove_roles" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.Member.remove_roles</span></code></a>.</p>
@@ -487,7 +487,7 @@
     </aside>
   </div>
 </div><script src="../_static/documentation_options.js?v=fad06981"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../_static/changelog.js?v=11ff7913"></script>

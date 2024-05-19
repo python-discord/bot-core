@@ -5,14 +5,14 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="site_api" href="pydis_core.site_api.html" /><link rel="prev" title="scheduling" href="pydis_core.utils.scheduling.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
         <title>async_stats - Pydis Core v11.0.1</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -390,16 +390,16 @@
         </div>
         <article role="main">
           <section id="module-pydis_core.async_stats">
-<span id="async-stats"></span><h1>async_stats<a class="headerlink" href="#module-pydis_core.async_stats" title="Link to this heading">#</a></h1>
+<span id="async-stats"></span><h1>async_stats<a class="headerlink" href="#module-pydis_core.async_stats" title="Link to this heading">¶</a></h1>
 <p>An async transport method for statsd communication.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.async_stats.AsyncStatsClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AsyncStatsClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/57ddc0ffa9fd353221b746c5b0999109ba13e70a/pydis_core/async_stats.py#L11-L54"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.async_stats.AsyncStatsClient" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AsyncStatsClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/57ddc0ffa9fd353221b746c5b0999109ba13e70a/pydis_core/async_stats.py#L11-L54"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.async_stats.AsyncStatsClient" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://statsd.readthedocs.io/en/v3.3/reference.html#statsd.client.base.StatsClientBase" title="(in Python StatsD - Edited by Python Discord to extend statsd base objects to also allow referencing statsd.client.base.StatsClientBase v3.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">StatsClientBase</span></code></a></p>
 <p>An async implementation of <a class="reference external" href="https://statsd.readthedocs.io/en/v3.3/reference.html#statsd.client.base.StatsClientBase" title="(in Python StatsD - Edited by Python Discord to extend statsd base objects to also allow referencing statsd.client.base.StatsClientBase v3.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">statsd.client.base.StatsClientBase</span></code></a> that supports async stat communication.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.async_stats.AsyncStatsClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/57ddc0ffa9fd353221b746c5b0999109ba13e70a/pydis_core/async_stats.py#L14-L38"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.async_stats.AsyncStatsClient.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/57ddc0ffa9fd353221b746c5b0999109ba13e70a/pydis_core/async_stats.py#L14-L38"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.async_stats.AsyncStatsClient.__init__" title="Link to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#pydis_core.async_stats.AsyncStatsClient" title="pydis_core.async_stats.AsyncStatsClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AsyncStatsClient</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -416,7 +416,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.async_stats.AsyncStatsClient.create_socket">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_socket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/57ddc0ffa9fd353221b746c5b0999109ba13e70a/pydis_core/async_stats.py#L39-L46"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.async_stats.AsyncStatsClient.create_socket" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_socket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/57ddc0ffa9fd353221b746c5b0999109ba13e70a/pydis_core/async_stats.py#L39-L46"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.async_stats.AsyncStatsClient.create_socket" title="Link to this definition">¶</a></dt>
 <dd><p>Use <a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.create_datagram_endpoint" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio.loop.create_datagram_endpoint</span></code></a> from the loop given on init to create a socket.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -502,7 +502,7 @@
     </aside>
   </div>
 </div><script src="../_static/documentation_options.js?v=6a5133bb"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../_static/changelog.js?v=11ff7913"></script>

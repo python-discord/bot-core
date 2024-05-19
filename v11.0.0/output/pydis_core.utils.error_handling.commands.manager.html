@@ -5,14 +5,14 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="caching" href="pydis_core.utils.caching.html" /><link rel="prev" title="abc" href="pydis_core.utils.error_handling.commands.abc.html" />
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
         <title>manager - Pydis Core v11.0.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     
     
 
@@ -390,20 +390,20 @@
         </div>
         <article role="main">
           <section id="module-pydis_core.utils.error_handling.commands.manager">
-<span id="manager"></span><h1>manager<a class="headerlink" href="#module-pydis_core.utils.error_handling.commands.manager" title="Link to this heading">#</a></h1>
+<span id="manager"></span><h1>manager<a class="headerlink" href="#module-pydis_core.utils.error_handling.commands.manager" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.utils.error_handling.commands.manager.CommandErrorManager">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CommandErrorManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/error_handling/commands/manager.py#L13-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.error_handling.commands.manager.CommandErrorManager" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CommandErrorManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/error_handling/commands/manager.py#L13-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.error_handling.commands.manager.CommandErrorManager" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A class that registers error handlers and handles all command related errors.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.error_handling.commands.manager.CommandErrorManager.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/error_handling/commands/manager.py#L16-L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.error_handling.commands.manager.CommandErrorManager.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/error_handling/commands/manager.py#L16-L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.error_handling.commands.manager.CommandErrorManager.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.error_handling.commands.manager.CommandErrorManager.handle_error">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_or_interaction</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/error_handling/commands/manager.py#L21-L37"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.error_handling.commands.manager.CommandErrorManager.handle_error" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_or_interaction</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/error_handling/commands/manager.py#L21-L37"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.error_handling.commands.manager.CommandErrorManager.handle_error" title="Link to this definition">¶</a></dt>
 <dd><p>Handle a Discord exception.</p>
 <p>Iterate through available handlers by registration order, and choose the first one capable of handling
 the error as determined by <cite>should_handle_error</cite>; there is no priority system.</p>
@@ -416,7 +416,7 @@ the error as determined by <cite>should_handle_error</cite>; there is no priorit
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.error_handling.commands.manager.CommandErrorManager.register_handler">
-<span class="sig-name descname"><span class="pre">register_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/error_handling/commands/manager.py#L38-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.error_handling.commands.manager.CommandErrorManager.register_handler" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">register_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/1c35bf5f8d9a02dfbfba3a1093c1b92253ec2f91/pydis_core/utils/error_handling/commands/manager.py#L38-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.error_handling.commands.manager.CommandErrorManager.register_handler" title="Link to this definition">¶</a></dt>
 <dd><p>Register a command error handler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -503,7 +503,7 @@ the error as determined by <cite>should_handle_error</cite>; there is no priorit
     </aside>
   </div>
 </div><script src="../_static/documentation_options.js?v=ce29b7a2"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../_static/changelog.js?v=11ff7913"></script>
