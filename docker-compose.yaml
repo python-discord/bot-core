@@ -51,7 +51,7 @@ services:
   web:
     << : *restart_policy
     image: ghcr.io/python-discord/site:latest
-    command: ["run", "--debug"]
+    command: ["python", "manage.py", "run"]
     ports:
       - "8000:8000"
     tty: true
