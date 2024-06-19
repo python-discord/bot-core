@@ -38,7 +38,7 @@ fakeredis = ["fakeredis"]
 all = ["async-rediscache", "fakeredis"]
 
 [tool.poetry.group.dev.dependencies]
-taskipy = "1.12.2"
+taskipy = "1.13.0"
 python-dotenv = "1.0.1"
 
 [tool.poetry.group.test.dependencies]
