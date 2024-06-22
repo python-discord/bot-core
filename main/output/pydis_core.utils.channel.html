@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="checks" href="pydis_core.utils.checks.html" /><link rel="prev" title="caching" href="pydis_core.utils.caching.html" />
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>channel - Pydis Core Latest (11.1.0)</title>
+        <title>channel - Pydis Core Latest (11.2.0)</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -183,7 +183,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core Latest (11.1.0)</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core Latest (11.2.0)</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -210,7 +210,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core Latest (11.1.0)</span>
+  <span class="sidebar-brand-text">Pydis Core Latest (11.2.0)</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -457,25 +457,25 @@
 <p>Useful helper functions for interacting with various discord channel objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.channel.get_or_fetch_channel">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/5873ad7d9fc5a4fa803b1411db1804c5998aaab5/pydis_core/utils/channel.py#L25-L58"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.channel.get_or_fetch_channel" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_fetch_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/3fe3eaefc11cd8e5c2ca17fe9e99fe3ef5639933/pydis_core/utils/channel.py#L25-L58"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.channel.get_or_fetch_channel" title="Link to this definition">¶</a></dt>
 <dd><p>Attempt to get or fetch the given <code class="docutils literal notranslate"><span class="pre">channel_id</span></code> from the bots cache, and return it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bot</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a></span>) – The <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.4.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Bot</span></code></a> instance to use for getting/fetching.</p></li>
+<li><p><strong>bot</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></a></span>) – The <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot" title="(in discord.py v2.5.0a)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discord.ext.commands.Bot</span></code></a> instance to use for getting/fetching.</p></li>
 <li><p><strong>channel_id</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span>) – The channel to get/fetch.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.InvalidData" title="(in discord.py v2.4.0a)"><strong>discord.InvalidData</strong></a> – An unknown channel type was received from Discord.</p></li>
-<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.HTTPException" title="(in discord.py v2.4.0a)"><strong>discord.HTTPException</strong></a> – Retrieving the channel failed.</p></li>
-<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.NotFound" title="(in discord.py v2.4.0a)"><strong>discord.NotFound</strong></a> – Invalid Channel ID.</p></li>
-<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Forbidden" title="(in discord.py v2.4.0a)"><strong>discord.Forbidden</strong></a> – You do not have permission to fetch this channel.</p></li>
+<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.InvalidData" title="(in discord.py v2.5.0a)"><strong>discord.InvalidData</strong></a> – An unknown channel type was received from Discord.</p></li>
+<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.HTTPException" title="(in discord.py v2.5.0a)"><strong>discord.HTTPException</strong></a> – Retrieving the channel failed.</p></li>
+<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.NotFound" title="(in discord.py v2.5.0a)"><strong>discord.NotFound</strong></a> – Invalid Channel ID.</p></li>
+<li><p><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Forbidden" title="(in discord.py v2.5.0a)"><strong>discord.Forbidden</strong></a> – You do not have permission to fetch this channel.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.abc.GuildChannel" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GuildChannel</span></code></a> | <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.abc.PrivateChannel" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrivateChannel</span></code></a> | <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Thread" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Thread</span></code></a></span></p>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.abc.GuildChannel" title="(in discord.py v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GuildChannel</span></code></a> | <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.abc.PrivateChannel" title="(in discord.py v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrivateChannel</span></code></a> | <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Thread" title="(in discord.py v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Thread</span></code></a></span></p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The channel from the ID.</p>
@@ -485,12 +485,12 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.channel.is_in_category">
-<span class="sig-name descname"><span class="pre">is_in_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/5873ad7d9fc5a4fa803b1411db1804c5998aaab5/pydis_core/utils/channel.py#L11-L23"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.channel.is_in_category" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_in_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/3fe3eaefc11cd8e5c2ca17fe9e99fe3ef5639933/pydis_core/utils/channel.py#L11-L23"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.channel.is_in_category" title="Link to this definition">¶</a></dt>
 <dd><p>Return whether the given <code class="docutils literal notranslate"><span class="pre">channel</span></code> in the the category with the id <code class="docutils literal notranslate"><span class="pre">category_id</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>channel</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.TextChannel" title="(in discord.py v2.4.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextChannel</span></code></a></span>) – The channel to check.</p></li>
+<li><p><strong>channel</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.TextChannel" title="(in discord.py v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextChannel</span></code></a></span>) – The channel to check.</p></li>
 <li><p><strong>category_id</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span>) – The category to check for.</p></li>
 </ul>
 </dd>
@@ -574,7 +574,7 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=bffcfdfb"></script>
+</div><script src="../_static/documentation_options.js?v=2d832310"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
