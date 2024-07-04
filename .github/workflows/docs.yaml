@@ -16,7 +16,7 @@ jobs:
       - name: Install Python Dependencies
         uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.2
         with:
-          python_version: "3.11"
+          python_version: "3.12"
           install_args: "--extras async-rediscache --only main --only doc"
 
       - name: Generate HTML Site
@@ -40,7 +40,7 @@ jobs:
       - name: Install Python Dependencies
         uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.2
         with:
-          python_version: "3.11"
+          python_version: "3.12"
           install_args: "--extras async-rediscache"
 
       - name: Build All Doc Versions

@@ -4,16 +4,14 @@ version = "11.2.0"
 description = "PyDis core provides core functionality and utility to the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
-classifiers=[
-    "Development Status :: 5 - Production/Stable",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3",
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
 ]
-packages = [
-    { include = "pydis_core" },
-]
+packages = [{ include = "pydis_core" }]
 include = ["LICENSE"]
 exclude = ["tests", "tests.*"]
 readme = "README.md"
@@ -23,13 +21,13 @@ repository = "https://github.com/python-discord/bot-core"
 keywords = ["bot", "discord", "discord.py"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 
 "discord.py" = "~=2.4"
 async-rediscache = { version = "1.0.0rc2", optional = true }
 fakeredis = { version = "~=2.0", extras = ["lua"], optional = true }
 pydantic = "~=2.6"
-statsd  = "~=4.0"
+statsd = "~=4.0"
 aiodns = "~=3.1"
 
 [tool.poetry.extras]
@@ -78,7 +76,7 @@ source_pkgs = ["pydis_core"]
 source = ["tests"]
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py312"
 extend-exclude = [".cache"]
 output-format = "concise"
 line-length = 120
@@ -88,24 +86,59 @@ preview = true
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-    "ANN002", "ANN003", "ANN101", "ANN102", "ANN204", "ANN206", "ANN401",
-    "B904",
-    "C401", "C408", "C901",
-    "COM812",
-    "CPY001",
-    "D100", "D104", "D105", "D107", "D203", "D212", "D214", "D215", "D301",
-    "D400", "D401", "D402", "D404", "D405", "D406", "D407", "D408", "D409", "D410", "D411", "D412", "D413", "D414", "D416", "D417",
-    "E731",
-    "EM101", "EM102",
-    "G004",
-    "PLE0604",
-    "PLR",
-    "PT009",
-    "RET504",
-    "RUF005", "RUF029",
-    "S311", "S404",
-    "SIM102", "SIM108",
-    "TRY003",
+  "ANN002",
+  "ANN003",
+  "ANN101",
+  "ANN102",
+  "ANN204",
+  "ANN206",
+  "ANN401",
+  "B904",
+  "C401",
+  "C408",
+  "C901",
+  "COM812",
+  "CPY001",
+  "D100",
+  "D104",
+  "D105",
+  "D107",
+  "D203",
+  "D212",
+  "D214",
+  "D215",
+  "D301",
+  "D400",
+  "D401",
+  "D402",
+  "D404",
+  "D405",
+  "D406",
+  "D407",
+  "D408",
+  "D409",
+  "D410",
+  "D411",
+  "D412",
+  "D413",
+  "D414",
+  "D416",
+  "D417",
+  "E731",
+  "EM101",
+  "EM102",
+  "G004",
+  "PLE0604",
+  "PLR",
+  "PT009",
+  "RET504",
+  "RUF005",
+  "RUF029",
+  "S311",
+  "S404",
+  "SIM102",
+  "SIM108",
+  "TRY003",
 ]
 
 [tool.ruff.lint.isort]

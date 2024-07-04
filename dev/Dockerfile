@@ -1,4 +1,4 @@
-ARG python_version=3.11
+ARG python_version=3.12
 
 FROM --platform=linux/amd64 ghcr.io/owl-corp/python-poetry-base:$python_version-slim
 
