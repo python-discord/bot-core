@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`11.3.0 <17th July 2024>`
+- :feature:`254` Add a ``py.typed`` file for :literal-url:`PEP 561 <https://peps.python.org/pep-0561/>` compliance.
+
+
 - :release:`11.2.0 <22nd June 2024>`
 - :support:`244` Bump Discord.py to :literal-url:`2.4.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.4.0>`.
 
