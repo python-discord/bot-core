@@ -201,7 +201,7 @@ class LinePaginator(Paginator):
         scale_to_size: int = 4000,
         empty: bool = True,
         restrict_to_user: User | None = None,
-        timeout: int = 300,
+        timeout: int = 300,  # noqa: ASYNC109
         footer_text: str | None = None,
         url: str | None = None,
         exception_on_empty_embed: bool = False,
