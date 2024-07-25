@@ -49,7 +49,7 @@ async def _handle_modify_message(message: Message, action: Literal["edit", "dele
 
 class ViewWithUserAndRoleCheck(ui.View):
     """
-    A view that allows the original invoker and moderators to interact with it.
+    A view that allows only allows the specified users, or users with the specified roles, to interact with it.
 
     Args:
         allowed_users: A sequence of user's ids who are allowed to interact with the view.
