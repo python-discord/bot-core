@@ -5,7 +5,7 @@ Changelog
 =========
 
 - :release:`11.3.1 <25th July 2024>`
-- :feature:`-` Correct the docstring of :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck`.
+- :bug:`-` Correct the docstring of :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck`.
 
 - :release:`11.3.0 <17th July 2024>`
 - :feature:`254` Add a ``py.typed`` file for :literal-url:`PEP 561 <https://peps.python.org/pep-0561/>` compliance.
