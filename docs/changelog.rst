@@ -4,6 +4,9 @@
 Changelog
 =========
 
+- :release:`11.4.0 <28th July 2024>`
+- :feature:`262` Add :obj:`pydis_core.utils.pagination.boostrap_line_paginator_with_emojis` to boostrap paginators with custom emojis and remove boilerplate code.
+
 - :release:`11.3.1 <25th July 2024>`
 - :bug:`-` Correct the docstring of :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck`.
 

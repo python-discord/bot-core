@@ -395,3 +395,50 @@ class LinePaginator(Paginator):
                 # Suppress if trying to act on an archived thread.
                 if e.code != 50083:
                     raise
+
+
+def boostrap_line_paginator_with_emojis(pagination_emojis: PaginationEmojis) -> type[LinePaginator]:
+    """Bootsrap a LinePaginator class with custom emojis."""
+    class _LinePaginator(LinePaginator):
+        @classmethod
+        async def paginate(
+            cls,
+            lines: list[str],
+            ctx: Context | discord.Interaction,
+            embed: discord.Embed,
+            *,
+            prefix: str = "",
+            suffix: str = "",
+            max_lines: int | None = None,
+            max_size: int = 500,
+            scale_to_size: int = 4000,
+            empty: bool = True,
+            restrict_to_user: User | None = None,
+            timeout: int = 300,  # noqa: ASYNC109
+            footer_text: str | None = None,
+            url: str | None = None,
+            exception_on_empty_embed: bool = False,
+            reply: bool = False,
+            allowed_roles: Sequence[int] | None = None,
+        ) -> discord.Message | None:
+            return await super().paginate(
+               pagination_emojis=pagination_emojis,
+               lines=lines,
+               ctx=ctx,
+               embed=embed,
+               prefix=prefix,
+               suffix=suffix,
+               max_lines=max_lines,
+               max_size=max_size,
+               scale_to_size=scale_to_size,
+               empty=empty,
+               restrict_to_user=restrict_to_user,
+               timeout=timeout,
+               footer_text=footer_text,
+               url=url,
+               exception_on_empty_embed=exception_on_empty_embed,
+               reply=reply,
+               allowed_roles=allowed_roles
+            )
+
+    return _LinePaginator
