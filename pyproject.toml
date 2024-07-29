@@ -48,7 +48,7 @@ pytest-xdist = "3.6.1"
 
 [tool.poetry.group.lint.dependencies]
 ruff = "0.5.5"
-pre-commit = "3.7.1"
+pre-commit = "3.8.0"
 
 [tool.poetry.group.doc.dependencies]
 Sphinx = "7.4.7"
