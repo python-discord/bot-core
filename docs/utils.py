@@ -94,7 +94,7 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> str |
 
         pos = _global_assign_pos(source, symbol_name)
         if pos is None:
-            if symbol_name in ("model_config", "model_fields", "model_computed_fields"):
+            if symbol_name in ("model_config", "model_fields", "model_computed_fields") or symbol_name.startswith("__"):
                 # These are ClassVars added by pydantic.
                 # Since they're not in our source code, we cannot resolve them to a url.
                 return None
