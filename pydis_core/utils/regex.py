@@ -11,7 +11,7 @@ DISCORD_INVITE = re.compile(
     r"discord([.,]|dot)li|"                      # or discord.li
     r"discord([.,]|dot)io|"                      # or discord.io.
     r"((?<!\w)([.,]|dot))gg"                     # or .gg/
-    r")(/|slash)"                                # / or 'slash'
+    r")(/|slash|\\)"                             # / or \ or 'slash'
     r"(?P<invite>\S+)",                          # the invite code itself
     flags=re.IGNORECASE
 )
