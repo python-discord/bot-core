@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`11.4.0 <11th September 2024>`
+- :feature:`269` Update :obj:`pydis_core.utils.regex.DISCORD_INVITE` to also match backslash before the invite code.
+
+
 - :release:`11.3.1 <25th July 2024>`
 - :bug:`-` Correct the docstring of :obj:`pydis_core.utils.interactions.ViewWithUserAndRoleCheck`.
 
