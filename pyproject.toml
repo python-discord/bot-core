@@ -53,7 +53,7 @@ pre-commit = "3.8.0"
 [tool.poetry.group.doc.dependencies]
 Sphinx = "8.0.2"
 gitpython = "3.1.43"
-sphinx-autodoc-typehints = "2.4.0"
+sphinx-autodoc-typehints = "2.4.4"
 furo = "2024.8.6"
 six = "1.16.0"
 releases = "2.1.1"
