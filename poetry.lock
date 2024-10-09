@@ -1761,13 +1761,13 @@ test = ["cython (>=3.0)", "defusedxml (>=0.7.1)", "pytest (>=8.0)", "setuptools 
 
 [[package]]
 name = "sphinx-autodoc-typehints"
-version = "2.4.0"
+version = "2.5.0"
 description = "Type hints (PEP 484) support for the Sphinx autodoc extension"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "sphinx_autodoc_typehints-2.4.0-py3-none-any.whl", hash = "sha256:c9774d47e7d304cf975e073df49ebf19763dca94ac0295e7013b522b26cb18de"},
-    {file = "sphinx_autodoc_typehints-2.4.0.tar.gz", hash = "sha256:8f8281654ddf5709875429b7120d367f4edee39a131e13d5806e4f779a81bf0f"},
+    {file = "sphinx_autodoc_typehints-2.5.0-py3-none-any.whl", hash = "sha256:53def4753239683835b19bfa8b68c021388bd48a096efcb02cdab508ece27363"},
+    {file = "sphinx_autodoc_typehints-2.5.0.tar.gz", hash = "sha256:259e1026b218d563d72743f417fcc25906a9614897fe37f91bd8d7d58f748c3b"},
 ]
 
 [package.dependencies]
@@ -1803,6 +1803,7 @@ optional = false
 python-versions = "*"
 files = [
     {file = "sphinx-multiversion-0.2.4.tar.gz", hash = "sha256:5cd1ca9ecb5eed63cb8d6ce5e9c438ca13af4fa98e7eb6f376be541dd4990bcb"},
+    {file = "sphinx_multiversion-0.2.4-py2.py3-none-any.whl", hash = "sha256:5c38d5ce785a335d8c8d768b46509bd66bfb9c6252b93b700ca8c05317f207d6"},
     {file = "sphinx_multiversion-0.2.4-py3-none-any.whl", hash = "sha256:dec29f2a5890ad68157a790112edc0eb63140e70f9df0a363743c6258fbeb478"},
 ]
 
@@ -2103,4 +2104,4 @@ fakeredis = ["fakeredis"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "5c9d7e5bf9f284abc00a78bed66ef37ce3926a12f6d5b32189fb5911389875ed"
+content-hash = "0f723b5518ef918c330908716ddba86cd66168c1eb0a19df3aea4c58e1a633a2"
