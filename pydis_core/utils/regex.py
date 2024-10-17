@@ -5,13 +5,8 @@ import re
 DISCORD_INVITE = re.compile(
     r"(https?://)?(www\.)?"                      # Optional http(s) and www.
     r"(discord(app)?)?"                          # Optional discord(app)
-    r"("
-        r"([.,]|dot)gg|"                         # Could be .gg
-        r"([.,]|dot)com|"                        # or .com
-        r"([.,]|dot)me|"                         # or .me
-        r"([.,]|dot)li|"                         # or .li
-        r"([.,]|dot)io"                          # or .io
-    r")"
+    r"([.,]|dot)"                                # Various characters to cover dots
+    r"(gg|com|me|li|io)"                         # A few TLDs that embed within discord
     r"((/|slash|\\)(invite))?"                   # / or \ or 'slash' invite
     r"(/|slash|\\)"                              # / or \ or 'slash'
     r"(?P<invite>\S+)",                          # the invite code itself
