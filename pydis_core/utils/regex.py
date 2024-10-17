@@ -4,13 +4,13 @@ import re
 
 DISCORD_INVITE = re.compile(
     r"(https?://)?(www\.)?"                      # Optional http(s) and www.
+    r"(discord(app)?)?"                          # Optional discord(app)
     r"("
-        r"discord(app)?([.,]|dot)gg|"            # Could be discord(app).gg
-        r"discord(app)?([.,]|dot)com|"           # or discord(app).com/invite
-        r"discord(app)?([.,]|dot)me|"            # or discord(app).me
-        r"discord(app)?([.,]|dot)li|"            # or discord(app).li
-        r"discord(app)?([.,]|dot)io|"            # or discord(app).io
-        r"((?<!\w)([.,]|dot))gg"                 # or .gg
+        r"([.,]|dot)gg|"                         # Could be .gg
+        r"([.,]|dot)com|"                        # or .com
+        r"([.,]|dot)me|"                         # or .me
+        r"([.,]|dot)li|"                         # or .li
+        r"([.,]|dot)io"                          # or .io
     r")"
     r"((/|slash|\\)(invite))?"                   # / or \ or 'slash' invite
     r"(/|slash|\\)"                              # / or \ or 'slash'
