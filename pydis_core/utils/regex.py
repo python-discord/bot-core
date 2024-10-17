@@ -4,13 +4,14 @@ import re
 
 DISCORD_INVITE = re.compile(
     r"(https?://)?(www\.)?"                      # Optional http(s) and www.
-    r"(discord([.,]|dot)gg|"                     # Could be discord.gg/
-    r"discord([.,]|dot)com(/|slash)invite|"      # or discord.com/invite/
-    r"discordapp([.,]|dot)com(/|slash)invite|"   # or discordapp.com/invite/
+    r"(discord([.,]|dot)gg|"                     # Could be discord.gg
+    r"discord([.,]|dot)com|"                     # or discord.com/invite
+    r"discordapp([.,]|dot)com|"                  # or discordapp.com/invite
     r"discord([.,]|dot)me|"                      # or discord.me
     r"discord([.,]|dot)li|"                      # or discord.li
-    r"discord([.,]|dot)io|"                      # or discord.io.
-    r"((?<!\w)([.,]|dot))gg"                     # or .gg/
+    r"discord([.,]|dot)io|"                      # or discord.io
+    r"((?<!\w)([.,]|dot))gg"                     # or .gg
+    r"((/|slash|\\)(invite))?"                   # / or \ or 'slash' invite
     r")(/|slash|\\)"                             # / or \ or 'slash'
     r"(?P<invite>\S+)",                          # the invite code itself
     flags=re.IGNORECASE
