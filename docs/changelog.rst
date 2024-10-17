@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`11.5.0 <17th October 2024>`
+- :feature:`282` Update :obj:`pydis_core.utils.regex.DISCORD_INVITE` to cover more edge cases.
+
+
 - :release:`11.4.0 <11th September 2024>`
 - :feature:`269` Update :obj:`pydis_core.utils.regex.DISCORD_INVITE` to also match backslash before the invite code.
 
