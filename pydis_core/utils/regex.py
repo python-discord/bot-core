@@ -5,12 +5,11 @@ import re
 DISCORD_INVITE = re.compile(
     r"(https?://)?(www\.)?"                      # Optional http(s) and www.
     r"("
-        r"discord([.,]|dot)gg|"                  # Could be discord.gg
-        r"discord([.,]|dot)com|"                 # or discord.com/invite
-        r"discordapp([.,]|dot)com|"              # or discordapp.com/invite
-        r"discord([.,]|dot)me|"                  # or discord.me
-        r"discord([.,]|dot)li|"                  # or discord.li
-        r"discord([.,]|dot)io|"                  # or discord.io
+        r"discord(app)?([.,]|dot)gg|"            # Could be discord(app).gg
+        r"discord(app)?([.,]|dot)com|"           # or discord(app).com/invite
+        r"discord(app)?([.,]|dot)me|"            # or discord(app).me
+        r"discord(app)?([.,]|dot)li|"            # or discord(app).li
+        r"discord(app)?([.,]|dot)io|"            # or discord(app).io
         r"((?<!\w)([.,]|dot))gg"                 # or .gg
     r")"
     r"((/|slash|\\)(invite))?"                   # / or \ or 'slash' invite
