@@ -35,8 +35,6 @@ class UtilsRegexTests(unittest.TestCase):
         self.assertEqual(match_regex("www.discord.com/invite/python"), "python")
         self.assertEqual(match_regex("discordapp.com/invite/python"), "python")
         self.assertEqual(match_regex("discord.me/python"), "python")
-        self.assertEqual(match_regex("discord.li/python"), "python")
-        self.assertEqual(match_regex("discord.io/python"), "python")
         self.assertEqual(match_regex(".gg/python"), "python")
 
         self.assertEqual(match_regex("discord.gg/python/but/extra"), "python/but/extra")
@@ -56,9 +54,17 @@ class UtilsRegexTests(unittest.TestCase):
 
         self.assertEqual(match_regex("another string"), None)
         self.assertEqual(match_regex("https://pythondiscord.com"), None)
+        self.assertEqual(match_regex("https://tenor.com/view/cat-scream-cat-rage-gif-8639900204413677493"), None)
+        self.assertEqual(match_regex("https://paste.pythondiscord.com/1234"), None)
         self.assertEqual(match_regex("https://discord.com"), None)
         self.assertEqual(match_regex("https://discord.gg"), None)
         self.assertEqual(match_regex("https://discord.gg/ python"), None)
+        self.assertEqual(search_regex("https://discord.com/developers/applications"), None)
+        self.assertEqual(
+            search_regex(
+                "https://discord.com/channels/267624335836053506/305126844661760000/1309985927287930892"
+            ), None
+        )
 
         self.assertEqual(search_regex("https://discord.com with whitespace"), None)
         self.assertEqual(search_regex(" https://discord.com "), None)
