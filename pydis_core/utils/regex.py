@@ -3,8 +3,8 @@
 import re
 
 DISCORD_INVITE = re.compile(
-    r"(https?:\/\/)?(www\.)?"                      # Optional http(s) and www.
-    r"(discord(app)?)?"                          # Optional discord(app)
+    r"(https?:\/\/)?(www\.)?"                    # Optional http(s) and www.
+    r"(\B|discord(app)?)"                        # Optional discord(app)
     r"([.,]|dot)"                                # Various characters to cover dots
     r"("
         r"(gg|me)"                               # TLDs that embed within discord
