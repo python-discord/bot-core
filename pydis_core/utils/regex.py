@@ -7,7 +7,7 @@ DISCORD_INVITE = re.compile(
     r"(discord(app)?)?"                          # Optional discord(app)
     r"([.,]|dot)"                                # Various characters to cover dots
     r"("
-        r"(gg|me|li|io)"                         # A few TLDs that embed within discord
+        r"(gg|me)"                               # TLDs that embed within discord
         r"|com(\/|slash|\\)invite"               # Only match com/invite
     r")"
     r"(/|slash|\\)"                              # / or \ or 'slash'
