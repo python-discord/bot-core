@@ -1,7 +1,5 @@
 # Modified version of python-discord/bot
 
-version: "3.8"
-
 x-restart-policy: &restart_policy
   restart: unless-stopped
 
