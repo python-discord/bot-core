@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`11.5.1 <23rd November 2024>`
+- :bug:`295` Update :obj:`pydis_core.utils.regex.DISCORD_INVITE` to not be overly strict.
+
+
 - :release:`11.5.0 <17th October 2024>`
 - :feature:`282` Update :obj:`pydis_core.utils.regex.DISCORD_INVITE` to cover more edge cases.
 
