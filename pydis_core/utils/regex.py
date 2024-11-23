@@ -6,8 +6,10 @@ DISCORD_INVITE = re.compile(
     r"(https?://)?(www\.)?"                      # Optional http(s) and www.
     r"(discord(app)?)?"                          # Optional discord(app)
     r"([.,]|dot)"                                # Various characters to cover dots
-    r"(gg|com|me|li|io)"                         # A few TLDs that embed within discord
-    r"((/|slash|\\)(invite))?"                   # / or \ or 'slash' invite
+    r"("
+        r"(gg|me|li|io)"                         # A few TLDs that embed within discord
+        r"|com(\/|slash|\\)invite"               # Only match com/invite
+    r")"
     r"(/|slash|\\)"                              # / or \ or 'slash'
     r"(?P<invite>\S+)",                          # the invite code itself
     flags=re.IGNORECASE
