@@ -7,12 +7,12 @@
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>interactions - Pydis Core v9.1.1</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
-    <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
-    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
     <link rel="stylesheet" type="text/css" href="../_static/index.css?v=832e2368" />
+    <link rel="stylesheet" type="text/css" href="../_static/logo.css?v=41ebe54c" />
+    <link rel="stylesheet" type="text/css" href="../_static/changelog.css?v=117bb91a" />
     
     
 
@@ -455,7 +455,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.utils.interactions.DeleteMessageButton">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DeleteMessageButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('secondary',</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Delete'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/3d53d05329b4c3b75909888986c98b3d6fc49b20/pydis_core/utils/interactions.py#L88-L114"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.interactions.DeleteMessageButton" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ui.Button" title="(in discord.py v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ui.Button" title="(in discord.py v2.6.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a></p>
 <p>A button that can be added to a view to delete the message containing the view on click.</p>
 <p>This button itself carries out no interaction checks, these should be done by the parent view.</p>
 <p>See <a class="reference internal" href="#pydis_core.utils.interactions.ViewWithUserAndRoleCheck" title="pydis_core.utils.interactions.ViewWithUserAndRoleCheck"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pydis_core.utils.interactions.ViewWithUserAndRoleCheck</span></code></a> for a view that implements basic checks.</p>
@@ -488,7 +488,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.utils.interactions.ViewWithUserAndRoleCheck">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ViewWithUserAndRoleCheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_users</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">180.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/3d53d05329b4c3b75909888986c98b3d6fc49b20/pydis_core/utils/interactions.py#L28-L86"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.interactions.ViewWithUserAndRoleCheck" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ui.View" title="(in discord.py v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.ui.View" title="(in discord.py v2.6.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a></p>
 <p>A view that allows the original invoker and moderators to interact with it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -497,7 +497,7 @@
 <li><p><strong>allowed_roles</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – A sequence of role ids that are allowed to interact with the view.</p></li>
 <li><p><strong>timeout</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]</span>) – Timeout in seconds from last interaction with the UI before no longer accepting input.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> then there is no timeout.</p></li>
-<li><p><strong>message</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Message" title="(in discord.py v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a>]</span>) – The message to remove the view from on timeout. This can also be set with
+<li><p><strong>message</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Message" title="(in discord.py v2.6.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a>]</span>) – The message to remove the view from on timeout. This can also be set with
 <code class="docutils literal notranslate"><span class="pre">view.message</span> <span class="pre">=</span> <span class="pre">await</span> <span class="pre">ctx.send(</span> <span class="pre">...</span> <span class="pre">)`</span></code> , or similar, after the view is instantiated.</p></li>
 </ul>
 </dd>
@@ -513,7 +513,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dd><p>Ensure the user clicking the button is the view invoker, or a moderator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>interaction</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.Interaction" title="(in discord.py v2.5.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interaction</span></code></a></span>) – The interaction that occurred.</p>
+<dd class="field-odd"><p><strong>interaction</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://discordpy.readthedocs.io/en/latest/interactions/api.html#discord.Interaction" title="(in discord.py v2.6.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interaction</span></code></a></span>) – The interaction that occurred.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></span></p>
