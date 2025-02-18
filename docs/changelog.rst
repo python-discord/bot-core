@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`11.6.0 <18th February 2025>`
+- :bug:`302` Bump Discord.py to :literal-url:`2.5.0 <https://discordpy.readthedocs.io/en/stable/whats_new.html#v2-5-0>`.
+
+
 - :release:`11.5.1 <23rd November 2024>`
 - :bug:`295` Update :obj:`pydis_core.utils.regex.DISCORD_INVITE` to not be overly strict.
 
@@ -24,7 +28,7 @@ Changelog
 
 
 - :release:`11.2.0 <22nd June 2024>`
-- :support:`244` Bump Discord.py to :literal-url:`2.4.0 <https://github.com/Rapptz/discord.py/releases/tag/v2.4.0>`.
+- :support:`244` Bump Discord.py to :literal-url:`2.4.0 <https://discordpy.readthedocs.io/en/stable/whats_new.html#v2-4-0>`.
 
 - :release:`11.1.0 <30th March 2024>`
 - :support:`210` Drop the restriction that meant fakeredis could not be installed on Python 3.12 as lupa now supports 3.12
