@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydis_core"
-version = "11.6.0"
+version = "11.6.1"
 description = "PyDis core provides core functionality and utility to the bots of the Python Discord community."
 authors = ["Python Discord <info@pythondiscord.com>"]
 license = "MIT"
