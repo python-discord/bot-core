@@ -4,6 +4,9 @@
 Changelog
 =========
 
+- :release:`11.6.1 <13th July 2025>`
+- :bug:`303` Update Discord invite regex to handle cases with additional slashes.
+
 - :release:`11.6.0 <18th February 2025>`
 - :bug:`302` Bump Discord.py to :literal-url:`2.5.0 <https://discordpy.readthedocs.io/en/stable/whats_new.html#v2-5-0>`.
 
