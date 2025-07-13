@@ -331,6 +331,10 @@
                     </li>
                 
                     <li class="toctree-l2 ">
+                        <a class="version_link reference internal" href="../../v11.6.0/output/pydis_core.utils.lock.html">v11.6.0</a>
+                    </li>
+                
+                    <li class="toctree-l2 ">
                         <a class="version_link reference internal" href="../../v11.5.1/output/pydis_core.utils.lock.html">v11.5.1</a>
                     </li>
                 
@@ -467,12 +471,12 @@
 <span id="lock"></span><h1>lock<a class="headerlink" href="#module-pydis_core.utils.lock" title="Link to this heading">¶</a></h1>
 <dl class="py exception">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.LockedResourceError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LockedResourceError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L22-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.LockedResourceError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LockedResourceError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L22-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.LockedResourceError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></p>
 <p>Exception raised when an operation is attempted on a locked resource.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.LockedResourceError.type">
-<span class="sig-name descname"><span class="pre">type</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L22-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.LockedResourceError.type" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">type</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L22-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.LockedResourceError.type" title="Link to this definition">¶</a></dt>
 <dd><p>Name of the locked resource’s type</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -483,7 +487,7 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.LockedResourceError.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L22-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.LockedResourceError.id" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L22-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.LockedResourceError.id" title="Link to this definition">¶</a></dt>
 <dd><p>ID of the locked resource</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -494,38 +498,38 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.LockedResourceError.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L31-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.LockedResourceError.__init__" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L31-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.LockedResourceError.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.SharedEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SharedEvent</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L41-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SharedEvent</span></span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L41-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Context manager managing an internal event exposed through the wait coro.</p>
 <p>While any code is executing in this context manager, the underlying event will not be set;
 when all of the holders finish the event will be set.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.SharedEvent.__enter__">
-<span class="sig-name descname"><span class="pre">__enter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L54-L58"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent.__enter__" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__enter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L54-L58"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent.__enter__" title="Link to this definition">¶</a></dt>
 <dd><p>Increment the count of the active holders and clear the internal event.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.SharedEvent.__exit__">
-<span class="sig-name descname"><span class="pre">__exit__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_exc_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_exc_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_exc_tb</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L59-L64"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent.__exit__" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__exit__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_exc_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_exc_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_exc_tb</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L59-L64"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent.__exit__" title="Link to this definition">¶</a></dt>
 <dd><p>Decrement the count of the active holders; if 0 is reached set the internal event.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.SharedEvent.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L49-L53"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent.__init__" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L49-L53"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.SharedEvent.wait">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L65-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent.wait" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L65-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.SharedEvent.wait" title="Link to this definition">¶</a></dt>
 <dd><p>Wait for all active holders to exit.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -538,7 +542,7 @@ when all of the holders finish the event will be set.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.lock">
-<span class="sig-name descname"><span class="pre">lock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L70-L137"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.lock" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">lock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L70-L137"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.lock" title="Link to this definition">¶</a></dt>
 <dd><p>Turn the decorated coroutine function into a mutually exclusive operation on a <cite>resource_id</cite>.</p>
 <p>If decorating a command, this decorator must go before (below) the <cite>command</cite> decorator.</p>
 <dl class="field-list simple">
@@ -565,7 +569,7 @@ and return None.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pydis_core.utils.lock.lock_arg">
-<span class="sig-name descname"><span class="pre">lock_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_or_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/16835478af6b842d776d634e53aab8ee31bd350c/pydis_core/utils/lock.py#L139-L157"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.lock_arg" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">lock_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_or_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/7a0f529835ec5f3f09b0924848e0be9f0230d310/pydis_core/utils/lock.py#L139-L157"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.lock.lock_arg" title="Link to this definition">¶</a></dt>
 <dd><p>Apply the <cite>lock</cite> decorator using the value of the arg at the given name/position as the ID.</p>
 <p>See <cite>lock</cite> docs for more information.</p>
 <dl class="field-list simple">
