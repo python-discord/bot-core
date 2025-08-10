@@ -49,6 +49,11 @@ class UtilsRegexTests(unittest.TestCase):
         self.assertEqual(search_regex("https://discord.gg/python with whitespace"), "python")
         self.assertEqual(search_regex(" https://discord.gg/python "), "python")
 
+        self.assertEqual(search_regex("discord:#@discordapp.com/invite/python"), "python")
+        self.assertEqual(search_regex("discord:/#@discordapp.com/invite/python"), "python")
+        self.assertEqual(search_regex("discord://#@discordapp.com/invite/python"), "python")
+        self.assertEqual(search_regex("discord://@#discordapp.com/invite/python"), "python")
+
     def test_discord_invite_negatives(self):
         """Test the DISCORD_INVITE regex on a set of strings we would expect to not capture."""
 
