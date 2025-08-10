@@ -4,6 +4,9 @@
 Changelog
 =========
 
+- :release:`11.7.0 <10th August 2025>`
+- :bug:`304` Update Discord invite regex to handle new protocol.
+
 - :release:`11.6.1 <13th July 2025>`
 - :bug:`303` Update Discord invite regex to handle cases with additional slashes.
 

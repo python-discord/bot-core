@@ -3,7 +3,9 @@
 import re
 
 DISCORD_INVITE = re.compile(
-    r"(https?:\/\/)?(www\.)?"                    # Optional http(s) and www.
+    r"(https?:\/\/)?(discord:\/*)?"          # Optional protocols
+    r"(www\.)?"                                  # Optional www
+    r"[@#]*"                                     # Optional @ or # symbols
     r"(\B|discord(app)?)"                        # Optional discord(app)
     r"([.,]|dot)"                                # Various characters to cover dots
     r"("
