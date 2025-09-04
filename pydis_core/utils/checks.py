@@ -1,5 +1,6 @@
 import datetime
 from collections.abc import Callable, Container, Iterable
+from typing import TYPE_CHECKING
 
 from discord.ext.commands import (
     BucketType,
@@ -13,6 +14,9 @@ from discord.ext.commands import (
 )
 
 from pydis_core.utils.logging import get_logger
+
+if TYPE_CHECKING:
+    import discord
 
 log = get_logger(__name__)
 
@@ -74,9 +78,14 @@ def in_whitelist_check(
         # categories, it's probably not wise to rely on its category in any case.
         channels = tuple(channels) + (redirect,)
 
-    if channels and ctx.channel.id in channels:
-        log.trace(f"{ctx.author} may use the `{ctx.command.name}` command as they are in a whitelisted channel.")
-        return True
+    if channels:
+        # If the channel is a thread/forum post we want to check the parent channel instead.
+        parent: discord.ForumChannel | discord.TextChannel | None = getattr(ctx.channel, "parent", None)
+        channel_id_to_check = parent.id if parent else ctx.channel.id
+
+        if channel_id_to_check in channels:
+            log.trace(f"{ctx.author} may use the `{ctx.command.name}` command as they are in a whitelisted channel.")
+            return True
 
     # Only check the category id if we have a category whitelist and the channel has a `category_id`
     if categories and hasattr(ctx.channel, "category_id") and ctx.channel.category_id in categories:
