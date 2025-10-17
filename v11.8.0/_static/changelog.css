@@ -1,0 +1,11 @@
+[data-theme='dark'] #changelog .dark,
+[data-theme='light'] #changelog .light,
+[data-theme='auto'] #changelog .light {
+    display: inline;
+}
+
+[data-theme='dark'] #changelog .light,
+[data-theme='light'] #changelog .dark,
+[data-theme='auto'] #changelog .dark {
+    display: none;
+}
