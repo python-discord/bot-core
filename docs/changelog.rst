@@ -4,7 +4,7 @@
 Changelog
 =========
 
-- :release:`11.8.0 <4th September 2025>`
+- :release:`11.8.0 <1st January 1970>`
 - :feature:`305` Update :obj:`pydis_core.utils.checks.in_whitelist_check` to check against the parent channel, if one exists, instead of the ``ctx.channel.id``.
 
 - :release:`11.7.0 <10th August 2025>`
