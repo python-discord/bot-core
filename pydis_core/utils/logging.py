@@ -48,7 +48,7 @@ def get_logger(name: str | None = None) -> CustomLogger:
     Returns:
         An instance of the :obj:`CustomLogger` class.
     """
-    return typing.cast(CustomLogger, logging.getLogger(name))
+    return typing.cast("CustomLogger", logging.getLogger(name))
 
 
 # Setup trace level logging so that we can use it within pydis_core.

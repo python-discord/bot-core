@@ -138,8 +138,8 @@ def update_wrapper_globals(
             If ``wrapper`` and ``wrapped`` share a global name that's also used in ``wrapped``\'s typehints,
             and is not in ``ignored_conflict_names``.
     """
-    wrapped = typing.cast(types.FunctionType, wrapped)
-    wrapper = typing.cast(types.FunctionType, wrapper)
+    wrapped = typing.cast("types.FunctionType", wrapped)
+    wrapper = typing.cast("types.FunctionType", wrapper)
 
     annotation_global_names = (
         ann.split(".", maxsplit=1)[0] for ann in wrapped.__annotations__.values() if isinstance(ann, str)
