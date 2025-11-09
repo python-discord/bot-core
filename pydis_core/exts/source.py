@@ -56,7 +56,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
 
     def __init__(self, bot: "Bot", github_repo: str) -> None:
         self.bot = bot
-        self.github_repo = github_repo
+        self.github_repo = github_repo.rstrip("/")
 
     @commands.command(name="source", aliases=("src",))
     async def source_command(
