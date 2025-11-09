@@ -12,7 +12,7 @@ Table of contents:
 ## Building
 To build the docs, you can use the following task:
 ```shell
-poetry run task docs
+uv run task docs
 ```
 
 The output will be in the [`/docs/build`](.) directory.
@@ -42,7 +42,7 @@ The project supports building all different versions at once using [sphinx-multi
 after version `v7.1.0`. You can run the following command to achieve that:
 
 ```shell
-poetry run sphinx_multiversion -v docs docs/build -n -j auto -n
+uv run sphinx_multiversion -v docs docs/build -n -j auto -n
 ```
 
 This will build all tags, as well as the main branch. To build branches besides the main one

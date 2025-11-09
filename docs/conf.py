@@ -35,7 +35,7 @@ REPO_LINK = "https://github.com/python-discord/bot-core"
 # The full version, including alpha/beta/rc tags
 release = version = tomli.loads(
     (PROJECT_ROOT / "pyproject.toml").read_text(encoding="utf-8")
-)["tool"]["poetry"]["version"]
+)["project"]["version"]
 
 # -- General configuration ---------------------------------------------------
 
