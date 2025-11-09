@@ -164,6 +164,6 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
         embed = Embed(title=title, description=description)
         embed.add_field(name="Source Code", value=f"[Go to GitHub]({url})")
         line_text = f":{first_line}" if first_line else ""
-        embed.set_footer(text=f"{location}{line_text}")
+        embed.set_footer(text=f"{location}{line_text}", icon_url=GITHUB_AVATAR)
 
         return embed
