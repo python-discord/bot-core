@@ -36,30 +36,30 @@ all = [
 [dependency-groups]
 dev = [
     "taskipy==1.14.1",
-    "python-dotenv==1.0.1"
+    "python-dotenv==1.2.1"
 ]
 
 test = [
-    "pytest==8.3.4",
-    "pytest-cov==6.0.0",
-    "pytest-xdist==3.6.1"
+    "pytest==8.4.2",
+    "pytest-cov==7.0.0",
+    "pytest-xdist==3.8.0"
 ]
 
 lint = [
     "ruff==0.9.6",
-    "pre-commit==4.1.0"
+    "pre-commit==4.4.0"
 ]
 
 doc = [
-    "Sphinx==8.1.3",
-    "gitpython==3.1.44",
-    "sphinx-autodoc-typehints==3.0.1",
-    "furo==2024.8.6",
+    "Sphinx==8.2.3",
+    "gitpython==3.1.45",
+    "sphinx-autodoc-typehints==3.5.2",
+    "furo==2025.9.25",
     "six==1.17.0",
     "releases==2.1.1",
     "sphinx-multiversion==0.2.4",
-    "docstring-parser==0.16",
-    "tomli==2.2.1"
+    "docstring-parser==0.17.0",
+    "tomli==2.3.0"
 ]
 
 [tool.taskipy.tasks]
