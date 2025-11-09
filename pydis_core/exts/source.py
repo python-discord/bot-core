@@ -12,6 +12,8 @@ if TYPE_CHECKING:
     from pydis_core import BotBase as Bot
 
 
+GITHUB_AVATAR = "https://avatars1.githubusercontent.com/u/9919"
+
 class _TagIdentifierStub(NamedTuple):
     """A minmally functioning stub representing a tag identifier."""
 
@@ -63,7 +65,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
         if not source_item:
             embed = Embed(title=f"{self.bot.user.name}'s GitHub Repository")
             embed.add_field(name="Repository", value=f"[Go to GitHub]({self.github_repo})")
-            embed.set_thumbnail(url="https://avatars1.githubusercontent.com/u/9919")
+            embed.set_thumbnail(url=GITHUB_AVATAR)
             await ctx.send(embed=embed)
             return
 
