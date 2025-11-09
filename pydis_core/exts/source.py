@@ -33,7 +33,7 @@ class _SourceType(enum.StrEnum):
     """The types of source objects recognized by the source command."""
 
     help_command = enum.auto()
-    command = enum.auto()
+    text_command = enum.auto()
     cog = enum.auto()
     tag = enum.auto()
     extension_not_loaded = enum.auto()
@@ -85,7 +85,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
 
         cmd = ctx.bot.get_command(argument)
         if cmd:
-            return cmd, _SourceType.command
+            return cmd, _SourceType.text_command
 
         tags_cog = ctx.bot.get_cog("Tags")
         show_tag = True
@@ -109,7 +109,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
 
         Raise BadArgument if `source_item` is a dynamically-created object (e.g. via internal eval).
         """
-        if source_type == _SourceType.command:
+        if source_type == _SourceType.text_command:
             source_item = inspect.unwrap(source_item.callback)
             src = source_item.__code__
             filename = src.co_filename
@@ -151,7 +151,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
         if source_type == _SourceType.help_command:
             title = "Help Command"
             description = source_object.__doc__.splitlines()[1]
-        elif source_type == _SourceType.command:
+        elif source_type == _SourceType.text_command:
             description = source_object.short_doc
             title = f"Command: {source_object.qualified_name}"
         elif source_type == _SourceType.tag:
