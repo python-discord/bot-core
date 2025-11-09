@@ -142,7 +142,6 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
             first_line_no = None
             lines_extension = ""
 
-        # Handle tag file location differently than others to avoid errors in some cases
         if not first_line_no:
             file_location = Path(filename)
         elif source_type == _SourceType.core_command:
@@ -154,6 +153,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
             internal_location = Path(filename).relative_to(package_location).as_posix()
             file_location = "pydis_core/exts/" + internal_location
         else:
+            # Handle tag file location differently than others to avoid errors in some cases
             file_location = Path(filename).relative_to(Path.cwd()).as_posix()
 
         repo = self.github_repo if source_type != _SourceType.core_command else BOT_CORE_REPO
