@@ -85,7 +85,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
 
         cog = ctx.bot.get_cog(argument)
         if cog:
-            if cog.__module__.startswith("pydis_core.exts"):
+            if inspect.getmodule(cog).__name__.startswith("pydis_core.exts"):
                 return cog, _SourceType.core_cog
             return cog, _SourceType.cog
 
