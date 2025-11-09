@@ -2,7 +2,6 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import contextlib
-import functools
 import logging
 import os.path
 import shutil
@@ -194,7 +193,9 @@ intersphinx_mapping = {
 
 
 # -- Options for the linkcode extension --------------------------------------
-linkcode_resolve = functools.partial(utils.linkcode_resolve, REPO_LINK)
+def linkcode_resolve(domain: str, info: dict) -> str | None:
+    """Determine the URL corresponding to Python object."""
+    return utils.linkcode_resolve(REPO_LINK, domain, info)
 
 
 # -- Options for releases extension ------------------------------------------
