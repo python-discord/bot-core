@@ -1,65 +1,66 @@
-[tool.poetry]
+[project]
 name = "pydis_core"
-version = "11.8.0"
+version = "12.0.0"
 description = "PyDis core provides core functionality and utility to the bots of the Python Discord community."
-authors = ["Python Discord <info@pythondiscord.com>"]
+readme = "README.md"
+authors = [
+    { name = "Python Discord", email = "info@pythondiscord.com" }
+]
 license = "MIT"
+license-files = ["LICENSE"]
 classifiers=[
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
 ]
-packages = [
-    { include = "pydis_core" },
-]
-include = ["LICENSE"]
-exclude = ["tests", "tests.*"]
-readme = "README.md"
-homepage = "https://pythondiscord.com/"
-documentation = "https://bot-core.pythondiscord.com/"
-repository = "https://github.com/python-discord/bot-core"
 keywords = ["bot", "discord", "discord.py"]
+requires-python = ">=3.11"
+import-names = ["pydis_core"]
 
-[tool.poetry.dependencies]
-python = "^3.11"
+dependencies = [
+    "discord.py~=2.5",
+    "pydantic~=2.6",
+    "statsd~=4.0",
+    "aiodns~=3.1"
+]
 
-"discord.py" = "~=2.5"
-async-rediscache = { version = "1.0.0rc2", optional = true }
-fakeredis = { version = "~=2.0", extras = ["lua"], optional = true }
-pydantic = "~=2.6"
-statsd  = "~=4.0"
-aiodns = "~=3.1"
+[project.optional-dependencies]
+async-rediscache = ["async-rediscache~=1.0.0rc2"]
+fakeredis = ["fakeredis[lua]~=2.0"]
+all = [
+    "async-rediscache~=1.0.0rc2",
+    "fakeredis[lua]~=2.0"
+]
 
-[tool.poetry.extras]
-async-rediscache = ["async-rediscache"]
-fakeredis = ["fakeredis"]
-all = ["async-rediscache", "fakeredis"]
+[dependency-groups]
+dev = [
+    "taskipy==1.14.1",
+    "python-dotenv==1.0.1"
+]
 
-[tool.poetry.group.dev.dependencies]
-taskipy = "1.14.1"
-python-dotenv = "1.0.1"
+test = [
+    "pytest==8.3.4",
+    "pytest-cov==6.0.0",
+    "pytest-xdist==3.6.1"
+]
 
-[tool.poetry.group.test.dependencies]
-pytest = "8.3.4"
-pytest-cov = "6.0.0"
-pytest-xdist = "3.6.1"
+lint = [
+    "ruff==0.9.6",
+    "pre-commit==4.1.0"
+]
 
-[tool.poetry.group.lint.dependencies]
-ruff = "0.9.6"
-pre-commit = "4.1.0"
-
-[tool.poetry.group.doc.dependencies]
-Sphinx = "8.1.3"
-gitpython = "3.1.44"
-sphinx-autodoc-typehints = "3.0.1"
-furo = "2024.8.6"
-six = "1.17.0"
-releases = "2.1.1"
-sphinx-multiversion = "0.2.4"
-docstring-parser = "0.16"
-tomli = "2.2.1"
+doc = [
+    "Sphinx==8.1.3",
+    "gitpython==3.1.44",
+    "sphinx-autodoc-typehints==3.0.1",
+    "furo==2024.8.6",
+    "six==1.17.0",
+    "releases==2.1.1",
+    "sphinx-multiversion==0.2.4",
+    "docstring-parser==0.16",
+    "tomli==2.2.1"
+]
 
 [tool.taskipy.tasks]
 lint = "pre-commit run --all-files"
@@ -68,9 +69,20 @@ docs = "sphinx-build -nW -j auto -b html docs docs/build"
 test = "pytest -n 8 --ff"
 retest = "pytest -n 8 --lf"
 
+[project.urls]
+Homepage = "https://bot-core.pythondiscord.com/"
+Documentation = "https://bot-core.pythondiscord.com/"
+Repository = "https://github.com/python-discord/bot-core"
+Changelog = "https://bot-core.pythondiscord.com/main/changelog.html"
+Support = "https://discord.gg/python"
+
 [build-system]
-requires = ["poetry-core>=1.2.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.9.7,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+source-exclude = ["tests", "tests.*"]
+module-root = ""
 
 [tool.coverage.run]
 branch = true
