@@ -1,6 +1,8 @@
 """Reusable Discord cogs."""
-from .source import SourceCode
+from pydis_core.exts import source
 
-__all__ = [SourceCode]
+__all__ = [
+    source,
+]
 
 __all__ = [module.__name__ for module in __all__]

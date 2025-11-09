@@ -1,3 +1,4 @@
+"""Pre-built cog to display source code links for commands and cogs."""
 import enum
 import inspect
 from pathlib import Path
@@ -11,14 +12,14 @@ if TYPE_CHECKING:
     from pydis_core import BotBase as Bot
 
 
-class TagIdentifierStub(NamedTuple):
+class _TagIdentifierStub(NamedTuple):
     """A minmally functioning stub representing a tag identifier."""
 
     group: str | None
     name: str
 
     @classmethod
-    def from_string(cls, string: str) -> "TagIdentifierStub":
+    def from_string(cls, string: str) -> "_TagIdentifierStub":
         """Create a TagIdentifierStub from a string."""
         split_string = string.split(" ", maxsplit=2)
         if len(split_string) == 1:
@@ -26,7 +27,7 @@ class TagIdentifierStub(NamedTuple):
         return cls(split_string[0], split_string[1])
 
 
-class SourceType(enum.StrEnum):
+class _SourceType(enum.StrEnum):
     """The types of source objects recognized by the source command."""
 
     help_command = enum.auto()
@@ -71,18 +72,18 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
         await ctx.send(embed=embed)
 
     @staticmethod
-    async def _get_source_object(ctx: commands.Context, argument: str) -> tuple[object, SourceType]:
+    async def _get_source_object(ctx: commands.Context, argument: str) -> tuple[object, _SourceType]:
         """Convert argument into the source object and source type."""
         if argument.lower() == "help":
-            return ctx.bot.help_command, SourceType.help_command
+            return ctx.bot.help_command, _SourceType.help_command
 
         cog = ctx.bot.get_cog(argument)
         if cog:
-            return cog, SourceType.cog
+            return cog, _SourceType.cog
 
         cmd = ctx.bot.get_command(argument)
         if cmd:
-            return cmd, SourceType.command
+            return cmd, _SourceType.command
 
         tags_cog = ctx.bot.get_cog("Tags")
         show_tag = True
@@ -90,9 +91,9 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
         if not tags_cog:
             show_tag = False
         else:
-            identifier = TagIdentifierStub.from_string(argument.lower())
+            identifier = _TagIdentifierStub.from_string(argument.lower())
             if identifier in tags_cog.tags:
-                return identifier, SourceType.tag
+                return identifier, _SourceType.tag
 
         escaped_arg = escape_markdown(argument)
 
@@ -100,17 +101,17 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
             f"Unable to convert '{escaped_arg}' to valid command{', tag,' if show_tag else ''} or Cog."
         )
 
-    def _get_source_link(self, source_item: object, source_type: SourceType) -> tuple[str, str, int | None]:
+    def _get_source_link(self, source_item: object, source_type: _SourceType) -> tuple[str, str, int | None]:
         """
         Build GitHub link of source item, return this link, file location and first line number.
 
         Raise BadArgument if `source_item` is a dynamically-created object (e.g. via internal eval).
         """
-        if source_type == SourceType.command:
+        if source_type == _SourceType.command:
             source_item = inspect.unwrap(source_item.callback)
             src = source_item.__code__
             filename = src.co_filename
-        elif source_type == SourceType.tag:
+        elif source_type == _SourceType.tag:
             tags_cog = self.bot.get_cog("Tags")
             filename = tags_cog.tags[source_item].file_path
         else:
@@ -120,7 +121,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
             except TypeError:
                 raise commands.BadArgument("Cannot get source for a dynamically-created object.")
 
-        if source_type != SourceType.tag:
+        if source_type != _SourceType.tag:
             try:
                 lines, first_line_no = inspect.getsourcelines(src)
             except OSError:
@@ -141,17 +142,17 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
 
         return url, file_location, first_line_no or None
 
-    async def _build_embed(self, source_object: object, source_type: SourceType) -> Embed | None:
+    async def _build_embed(self, source_object: object, source_type: _SourceType) -> Embed | None:
         """Build embed based on source object."""
         url, location, first_line = self._get_source_link(source_object, source_type)
 
-        if source_type == SourceType.help_command:
+        if source_type == _SourceType.help_command:
             title = "Help Command"
             description = source_object.__doc__.splitlines()[1]
-        elif source_type == SourceType.command:
+        elif source_type == _SourceType.command:
             description = source_object.short_doc
             title = f"Command: {source_object.qualified_name}"
-        elif source_type == SourceType.tag:
+        elif source_type == _SourceType.tag:
             title = f"Tag: {source_object}"
             description = ""
         else:
