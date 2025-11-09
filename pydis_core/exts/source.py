@@ -57,7 +57,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
     @commands.command(name="source", aliases=("src",))
     async def source_command(
         self,
-        ctx: commands.Context,
+        ctx: "commands.Context[Bot]",
         *,
         source_item: str | None = None,
     ) -> None:
@@ -74,7 +74,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
         await ctx.send(embed=embed)
 
     @staticmethod
-    async def _get_source_object(ctx: commands.Context, argument: str) -> tuple[object, _SourceType]:
+    async def _get_source_object(ctx: "commands.Context[Bot]", argument: str) -> tuple[object, _SourceType]:
         """Convert argument into the source object and source type."""
         if argument.lower() == "help":
             return ctx.bot.help_command, _SourceType.help_command
