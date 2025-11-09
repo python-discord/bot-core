@@ -1,6 +1,7 @@
 """Pre-built cog to display source code links for commands and cogs."""
 import enum
 import inspect
+import os
 from importlib import metadata
 from pathlib import Path
 from typing import NamedTuple, TYPE_CHECKING
@@ -160,6 +161,8 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
 
         if source_type == _SourceType.core_command or source_type == _SourceType.core_cog:
             version = f"v{metadata.version('pydis_core')}"
+        elif sha := os.getenv("GITHUB_SHA"):
+            version = sha
         else:
             version = "main"
 
