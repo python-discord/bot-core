@@ -1,6 +1,7 @@
 """Pre-built cog to display source code links for commands and cogs."""
 import enum
 import inspect
+from importlib import metadata
 from pathlib import Path
 from typing import NamedTuple, TYPE_CHECKING
 
@@ -13,6 +14,7 @@ if TYPE_CHECKING:
 
 
 GITHUB_AVATAR = "https://avatars1.githubusercontent.com/u/9919"
+BOT_CORE_REPO = "https://github.com/python-discord/bot-core"
 
 class _TagIdentifierStub(NamedTuple):
     """A minmally functioning stub representing a tag identifier."""
@@ -34,7 +36,9 @@ class _SourceType(enum.StrEnum):
 
     help_command = enum.auto()
     text_command = enum.auto()
+    core_command = enum.auto()
     cog = enum.auto()
+    core_cog = enum.auto()
     tag = enum.auto()
     extension_not_loaded = enum.auto()
 
@@ -81,10 +85,14 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
 
         cog = ctx.bot.get_cog(argument)
         if cog:
+            if cog.__module__.startswith("pydis_core.exts"):
+                return cog, _SourceType.core_cog
             return cog, _SourceType.cog
 
         cmd = ctx.bot.get_command(argument)
         if cmd:
+            if cmd.module.startswith("pydis_core.exts"):
+                return cmd, _SourceType.core_command
             return cmd, _SourceType.text_command
 
         tags_cog = ctx.bot.get_cog("Tags")
@@ -109,7 +117,7 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
 
         Raise BadArgument if `source_item` is a dynamically-created object (e.g. via internal eval).
         """
-        if source_type == _SourceType.text_command:
+        if source_type == _SourceType.text_command or source_type == _SourceType.core_command:
             source_item = inspect.unwrap(source_item.callback)
             src = source_item.__code__
             filename = src.co_filename
@@ -137,10 +145,25 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
         # Handle tag file location differently than others to avoid errors in some cases
         if not first_line_no:
             file_location = Path(filename)
+        elif source_type == _SourceType.core_command:
+            package_location = metadata.distribution("pydis_core").locate_file("") / "pydis_core"
+            internal_location = Path(filename).relative_to(package_location).as_posix()
+            file_location = "pydis_core/" + internal_location
+        elif source_type == _SourceType.core_cog:
+            package_location = metadata.distribution("pydis_core").locate_file("") / "pydis_core" / "exts"
+            internal_location = Path(filename).relative_to(package_location).as_posix()
+            file_location = "pydis_core/exts/" + internal_location
         else:
             file_location = Path(filename).relative_to(Path.cwd()).as_posix()
 
-        url = f"{self.github_repo}/blob/main/{file_location}{lines_extension}"
+        repo = self.github_repo if source_type != _SourceType.core_command else BOT_CORE_REPO
+
+        if source_type == _SourceType.core_command or source_type == _SourceType.core_cog:
+            version = f"v{metadata.version('pydis_core')}"
+        else:
+            version = "main"
+
+        url = f"{repo}/blob/{version}/{file_location}{lines_extension}"
 
         return url, file_location, first_line_no or None
 
@@ -154,6 +177,12 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
         elif source_type == _SourceType.text_command:
             description = source_object.short_doc
             title = f"Command: {source_object.qualified_name}"
+        elif source_type == _SourceType.core_command:
+            description = source_object.short_doc
+            title = f"Core Command: {source_object.qualified_name}"
+        elif source_type == _SourceType.core_cog:
+            title = f"Core Cog: {source_object.qualified_name}"
+            description = source_object.description.splitlines()[0]
         elif source_type == _SourceType.tag:
             title = f"Tag: {source_object}"
             description = ""
