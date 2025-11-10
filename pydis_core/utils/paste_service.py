@@ -98,8 +98,8 @@ async def send_to_paste_service(
         try:
             async with http_session.get(f"{paste_url}/api/v1/lexer") as response:
                 response_json = await response.json()  # Supported lexers are the keys.
-        except HTTPException:
-            raise PasteUploadError("Could not fetch supported lexers from selected paste_url.")
+        except HTTPException as e:
+            raise PasteUploadError("Could not fetch supported lexers from selected paste_url.") from e
 
         _lexers_supported_by_pastebin[paste_url] = list(response_json)
 

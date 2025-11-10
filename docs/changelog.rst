@@ -4,6 +4,14 @@
 Changelog
 =========
 
+.. XXX: CHANGE DATE BEFORE RELEASE
+
+- :release:`12.0.0 <9th November 2025>`
+- :feature:`310` Provide a pre-built :obj:`pydis_core.exts.source.SourceCode` cog for providing links to command implementations.
+- :support:`309` Dependency bumps on all dependencies
+- :support:`309` Migrate build system from Poetry to uv
+- :support:`309` Explicit support for Python 3.13 and 3.14
+
 - :release:`11.8.0 <1st January 1970>`
 - :feature:`305` Update :obj:`pydis_core.utils.checks.in_whitelist_check` to check against the parent channel, if one exists, instead of the ``ctx.channel.id``.
 

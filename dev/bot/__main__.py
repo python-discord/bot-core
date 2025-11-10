@@ -7,6 +7,7 @@ import dotenv
 from discord.ext import commands
 
 import pydis_core
+from pydis_core.exts.source import SourceCode
 
 from . import Bot
 
@@ -30,6 +31,7 @@ async def main() -> None:
     """Run the bot."""
     bot.http_session = aiohttp.ClientSession()
     async with bot:
+        await bot.add_cog(SourceCode(bot, github_repo="https://github.com/python-discord/bot-core"))
         await bot.start(os.getenv("BOT_TOKEN"))
 
 

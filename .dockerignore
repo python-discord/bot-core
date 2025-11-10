@@ -3,5 +3,5 @@
 !pydis_core/
 !dev/
 !pyproject.toml
-!poetry.lock
+!uv.lock
 !README.md

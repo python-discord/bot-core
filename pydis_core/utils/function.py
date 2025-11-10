@@ -51,16 +51,16 @@ def get_arg_value(name_or_pos: Argument, arguments: BoundArgs) -> typing.Any:
 
         try:
             _name, value = arg_values[arg_pos]
-        except IndexError:
-            raise ValueError(f"Argument position {arg_pos} is out of bounds.")
+        except IndexError as e:
+            raise ValueError(f"Argument position {arg_pos} is out of bounds.") from e
         else:
             return value
     elif isinstance(name_or_pos, str):
         arg_name = name_or_pos
         try:
             return arguments[arg_name]
-        except KeyError:
-            raise ValueError(f"Argument {arg_name!r} doesn't exist.")
+        except KeyError as e:
+            raise ValueError(f"Argument {arg_name!r} doesn't exist.") from e
     else:
         raise TypeError("'arg' must either be an int (positional index) or a str (keyword).")
 
@@ -138,8 +138,8 @@ def update_wrapper_globals(
             If ``wrapper`` and ``wrapped`` share a global name that's also used in ``wrapped``\'s typehints,
             and is not in ``ignored_conflict_names``.
     """
-    wrapped = typing.cast(types.FunctionType, wrapped)
-    wrapper = typing.cast(types.FunctionType, wrapper)
+    wrapped = typing.cast("types.FunctionType", wrapped)
+    wrapper = typing.cast("types.FunctionType", wrapper)
 
     annotation_global_names = (
         ann.split(".", maxsplit=1)[0] for ann in wrapped.__annotations__.values() if isinstance(ann, str)

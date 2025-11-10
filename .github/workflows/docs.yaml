@@ -13,11 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.2
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
         with:
-          python_version: "3.11"
-          install_args: "--extras async-rediscache --only main --only doc"
+          enable-cache: true
+          resolution-strategy: "lowest"
+          cache-dependency-glob: "uv.lock"
+          activate-environment: true
+
+      - name: Install dependencies
+        run: uv sync --locked --group doc --extra async-rediscache
 
       - name: Generate HTML Site
         run: sphinx-build -nW -j auto -b html docs docs/build
@@ -37,11 +42,16 @@ jobs:
         with:
           fetch-depth: 0  # We need to check out the entire repository to find all tags
 
-      - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.2
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
         with:
-          python_version: "3.11"
-          install_args: "--extras async-rediscache"
+          enable-cache: true
+          resolution-strategy: "lowest"
+          cache-dependency-glob: "uv.lock"
+          activate-environment: true
+
+      - name: Install dependencies
+        run: uv sync --locked --group doc --extra async-rediscache
 
       - name: Build All Doc Versions
         run: sphinx-multiversion docs docs/build -n -j auto

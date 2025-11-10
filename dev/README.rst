@@ -22,7 +22,7 @@ Option 1
    - The path provided to install should be the root directory of this project on your machine.
      That is, the folder which contains the ``pyproject.toml`` file.
    - Make sure to install in the correct environment. Most Python Discord projects use
-     poetry, so you can run ``poetry run pip install /path/to/pydis_core``.
+     uv, so you can run ``uv run -- pip install /path/to/pydis_core``.
 
 3. You can now use features from your local bot-core changes.
    To load new changes, run the install command again.

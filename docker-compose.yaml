@@ -67,7 +67,7 @@ services:
       context: .
       dockerfile: dev/Dockerfile
     volumes:
-      - .:/app:ro
+      - ./dev:/app/dev:ro
     tty: true
     depends_on:
       - web

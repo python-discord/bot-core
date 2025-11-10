@@ -92,9 +92,9 @@ class APIClient:
             try:
                 response_json = await response.json()
                 raise ResponseCodeError(response=response, response_json=response_json)
-            except aiohttp.ContentTypeError:
+            except aiohttp.ContentTypeError as e:
                 response_text = await response.text()
-                raise ResponseCodeError(response=response, response_text=response_text)
+                raise ResponseCodeError(response=response, response_text=response_text) from e
 
     async def request(self, method: str, endpoint: str, *, raise_for_status: bool = True, **kwargs) -> dict | None:
         """
