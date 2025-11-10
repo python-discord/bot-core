@@ -129,14 +129,14 @@ class SourceCode(commands.Cog, description="Displays information about the bot's
             src = type(source_item)
             try:
                 filename = inspect.getsourcefile(src)
-            except TypeError:
-                raise commands.BadArgument("Cannot get source for a dynamically-created object.")
+            except TypeError as e:
+                raise commands.BadArgument("Cannot get source for a dynamically-created object.") from e
 
         if source_type != _SourceType.tag:
             try:
                 lines, first_line_no = inspect.getsourcelines(src)
-            except OSError:
-                raise commands.BadArgument("Cannot get source for a dynamically-created object.")
+            except OSError as e:
+                raise commands.BadArgument("Cannot get source for a dynamically-created object.") from e
 
             lines_extension = f"#L{first_line_no}-L{first_line_no+len(lines)-1}"
         else:

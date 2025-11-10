@@ -317,8 +317,8 @@ class BotBase(commands.Bot):
 
         try:
             await self.ping_services()
-        except Exception as e:  # noqa: BLE001
-            raise StartupError(e)
+        except Exception as e:
+            raise StartupError(e) from e
 
     async def ping_services(self) -> None:
         """Ping all required services on setup to ensure they are up before starting."""

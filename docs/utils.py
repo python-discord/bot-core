@@ -98,7 +98,7 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> str |
                 # These are ClassVars added by pydantic.
                 # Since they're not in our source code, we cannot resolve them to a url.
                 return None
-            raise Exception(f"Could not find symbol `{symbol_name}` in {module.__name__}.")
+            raise Exception(f"Could not find symbol `{symbol_name}` in {module.__name__}.") from None
 
         start, end = pos
         _, offset = inspect.getsourcelines(symbol[-2])

@@ -51,16 +51,16 @@ def get_arg_value(name_or_pos: Argument, arguments: BoundArgs) -> typing.Any:
 
         try:
             _name, value = arg_values[arg_pos]
-        except IndexError:
-            raise ValueError(f"Argument position {arg_pos} is out of bounds.")
+        except IndexError as e:
+            raise ValueError(f"Argument position {arg_pos} is out of bounds.") from e
         else:
             return value
     elif isinstance(name_or_pos, str):
         arg_name = name_or_pos
         try:
             return arguments[arg_name]
-        except KeyError:
-            raise ValueError(f"Argument {arg_name!r} doesn't exist.")
+        except KeyError as e:
+            raise ValueError(f"Argument {arg_name!r} doesn't exist.") from e
     else:
         raise TypeError("'arg' must either be an int (positional index) or a str (keyword).")
 
