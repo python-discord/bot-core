@@ -31,6 +31,7 @@ fakeredis = { version = "~=2.0", extras = ["lua"], optional = true }
 pydantic = "~=2.6"
 statsd  = "~=4.0"
 aiodns = "~=3.1"
+python-dateutil = "2.9.0.post0"
 
 [tool.poetry.extras]
 async-rediscache = ["async-rediscache"]
