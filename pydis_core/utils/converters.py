@@ -1,11 +1,13 @@
-import dateutil.parser
 from datetime import UTC, datetime
-from discord.ext.commands import BadArgument, Context, Converter
+
+import dateutil.parser
+from discord.ext.commands import BadArgument, Converter
+
 
 class ISODateTime(Converter):
     """Converts an ISO-8601 datetime string into a datetime.datetime."""
 
-    async def convert(self, ctx: Context, datetime_string: str) -> datetime:
+    async def convert(self, datetime_string: str) -> datetime:
         """
         Converts a ISO-8601 `datetime_string` into a `datetime.datetime` object.
 
