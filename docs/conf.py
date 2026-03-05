@@ -2,7 +2,6 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import contextlib
-import functools
 import logging
 import os.path
 import shutil
@@ -119,7 +118,7 @@ def skip(*args) -> bool:
     name = args[2]
     would_skip = args[4]
 
-    if name == "__weakref__":
+    if name in ("__weakref__", "__subclasshook__"):
         return True
     return would_skip
 
@@ -154,13 +153,21 @@ def setup(app: Sphinx) -> None:
 
 ignored_targets = [
     "async_rediscache",
-    "pydantic.main.BaseModel"
+    "pydantic.main.BaseModel",
+    "pydantic_core.*",
+    "pydantic._internal.*",
+    "pydantic.plugin.*"
 ]
 
 # nitpick raises warnings as errors. This regex tells nitpick to ignore any warnings that match this regex.
 # This is a workaround for modules/classes that do not have docs that can be linked out to.
 nitpick_ignore_regex = [
     ("py:.*", "|".join([f".*{entry}.*" for entry in ignored_targets])),
+]
+
+suppress_warnings = [
+    "sphinx_autodoc_typehints.forward_reference",
+    "sphinx_autodoc_typehints.guarded_import",
 ]
 
 # -- Extension configuration -------------------------------------------------
@@ -190,11 +197,18 @@ intersphinx_mapping = {
     "aiohttp": ("https://docs.aiohttp.org/en/stable/", None),
     "statsd": ("https://statsd.readthedocs.io/en/v3.3/", ("_static/statsd_additional_objects.inv", None)),
     "pydantic": ("https://docs.pydantic.dev/latest/", None),
+    "dateutil": ("https://dateutil.readthedocs.io/en/stable/", None),
 }
 
 
 # -- Options for the linkcode extension --------------------------------------
-linkcode_resolve = functools.partial(utils.linkcode_resolve, REPO_LINK)
+def _safe_linkcode_resolve(domain: str, info: dict[str, str]) -> str | None:
+    try:
+        return utils.linkcode_resolve(REPO_LINK, domain, info)
+    except ValueError:
+        return None
+
+linkcode_resolve = _safe_linkcode_resolve
 
 
 # -- Options for releases extension ------------------------------------------
