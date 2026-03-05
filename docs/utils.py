@@ -68,7 +68,11 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> str |
     # in multiversion builds. We load the module from the file location instead
     spec = importlib.util.spec_from_file_location(info["module"], origin, submodule_search_locations=search_locations)
     module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+
+    try:
+        spec.loader.exec_module(module)
+    except Exception:  # noqa: BLE001
+        return None
 
     symbol = [module]
     for name in symbol_name.split("."):
