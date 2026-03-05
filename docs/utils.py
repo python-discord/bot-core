@@ -71,7 +71,7 @@ def linkcode_resolve(repo_link: str, domain: str, info: dict[str, str]) -> str |
 
     try:
         spec.loader.exec_module(module)
-    except Exception:
+    except Exception:  # noqa: BLE001
         return None
 
     symbol = [module]
