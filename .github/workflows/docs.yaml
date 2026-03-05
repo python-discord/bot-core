@@ -5,7 +5,7 @@ on:
   workflow_call:
 
 jobs:
-  latest-build:
+  build-deploy:
     # We only need to verify that the docs build with no warnings here
     name: Build Latest Docs Version
     runs-on: ubuntu-latest
@@ -26,38 +26,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: docs-latest
-          path: docs/build/*
-
-  build-deploy:
-    name: Build & Deploy Docs
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # We need to check out the entire repository to find all tags
-
-      - name: Install Python Dependencies
-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.2
-        with:
-          python_version: "3.12"
-          install_args: "--extras async-rediscache"
-
-      - name: Build All Doc Versions
-        run: sphinx-multiversion docs docs/build -n -j auto
-        env:
-          BUILD_DOCS_FOR_HEAD: ${{ github.event_name == 'pull_request' }}
-          BRANCH_NAME: ${{ github.head_ref }}
-
-      - name: Remove Metadata Files
-        run: |
-          rm -r docs/build/**/_sources
-          rm -r docs/build/**/.doctrees
-
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: docs
           path: docs/build/*
 
       - name: Deploy To GitHub Pages

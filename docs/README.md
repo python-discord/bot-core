@@ -36,28 +36,6 @@ The docs folder has a few moving components, here's a brief description of each:
 - `utils.py`: Helpful function used by `conf.py` to properly create the docs.
 - `netlify_build.py`: Script which downloads the build output in netlify. Refer to [Static Netlify Build](#static-builds)
 
-
-## Versions
-The project supports building all different versions at once using [sphinx-multiversion][multiversion]
-after version `v7.1.0`. You can run the following command to achieve that:
-
-```shell
-poetry run sphinx_multiversion -v docs docs/build -n -j auto -n
-```
-
-This will build all tags, as well as the main branch. To build branches besides the main one
-(such as the one you are currently working on), set the `BUILD_DOCS_FOR_HEAD` environment variable
-to True.
-
-When using multi-version, keep the following in mind:
-1. This command will not fail on warnings, unlike the docs task. Make sure that passes first
-   before using this one.
-2. Make sure to clear the build directory before running this script to avoid conflicts.
-
-
-[multiversion]: https://holzhaus.github.io/sphinx-multiversion/master/index.html
-
-
 ## Docstrings
 To have your code properly added to the generated docs, you need to do a couple of things:
 1. Write your code with annotations.

@@ -53,7 +53,6 @@ extensions = [
     "releases",
     "sphinx.ext.linkcode",
     "sphinx.ext.githubpages",
-    "sphinx_multiversion",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -224,22 +223,3 @@ def _releases_setup(app: Sphinx) -> dict:
 
 _original_releases_setup = releases.setup
 releases.setup = _releases_setup
-
-
-# -- Options for the multiversion extension ----------------------------------
-# Filter out older versions, and don't build branches other than main
-# unless `BUILD_DOCS_FOR_HEAD` env variable is True.
-smv_remote_whitelist = "origin"
-smv_latest_version = "main"
-
-smv_branch_whitelist = "main"
-if os.getenv("BUILD_DOCS_FOR_HEAD", "False").lower() == "true":
-    if not (branch := os.getenv("BRANCH_NAME")):
-        with contextlib.suppress(git.InvalidGitRepositoryError):
-            branch = git.Repo(PROJECT_ROOT).active_branch.name
-
-    if branch:
-        logger.info(f"Adding branch {branch} to build whitelist.")
-        smv_branch_whitelist = f"main|{branch}"
-
-smv_tag_whitelist = r"v(?!([0-6]\.)|(7\.[0-1]\.0))"  # Don't include any versions prior to v7.1.1

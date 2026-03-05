@@ -28,7 +28,7 @@ python = "^3.12"
 "discord.py" = "~=2.5"
 async-rediscache = { version = "1.0.0rc2", optional = true }
 fakeredis = { version = "~=2.0", extras = ["lua"], optional = true }
-pydantic = "~=2.6"
+pydantic = "~=2.12"
 statsd  = "~=4.0"
 aiodns = "~=3.1"
 python-dateutil = "2.9.0.post0"
@@ -58,7 +58,6 @@ sphinx-autodoc-typehints = "3.5.2"
 furo = "2025.12.19"
 six = "1.17.0"
 releases = "2.1.1"
-sphinx-multiversion = "0.2.4"
 docstring-parser = "0.17.0"
 tomli = "2.4.0"
 
