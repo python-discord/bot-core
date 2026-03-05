@@ -1,0 +1,7 @@
+manager
+=========================================================
+
+.. automodule:: pydis_core.utils.error_handling.commands.manager
+   :members:
+   :show-inheritance:
+   :special-members:

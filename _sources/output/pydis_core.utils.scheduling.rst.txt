@@ -1,0 +1,7 @@
+scheduling
+===================================
+
+.. automodule:: pydis_core.utils.scheduling
+   :members:
+   :show-inheritance:
+   :special-members:

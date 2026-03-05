@@ -1,0 +1,7 @@
+site\_api
+============================
+
+.. automodule:: pydis_core.site_api
+   :members:
+   :show-inheritance:
+   :special-members:

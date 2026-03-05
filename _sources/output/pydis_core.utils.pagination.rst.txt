@@ -1,0 +1,7 @@
+pagination
+===================================
+
+.. automodule:: pydis_core.utils.pagination
+   :members:
+   :show-inheritance:
+   :special-members:

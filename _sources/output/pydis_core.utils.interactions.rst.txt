@@ -1,0 +1,7 @@
+interactions
+=====================================
+
+.. automodule:: pydis_core.utils.interactions
+   :members:
+   :show-inheritance:
+   :special-members:

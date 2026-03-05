@@ -1,0 +1,7 @@
+function
+=================================
+
+.. automodule:: pydis_core.utils.function
+   :members:
+   :show-inheritance:
+   :special-members:

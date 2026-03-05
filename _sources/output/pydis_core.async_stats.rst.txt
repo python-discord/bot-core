@@ -1,0 +1,7 @@
+async\_stats
+===============================
+
+.. automodule:: pydis_core.async_stats
+   :members:
+   :show-inheritance:
+   :special-members:

@@ -1,0 +1,25 @@
+Pydis Core
+==========
+
+.. automodule:: pydis_core
+   :members:
+   :show-inheritance:
+   :special-members:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pydis_core.exts
+   pydis_core.utils
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pydis_core.async_stats
+   pydis_core.site_api

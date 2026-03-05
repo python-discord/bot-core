@@ -1,0 +1,7 @@
+converters
+===================================
+
+.. automodule:: pydis_core.utils.converters
+   :members:
+   :show-inheritance:
+   :special-members:

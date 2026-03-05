@@ -1,0 +1,16 @@
+commands package
+==================================================
+
+.. automodule:: pydis_core.utils.error_handling.commands
+   :members:
+   :show-inheritance:
+   :special-members:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pydis_core.utils.error_handling.commands.abc
+   pydis_core.utils.error_handling.commands.manager

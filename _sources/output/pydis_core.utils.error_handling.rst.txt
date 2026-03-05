@@ -1,0 +1,15 @@
+error\_handling package
+=========================================
+
+.. automodule:: pydis_core.utils.error_handling
+   :members:
+   :show-inheritance:
+   :special-members:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pydis_core.utils.error_handling.commands

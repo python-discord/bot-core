@@ -1,0 +1,38 @@
+Utils
+=====
+
+.. automodule:: pydis_core.utils
+   :members:
+   :show-inheritance:
+   :special-members:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pydis_core.utils.error_handling
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pydis_core.utils.caching
+   pydis_core.utils.channel
+   pydis_core.utils.checks
+   pydis_core.utils.commands
+   pydis_core.utils.converters
+   pydis_core.utils.cooldown
+   pydis_core.utils.function
+   pydis_core.utils.interactions
+   pydis_core.utils.lock
+   pydis_core.utils.logging
+   pydis_core.utils.members
+   pydis_core.utils.messages
+   pydis_core.utils.pagination
+   pydis_core.utils.paste_service
+   pydis_core.utils.regex
+   pydis_core.utils.scheduling

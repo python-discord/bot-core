@@ -1,0 +1,7 @@
+caching
+================================
+
+.. automodule:: pydis_core.utils.caching
+   :members:
+   :show-inheritance:
+   :special-members:

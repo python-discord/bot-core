@@ -1,0 +1,7 @@
+Exts
+====
+
+.. automodule:: pydis_core.exts
+   :members:
+   :show-inheritance:
+   :special-members:

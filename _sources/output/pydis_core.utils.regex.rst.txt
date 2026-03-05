@@ -1,0 +1,7 @@
+regex
+==============================
+
+.. automodule:: pydis_core.utils.regex
+   :members:
+   :show-inheritance:
+   :special-members:

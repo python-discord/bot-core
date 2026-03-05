@@ -1,0 +1,7 @@
+abc
+=====================================================
+
+.. automodule:: pydis_core.utils.error_handling.commands.abc
+   :members:
+   :show-inheritance:
+   :special-members:

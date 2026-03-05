@@ -1,0 +1,7 @@
+logging
+================================
+
+.. automodule:: pydis_core.utils.logging
+   :members:
+   :show-inheritance:
+   :special-members:

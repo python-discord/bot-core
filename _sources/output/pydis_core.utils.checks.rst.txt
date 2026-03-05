@@ -1,0 +1,7 @@
+checks
+===============================
+
+.. automodule:: pydis_core.utils.checks
+   :members:
+   :show-inheritance:
+   :special-members:

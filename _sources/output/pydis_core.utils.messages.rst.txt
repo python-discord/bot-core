@@ -1,0 +1,7 @@
+messages
+=================================
+
+.. automodule:: pydis_core.utils.messages
+   :members:
+   :show-inheritance:
+   :special-members:

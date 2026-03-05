@@ -1,0 +1,7 @@
+paste\_service
+=======================================
+
+.. automodule:: pydis_core.utils.paste_service
+   :members:
+   :show-inheritance:
+   :special-members:

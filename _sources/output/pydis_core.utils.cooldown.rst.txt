@@ -1,0 +1,7 @@
+cooldown
+=================================
+
+.. automodule:: pydis_core.utils.cooldown
+   :members:
+   :show-inheritance:
+   :special-members:

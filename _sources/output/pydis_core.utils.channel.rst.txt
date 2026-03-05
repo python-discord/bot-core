@@ -1,0 +1,7 @@
+channel
+================================
+
+.. automodule:: pydis_core.utils.channel
+   :members:
+   :show-inheritance:
+   :special-members:
