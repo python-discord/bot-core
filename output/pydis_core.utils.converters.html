@@ -7,7 +7,7 @@
         <link rel="prefetch" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" as="image">
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"><!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
-        <title>converters - Pydis Core v11.8.0</title>
+        <title>converters - Pydis Core v11.9.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -166,7 +166,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Pydis Core v11.8.0</div></a>
+      <a href="../index.html"><div class="brand">Pydis Core v11.9.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -190,7 +190,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core v11.8.0</span>
+  <span class="sidebar-brand-text">Pydis Core v11.9.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -283,12 +283,12 @@
 <span id="converters"></span><h1>converters<a class="headerlink" href="#module-pydis_core.utils.converters" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="pydis_core.utils.converters.ISODateTime">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ISODateTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0a6c0032c8dd1336442dd145f93bc39a8cd1b81c/pydis_core/utils/converters.py#L7-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.converters.ISODateTime" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ISODateTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c738e82d982093864da21853f04decc1548e4381/pydis_core/utils/converters.py#L7-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.converters.ISODateTime" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Converter" title="(in discord.py v2.8.0a)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Converter</span></code></a></p>
 <p>Converts an ISO-8601 datetime string into a datetime.datetime.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pydis_core.utils.converters.ISODateTime.convert">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime_string</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/0a6c0032c8dd1336442dd145f93bc39a8cd1b81c/pydis_core/utils/converters.py#L10-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.converters.ISODateTime.convert" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime_string</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/python-discord/bot-core/blob/c738e82d982093864da21853f04decc1548e4381/pydis_core/utils/converters.py#L10-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydis_core.utils.converters.ISODateTime.convert" title="Link to this definition">¶</a></dt>
 <dd><p>Converts an ISO-8601 <code class="docutils literal notranslate"><span class="pre">datetime_string</span></code> into a <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> object.</p>
 <p>The converter is flexible in the formats it accepts, as it uses the <a class="reference external" href="https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.isoparse" title="(in dateutil v3.9.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">isoparse</span></code></a>
 method of <a class="reference external" href="https://dateutil.readthedocs.io/en/stable/parser.html#module-dateutil.parser" title="(in dateutil v3.9.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dateutil.parser</span></code></a>. In general, it accepts datetime strings that start with a date,
@@ -395,7 +395,7 @@ datetime string. The converter accepts both a <code class="docutils literal notr
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=f661e9e8"></script>
+</div><script src="../_static/documentation_options.js?v=87b4a3b1"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>

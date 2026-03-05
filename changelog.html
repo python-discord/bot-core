@@ -7,7 +7,7 @@
         <link rel="prefetch" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" as="image">
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg"><!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
-        <title>Changelog - Pydis Core v11.8.0</title>
+        <title>Changelog - Pydis Core v11.9.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -166,7 +166,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Pydis Core v11.8.0</div></a>
+      <a href="index.html"><div class="brand">Pydis Core v11.9.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -190,7 +190,7 @@
     <img class="sidebar-logo" src="https://raw.githubusercontent.com/python-discord/branding/main/logos/logo_full/logo_full.min.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Pydis Core v11.8.0</span>
+  <span class="sidebar-brand-text">Pydis Core v11.9.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -281,8 +281,15 @@
         <article role="main" id="furo-main-content">
           <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="11.9.0">
+<h2 style="margin-bottom: 0.3em;"><a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/v11.9.0">11.9.0</a> <span style="font-size: 75%;">5th March 2026</span></h2><ul class="simple">
+<li><p>[<span style="color: #F50F10;">Breaking</span>]<span>:</span><span> </span> Remove sphinx-multiversion as it’s unmaintained and causes issues with our docs builds.</p></li>
+<li><p>[<span style="color: #F50F10;">Breaking</span>]<span>:</span><span> </span> Drop support for Python 3.11.</p></li>
+<li><p>[<span style="color: #40A056;">Feature</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/311">#311</a><span>:</span> Introduce <a class="reference internal" href="output/pydis_core.utils.converters.html#pydis_core.utils.converters.ISODateTime" title="pydis_core.utils.converters.ISODateTime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pydis_core.utils.converters.ISODateTime</span></code></a> converter for parsing ISO 8601 formatted date-time strings in commands.</p></li>
+</ul>
+</section>
 <section id="11.8.0">
-<h2 style="margin-bottom: 0.3em;"><a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/v11.8.0">11.8.0</a> <span style="font-size: 75%;">1st January 1970</span></h2><ul class="simple">
+<h2 style="margin-bottom: 0.3em;"><a class="reference external" href="https://github.com/python-discord/bot-core/releases/tag/v11.8.0">11.8.0</a> <span style="font-size: 75%;">17th October 2025</span></h2><ul class="simple">
 <li><p>[<span style="color: #40A056;">Feature</span>]<span> </span><a class="reference external" href="https://github.com/python-discord/bot-core/issues/305">#305</a><span>:</span> Update <a class="reference internal" href="output/pydis_core.utils.checks.html#pydis_core.utils.checks.in_whitelist_check" title="pydis_core.utils.checks.in_whitelist_check"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pydis_core.utils.checks.in_whitelist_check</span></code></a> to check against the parent channel, if one exists, instead of the <code class="docutils literal notranslate"><span class="pre">ctx.channel.id</span></code>.</p></li>
 </ul>
 </section>
@@ -750,7 +757,7 @@
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=f661e9e8"></script>
+</div><script src="_static/documentation_options.js?v=87b4a3b1"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
