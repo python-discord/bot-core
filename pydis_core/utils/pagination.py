@@ -221,6 +221,11 @@ class LinePaginator(Paginator):
         The interaction will be limited to `restrict_to_user` (ctx.author by default) or
         to any user with a moderation role.
 
+        Example:
+        >>> embed = discord.Embed()
+        >>> embed.set_author(name="Some Operation", url=url, icon_url=icon)
+        >>> await LinePaginator.paginate(pagination_emojis, [line for line in lines], ctx, embed)
+
         Args:
             pagination_emojis (PaginationEmojis): The emojis used to navigate pages.
             lines (list[str]): A list of lines to be added to the paginated content.
@@ -239,11 +244,6 @@ class LinePaginator(Paginator):
             exception_on_empty_embed (bool): Indicates whether to raise an exception when no lines are provided.
             reply (bool): Indicates whether to send the page as a reply to the context's message.
             allowed_roles (Sequence[int]): A list of role ids that are allowed to change pages.
-
-        Example:
-        >>> embed = discord.Embed()
-        >>> embed.set_author(name="Some Operation", url=url, icon_url=icon)
-        >>> await LinePaginator.paginate(pagination_emojis, [line for line in lines], ctx, embed)
         """
         paginator = cls(prefix=prefix, suffix=suffix, max_size=max_size,
                         max_lines=max_lines, scale_to_size=scale_to_size)
