@@ -16,7 +16,7 @@ jobs:
       - name: Install Python Dependencies
         uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.2
         with:
-          python_version: "3.11"
+          python_version: "3.12"
           install_args: "--extras async-rediscache --only main --only doc"
 
       - name: Generate HTML Site
@@ -35,12 +35,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # We need to check out the entire repository to find all tags
+          fetch-depth: 0 # We need to check out the entire repository to find all tags
 
       - name: Install Python Dependencies
         uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.2
         with:
-          python_version: "3.11"
+          python_version: "3.12"
           install_args: "--extras async-rediscache"
 
       - name: Build All Doc Versions
