@@ -52,9 +52,9 @@ ruff = "0.9.6"
 pre-commit = "4.1.0"
 
 [tool.poetry.group.doc.dependencies]
-Sphinx = "9.1.0"
+Sphinx = "8.2.3"
 gitpython = "3.1.46"
-sphinx-autodoc-typehints = "3.9.6"
+sphinx-autodoc-typehints = "3.5.2"
 furo = "2025.12.19"
 six = "1.17.0"
 releases = "2.1.1"
