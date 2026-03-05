@@ -1,14 +1,11 @@
 # Configuration file for the Sphinx documentation builder.
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-import contextlib
 import logging
-import os.path
 import shutil
 import sys
 from pathlib import Path
 
-import git
 import releases
 import sphinx.util.logging
 import tomli
