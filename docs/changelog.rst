@@ -4,7 +4,12 @@
 Changelog
 =========
 
-- :release:`11.8.0 <1st January 1970>`
+- :release:`11.9.0 <5th March 2026>`
+- :breaking:`-` Drop support for Python 3.11.
+- :breaking:`-` Remove sphinx-multiversion as it's unmaintained and causes issues with our docs builds.
+- :feature:`311` Introduce :obj:`pydis_core.utils.converters.ISODateTime` converter for parsing ISO 8601 formatted date-time strings in commands.
+
+- :release:`11.8.0 <17th October 2025>`
 - :feature:`305` Update :obj:`pydis_core.utils.checks.in_whitelist_check` to check against the parent channel, if one exists, instead of the ``ctx.channel.id``.
 
 - :release:`11.7.0 <10th August 2025>`
