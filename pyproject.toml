@@ -28,6 +28,7 @@ python = "^3.12"
 "discord.py" = "~=2.7"
 async-rediscache = { version = "1.0.0rc2", optional = true }
 fakeredis = { version = "~=2.0", extras = ["lua"], optional = true }
+davey = { version = "~=0.1", optional = true }
 pydantic = "~=2.12"
 statsd  = "~=4.0"
 aiodns = "~=3.1"
@@ -36,7 +37,8 @@ python-dateutil = "2.9.0.post0"
 [tool.poetry.extras]
 async-rediscache = ["async-rediscache"]
 fakeredis = ["fakeredis"]
-all = ["async-rediscache", "fakeredis"]
+voice = ["davey"]
+all = ["async-rediscache", "fakeredis", "davey"]
 
 [tool.poetry.group.dev.dependencies]
 taskipy = "1.14.1"
