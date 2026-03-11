@@ -606,14 +606,14 @@ toml = ["tomli ; python_full_version <= \"3.11.0a6\""]
 
 [[package]]
 name = "discord-py"
-version = "2.5.0"
+version = "2.7.1"
 description = "A Python wrapper for the Discord API"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "discord.py-2.5.0-py3-none-any.whl", hash = "sha256:8e1e3b3ff5a112a4ab3a615059a285238eea34edff6de8737db6e1f72ea05195"},
-    {file = "discord_py-2.5.0.tar.gz", hash = "sha256:f6827909b87ea89bdb2cc49d475cb1fada2e73235a3e4568fc8b113660340c73"},
+    {file = "discord_py-2.7.1-py3-none-any.whl", hash = "sha256:849dca2c63b171146f3a7f3f8acc04248098e9e6203412ce3cf2745f284f7439"},
+    {file = "discord_py-2.7.1.tar.gz", hash = "sha256:24d5e6a45535152e4b98148a9dd6b550d25dc2c9fb41b6d670319411641249da"},
 ]
 
 [package.dependencies]
@@ -621,11 +621,11 @@ aiohttp = ">=3.7.4,<4"
 audioop-lts = {version = "*", markers = "python_version >= \"3.13\""}
 
 [package.extras]
-dev = ["black (==22.6)", "typing_extensions (>=4.3,<5)"]
+dev = ["ruff (==0.12)", "typing_extensions (>=4.3,<5)"]
 docs = ["imghdr-lts (==1.0.0) ; python_version >= \"3.13\"", "sphinx (==4.4.0)", "sphinx-inline-tabs (==2023.4.21)", "sphinxcontrib-applehelp (==1.0.4)", "sphinxcontrib-devhelp (==1.0.2)", "sphinxcontrib-htmlhelp (==2.0.1)", "sphinxcontrib-jsmath (==1.0.1)", "sphinxcontrib-qthelp (==1.0.3)", "sphinxcontrib-serializinghtml (==1.1.5)", "sphinxcontrib-websupport (==1.2.4)", "sphinxcontrib_trio (==1.1.2)", "typing-extensions (>=4.3,<5)"]
-speed = ["Brotli", "aiodns (>=1.1) ; sys_platform != \"win32\"", "cchardet (==2.1.7) ; python_version < \"3.10\"", "orjson (>=3.5.4)", "zstandard (>=0.23.0)"]
+speed = ["Brotli", "aiodns (>=1.1) ; sys_platform != \"win32\"", "cchardet (==2.1.7) ; python_version < \"3.10\"", "orjson (>=3.5.4)", "zstandard (>=0.23.0) ; python_version <= \"3.13\""]
 test = ["coverage[toml]", "pytest", "pytest-asyncio", "pytest-cov", "pytest-mock", "typing-extensions (>=4.3,<5)", "tzdata ; sys_platform == \"win32\""]
-voice = ["PyNaCl (>=1.3.0,<1.6)"]
+voice = ["PyNaCl (>=1.5.0,<1.6)", "davey (>=0.1.0)"]
 
 [[package]]
 name = "distlib"
@@ -2481,4 +2481,4 @@ fakeredis = ["fakeredis"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "607aa69b9867e8a1e6dc3dbfcaaba6f0e8fc794eb2f8b29a0a9db928500908a4"
+content-hash = "1a4ec82ea33fe816a281100ad14a0a9ac6fa4d81396f0dfffb89393e85b4bf07"
