@@ -23,7 +23,7 @@ except ImportError:
     RedisSession = object
     REDIS_AVAILABLE = False
 
-log = get_logger()
+log = get_logger(__name__)
 
 
 class StartupError(Exception):
