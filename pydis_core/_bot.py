@@ -168,8 +168,9 @@ class BotBase(commands.Bot):
         log.info("Loading extensions...")
         self.all_extensions = walk_extensions(module)
 
-        for extension in self.all_extensions:
-            scheduling.create_task(self.load_extension(extension))
+        tasks = [scheduling.create_task(self.load_extension(extension)) for extension in self.all_extensions]
+        await asyncio.gather(*tasks)
+        log.info("All extensions loaded.")
 
     async def _sync_app_commands(self) -> None:
         """Sync global & guild specific application commands after extensions are loaded."""
