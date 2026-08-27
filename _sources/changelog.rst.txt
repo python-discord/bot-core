@@ -4,6 +4,15 @@
 Changelog
 =========
 
+- :release:`11.10.1 <5th March 2026>`
+- :feature:`313` Update :obj:`pydis_core.utils.regex.DISCORD_INVITE` to also match a "｡" (HALFWIDTH IDEOGRAPHIC FULL STOP)
+
+
+- :release:`11.10.0 <17th May 2026>`
+- :feature:`312` Update format of :obj:`pydis_core.utils.logging.log_format` to include the function & line number in the output
+- :feature:`312` Log when all cogs are done loading
+
+
 - :release:`11.9.0 <5th March 2026>`
 - :breaking:`-` Drop support for Python 3.11.
 - :breaking:`-` Remove sphinx-multiversion as it's unmaintained and causes issues with our docs builds.
