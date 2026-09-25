@@ -4,6 +4,10 @@
 Changelog
 =========
 
+- :release:`11.11.0 <25th September 2026>`
+- :feature:`-` Install discord.py with its ``speed`` extra, so it parses gateway events with orjson.
+
+
 - :release:`11.10.1 <5th March 2026>`
 - :feature:`313` Update :obj:`pydis_core.utils.regex.DISCORD_INVITE` to also match a "｡" (HALFWIDTH IDEOGRAPHIC FULL STOP)
 
